@@ -1,5 +1,6 @@
 import streamlit as st
-
+import requests
+import json
 
 
 
@@ -10,6 +11,13 @@ def main():
     id=get_url_params()
 
     st.write("ID from Flask application: ",id)
+
+
+    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+    df=pd.json_normalize(response, max_level=2)
+    st.write(df)
+
+
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_item == "ad":
