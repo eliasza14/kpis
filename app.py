@@ -17,26 +17,26 @@ def main():
 
     ad_expander = st.sidebar.expander("ad")
     with ad_expander:
-        selected_option = st.button("button1")
-        selected_option = st.button("button2")
-        selected_option = st.button("button3")
+        selected_option1 = st.button("button1")
+        selected_option2 = st.button("button2")
+        selected_option3 = st.button("button3")
 
     e_expander = st.sidebar.expander("e")
     with e_expander:
-        selected_option = st.button("button4")
-        selected_option = st.button("button5")
-        selected_option = st.button("button6")
+        selected_option4 = st.button("button4")
+        selected_option5 = st.button("button5")
+        selected_option6 = st.button("button6")
     
-    st.sidebar.button("button7")
+    selected_option7 = st.sidebar.button("button7")
 
 
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
-    if selected_option == "button1":
+    if selected_option1:
         display_ad_submenu()
-    elif selected_option == "button2":
+    elif selected_option2:
         display_e_submenu()
-    elif selected_option == "button7":
+    elif selected_option7:
         display_pinkas_submenu(id)
 
 
