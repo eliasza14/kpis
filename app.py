@@ -15,19 +15,19 @@ def main():
     st.write("ID from Flask application: ",id)
 
 
-    ad_expander = st.sidebar.expander("ad")
+    ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
     with ad_expander:
-        selected_option1 = st.button("button1")
-        selected_option2 = st.button("button2")
-        selected_option3 = st.button("button3")
+        selected_option1 = st.button("Εργαζόμενοι")
+        selected_option2 = st.button("Ώρες Απασχόλησης")
+        selected_option3 = st.button("Ετήσιες Μονάδες Εργασίας")
 
-    e_expander = st.sidebar.expander("e")
+    e_expander = st.sidebar.expander("Επιχειρηματικότητα")
     with e_expander:
-        selected_option4 = st.button("button4")
-        selected_option5 = st.button("button5")
-        selected_option6 = st.button("button6")
+        selected_option4 = st.button("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
+        selected_option5 = st.button("% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος")
+        selected_option6 = st.button("Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος")
     
-    selected_option7 = st.sidebar.button("button7")
+    selected_option7 = st.sidebar.button("Αναλυτικός Πίνακας Δεδομένων")
 
 
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
