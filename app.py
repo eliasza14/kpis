@@ -15,11 +15,11 @@ def main():
     st.write("ID from Flask application: ",id)
 
 
-    ad_expander = st.sidebar.beta_expander("ad")
+    ad_expander = st.sidebar.expander("ad")
     with ad_expander:
         selected_option = st.radio("", ["2", "3"])
     
-    e_expander = st.sidebar.beta_expander("e")
+    e_expander = st.sidebar.expander("e")
     with e_expander:
         selected_option = st.radio("", ["2", "5"])
     
