@@ -17,7 +17,7 @@ def main():
 
     ad_expander = st.sidebar.expander("ad")
     with ad_expander:
-        selected_option = st.radio("", ["2", "3"])
+        selected_option = st.button("button1")
     
     e_expander = st.sidebar.expander("e")
     with e_expander:
