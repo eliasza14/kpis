@@ -57,6 +57,8 @@ def display_pinkas_submenu(id):
     
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
     df=pd.json_normalize(response, max_level=2)
+    df['year'] = df['year'].apply(format_year)
+    
     df1=df.groupby(['koispe_id','year'])['profile.eko.sum'].sum()
     dftest=pd.DataFrame(df1).reset_index()
     
@@ -65,7 +67,7 @@ def display_pinkas_submenu(id):
     dffilter['year'] = dffilter['year'].apply(format_year)
     # dffilter
     # data_canada = px.data.gapminder().query("country == 'Canada'")
-    fig = px.bar(dffilter, x=dffilter['year'].astype(int), y='profile.eko.sum',orientation='v')
+    fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
     st.plotly_chart(fig)
 
     # Add content for pinkas submenu here
