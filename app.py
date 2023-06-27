@@ -14,19 +14,9 @@ def main():
     st.write("ID from Flask application: ",id)
 
 
-    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
-    df=pd.json_normalize(response, max_level=2)
-    df1=df.groupby(['koispe_id','year'])['profile.eko.sum'].sum()
-    dftest=pd.DataFrame(df1).reset_index()
     
-    st.write(df)
-    dffilter=dftest[dftest['koispe_id']==int(id)]
-    # dffilter
-    # data_canada = px.data.gapminder().query("country == 'Canada'")
-    fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
-    st.plotly_chart(fig)
 
-    
+
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_item == "ad":
@@ -63,6 +53,19 @@ def display_e_submenu():
 def display_pinkas_submenu():
     st.subheader("pinkas Submenu")
     st.write("Content for pinkas submenu")
+    
+    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+    df=pd.json_normalize(response, max_level=2)
+    df1=df.groupby(['koispe_id','year'])['profile.eko.sum'].sum()
+    dftest=pd.DataFrame(df1).reset_index()
+    
+    st.write(df)
+    dffilter=dftest[dftest['koispe_id']==int(id)]
+    # dffilter
+    # data_canada = px.data.gapminder().query("country == 'Canada'")
+    fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
+    st.plotly_chart(fig)
+
     # Add content for pinkas submenu here
 
 
