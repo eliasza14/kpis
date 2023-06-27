@@ -20,14 +20,14 @@ def main():
         selected_option = st.button("button1")
         selected_option = st.button("button2")
         selected_option = st.button("button3")
-        
+
     e_expander = st.sidebar.expander("e")
     with e_expander:
         selected_option = st.button("button4")
         selected_option = st.button("button5")
         selected_option = st.button("button6")
     
-    st.sidebar.write("pinkas")
+    st.sidebar.button("button7")
 
 
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
