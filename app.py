@@ -65,7 +65,7 @@ def display_pinkas_submenu(id):
     dffilter['year'] = dffilter['year'].apply(format_year)
     # dffilter
     # data_canada = px.data.gapminder().query("country == 'Canada'")
-    fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
+    fig = px.bar(dffilter, x=dffilter['year'].astype(int), y='profile.eko.sum',orientation='v')
     st.plotly_chart(fig)
 
     # Add content for pinkas submenu here
