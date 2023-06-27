@@ -32,6 +32,18 @@ def main():
 
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
+    if selected_option == "button1":
+        display_ad_submenu()
+    elif selected_option == "button2":
+        display_e_submenu()
+    elif selected_option == "button7":
+        display_pinkas_submenu(id)
+
+
+
+
+
+
     if selected_item == "ad":
         display_ad_submenu()
     elif selected_item == "e":
