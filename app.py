@@ -1,12 +1,11 @@
 import streamlit as st
-import request
 
 
 
 
 
 def main():
-    st.write(getId())
+    st.write(home())
     st.sidebar.title("Menu")
     
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
@@ -48,14 +47,24 @@ def display_pinkas_submenu():
     # Add content for pinkas submenu here
 
 
-def getId():
-    id_received = request.args.get('id')
 
+
+def home():
+    query_params = st.experimental_get_query_params()
+    id_received = query_params.get("id", [""])[0]
+    
+    id_input = st.text_input("Enter ID", value=id_received)
+    if id_input:
+        display_contents(id_input)
+
+def display_contents(id_received):
     # Retrieve the contents of the specific ID (replace with your own logic)
     contents = {'id': id_received, 'name': 'John eseaas', 'email': 'john@example.com'}
 
-    # Display the contents
-    return f'<html><body><h1>Contents of ID: {id_received}</h1><p>Name: {contents["name"]}</p><p>Email: {contents["email"]}</p></body></html>'
+    st.write(f'# Contents of ID: {id_received}')
+    st.write(f'Name: {contents["name"]}')
+    st.write(f'Email: {contents["email"]}')
+
 
 
 if __name__ == "__main__":
