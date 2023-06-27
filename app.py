@@ -15,7 +15,15 @@ def main():
     st.write("ID from Flask application: ",id)
 
 
+    ad_expander = st.sidebar.beta_expander("ad")
+    with ad_expander:
+        selected_option = st.radio("", ["2", "3"])
     
+    e_expander = st.sidebar.beta_expander("e")
+    with e_expander:
+        selected_option = st.radio("", ["2", "5"])
+    
+    st.sidebar.write("pinkas")
 
 
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
