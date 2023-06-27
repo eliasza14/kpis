@@ -7,7 +7,7 @@ import streamlit as st
 def main():
     #st.write(home())
     st.sidebar.title("Menu")
-    
+    home()
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_item == "ad":
