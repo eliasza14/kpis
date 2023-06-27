@@ -3,11 +3,13 @@ import streamlit as st
 def main():
     st.sidebar.title("Menu")
     
-    with st.sidebar.beta_expander("ad"):
+    ad_expander = st.sidebar.beta_expander("ad")
+    with ad_expander:
         st.write("-> 2")
         st.write("-> 3")
 
-    with st.sidebar.beta_expander("e"):
+    e_expander = st.sidebar.beta_expander("e")
+    with e_expander:
         st.write("-> 2")
         st.write("-> 5")
 
@@ -15,4 +17,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
