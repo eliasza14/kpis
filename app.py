@@ -85,10 +85,20 @@ def main():
 def ad_button1(id):
     st.subheader("button1 Submenu")
     st.write("Content of button1")
-    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispecmt.json").text)
-    df=pd.json_normalize(response, max_level=1)
+    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
+    # df=pd.json_normalize(response, max_level=1)
+    # st.write(df)
+    data = json.loads(response.text)
+    
+    # Convert the JSON data to a list of dictionaries
+    records = []
+    for key, value in data.items():
+        value['id'] = key
+        records.append(value)
+    
+    # Create a dataframe from the list of dictionaries
+    df = pd.DataFrame(records)
     st.write(df)
-
 
 def ad_button2(id):
     st.subheader("button2 Submenu")
