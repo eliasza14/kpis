@@ -86,10 +86,10 @@ def ad_button1(id):
     st.subheader("button1 Submenu")
     st.write("Content of button1")
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
-    df=pd.json_normalize(response, max_level=2)
+    df=pd.json_normalize(response, max_level=1)
     st.write(df)
 
-    
+
 def ad_button2(id):
     st.subheader("button2 Submenu")
     st.write("Content of button2")
