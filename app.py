@@ -24,7 +24,7 @@ def main():
     elif selected_item == "e":
         display_e_submenu()
     elif selected_item == "pinkas":
-        display_pinkas_submenu()
+        display_pinkas_submenu(id)
 
 def display_ad_submenu():
     st.subheader("ad Submenu")
@@ -50,7 +50,7 @@ def display_e_submenu():
         st.write("Content for Option 5 in e submenu")
         # Add content for Option 5 in e submenu here
 
-def display_pinkas_submenu():
+def display_pinkas_submenu(id):
     st.subheader("pinkas Submenu")
     st.write("Content for pinkas submenu")
     
