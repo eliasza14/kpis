@@ -7,7 +7,9 @@ import streamlit as st
 def main():
     #st.write(home())
     st.sidebar.title("Menu")
-    home()
+    id=get_url_params()
+
+    st.write("ID from Flask application: ",id)
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_item == "ad":
@@ -49,13 +51,14 @@ def display_pinkas_submenu():
 
 
 
-def home():
+def get_url_params():
     query_params = st.experimental_get_query_params()
     id_received = query_params.get("id", [""])[0]
     
-    id_input = st.text_input("Enter ID", value=id_received)
-    if id_input:
-        display_contents(id_input)
+    return id_received
+    # id_input = st.text_input("Enter ID", value=id_received)
+    # if id_input:
+    #     display_contents(id_input)
 
 def display_contents(id_received):
     # Retrieve the contents of the specific ID (replace with your own logic)
