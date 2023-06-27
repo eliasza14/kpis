@@ -5,7 +5,7 @@ import streamlit as st
 
 
 def main():
-    st.write(home())
+    #st.write(home())
     st.sidebar.title("Menu")
     
     selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
