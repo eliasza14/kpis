@@ -97,7 +97,9 @@ def ad_button1(id):
         records.append(value)
     
     # Create a dataframe from the list of dictionaries
-    df = pd.DataFrame(records)
+    #df = pd.DataFrame(records)
+    df=pd.json_normalize(records, max_level=2)
+
     st.write(df)
 
 def ad_button2(id):
