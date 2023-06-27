@@ -88,11 +88,11 @@ def ad_button1(id):
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
     # df=pd.json_normalize(response, max_level=1)
     # st.write(df)
-    data = json.loads(response.text)
+    # data = json.loads(response.text)
     
     # Convert the JSON data to a list of dictionaries
     records = []
-    for key, value in data.items():
+    for key, value in response.items():
         value['id'] = key
         records.append(value)
     
