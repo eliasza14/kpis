@@ -4,7 +4,8 @@ import json
 import pandas as pd
 import plotly.express as px
 
-
+def format_year(year):
+    return "{:d}".format(year)  # Removes the comma separator
 
 def main():
     #st.write(home())
@@ -61,6 +62,7 @@ def display_pinkas_submenu(id):
     
     st.write(df)
     dffilter=dftest[dftest['koispe_id']==int(id)]
+    dffilter['year'] = dffilter['year'].apply(format_year)
     # dffilter
     # data_canada = px.data.gapminder().query("country == 'Canada'")
     fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
