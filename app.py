@@ -23,9 +23,9 @@ def main():
     id=get_url_params()
 
     st.write("ID from Flask application: ",id)
-    image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
+    # image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
 
-    st.image(image, caption='Sunrise by the mountains')
+    st.image("https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png", width=120)
 
 
 
