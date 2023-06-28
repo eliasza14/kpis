@@ -14,7 +14,7 @@ def format_year(year):
 def main():
     #st.write(home())
     st.set_page_config(
-        page_title="Real-Time Data Science Dashboard",
+        page_title="Koispe Dashboard",
         page_icon="✅",
         layout="wide",
     )    
@@ -99,26 +99,27 @@ def main():
 #         # Add content for Option 5 in e submenu here
 def ad_button1(id):
     st.subheader("button1 Submenu")
+    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
+    # df=pd.json_normalize(response, max_level=1)
+    # st.write(df)
+    # data = json.loads(response.text)
+    
+    # Convert the JSON data to a list of dictionaries
+    records = []
+    for key, value in response.items():
+        value['id'] = key
+        records.append(value)
+    
+    # Create a dataframe from the list of dictionaries
+    #df = pd.DataFrame(records)
+    df=pd.json_normalize(records, max_level=2)
+    year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
+
     st.write("Content of button1")
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col 1 Caption for first chart')
-
-            response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
-            # df=pd.json_normalize(response, max_level=1)
-            # st.write(df)
-            # data = json.loads(response.text)
-            
-            # Convert the JSON data to a list of dictionaries
-            records = []
-            for key, value in response.items():
-                value['id'] = key
-                records.append(value)
-            
-            # Create a dataframe from the list of dictionaries
-            #df = pd.DataFrame(records)
-            df=pd.json_normalize(records, max_level=2)
             st.write(df)
         with col2:
             st.write('Col2 Caption for first chart')
