@@ -203,23 +203,30 @@ def ad_button1(id,kpdf):
 
         with col1:
             st.write('Col1 Caption for second chart')
-            # Select the relevant columns
             
+            # Select the relevant columns
             columns = ['D9', 'D10', 'D11']
-            kpdf_selected = kpdf[columns]
+            df_selected = kpdf[columns]
 
             # Calculate the percentage values for each column
-            kpdf_percent = kpdf_selected.div(kpdf_selected.sum(axis=1), axis=0) * 100
+            df_percent = df_selected.div(df_selected.sum(axis=1), axis=0) * 100
 
             # Create the stacked bar plot using Plotly
-            fig = go.Figure(kpdf=[
-                go.Bar(name='D9', x=kpdf['year'].astype(str), y=kpdf_percent['D9'], text=kpdf['D9'], textposition='inside'),
-                go.Bar(name='D10', x=kpdf['year'].astype(str), y=kpdf_percent['D10'], text=kpdf['D10'], textposition='inside'),
-                go.Bar(name='D11', x=kpdf['year'].astype(str), y=kpdf_percent['D11'], text=kpdf['D11'], textposition='inside')
-            ])
+            fig = go.Figure()
+
+            for col in columns:
+                fig.add_trace(go.Bar(
+                    name=col,
+                    x=kpdf['year'],
+                    y=df_percent[col],
+                    text=kpdf[col],
+                    textposition='inside'
+                ))
 
             # Update the layout
             fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year', yaxis_title='Percentage')
+
+            # Show the plot
 
             st.plotly_chart(fig)
 
