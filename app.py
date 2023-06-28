@@ -5,7 +5,10 @@ import pandas as pd
 import plotly.express as px
 from PIL import Image
 
-
+def calculate_d4(row):
+    d1 = row['D1']
+    d3 = row['D3']
+    return d1 / (d1 + d3)
 
 
 def format_year(year):
@@ -43,9 +46,16 @@ def main():
     merged=pd.merge(df,df2,on=['koispe_id','year'])
     st.write(merged)
     kdata=merged[merged['koispe_id']==int(id)]
+
     kdata.drop(columns=['id_x', 'id_y'],inplace=True)
     st.write(kdata)
+    ###Start Creating DiktesDataframe
+    kpdf=kdata[kdata['koispe_id','year']]
+    
 
+
+    kpdf['D1'] = kdata['profile.meli_a']
+    print(kpdf)
 
 
 
