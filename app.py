@@ -27,6 +27,15 @@ def main():
 
     st.image("https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png", width=120)
 
+    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
+    response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+    df=pd.json_normalize(response, max_level=2)
+    df2=pd.json_normalize(response2, max_level=2)
+    merged=pd.merge(df,df2,on=['koispe_id','year'])
+    kdata=merged[merged['koispe_id']==id]
+    st.write(kdata)
+
+
 
 
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
@@ -104,6 +113,9 @@ def main():
 def ad_button1(id):
     st.subheader("button1 Submenu")
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
+
+
+    
     # df=pd.json_normalize(response, max_level=1)
     # st.write(df)
     # data = json.loads(response.text)
