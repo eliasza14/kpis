@@ -9,7 +9,7 @@ def calculate_d9(row):
     d3 = row['D3']
     d5 = row['D5']
     d7 = row['D7']
-    return (int(d3) + int(d3) + int(d5) + int(d7))
+    return (int(d3) / (int(d3) + int(d5) + int(d7)))
 
 
 def format_year(year):
