@@ -105,7 +105,7 @@ def ad_button1(id):
     st.write(koispe1df)
     totalmeloi=int(koispe1df['profile.meli_a'])+int(koispe1df['profile.meli_b'])+int(koispe1df['profile.meli_c'])
     
-    st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname']), value=totalmeloi, delta=-0.5,delta_color="inverse")
+    st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname'][0]), value=totalmeloi, delta=-0.5,delta_color="inverse")
 
     st.metric(label="Active developers", value=123, delta=123, delta_color="off")
 
