@@ -32,7 +32,11 @@ def main():
 
     df=pd.json_normalize(response, max_level=2)
     df2=pd.json_normalize(response2, max_level=2)
+    st.write(df)
+    st.write(df2)
+
     merged=pd.merge(df,df2,on=['koispe_id','year'])
+
     kdata=merged[merged['koispe_id']==str(id)]
     st.write(kdata)
 
