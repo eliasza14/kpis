@@ -68,7 +68,7 @@ def main():
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_option1:
-        ad_button1(id)
+        ad_button1(id,kdata)
     elif selected_option2:
         ad_button2(id)
     elif selected_option3:
@@ -121,7 +121,7 @@ def main():
 #     elif selected_option == "5":
 #         st.write("Content for Option 5 in e submenu")
 #         # Add content for Option 5 in e submenu here
-def ad_button1(id):
+def ad_button1(id,kdata):
     st.subheader("button1 Submenu")
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
@@ -147,8 +147,8 @@ def ad_button1(id):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('Col 1 Caption for first chart')
-            st.write(df)
+            st.write('Col1 show kdata')
+            st.write(kdata)
         with col2:
             st.write('Col2 Caption for first chart')
 
