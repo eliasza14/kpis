@@ -169,7 +169,7 @@ def ad_button1(id,kpdf):
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
-            st.write(kpdf['D1'][kpdf['year']=='2016'])
+            st.write(kpdf['D1'][kpdf['year']=='2016'][0])
         with col2:
             st.write('Col2 Caption for first chart')
 
