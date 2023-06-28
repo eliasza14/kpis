@@ -42,9 +42,8 @@ def main():
 
     merged=pd.merge(df,df2,on=['koispe_id','year'])
     st.write(merged)
-    st.write(id)
-    st.write(type(id))
     kdata=merged[merged['koispe_id']==int(id)]
+    kdata.drop(columns=['id_x', 'id_y'],inplace=True)
     st.write(kdata)
 
 
