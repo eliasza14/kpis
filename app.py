@@ -5,6 +5,11 @@ import pandas as pd
 import plotly.express as px
 from PIL import Image
 
+def calculate_d11(row):    
+    d3 = row['D3']
+    d5 = row['D5']
+    d7 = row['D7']
+    return (int(d7) / (int(d3) + int(d5) + int(d7))*100)
 
 def calculate_d10(row):    
     d3 = row['D3']
@@ -16,7 +21,7 @@ def calculate_d9(row):
     d3 = row['D3']
     d5 = row['D5']
     d7 = row['D7']
-    return (int(d3) / (int(d3) + int(d5) + int(d7)))
+    return (int(d3) / (int(d3) + int(d5) + int(d7))*100)
 
 
 def format_year(year):
@@ -70,6 +75,7 @@ def main():
     #Calculation from function
     kpdf['D9']=kpdf.apply(calculate_d9, axis=1)
     kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
+    kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
 
     st.write(kpdf)
 
