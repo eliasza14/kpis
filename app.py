@@ -56,6 +56,7 @@ def main():
 
 
     kpdf['D1'] = kdata['profile.meli_a']
+    kpdf['D3'] = kdata['profile.employee_general.sum']
     st.write(kpdf)
 
 
