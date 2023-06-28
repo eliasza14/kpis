@@ -69,7 +69,7 @@ def main():
     kpdf=kdata[['koispe_id','year']]
     
 
-
+    kpdf['year']=kpdf['year'].astype(str)
     kpdf['D1'] = kdata['profile.meli_a']
     kpdf['D3'] = kdata['profile.employee_general.sum']
     kpdf['D5'] = kdata['profile.employee.sum']
@@ -219,7 +219,7 @@ def ad_button1(id,kpdf):
             for col in columns:
                 fig.add_trace(go.Bar(
                     name=col,
-                    x=kpdf['year'].apply(format_year),
+                    x=kpdf['year'],
                     y=df_selected[col],
                     text=kpdf[col],
                     textposition='inside'
