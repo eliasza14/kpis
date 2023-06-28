@@ -69,7 +69,7 @@ def main():
     kpdf=kdata[['koispe_id','year']]
     
 
-    kpdf['year']=kpdf['year'].astype(str)
+    # kpdf['year']=kpdf['year'].astype(str)
     kpdf['D1'] = kdata['profile.meli_a']
     kpdf['D3'] = kdata['profile.employee_general.sum']
     kpdf['D5'] = kdata['profile.employee.sum']
@@ -226,7 +226,7 @@ def ad_button1(id,kpdf):
                 ))
 
             # Update the layout
-            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year', yaxis_title='Percentage')
+            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',xaxis_values=x, yaxis_title='Percentage')
 
             # Show the plot
 
