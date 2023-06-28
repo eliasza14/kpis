@@ -99,7 +99,7 @@ def main():
 #         # Add content for Option 5 in e submenu here
 def ad_button1(id):
     st.subheader("button1 Submenu")
-    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispecmt.json").text)
+    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
     # df=pd.json_normalize(response, max_level=1)
     # st.write(df)
     # data = json.loads(response.text)
@@ -113,7 +113,8 @@ def ad_button1(id):
     # Create a dataframe from the list of dictionaries
     #df = pd.DataFrame(records)
     df=pd.json_normalize(records, max_level=2)
-    year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
+    # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
+    year_filter = st.selectbox("Έτος", ['2016','2017','2018','2019'])
 
     st.write("Content of button1")
     with st.container():
