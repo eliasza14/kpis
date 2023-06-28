@@ -50,7 +50,8 @@ def main():
     kdata.drop(columns=['id_x', 'id_y'],inplace=True)
     st.write(kdata)
     ###Start Creating DiktesDataframe
-    kpdf=kdata[kdata['koispe_id','year']]
+
+    kpdf=kdata[['koispe_id','year']]
     
 
 
