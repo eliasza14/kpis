@@ -212,7 +212,7 @@ def ad_button1(id,kpdf):
             kpdf_percent = kpdf_selected.div(kpdf_selected.sum(axis=1), axis=0) * 100
 
             # Create the stacked bar plot using Plotly
-            fig = go.Figure(data=[
+            fig = go.Figure(kpdf=[
                 go.Bar(name='D9', x=kpdf['year'].astype(str), y=kpdf_percent['D9'], text=kpdf['D9'], textposition='inside'),
                 go.Bar(name='D10', x=kpdf['year'].astype(str), y=kpdf_percent['D10'], text=kpdf['D10'], textposition='inside'),
                 go.Bar(name='D11', x=kpdf['year'].astype(str), y=kpdf_percent['D11'], text=kpdf['D11'], textposition='inside')
