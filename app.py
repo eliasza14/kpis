@@ -83,12 +83,13 @@ def main():
 #         st.write("Content for Option 5 in e submenu")
 #         # Add content for Option 5 in e submenu here
 def ad_button1(id):
+    st.subheader("button1 Submenu")
+    st.write("Content of button1")
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Caption for first chart')
-            st.subheader("button1 Submenu")
-            st.write("Content of button1")
+
             response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
             # df=pd.json_normalize(response, max_level=1)
             # st.write(df)
