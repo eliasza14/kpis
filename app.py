@@ -31,9 +31,14 @@ def main():
     response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
 
     df=pd.json_normalize(response, max_level=2)
+    df['year'] = df['year'].apply(format_year)
+
     df2=pd.json_normalize(response2, max_level=2)
+    df2['year'] = df2['year'].apply(format_year)
+
     st.write(df)
     st.write(df2)
+
 
     merged=pd.merge(df,df2,on=['koispe_id','year'])
 
