@@ -5,6 +5,9 @@ import pandas as pd
 import plotly.express as px
 from PIL import Image
 
+
+
+
 def calculate_d9(row):    
     d3 = row['D3']
     d5 = row['D5']
@@ -86,7 +89,7 @@ def main():
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_option1:
-        ad_button1(id,kdata)
+        ad_button1(id,kpdf)
     elif selected_option2:
         ad_button2(id)
     elif selected_option3:
@@ -139,7 +142,7 @@ def main():
 #     elif selected_option == "5":
 #         st.write("Content for Option 5 in e submenu")
 #         # Add content for Option 5 in e submenu here
-def ad_button1(id,kdata):
+def ad_button1(id,kpdf):
     st.subheader("button1 Submenu")
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
@@ -165,8 +168,8 @@ def ad_button1(id,kdata):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('Col1 show kdata')
-            st.write(kdata)
+            st.write('Col1 show D1')
+            st.write(kpdf['D1'][kpdf['year']=='2016'])
         with col2:
             st.write('Col2 Caption for first chart')
 
