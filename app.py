@@ -56,7 +56,7 @@ def main():
 
 
     kpdf['D1'] = kdata['profile.meli_a']
-    print(kpdf)
+    st.write(kpdf)
 
 
 
