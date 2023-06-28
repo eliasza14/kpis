@@ -102,7 +102,7 @@ def ad_button1(id):
 
     st.write(df)
     koispe1df=df[df['id']==id]
-    
+    st.write(koispe1df)
     st.write(koispe1df['profile.meli_a']+koispe1df['profile.meli_b']+koispe1df['profile.meli_c'])
     
     st.metric(label="Gas price", value=4, delta=-0.5,delta_color="inverse")
