@@ -3,7 +3,7 @@ import requests
 import json
 import pandas as pd
 import plotly.express as px
-
+from PIL import Image
 
 
 
@@ -23,6 +23,10 @@ def main():
     id=get_url_params()
 
     st.write("ID from Flask application: ",id)
+    image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png')
+
+    st.image(image, caption='Sunrise by the mountains')
+
 
 
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
