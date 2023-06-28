@@ -41,8 +41,8 @@ def main():
 
 
     merged=pd.merge(df,df2,on=['koispe_id','year'])
-
-    kdata=merged[merged['koispe_id']==str(id)]
+    st.write(merged)
+    kdata=merged[merged['koispe_id']==id]
     st.write(kdata)
 
 
