@@ -4,11 +4,21 @@ import json
 import pandas as pd
 import plotly.express as px
 
+
+
+
+
 def format_year(year):
     return "{:d}".format(year)  # Removes the comma separator
 
 def main():
     #st.write(home())
+    st.set_page_config(
+        page_title="Real-Time Data Science Dashboard",
+        page_icon="✅",
+        layout="wide",
+    )    
+
     st.sidebar.title("Menu")
     id=get_url_params()
 
