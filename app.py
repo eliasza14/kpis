@@ -227,7 +227,7 @@ def ad_button1(id,kpdf):
 
             # Update the layout
             fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',xaxis_values=x, yaxis_title='Percentage')
-
+            fig.update_xaxes(autorange=False)
             # Show the plot
 
             st.plotly_chart(fig)
