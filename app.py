@@ -30,14 +30,15 @@ def main():
         selected_option1 = st.button("Εργαζόμενοι")
         selected_option2 = st.button("Ώρες Απασχόλησης")
         selected_option3 = st.button("Ετήσιες Μονάδες Εργασίας")
+        selected_option4 = st.button("Συνεταιριστές")
 
     e_expander = st.sidebar.expander("Επιχειρηματικότητα")
     with e_expander:
-        selected_option4 = st.button("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
-        selected_option5 = st.button("% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος")
-        selected_option6 = st.button("Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος")
+        selected_option5 = st.button("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
+        selected_option6 = st.button("% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος")
+        selected_option7 = st.button("Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος")
     
-    selected_option7 = st.sidebar.button("Αναλυτικός Πίνακας Δεδομένων")
+    selected_option8 = st.sidebar.button("Αναλυτικός Πίνακας Δεδομένων")
 
 
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
@@ -50,11 +51,15 @@ def main():
         ad_button3(id)
     elif selected_option4:
         ad_button4(id)
+
+    #Buttons epixirimatikotita    
     elif selected_option5:
-        ad_button5(id)
+        e_button5(id)
     elif selected_option6:
-        ad_button6(id)
+        e_button6(id)
     elif selected_option7:
+        e_button7(id)
+    elif selected_option8:
         display_pinkas_submenu(id)
 
 
@@ -144,16 +149,6 @@ def ad_button1(id):
 
 
 
-
-
-
-
-
-
-    
-
-
-
 def ad_button2(id):
     st.subheader("button2 Submenu")
     st.write("Content of button2")
@@ -163,12 +158,16 @@ def ad_button3(id):
 def ad_button4(id):
     st.subheader("button4 Submenu")
     st.write("Content of button4")
-def ad_button5(id):
+
+def e_button5(id):
     st.subheader("button5 Submenu")
     st.write("Content of button5")
-def ad_button6(id):
+def e_button6(id):
     st.subheader("button6 Submenu")
     st.write("Content of button6")
+def e_button7(id):
+    st.subheader("button7 Submenu")
+    st.write("Content of button7")
 
 def display_pinkas_submenu(id):
     st.subheader("pinkas Submenu")
