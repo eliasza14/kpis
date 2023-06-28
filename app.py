@@ -6,7 +6,11 @@ import plotly.express as px
 from PIL import Image
 
 
-
+def calculate_d10(row):    
+    d3 = row['D3']
+    d5 = row['D5']
+    d7 = row['D7']
+    return (int(d5) / (int(d3) + int(d5) + int(d7))*100)
 
 def calculate_d9(row):    
     d3 = row['D3']
@@ -65,6 +69,7 @@ def main():
     kpdf['D7'] = kdata['profile.eko.sum']
     #Calculation from function
     kpdf['D9']=kpdf.apply(calculate_d9, axis=1)
+    kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
 
     st.write(kpdf)
 
