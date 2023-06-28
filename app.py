@@ -203,6 +203,15 @@ def ad_button1(id,kpdf):
 
         with col1:
             st.write('Col1 Caption for second chart')
+            dfd = px.data.medals_long()
+
+            fig = px.bar(dfd, x="medal", y="count", color="nation", text_auto=True)
+            st.plotly_chart(fig)
+
+
+
+
+
         with col2:
             st.write('Col2 Caption for second chart col2')
             st.line_chart((1,0), height=100)
