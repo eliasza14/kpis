@@ -44,7 +44,7 @@ def main():
     st.write(merged)
     st.write(id)
     st.write(type(id))
-    kdata=merged[merged['koispe_id']==id]
+    kdata=merged[merged['koispe_id']==int(id)]
     st.write(kdata)
 
 
