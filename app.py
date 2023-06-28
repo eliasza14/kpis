@@ -88,7 +88,7 @@ def ad_button1(id):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('Caption for first chart')
+            st.write('Col 1 Caption for first chart')
 
             response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
             # df=pd.json_normalize(response, max_level=1)
@@ -106,6 +106,8 @@ def ad_button1(id):
             df=pd.json_normalize(records, max_level=2)
             st.write(df)
         with col2:
+            st.write('Col2 Caption for first chart')
+
             st.line_chart((0,1), height=100)
                 
             koispe1df=df[df['id']==id]
@@ -114,18 +116,20 @@ def ad_button1(id):
             
             st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname'][0]), value=totalmeloi, delta=-0.5,delta_color="inverse")
         with col3:
+            st.write('Col3 Caption for first chart')
+
             st.write("Content of column3")
 
     with st.container():
         col1, col2,col3 = st.columns(3)
 
         with col1:
-            st.write('Caption for second chart')
+            st.write('Col1 Caption for second chart')
         with col2:
-            st.write('Caption for second chart col2')
+            st.write('Col2 Caption for second chart col2')
             st.line_chart((1,0), height=100)
         with col3:
-            st.write('Caption for second chart col3')
+            st.write('Col3 Caption for second chart col3')
             st.line_chart((1,0), height=100)
 
 
