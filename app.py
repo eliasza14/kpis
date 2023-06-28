@@ -101,6 +101,10 @@ def ad_button1(id):
     df=pd.json_normalize(records, max_level=2)
 
     st.write(df)
+    koispe1df=df[df['id']==id]
+    st.write(koispe1df['profile.meli_a'])
+    st.write(koispe1df['profile.meli_b'])
+
     st.metric(label="Gas price", value=4, delta=-0.5,delta_color="inverse")
 
     st.metric(label="Active developers", value=123, delta=123, delta_color="off")
