@@ -9,7 +9,7 @@ def calculate_d11(row):
     d3 = row['D3']
     d5 = row['D5']
     d7 = row['D7']
-    return (int(d7) / (int(d3) + int(d5) + int(d7))*100)
+    return round((int(d7) / (int(d3) + int(d5) + int(d7))*100),2)
 
 def calculate_d10(row):    
     d3 = row['D3']
