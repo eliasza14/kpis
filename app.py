@@ -61,7 +61,7 @@ def main():
     kpdf['D5'] = kdata['profile.employee.sum']
     kpdf['D7'] = kdata['profile.eko.sum']
     #Calculation from function
-    kpdf['D9']=kdata.apply(calculate_d9, axis=1)
+    # kpdf['D9']=kdata.apply(calculate_d9, axis=1)
 
     st.write(kpdf)
 
