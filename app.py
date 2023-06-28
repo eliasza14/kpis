@@ -99,7 +99,7 @@ def main():
 #         # Add content for Option 5 in e submenu here
 def ad_button1(id):
     st.subheader("button1 Submenu")
-    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
+    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispecmt.json").text)
     # df=pd.json_normalize(response, max_level=1)
     # st.write(df)
     # data = json.loads(response.text)
