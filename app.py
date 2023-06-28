@@ -101,6 +101,9 @@ def ad_button1(id):
     df=pd.json_normalize(records, max_level=2)
 
     st.write(df)
+    st.metric(label="Gas price", value=4, delta=-0.5,delta_color="inverse")
+
+    st.metric(label="Active developers", value=123, delta=123, delta_color="off")
 
 def ad_button2(id):
     st.subheader("button2 Submenu")
