@@ -170,16 +170,18 @@ def ad_button1(id,kpdf):
         with col1:
             st.write('Col1 show D1')
             st.write(kpdf['D1'][kpdf['year']=='2016'][0])
+            st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']=='2016'][0]), value=int(kpdf['D1'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+
         with col2:
             st.write('Col2 Caption for first chart')
 
             st.line_chart((0,1), height=100)
                 
-            koispe1df=df[df['id']==id]
-            st.write(koispe1df)
-            totalmeloi=int(koispe1df['profile.meli_a'])+int(koispe1df['profile.meli_b'])+int(koispe1df['profile.meli_c'])
+            # koispe1df=df[df['id']==id]
+            # st.write(koispe1df)
+            # totalmeloi=int(koispe1df['profile.meli_a'])+int(koispe1df['profile.meli_b'])+int(koispe1df['profile.meli_c'])
             
-            st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname'][0]), value=totalmeloi, delta=-0.5,delta_color="inverse")
+            # st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname'][0]), value=totalmeloi, delta=-0.5,delta_color="inverse")
         with col3:
             st.write('Col3 Caption for first chart')
 
