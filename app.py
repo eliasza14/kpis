@@ -78,7 +78,7 @@ def main():
     kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
 
     st.write(kpdf)
-
+    st.write(kpdf)
 
 
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
@@ -203,10 +203,27 @@ def ad_button1(id,kpdf):
 
         with col1:
             st.write('Col1 Caption for second chart')
-            dfd = px.data.medals_long()
+            # Select the relevant columns
+            
+            columns = ['D9', 'D10', 'D11']
+            kpdf_selected = kpdf[columns]
 
-            fig = px.bar(dfd, x="medal", y="count", color="nation", text_auto=True)
+            # Calculate the percentage values for each column
+            kpdf_percent = kpdf_selected.div(kpdf_selected.sum(axis=1), axis=0) * 100
+
+            # Create the stacked bar plot using Plotly
+            fig = go.Figure(data=[
+                go.Bar(name='D9', x=kpdf['year'].astype(str), y=kpdf_percent['D9'], text=kpdf['D9'], textposition='inside'),
+                go.Bar(name='D10', x=kpdf['year'].astype(str), y=kpdf_percent['D10'], text=kpdf['D10'], textposition='inside'),
+                go.Bar(name='D11', x=kpdf['year'].astype(str), y=kpdf_percent['D11'], text=kpdf['D11'], textposition='inside')
+            ])
+
+            # Update the layout
+            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year', yaxis_title='Percentage')
+
             st.plotly_chart(fig)
+
+            
 
 
 
