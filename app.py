@@ -3,6 +3,8 @@ import requests
 import json
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
+
 from PIL import Image
 
 def calculate_d11(row):    
