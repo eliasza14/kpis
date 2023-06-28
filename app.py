@@ -5,10 +5,11 @@ import pandas as pd
 import plotly.express as px
 from PIL import Image
 
-def calculate_d4(row):
-    d1 = row['D1']
+def calculate_d9(row):    
     d3 = row['D3']
-    return d1 / (d1 + d3)
+    d5 = row['D5']
+    d7 = row['D7']
+    return d3  / (d3 + d5 + d7)
 
 
 def format_year(year):
@@ -59,6 +60,8 @@ def main():
     kpdf['D3'] = kdata['profile.employee_general.sum']
     kpdf['D5'] = kdata['profile.employee.sum']
     kpdf['D7'] = kdata['profile.eko.sum']
+    #Calculation from function
+    kpdf['D9']=kdata.apply(calculate_d9, axis=1)
 
     st.write(kpdf)
 
