@@ -219,7 +219,7 @@ def ad_button1(id,kpdf):
             for col in columns:
                 fig.add_trace(go.Bar(
                     name=col,
-                    x=kpdf['year'].astype(str),
+                    x=str(kpdf['year']),
                     y=df_selected[col],
                     text=kpdf[col],
                     textposition='inside'
