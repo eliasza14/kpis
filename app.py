@@ -211,7 +211,7 @@ def ad_button1(id,kpdf):
             df_selected = kpdf[columns]
 
             # Calculate the percentage values for each column
-            df_percent = df_selected.div(df_selected.sum(axis=1), axis=0) * 100
+            # df_percent = df_selected.div(df_selected.sum(axis=1), axis=0) * 100
 
             # Create the stacked bar plot using Plotly
             fig = go.Figure()
@@ -219,8 +219,8 @@ def ad_button1(id,kpdf):
             for col in columns:
                 fig.add_trace(go.Bar(
                     name=col,
-                    x=kpdf['year'],
-                    y=df_percent[col],
+                    x=kpdf['year'].astype(str),
+                    y=df_selected[col],
                     text=kpdf[col],
                     textposition='inside'
                 ))
