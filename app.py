@@ -29,10 +29,11 @@ def main():
 
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
     response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+
     df=pd.json_normalize(response, max_level=2)
     df2=pd.json_normalize(response2, max_level=2)
     merged=pd.merge(df,df2,on=['koispe_id','year'])
-    kdata=merged[merged['koispe_id']==id]
+    kdata=merged[merged['koispe_id']==str(id)]
     st.write(kdata)
 
 
@@ -115,7 +116,7 @@ def ad_button1(id):
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
 
-    
+
     # df=pd.json_normalize(response, max_level=1)
     # st.write(df)
     # data = json.loads(response.text)
