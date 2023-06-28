@@ -222,8 +222,7 @@ def ad_button1(id,kpdf):
                     x=kpdf['year'].apply(str),
                     y=df_selected[col],
                     text=kpdf[col],
-                    textposition='inside',
-                    hovertemplate='Value: %{text}'
+                    textposition='inside'
 
                 ))
 
