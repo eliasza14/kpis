@@ -83,29 +83,52 @@ def main():
 #         st.write("Content for Option 5 in e submenu")
 #         # Add content for Option 5 in e submenu here
 def ad_button1(id):
-    st.subheader("button1 Submenu")
-    st.write("Content of button1")
-    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
-    # df=pd.json_normalize(response, max_level=1)
-    # st.write(df)
-    # data = json.loads(response.text)
-    
-    # Convert the JSON data to a list of dictionaries
-    records = []
-    for key, value in response.items():
-        value['id'] = key
-        records.append(value)
-    
-    # Create a dataframe from the list of dictionaries
-    #df = pd.DataFrame(records)
-    df=pd.json_normalize(records, max_level=2)
+    with st.container():
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write('Caption for first chart')
+            st.subheader("button1 Submenu")
+            st.write("Content of button1")
+            response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
+            # df=pd.json_normalize(response, max_level=1)
+            # st.write(df)
+            # data = json.loads(response.text)
+            
+            # Convert the JSON data to a list of dictionaries
+            records = []
+            for key, value in response.items():
+                value['id'] = key
+                records.append(value)
+            
+            # Create a dataframe from the list of dictionaries
+            #df = pd.DataFrame(records)
+            df=pd.json_normalize(records, max_level=2)
+            st.write(df)
+        with col2:
+            st.line_chart((0,1), height=100)
+                
+            koispe1df=df[df['id']==id]
+            st.write(koispe1df)
+            totalmeloi=int(koispe1df['profile.meli_a'])+int(koispe1df['profile.meli_b'])+int(koispe1df['profile.meli_c'])
+            
+            st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname'][0]), value=totalmeloi, delta=-0.5,delta_color="inverse")
 
-    st.write(df)
-    koispe1df=df[df['id']==id]
-    st.write(koispe1df)
-    totalmeloi=int(koispe1df['profile.meli_a'])+int(koispe1df['profile.meli_b'])+int(koispe1df['profile.meli_c'])
+    with st.container():
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write('Caption for second chart')
+        with col2:
+            st.line_chart((1,0), height=100)
+
+
+
+
+
+
+
+
     
-    st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname'][0]), value=totalmeloi, delta=-0.5,delta_color="inverse")
+
 
 
 def ad_button2(id):
