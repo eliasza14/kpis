@@ -380,6 +380,12 @@ def e_button5(id,kpdf):
         with col1:
             st.write('D24')
             st.write(kpdf['D24'])
+        with col2:
+            st.write('D26')
+            st.write(kpdf['D26'])
+        with col2:
+            st.write('D27')
+            # st.write(kpdf['D26'])
 
 
 
