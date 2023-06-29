@@ -83,7 +83,9 @@ def main():
     kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
     kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
     #ores apasxolisis
-    kpdf['D12']=(kdata['profile.eme.sum'].astype(float))*2080
+    kpdf['D12']=(kdata['profile.eme.sum'].astype(int))*2080
+    kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(int))*2080
+
     st.write(kpdf)
     st.write(kpdf)
 
@@ -257,7 +259,32 @@ def ad_button1(id,kpdf):
 def ad_button2(id,kpdf):
     st.subheader("button2 Submenu")
     st.write("Content of button2")
-    st.write(kpdf['D12'][kpdf['year']=='2016'][0])
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('Col11 show D11')
+            st.write(kpdf['D11'][kpdf['year']=='2016'][0])
+            st.metric(label="Συνολο"+str(kpdf['D11'][kpdf['year']=='2016'][0]), value=int(kpdf['D11'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+
+        with col2:
+            st.write('Col2 Caption for first chart')
+            st.write('Col11 show D12')
+            st.write(kpdf['D12'][kpdf['year']=='2016'][0])
+            st.metric(label="Συνολο"+str(kpdf['D12'][kpdf['year']=='2016'][0]), value=int(kpdf['D12'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+
+            st.line_chart((0,1), height=100)
+                
+            # koispe1df=df[df['id']==id]
+            # st.write(koispe1df)
+            # totalmeloi=int(koispe1df['profile.meli_a'])+int(koispe1df['profile.meli_b'])+int(koispe1df['profile.meli_c'])
+            
+            # st.metric(label="Συνολο Μελών "+str(koispe1df['profile.lastname'][0]), value=totalmeloi, delta=-0.5,delta_color="inverse")
+        with col3:
+            st.write('Col3 Caption for first chart')
+
+            st.write("Content of column3")
+
+   
 
 def ad_button3(id):
     st.subheader("button3 Submenu")
