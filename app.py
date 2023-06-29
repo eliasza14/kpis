@@ -78,7 +78,8 @@ def main():
     kpdf['D9']=kpdf.apply(calculate_d9, axis=1)
     kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
     kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
-
+    #ores apasxolisis
+    kpdf['D12']=int(kdata['profile.eme.sum'])*2080
     st.write(kpdf)
     st.write(kpdf)
 
@@ -104,7 +105,7 @@ def main():
     if selected_option1:
         ad_button1(id,kpdf)
     elif selected_option2:
-        ad_button2(id)
+        ad_button2(id,kpdf)
     elif selected_option3:
         ad_button3(id)
     elif selected_option4:
@@ -177,11 +178,10 @@ def ad_button1(id,kpdf):
     #df = pd.DataFrame(records)
     # df=pd.json_normalize(records, max_level=2)
     # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
-    
+    year_filter = st.selectbox("Έτος", ['2016','2017','2018','2019'])
     
     st.write("Content of button1")
     with st.container():
-        year_filter = st.selectbox("Έτος", ['2016','2017','2018','2019'])
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
@@ -250,9 +250,11 @@ def ad_button1(id,kpdf):
 
 
 
-def ad_button2(id):
+def ad_button2(id,kpdf):
     st.subheader("button2 Submenu")
     st.write("Content of button2")
+    st.write(kpdf['D12'][kpdf['year']=='2016'][0])
+
 def ad_button3(id):
     st.subheader("button3 Submenu")
     st.write("Content of button3")
