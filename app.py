@@ -7,6 +7,16 @@ import plotly.graph_objects as go
 
 from PIL import Image
 
+
+def calculate_d15(row):    
+    d7 = row['D7']
+    d13 = row['D13']
+  
+    return int(d13) / int(d7) 
+
+
+
+
 def calculate_d14(row):    
     d5 = row['D5']
     d12 = row['D12']
@@ -90,6 +100,7 @@ def main():
     kpdf['D12']=(kdata['profile.eme.sum'].astype(int))*2080
     kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(int))*2080
     kpdf['D14']=kpdf.apply(calculate_d14, axis=1)
+    kpdf['D15']=kpdf.apply(calculate_d15, axis=1)
 
     st.write(kpdf)
     st.write(kpdf)
@@ -272,6 +283,14 @@ def ad_button2(id,kpdf):
             st.write('D14')
             st.write(kpdf['D14'])
             st.metric(label="Συνολο"+str(kpdf['D14'][kpdf['year']=='2016'][0]), value=int(kpdf['D14'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+
+        with col1:
+            st.write('D15')
+            st.write(kpdf['D15'])
+            st.metric(label="Συνολο"+str(kpdf['D15'][kpdf['year']=='2016'][0]), value=int(kpdf['D15'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+          
 
    
 
