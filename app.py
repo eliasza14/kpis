@@ -46,16 +46,17 @@ def get_data_from_json(kdata):
 
     kpdf['D26'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns), axis=1)
     #search for kad starts from .56
-
     matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
     kdata[matching_columns2] = kdata[matching_columns2].astype(int)
     
     kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
+
     kpdf['D28'] = kdata['report.turnover_other']
 
     #% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος
     kpdf['D29'] = round((kdata['report.turnover_total'].astype(int).pct_change()*100),1)
 
+    kpdf['D30'] = round((kpdf['D26'].astype(int).pct_change()*100),1)
 
 
     return kpdf
