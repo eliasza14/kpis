@@ -50,6 +50,7 @@ def get_data_from_json(kdata):
     
     kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
     kpdf['D28'] = kdata['report.turnover_other']
+    kpdf['D29'] = round((kdata['report.turnover_total'].astype(int).pct_change()*100),1)
 
 
 
