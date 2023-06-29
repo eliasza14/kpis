@@ -157,7 +157,7 @@ def main():
 #         # Add content for Option 5 in e submenu here
 def ad_button1(id,kpdf):
     st.subheader("button1 Submenu")
-    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
+    # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
 
 
@@ -166,14 +166,16 @@ def ad_button1(id,kpdf):
     # data = json.loads(response.text)
     
     # Convert the JSON data to a list of dictionaries
-    records = []
-    for key, value in response.items():
-        value['id'] = key
-        records.append(value)
+
+
+    # records = []
+    # for key, value in response.items():
+    #     value['id'] = key
+    #     records.append(value)
     
     # Create a dataframe from the list of dictionaries
     #df = pd.DataFrame(records)
-    df=pd.json_normalize(records, max_level=2)
+    # df=pd.json_normalize(records, max_level=2)
     # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
     year_filter = st.selectbox("Έτος", ['2016','2017','2018','2019'])
     
