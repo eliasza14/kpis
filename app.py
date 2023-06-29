@@ -40,7 +40,7 @@ def get_data_from_json(kdata):
     kpdf['D24']=kdata['report.turnover_total']
     #search for kad starts from .81
 
-    matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.01.13.")]
+    matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
     kdata[matching_columns] = kdata[matching_columns].astype(int)
 
     # kpdf['D26']=kdata.apply(calculate_d26,  matching_columns=matching_columns, axis=1)
@@ -54,9 +54,6 @@ def calculate_d26(row,matching_columns):
     st.write(matching_columns)
     values = row[matching_columns]
     column_sum = values.sum()
-
-    # matching_columns = row[matching_columns]
-    # d26=row[matching_columns].sum(axis=1)[0]
     st.write(column_sum)
     d26=column_sum
     return d26
