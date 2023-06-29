@@ -176,13 +176,13 @@ def ad_button1(id,kpdf):
     df=pd.json_normalize(records, max_level=2)
     # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
     year_filter = st.selectbox("Έτος", ['2016','2017','2018','2019'])
-
+    
     st.write("Content of button1")
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
-            st.write(kpdf['D1'][kpdf['year']==str(year_filter)][0])
+            st.write(kpdf['D1'][kpdf['year']=='2016'][0])
             st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']=='2016'][0]), value=int(kpdf['D1'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
 
         with col2:
