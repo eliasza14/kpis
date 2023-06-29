@@ -6,6 +6,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 from PIL import Image
+import locale
+
+
 
 @st.cache_resource
 def get_data_from_json(kdata):
@@ -70,6 +73,13 @@ def format_year(year):
     return "{:d}".format(year)  # Removes the comma separator
 
 def main():
+    # Set the default number formatting
+    locale.setlocale(locale.LC_ALL, "")
+    locale._override_localeconv = {
+        "thousands_sep": ".",
+        "decimal_point": ","
+    }
+
     #st.write(home())
     st.set_page_config(
         page_title="Koispe Dashboard",
