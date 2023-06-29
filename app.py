@@ -34,7 +34,7 @@ def get_data_from_json(kdata):
     kpdf['D19']=kpdf.apply(calculate_d19, axis=1)
     kpdf['D20']=round((kdata['profile.eme.sum'].astype(int).pct_change()*100),1)
     kpdf['D21']=round((kdata['profile.eme_eko.sum'].astype(int).pct_change()*100),1)
-
+    kpdf['D22']=((kdata['profile.eme.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100)
 
     return kpdf
 
@@ -322,6 +322,8 @@ def ad_button3(id,kpdf):
 
         with col2:
             st.write('D22')
+            st.write(kpdf['D22'])
+
         with col3:
             st.write('D23')
 
