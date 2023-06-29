@@ -36,6 +36,9 @@ def get_data_from_json(kdata):
     kpdf['D21']=round((kdata['profile.eme_eko.sum'].astype(int).pct_change()*100),1)
     kpdf['D22']=round(((kdata['profile.eme.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
     kpdf['D23']=round(((kdata['profile.eme_eko.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
+    #Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος
+    kpdf['D24']=kdata['report.turnover_total']
+
 
     return kpdf
 
@@ -349,9 +352,18 @@ def ad_button4(id):
     st.subheader("button4 Submenu")
     st.write("Content of button4")
 
-def e_button5(id):
+def e_button5(id,kpdf):
     st.subheader("button5 Submenu")
     st.write("Content of button5")
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('D24')
+            st.write(kpdf['D24'])
+
+
+
+
 def e_button6(id):
     st.subheader("button6 Submenu")
     st.write("Content of button6")
