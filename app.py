@@ -27,8 +27,8 @@ def get_data_from_json(kdata):
     kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(int))*2080
     kpdf['D14']=kpdf.apply(calculate_d14, axis=1)
     kpdf['D15']=kpdf.apply(calculate_d15, axis=1)
-    kpdf['D16']=kpdf['D12'].pct_change() * 100
-    kpdf['D17']=kpdf['D13'].pct_change() * 100
+    kpdf['D16']=round((kpdf['D12'].pct_change() * 100),1)
+    kpdf['D17']=round((kpdf['D13'].pct_change() * 100),1)
 
 
     return kpdf
