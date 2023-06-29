@@ -31,9 +31,18 @@ def get_data_from_json(kdata):
     kpdf['D17']=round((kpdf['D13'].pct_change() * 100),1)
     #etisies monades ergasias
     kpdf['D18']=kdata['profile.sum_eme_kispe']
+    kpdf['D19']=kpdf.apply(calculate_d19, axis=1)
 
 
     return kpdf
+
+
+def calculate_d19(row):
+    d18=row['D18']
+    d3 = row['D3']
+    d5 = row['D5']
+    d7 = row['D7']
+    return round((int(d18) / (int(d3) + int(d5) + int(d7))),1)
 
 
 
@@ -297,7 +306,8 @@ def ad_button3(id,kpdf):
             st.write(kpdf['D18'])
 
         with col2:
-            st.write('d19')
+            st.write('D19')
+            st.write(kpdf['D19'])
           
 
 
