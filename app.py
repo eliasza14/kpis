@@ -59,7 +59,7 @@ def get_data_from_json(kdata):
     kpdf['D30'] = round((kpdf['D26'].astype(int).pct_change()*100),1)
     kpdf['D31'] = round((kpdf['D27'].astype(int).pct_change()*100),1)
     kpdf['D32'] = round((kpdf['D28'].astype(int).pct_change()*100),1)
-    # kpdf['D36'] = round((kdata['report.overall'].pct_change()*100),1)
+    kpdf['D36'] = round((kdata['report.overall'].pct_change()*100),1)
 
     return kpdf
 
@@ -431,7 +431,7 @@ def e_button6(id,kpdf):
             st.write(kpdf['D32'])
         with col2:
             st.write('D36')
-            # st.write(kpdf['D36'])
+            st.write(kpdf['D36'])
 
 
 
