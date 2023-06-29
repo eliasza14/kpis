@@ -36,6 +36,7 @@ def get_data_from_json(kdata):
     kpdf['D21']=round((kdata['profile.eme_eko.sum'].astype(int).pct_change()*100),1)
     kpdf['D22']=round(((kdata['profile.eme.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
     kpdf['D23']=round(((kdata['profile.eme_eko.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
+
     #Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος
     kpdf['D24']=kdata['report.turnover_total']
     #search for kad starts from .81
@@ -44,12 +45,15 @@ def get_data_from_json(kdata):
     kdata[matching_columns] = kdata[matching_columns].astype(int)
 
     kpdf['D26'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns), axis=1)
+    #search for kad starts from .56
 
     matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
     kdata[matching_columns2] = kdata[matching_columns2].astype(int)
     
     kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
     kpdf['D28'] = kdata['report.turnover_other']
+
+    #% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος
     kpdf['D29'] = round((kdata['report.turnover_total'].astype(int).pct_change()*100),1)
 
 
@@ -206,7 +210,7 @@ def main():
     elif selected_option5:
         e_button5(id,kpdf)
     elif selected_option6:
-        e_button6(id)
+        e_button6(id,kpdf)
     elif selected_option7:
         e_button7(id)
     elif selected_option8:
@@ -403,9 +407,18 @@ def e_button5(id,kpdf):
 
 
 
-def e_button6(id):
+def e_button6(id,kpdf):
     st.subheader("button6 Submenu")
     st.write("Content of button6")
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('D29')
+            st.write(kpdf['D29'])
+
+
+
+
 def e_button7(id):
     st.subheader("button7 Submenu")
     st.write("Content of button7")
