@@ -32,7 +32,7 @@ def get_data_from_json(kdata):
     #etisies monades ergasias
     kpdf['D18']=kdata['profile.sum_eme_kispe']
     kpdf['D19']=kpdf.apply(calculate_d19, axis=1)
-    kpdf['D20']=round((int(kdata['profile.eme.sum']).pct_change()*100),1)
+    kpdf['D20']=round((kdata['profile.eme.sum'].astype(int).pct_change()*100),1)
 
 
     return kpdf
