@@ -43,7 +43,7 @@ def get_data_from_json(kdata):
     matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.01.13.")]
     kdata[matching_columns] = kdata[matching_columns].astype(int)
 
-    kpdf['D26']=kpdf.apply(calculate_d26,  matching_columns=matching_columns, axis=1)
+    kpdf['D26']=kdata.apply(calculate_d26,  matching_columns=matching_columns, axis=1)
 
     return kpdf
 
