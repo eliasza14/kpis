@@ -177,10 +177,11 @@ def ad_button1(id,kpdf):
     #df = pd.DataFrame(records)
     # df=pd.json_normalize(records, max_level=2)
     # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
-    year_filter = st.selectbox("Έτος", ['2016','2017','2018','2019'])
+    
     
     st.write("Content of button1")
     with st.container():
+        year_filter = st.selectbox("Έτος", ['2016','2017','2018','2019'])
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
