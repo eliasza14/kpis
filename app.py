@@ -27,7 +27,9 @@ def get_data_from_json(kdata):
     kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(int))*2080
     kpdf['D14']=kpdf.apply(calculate_d14, axis=1)
     kpdf['D15']=kpdf.apply(calculate_d15, axis=1)
-    kpdf['D16'] =kpdf['D12'].pct_change() * 100
+    kpdf['D16']=kpdf['D12'].pct_change() * 100
+    kpdf['D17']=kpdf['D13'].pct_change() * 100
+
 
     return kpdf
 
@@ -271,9 +273,13 @@ def ad_button2(id,kpdf):
             st.write('D15')
             st.write(kpdf['D15'])
             st.metric(label="Συνολο"+str(kpdf['D15'][kpdf['year']=='2016'][0]), value=int(kpdf['D15'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-        with col1:
+        with col2:
             st.write('D16')
             st.write(kpdf['D16'])
+        with col3:
+            st.write('D17')
+            st.write(kpdf['D17'])
+
 
           
 
