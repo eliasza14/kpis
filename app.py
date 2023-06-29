@@ -7,6 +7,28 @@ import plotly.graph_objects as go
 
 from PIL import Image
 
+@st.cache
+def get_data_from_json(kdata):
+    kpdf=kdata[['koispe_id','year']]
+    
+
+    # kpdf['year']=kpdf['year'].astype(str)
+    kpdf['D1'] = kdata['profile.meli_a']
+    kpdf['D3'] = kdata['profile.employee_general.sum']
+    kpdf['D5'] = kdata['profile.employee.sum']
+    kpdf['D7'] = kdata['profile.eko.sum']
+    #Calculation from function
+    kpdf['D9']=kpdf.apply(calculate_d9, axis=1)
+    kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
+    kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
+    #ores apasxolisis
+    kpdf['D12']=(kdata['profile.eme.sum'].astype(int))*2080
+    kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(int))*2080
+    kpdf['D14']=kpdf.apply(calculate_d14, axis=1)
+    kpdf['D15']=kpdf.apply(calculate_d15, axis=1)
+    return kpdf
+
+
 
 def calculate_d15(row):    
     d7 = row['D7']
@@ -85,23 +107,9 @@ def main():
     st.write(kdata)
     ###Start Creating DiktesDataframe
 
-    kpdf=kdata[['koispe_id','year']]
-    
+    kpdf=get_data_from_json(kdata)
 
-    # kpdf['year']=kpdf['year'].astype(str)
-    kpdf['D1'] = kdata['profile.meli_a']
-    kpdf['D3'] = kdata['profile.employee_general.sum']
-    kpdf['D5'] = kdata['profile.employee.sum']
-    kpdf['D7'] = kdata['profile.eko.sum']
-    #Calculation from function
-    kpdf['D9']=kpdf.apply(calculate_d9, axis=1)
-    kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
-    kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
-    #ores apasxolisis
-    kpdf['D12']=(kdata['profile.eme.sum'].astype(int))*2080
-    kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(int))*2080
-    kpdf['D14']=kpdf.apply(calculate_d14, axis=1)
-    kpdf['D15']=kpdf.apply(calculate_d15, axis=1)
+   
 
     st.write(kpdf)
     st.write(kpdf)
@@ -146,39 +154,6 @@ def main():
 
 
 
-
-
-
-    # if selected_item == "ad":
-    #     display_ad_submenu()
-    # elif selected_item == "e":
-    #     display_e_submenu()
-    # elif selected_item == "pinkas":
-    #     display_pinkas_submenu(id)
-
-# def display_ad_submenu():
-#     st.subheader("ad Submenu")
-#     ad_options = ["2", "3"]
-#     selected_option = st.selectbox("Select an option", ad_options)
-    
-#     if selected_option == "2":
-#         st.write("Content for Option 2 in ad submenu")
-#         # Add content for Option 2 in ad submenu here
-#     elif selected_option == "3":
-#         st.write("Content for Option 3 in ad submenu")
-#         # Add content for Option 3 in ad submenu here
-
-# def display_e_submenu():
-#     st.subheader("e Submenu")
-#     e_options = ["2", "5"]
-#     selected_option = st.selectbox("Select an option", e_options)
-    
-#     if selected_option == "2":
-#         st.write("Content for Option 2 in e submenu")
-#         # Add content for Option 2 in e submenu here
-#     elif selected_option == "5":
-#         st.write("Content for Option 5 in e submenu")
-#         # Add content for Option 5 in e submenu here
 def ad_button1(id,kpdf):
     st.subheader("button1 Submenu")
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
