@@ -57,7 +57,7 @@ def get_data_from_json(kdata):
     kpdf['D29'] = round((kdata['report.turnover_total'].astype(int).pct_change()*100),1)
 
     kpdf['D30'] = round((kpdf['D26'].astype(int).pct_change()*100),1)
-
+    kpdf['D31'] = round((kpdf['D27'].astype(int).pct_change()*100),1)
 
     return kpdf
 
@@ -416,6 +416,12 @@ def e_button6(id,kpdf):
         with col1:
             st.write('D29')
             st.write(kpdf['D29'])
+        with col2:
+            st.write('D30')
+            st.write(kpdf['D30'])
+        with col3:
+            st.write('D31')
+            st.write(kpdf['D31'])
 
 
 
