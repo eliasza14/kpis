@@ -262,17 +262,17 @@ def ad_button2(id,kpdf):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('Col11 show D11')
-            st.write(kpdf['D11'][kpdf['year']=='2016'][0])
-            st.metric(label="Συνολο"+str(kpdf['D11'][kpdf['year']=='2016'][0]), value=int(kpdf['D11'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-
-        with col2:
-            st.write('Col2 Caption for first chart')
             st.write('Col11 show D12')
             st.write(kpdf['D12'][kpdf['year']=='2016'][0])
             st.metric(label="Συνολο"+str(kpdf['D12'][kpdf['year']=='2016'][0]), value=int(kpdf['D12'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
 
-            st.line_chart((0,1), height=100)
+        with col2:
+            st.write('Col2 Caption for first chart')
+            st.write('Col11 show D13')
+            st.write(kpdf['D13'][kpdf['year']=='2016'][0])
+            st.metric(label="Συνολο"+str(kpdf['D13'][kpdf['year']=='2016'][0]), value=int(kpdf['D13'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+
+            # st.line_chart((0,1), height=100)
                 
             # koispe1df=df[df['id']==id]
             # st.write(koispe1df)
