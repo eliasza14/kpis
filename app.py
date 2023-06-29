@@ -83,7 +83,7 @@ def main():
     kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
     kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
     #ores apasxolisis
-    kpdf['D12']=(kdata['profile.eme.sum'].astype(int))*2080
+    kpdf['D12']=(kdata['profile.eme.sum'].astype(float))*2080
     st.write(kpdf)
     st.write(kpdf)
 
