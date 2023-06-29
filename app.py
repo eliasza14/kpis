@@ -107,7 +107,9 @@ def main():
     st.image("https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png", width=120)
 
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
-    response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+    respnse2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+    respone3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
+
 
     df=pd.json_normalize(response, max_level=2)
     df['year'] = df['year'].apply(format_year)
@@ -115,11 +117,15 @@ def main():
     df2=pd.json_normalize(response2, max_level=2)
     df2['year'] = df2['year'].apply(format_year)
 
+    df3=pd.json_normalize(response3, max_level=2)
+    df3['year'] = df3['year'].apply(format_year)
+
     st.write(df)
     st.write(df2)
+    st.write(df3)
 
-
-    merged=pd.merge(df,df2,on=['koispe_id','year'])
+    dfs=[df,df2,df3]
+    merged=pd.merge(dfs,on=['koispe_id','year'])
     st.write(merged)
     kdata=merged[merged['koispe_id']==int(id)]
 
