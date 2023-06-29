@@ -49,6 +49,8 @@ def get_data_from_json(kdata):
     kdata[matching_columns2] = kdata[matching_columns2].astype(int)
     
     kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
+    kpdf['D28'] = kdata['report.turnover_other']
+
 
 
     return kpdf
@@ -388,9 +390,14 @@ def e_button5(id,kpdf):
         with col2:
             st.write('D26')
             st.write(kpdf['D26'])
-        with col2:
+        with col3:
             st.write('D27')
             st.write(kpdf['D27'])
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('D28')
+            st.write(kpdf['D28'])
 
 
 
