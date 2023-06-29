@@ -29,6 +29,8 @@ def get_data_from_json(kdata):
     kpdf['D15']=kpdf.apply(calculate_d15, axis=1)
     kpdf['D16']=round((kpdf['D12'].pct_change() * 100),1)
     kpdf['D17']=round((kpdf['D13'].pct_change() * 100),1)
+    #etisies monades ergasias
+    kpdf['D18']=kdata['profile.sum_eme_kispe']
 
 
     return kpdf
@@ -145,7 +147,7 @@ def main():
     elif selected_option2:
         ad_button2(id,kpdf)
     elif selected_option3:
-        ad_button3(id)
+        ad_button3(id,kpdf)
     elif selected_option4:
         ad_button4(id)
 
@@ -285,9 +287,24 @@ def ad_button2(id,kpdf):
 
    
 
-def ad_button3(id):
+def ad_button3(id,kpdf):
     st.subheader("button3 Submenu")
     st.write("Content of button3")
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('D18')
+            st.write(kpdf['D18'])
+
+        with col2:
+            st.write('d19')
+          
+
+
+
+
+
+
 def ad_button4(id):
     st.subheader("button4 Submenu")
     st.write("Content of button4")
