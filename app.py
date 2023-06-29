@@ -50,8 +50,11 @@ def get_data_from_json(kdata):
 
 
 def calculate_d26(row,matching_columns):
-    matching_columns = row[matching_columns]
+    st.write("mpike")
+    st.write(matching_columns)
+    # matching_columns = row[matching_columns]
     d26=row[matching_columns].sum(axis=1)[0]
+    st.write(d26)
     return d26
 
 
