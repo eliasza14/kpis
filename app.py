@@ -176,7 +176,7 @@ def main():
 
     #Buttons epixirimatikotita    
     elif selected_option5:
-        e_button5(id)
+        e_button5(id,kpdf)
     elif selected_option6:
         e_button6(id)
     elif selected_option7:
