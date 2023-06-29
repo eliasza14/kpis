@@ -107,8 +107,8 @@ def main():
     st.image("https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png", width=120)
 
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
-    respnse2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
-    respone3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
+    response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+    response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
 
     df=pd.json_normalize(response, max_level=2)
