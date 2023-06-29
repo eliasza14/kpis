@@ -37,6 +37,7 @@ def get_data_from_json(kdata):
     kpdf['D22']=round(((kdata['profile.eme.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
     kpdf['D23']=round(((kdata['profile.eme_eko.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
 
+
     #Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος
     kpdf['D24']=kdata['report.turnover_total']
     #search for kad starts from .81
@@ -60,6 +61,8 @@ def get_data_from_json(kdata):
     kpdf['D31'] = round((kpdf['D27'].astype(int).pct_change()*100),1)
     kpdf['D32'] = round((kpdf['D28'].astype(int).pct_change()*100),1)
     kpdf['D36'] = round((kdata['report.overall'].astype(int).pct_change()*100),1)
+    kpdf['D38'] = round(((kdata['report.overall'].astype(int))/(kdata['report.turnover_total'].astype(int))),1)
+
 
     return kpdf
 
