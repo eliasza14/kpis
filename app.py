@@ -227,6 +227,7 @@ def main():
 
 def ad_button1(id,kpdf):
     st.subheader("button1 Submenu")
+    copyKpdf=kpdf.copy()
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
 
@@ -247,14 +248,14 @@ def ad_button1(id,kpdf):
     #df = pd.DataFrame(records)
     # df=pd.json_normalize(records, max_level=2)
     # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    year_filter = st.selectbox("Έτος", copyKpdf['year'].tolist())
     
     st.write("Content of button1")
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
-            st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
+            st.metric(label="Συνολο Μελών "+str(copyKpdf['D1'][copyKpdf['year']==str(year_filter)][0]), value=int(copyKpdf['D1'][copyKpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
         with col2:
             st.write('Col2 Caption for first chart')
