@@ -246,6 +246,39 @@ def ad_button2(id,kpdf):
             )
             fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
             st.plotly_chart(fig)
+        with col3:
+            # Filter the dataframe based on the selected year
+            filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
+
+            # Select the value from the filtered dataframe
+            d11_value = filtered_kpdf["D11"].iloc[0]
+
+            # Create the figure and gauge chart
+            fig = go.Figure(go.Indicator(
+                mode="gauge+number",
+                value=d11_value,
+                domain={'x': [0, 1], 'y': [0, 1]},
+                title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
+                number={'suffix': '%'}
+            ))
+
+            # Customize the appearance of the gauge chart
+            fig.update_traces(
+                gauge={
+                    'axis': {'range': [None, 100]},
+                    'bar': {'color': "red",'thickness': 0.7},
+                    'bgcolor': "white",
+                    'borderwidth': 2,
+                    'bordercolor': "gray",
+                    'steps': [
+                        {'range': [0, 100], 'color': 'whitesmoke'},
+                        ]
+                    },  # Set the range for the gauge axis
+                title_font={'size': 30,'color': 'gray'},  # Set the title font size
+                number_font={'size': 70},  # Set the number font size
+            )
+            fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
+            st.plotly_chart(fig)
 
 
 
