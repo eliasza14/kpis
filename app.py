@@ -210,7 +210,12 @@ def ad_button2(id,kpdf):
                 title_font={'size': 30,'color': 'gray'},  # Set the title font size
                 number_font={'size': 70},  # Set the number font size
             )
-            fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
+            fig.update_layout(
+                height=300,  # Adjust the height of the chart
+                width=400,   # Adjust the width of the chart
+                paper_bgcolor="white",
+                font={'color': "gray", 'family': "Arial"}
+            )
             st.plotly_chart(fig)
 
         with col2:
@@ -225,7 +230,7 @@ def ad_button2(id,kpdf):
                 mode="gauge+number",
                 value=d10_value,
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Εργαζόμενοι Γενικού ΛΥΨΥ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)",'font': {'size': 20}},
+                title={'text': "Εργαζόμενοι Γενικού ΛΥΨΥ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
                 number={'suffix': '%'}
             ))
 
@@ -244,7 +249,13 @@ def ad_button2(id,kpdf):
                 title_font={'size': 30,'color': 'gray'},  # Set the title font size
                 number_font={'size': 70},  # Set the number font size
             )
-            fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
+            fig.update_layout(
+                height=300,  # Adjust the height of the chart
+                width=400,   # Adjust the width of the chart
+                paper_bgcolor="white",
+                font={'color': "gray", 'family': "Arial"}
+            )
+            
             st.plotly_chart(fig)
         with col3:
             # Filter the dataframe based on the selected year
@@ -258,7 +269,7 @@ def ad_button2(id,kpdf):
                 mode="gauge+number",
                 value=d11_value,
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)", 'font': {'size': 20}},
+                title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
                 number={'suffix': '%'},
                 
             ))
