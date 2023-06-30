@@ -91,25 +91,38 @@ def main():
 
 
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
-    
-    if selected_option1:
+
+
+ 
+    if selected_option1=="Εργαζόμενοι":
         ad_button1(id,kpdf)
-    elif selected_option2:
+    elif selected_option1=="Ώρες Απασχόλησης":
         ad_button2(id,kpdf)
-    elif selected_option3:
+    elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
         ad_button3(id,kpdf)
-    elif selected_option4:
+    elif selected_option1=="Συνεταιριστές":
         ad_button4(id)
 
-    #Buttons epixirimatikotita    
-    elif selected_option5:
-        e_button5(id,kpdf)
-    elif selected_option6:
-        e_button6(id,kpdf)
-    elif selected_option7:
-        e_button7(id,kpdf)
-    elif selected_option8:
-        display_pinkas_submenu(id)
+
+    
+    # if selected_option1:
+    #     ad_button1(id,kpdf)
+    # elif selected_option2:
+    #     ad_button2(id,kpdf)
+    # elif selected_option3:
+    #     ad_button3(id,kpdf)
+    # elif selected_option4:
+    #     ad_button4(id)
+
+    # #Buttons epixirimatikotita    
+    # elif selected_option5:
+    #     e_button5(id,kpdf)
+    # elif selected_option6:
+    #     e_button6(id,kpdf)
+    # elif selected_option7:
+    #     e_button7(id,kpdf)
+    # elif selected_option8:
+    #     display_pinkas_submenu(id)
 
 
 
