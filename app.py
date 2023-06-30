@@ -141,7 +141,7 @@ def ad_button1(id,kpdf):
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
-            st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
+            st.write(kpdf['D1'][kpdf['year']==str(year_filter)].value)
             # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
         with col2:
