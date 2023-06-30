@@ -381,6 +381,7 @@ def ad_button3(id,kpdf):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D12'].tolist()
+            st.write(values)
 
             # Calculate percentage change
             percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
