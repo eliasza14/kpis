@@ -261,6 +261,7 @@ def ad_button2(id,kpdf):
                 title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
                 number={'suffix': '%'}
             ))
+            
 
             # Customize the appearance of the gauge chart
             fig.update_traces(
@@ -275,7 +276,7 @@ def ad_button2(id,kpdf):
                         ]
                     },  # Set the range for the gauge axis
                 title_font={'size': 30,'color': 'gray'},  # Set the title font size
-                number_font={'size': 70},  # Set the number font size
+                number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
                 height=300,  # Adjust the height of the chart
