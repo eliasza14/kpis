@@ -375,7 +375,7 @@ def ad_button3(id,kpdf):
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
-            st.write('Δ12')
+            st.write('Δ12-Ωρες απασχολησης εργαζομένων ΛΥΨΥ')
             categories=kpdf['year'].tolist()
             st.write(categories)
             # Sample data
@@ -427,7 +427,7 @@ def ad_button3(id,kpdf):
 
 
         with col2:
-            st.write('Δ13')
+            st.write('Δ13-Ωρες απασχολησης εργαζομένων ΕΚΟ')
             categories=kpdf['year'].tolist()
             st.write(categories)
             # Sample data
