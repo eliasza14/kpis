@@ -48,7 +48,7 @@ def main():
     # merged= pd.merge([df, df2, df3], on=['koispe_id', 'year'])
 
     # merged=pd.merge(dfs,on=['koispe_id','year'])
-    
+
     st.write(merged)
     kdata=merged[merged['koispe_id']==int(id)]
 
@@ -60,10 +60,21 @@ def main():
     kpdf=get_data_from_json(kdata)
     st.title("Πίνακας Δεικτών")
     st.write(kpdf)
-   
+   #Radio button
+    ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
+    with ad_expander:
+        selected_option1 = st.radio("Επιλέξτε επιλογή", ["Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας", "Συνεταιριστές"])
 
+    e_expander = st.sidebar.expander("Επιχειρηματικότητα")
+    with e_expander:
+        selected_option2 = st.radio("Επιλέξτε επιλογή", ["Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος", "% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος", "Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος"])
+
+    selected_option3 = st.sidebar.button("Αναλυτικός Πίνακας Δεδομένων")
 
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
+
+
+    #Buttons
     with ad_expander:
         selected_option1 = st.button("Εργαζόμενοι")
         selected_option2 = st.button("Ώρες Απασχόλησης")
