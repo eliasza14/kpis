@@ -103,34 +103,20 @@ def main():
     #RADIO OPTION ANTHROPINO DYNAMIKO
     if selected_option1=="Εργαζόμενοι":
         ad_button1(id,kpdf)
-        selected_option2 = None
-
     elif selected_option1=="Ώρες Απασχόλησης":
         ad_button2(id,kpdf)
-        selected_option2 = None
-
     elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
         ad_button3(id,kpdf)
-        selected_option2 = None
-
     elif selected_option1=="Συνεταιριστές":
         ad_button4(id)
-        selected_option2 = None
-
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
     if selected_option2=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
         e_button5(id,kpdf)
-        selected_option1 = None
-
     elif selected_option2=="% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος":
         e_button6(id,kpdf)
-        selected_option1 = None
-
     elif selected_option2=="Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος":
         e_button7(id,kpdf)
-        selected_option1 = None
-
    
 
 
