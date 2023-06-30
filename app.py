@@ -256,7 +256,8 @@ def ad_button1(id,kpdf,year_filter):
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
-            st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
+            st.write(year_filter)
+            st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)]), delta=-0.5,delta_color="inverse")
 
         with col2:
             st.write('Col2 Caption for first chart')
