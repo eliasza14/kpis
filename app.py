@@ -428,7 +428,6 @@ def ad_button3(id,kpdf):
 
         with col2:
             st.write('Δ13')
-            st.write('Δ13')
             categories=kpdf['year'].tolist()
             st.write(categories)
             # Sample data
