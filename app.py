@@ -62,6 +62,8 @@ def get_data_from_json(kdata):
     kpdf['D32'] = round((kpdf['D28'].astype(int).pct_change()*100),1)
     kpdf['D36'] = round((kdata['report.overall'].astype(int).pct_change()*100),1)
     kpdf['D38'] = round(((kdata['report.overall'].astype(int))/(kdata['report.turnover_total'].astype(int))),1)
+    kpdf['D39'] = round(((kdata['report.grants'].astype(int))/(kdata['report.turnover_total'].astype(int))),1)
+
 
 
     return kpdf
@@ -69,6 +71,7 @@ def get_data_from_json(kdata):
 
 def calculate_d26_d27(row,matching_columns):
     st.write("mpike")
+    
     st.write(matching_columns)
     values = row[matching_columns]
     column_sum = values.sum()
@@ -435,7 +438,14 @@ def e_button6(id,kpdf):
         with col2:
             st.write('D36')
             st.write(kpdf['D36'])
-
+        with col3:
+            st.write('D38')
+            st.write('D38')
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('D39')
+            st.write(kpdf['D39'])
 
 
 
