@@ -398,7 +398,7 @@ def ad_button3(id,kpdf):
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
-                width=800  # Set the width of the chart
+                width=400  # Set the width of the chart
             )
 
             # Create the figure
@@ -451,7 +451,7 @@ def ad_button3(id,kpdf):
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
-                width=800  # Set the width of the chart
+                width=400  # Set the width of the chart
             )
 
             # Create the figure
