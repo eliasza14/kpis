@@ -377,11 +377,9 @@ def ad_button3(id,kpdf):
         with col1:
             st.write('Δ12-Ωρες απασχολησης εργαζομένων ΛΥΨΥ')
             categories=kpdf['year'].tolist()
-            st.write(categories)
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D12'].tolist()
-            st.write(values)
 
             # Calculate percentage change
             percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
@@ -394,9 +392,9 @@ def ad_button3(id,kpdf):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='Bar Chart with Percentage Change',
+                title='Μεταβολή ωρών απασχόλησης ΛΥΨΥ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
                 width=400  # Set the width of the chart
             )
@@ -429,11 +427,9 @@ def ad_button3(id,kpdf):
         with col2:
             st.write('Δ13-Ωρες απασχολησης εργαζομένων ΕΚΟ')
             categories=kpdf['year'].tolist()
-            st.write(categories)
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D13'].tolist()
-            st.write(values)
 
             # Calculate percentage change
             percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
@@ -446,9 +442,9 @@ def ad_button3(id,kpdf):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='Bar Chart with Percentage Change',
+                title='Μεταβολή ωρών απασχόλησης ΕΚΟ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
                 width=400  # Set the width of the chart
             )
