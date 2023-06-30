@@ -3,12 +3,9 @@ import pandas as pd
 
 
 def calculate_d26_d27(row,matching_columns):
-    st.write("mpike")
     
-    st.write(matching_columns)
     values = row[matching_columns]
     column_sum = values.sum()
-    st.write(column_sum)
     d26=column_sum
     return d26
 
