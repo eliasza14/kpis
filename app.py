@@ -70,8 +70,18 @@ def main():
         selected_option2 = st.radio("Επιλέξτε επιλογή", ["Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος", "% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος", "Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος"])
 
     selected_option3 = st.sidebar.button("Αναλυτικός Πίνακας Δεδομένων")
+# Initialize variables to track selected options
+    selected_ad_option = None
+    selected_e_option = None
 
-    ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
+    # Update selected options based on user input
+    if selected_option1:
+        selected_ad_option = selected_option1
+        selected_e_option = None
+    elif selected_option2:
+        selected_e_option = selected_option2
+        selected_ad_option = None
+    # ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
 
 
     #Buttons
@@ -94,21 +104,21 @@ def main():
 
 
     #RADIO OPTION ANTHROPINO DYNAMIKO
-    if selected_option1=="Εργαζόμενοι":
+    if selected_ad_option =="Εργαζόμενοι":
         ad_button1(id,kpdf)
-    elif selected_option1=="Ώρες Απασχόλησης":
+    elif selected_ad_option =="Ώρες Απασχόλησης":
         ad_button2(id,kpdf)
-    elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
+    elif selected_ad_option =="Ετήσιες Μονάδες Εργασίας":
         ad_button3(id,kpdf)
-    elif selected_option1=="Συνεταιριστές":
+    elif selected_ad_option =="Συνεταιριστές":
         ad_button4(id)
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
-    if selected_option2=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
+    if selected_e_option =="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
         e_button5(id,kpdf)
-    elif selected_option2=="% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος":
+    elif selected_e_option =="% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος":
         e_button6(id,kpdf)
-    elif selected_option2=="Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος":
+    elif selected_e_option =="Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος":
         e_button7(id,kpdf)
    
 
