@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import packageKPS
+from packageKPS import *
 from PIL import Image
 
 
