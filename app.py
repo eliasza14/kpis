@@ -207,8 +207,8 @@ def ad_button2(id,kpdf):
                         {'range': [0, 100], 'color': 'whitesmoke'},
                         ]
                     },  # Set the range for the gauge axis
-                title_font={'size': 30,'color': 'gray'},  # Set the title font size
-                number_font={'size': 70},  # Set the number font size
+                title_font={'size': 10,'color': 'gray'},  # Set the title font size
+                number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
                 height=300,  # Adjust the height of the chart
@@ -246,8 +246,8 @@ def ad_button2(id,kpdf):
                         {'range': [0, 100], 'color': 'whitesmoke'},
                         ]
                     },  # Set the range for the gauge axis
-                title_font={'size': 30,'color': 'gray'},  # Set the title font size
-                number_font={'size': 70},  # Set the number font size
+                title_font={'size': 10,'color': 'gray'},  # Set the title font size
+                number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
                 height=300,  # Adjust the height of the chart
@@ -287,7 +287,7 @@ def ad_button2(id,kpdf):
                         {'range': [0, 100], 'color': 'whitesmoke'},
                         ]
                     },  # Set the range for the gauge axis
-                title_font={'size': 30,'color': 'gray'},  # Set the title font size
+                title_font={'size': 10,'color': 'gray'},  # Set the title font size
                 number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
