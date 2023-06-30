@@ -396,7 +396,9 @@ def ad_button3(id,kpdf):
             layout = go.Layout(
                 title='Bar Chart with Percentage Change',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False)
+                yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=800  # Set the width of the chart
             )
 
             # Create the figure
@@ -447,7 +449,9 @@ def ad_button3(id,kpdf):
             layout = go.Layout(
                 title='Bar Chart with Percentage Change',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False)
+                yaxis2=dict(title='Percentage Change', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=800  # Set the width of the chart
             )
 
             # Create the figure
