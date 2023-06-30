@@ -258,10 +258,9 @@ def ad_button2(id,kpdf):
                 mode="gauge+number",
                 value=d11_value,
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
+                title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)", 'font': {'size': 20}},
                 number={'suffix': '%'},
-                number_font={'size': 40},
-
+                
             ))
             
 
