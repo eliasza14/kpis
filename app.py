@@ -327,6 +327,8 @@ def ad_button2(id,kpdf):
 
 
 
+
+
     #     col1, col2,col3 = st.columns(3)
     #     with col1:
     #         st.write('D12')
@@ -355,40 +357,53 @@ def ad_button2(id,kpdf):
     #         st.write('D17')
     #         st.write(kpdf['D17'])
 
+def ad_button3(id,kpdf):
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    
+    st.write("Content of button1")
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
+            st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
+            # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
+        with col2:
+            st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος)')
+            st.write(kpdf['D15'][kpdf['year']==str(year_filter)])
           
 
    
 
-def ad_button3(id,kpdf):
-    st.subheader("button3 Submenu")
-    st.write("Content of button3")
-    with st.container():
-        col1, col2,col3 = st.columns(3)
-        with col1:
-            st.write('D18')
-            st.write(kpdf['D18'])
+# def ad_button3(id,kpdf):
+#     st.subheader("button3 Submenu")
+#     st.write("Content of button3")
+#     with st.container():
+#         col1, col2,col3 = st.columns(3)
+#         with col1:
+#             st.write('D18')
+#             st.write(kpdf['D18'])
 
-        with col2:
-            st.write('D19')
-            st.write(kpdf['D19'])
-        with col3:
-            st.write('D20')
-            st.write(kpdf['D20'])
+#         with col2:
+#             st.write('D19')
+#             st.write(kpdf['D19'])
+#         with col3:
+#             st.write('D20')
+#             st.write(kpdf['D20'])
 
-    with st.container():
-        col1, col2,col3 = st.columns(3)
-        with col1:
-            st.write('D21')
-            st.write(kpdf['D21'])
+#     with st.container():
+#         col1, col2,col3 = st.columns(3)
+#         with col1:
+#             st.write('D21')
+#             st.write(kpdf['D21'])
 
-        with col2:
-            st.write('D22')
-            st.write(kpdf['D22'])
+#         with col2:
+#             st.write('D22')
+#             st.write(kpdf['D22'])
 
-        with col3:
-            st.write('D23')
-            st.write(kpdf['D23'])
+#         with col3:
+#             st.write('D23')
+#             st.write(kpdf['D23'])
 
 
           
