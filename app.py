@@ -153,84 +153,60 @@ def ad_button1(id,kpdf):
 
             st.write("Content of column3")
 
-    with st.container():
-        col1, col2,col3 = st.columns(3)
-
-        with col1:
-            st.write('Col1 Caption for second chart')
-            
-            # Select the relevant columns
-            columns = ['D9', 'D10', 'D11']
-            df_selected = kpdf[columns]
-
-            # Calculate the percentage values for each column
-            # df_percent = df_selected.div(df_selected.sum(axis=1), axis=0) * 100
-
-            # Create the stacked bar plot using Plotly
-            fig = go.Figure()
-
-            for col in columns:
-                fig.add_trace(go.Bar(
-                    name=col,
-                    x=kpdf['year'].apply(str),
-                    y=df_selected[col],
-                    text=kpdf[col],
-                    textposition='inside'
-
-                ))
-
-            # Update the layout
-            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
-            # Show the plot
-
-            st.plotly_chart(fig)
-
-            
-
-
-
-
-
-        with col2:
-            st.write('Col2 Caption for second chart col2')
-            st.line_chart((1,0), height=100)
-        with col3:
-            st.write('Col3 Caption for second chart col3')
-            st.line_chart((1,0), height=100)
 
 
 
 def ad_button2(id,kpdf):
     st.subheader("button2 Submenu")
     st.write("Content of button2")
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+
+    st.write("Content of button1")
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('D12')
-            st.metric(label="Συνολο"+str(kpdf['D12'][kpdf['year']=='2016'][0]), value=int(kpdf['D12'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+            st.write('D3')
+            st.write(kpdf['D3'][kpdf['year']==str(year_filter)])
 
         with col2:
-            st.write('D13')
-            st.metric(label="Συνολο"+str(kpdf['D13'][kpdf['year']=='2016'][0]), value=int(kpdf['D13'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+            st.write('D5')
+            st.write(kpdf['D5'][kpdf['year']==str(year_filter)])
+
+          
+        with col3:
+            st.write('D7')
+            st.write(kpdf['D7'][kpdf['year']==str(year_filter)])
+
+
+
+    # with st.container():
+    #     col1, col2,col3 = st.columns(3)
+    #     with col1:
+    #         st.write('D12')
+    #         st.metric(label="Συνολο"+str(kpdf['D12'][kpdf['year']=='2016'][0]), value=int(kpdf['D12'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+
+    #     with col2:
+    #         st.write('D13')
+    #         st.metric(label="Συνολο"+str(kpdf['D13'][kpdf['year']=='2016'][0]), value=int(kpdf['D13'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
 
   
-        with col3:
-            st.write('D14')
-            st.write(kpdf['D14'])
-            st.metric(label="Συνολο"+str(kpdf['D14'][kpdf['year']=='2016'][0]), value=int(kpdf['D14'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-    with st.container():
-        col1, col2,col3 = st.columns(3)
+    #     with col3:
+    #         st.write('D14')
+    #         st.write(kpdf['D14'])
+    #         st.metric(label="Συνολο"+str(kpdf['D14'][kpdf['year']=='2016'][0]), value=int(kpdf['D14'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+    # with st.container():
+    #     col1, col2,col3 = st.columns(3)
 
-        with col1:
-            st.write('D15')
-            st.write(kpdf['D15'])
-            st.metric(label="Συνολο"+str(kpdf['D15'][kpdf['year']=='2016'][0]), value=int(kpdf['D15'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-        with col2:
-            st.write('D16')
-            st.write(kpdf['D16'])
-        with col3:
-            st.write('D17')
-            st.write(kpdf['D17'])
+    #     with col1:
+    #         st.write('D15')
+    #         st.write(kpdf['D15'])
+    #         st.metric(label="Συνολο"+str(kpdf['D15'][kpdf['year']=='2016'][0]), value=int(kpdf['D15'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
+    #     with col2:
+    #         st.write('D16')
+    #         st.write(kpdf['D16'])
+    #     with col3:
+    #         st.write('D17')
+    #         st.write(kpdf['D17'])
 
 
           
