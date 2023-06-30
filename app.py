@@ -7,8 +7,7 @@ import plotly.graph_objects as go
 
 from PIL import Image
 
-
-@st.cache_resource
+@st.experimental_memo
 def get_data_from_json(kdata):
     kpdf=kdata[['koispe_id','year']]
     
