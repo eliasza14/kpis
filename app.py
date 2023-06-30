@@ -63,7 +63,7 @@ def get_data_from_json(kdata):
     kpdf['D36'] = round((kdata['report.overall'].astype(int).pct_change()*100),1)
     kpdf['D38'] = round(((kdata['report.overall'].astype(int))/(kdata['report.turnover_total'].astype(int))),1)
     kpdf['D39'] = round(((kdata['report.grants'].astype(int))/(kdata['report.turnover_total'].astype(int))),1)
-
+    kpdf['D40'] = round(((kdata['report.turnover_total'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))),1)
 
 
     return kpdf
@@ -221,7 +221,7 @@ def main():
     elif selected_option6:
         e_button6(id,kpdf)
     elif selected_option7:
-        e_button7(id)
+        e_button7(id,kpdf)
     elif selected_option8:
         display_pinkas_submenu(id)
 
@@ -449,9 +449,15 @@ def e_button6(id,kpdf):
 
 
 
-def e_button7(id):
+def e_button7(id,kpdf):
     st.subheader("button7 Submenu")
     st.write("Content of button7")
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('D40')
+            st.write(kpdf['D40'])
+
 
 def display_pinkas_submenu(id):
     st.subheader("pinkas Submenu")
