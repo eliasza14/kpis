@@ -277,7 +277,13 @@ def ad_button2(id,kpdf):
                 title_font={'size': 30,'color': 'gray'},  # Set the title font size
                 number_font={'size': 70},  # Set the number font size
             )
-            fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
+            fig.update_layout(
+                height=300,  # Adjust the height of the chart
+                width=400,   # Adjust the width of the chart
+                paper_bgcolor="white",
+                font={'color': "gray", 'family': "Arial"}
+            )
+            # fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
             st.plotly_chart(fig)
 
 
