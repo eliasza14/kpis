@@ -227,6 +227,8 @@ def main():
 
 def ad_button1(id,kpdf):
     st.subheader("button1 Submenu")
+    st.write("REFRESH :")
+    st.write(kpdf)
     copyKpdf=kpdf.copy()
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
