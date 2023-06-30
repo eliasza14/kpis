@@ -440,7 +440,7 @@ def e_button6(id,kpdf):
             st.write(kpdf['D36'])
         with col3:
             st.write('D38')
-            st.write('D38')
+            st.write(kpdf['D38'])
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
