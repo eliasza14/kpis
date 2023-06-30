@@ -207,7 +207,7 @@ def main():
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_option1:
-        ad_button1(id,kpdf)
+        ad_button1(id,kpdf,year_filter)
     elif selected_option2:
         ad_button2(id,kpdf)
     elif selected_option3:
