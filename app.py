@@ -7,7 +7,6 @@ import plotly.graph_objects as go
 
 from PIL import Image
 
-@st.experimental_memo
 def get_data_from_json(kdata):
     kpdf=kdata[['koispe_id','year']]
     
@@ -189,6 +188,8 @@ def main():
 
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
     with ad_expander:
+        year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+
         selected_option1 = st.button("Εργαζόμενοι")
         selected_option2 = st.button("Ώρες Απασχόλησης")
         selected_option3 = st.button("Ετήσιες Μονάδες Εργασίας")
@@ -226,7 +227,7 @@ def main():
 
 
 
-def ad_button1(id,kpdf):
+def ad_button1(id,kpdf,year_filter):
     st.subheader("button1 Submenu")
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
@@ -248,7 +249,7 @@ def ad_button1(id,kpdf):
     #df = pd.DataFrame(records)
     # df=pd.json_normalize(records, max_level=2)
     # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    # year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     
     st.write("Content of button1")
     with st.container():
