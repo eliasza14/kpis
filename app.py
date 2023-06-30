@@ -93,7 +93,7 @@ def main():
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
 
 
- 
+    #RADIO OPTION ANTHROPINO DYNAMIKO
     if selected_option1=="Εργαζόμενοι":
         ad_button1(id,kpdf)
     elif selected_option1=="Ώρες Απασχόλησης":
@@ -102,6 +102,15 @@ def main():
         ad_button3(id,kpdf)
     elif selected_option1=="Συνεταιριστές":
         ad_button4(id)
+
+    #RADIO OPTION EPIXEIRIMATIKOTITA
+    if selected_option2=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
+        e_button5(id,kpdf)
+    elif selected_option2=="% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος":
+        e_button6(id,kpdf)
+    elif selected_option2=="Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος":
+        e_button7(id,kpdf)
+   
 
 
     
