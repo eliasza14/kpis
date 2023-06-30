@@ -188,8 +188,6 @@ def main():
 
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό")
     with ad_expander:
-        year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
-
         selected_option1 = st.button("Εργαζόμενοι")
         selected_option2 = st.button("Ώρες Απασχόλησης")
         selected_option3 = st.button("Ετήσιες Μονάδες Εργασίας")
@@ -207,7 +205,7 @@ def main():
     # selected_item = st.sidebar.selectbox("", ["ad", "e", "pinkas"])
     
     if selected_option1:
-        ad_button1(id,kpdf,year_filter)
+        ad_button1(id,kpdf)
     elif selected_option2:
         ad_button2(id,kpdf)
     elif selected_option3:
@@ -227,7 +225,7 @@ def main():
 
 
 
-def ad_button1(id,kpdf,year_filter):
+def ad_button1(id,kpdf):
     st.subheader("button1 Submenu")
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoispe.json").text)
 
@@ -249,15 +247,14 @@ def ad_button1(id,kpdf,year_filter):
     #df = pd.DataFrame(records)
     # df=pd.json_normalize(records, max_level=2)
     # year_filter = st.selectbox("Select the Job", pd.unique(df["year"]))
-    # year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     
     st.write("Content of button1")
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
             st.write('Col1 show D1')
-            st.write(year_filter)
-            st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)]), delta=-0.5,delta_color="inverse")
+            st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
         with col2:
             st.write('Col2 Caption for first chart')
