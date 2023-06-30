@@ -63,7 +63,7 @@ def main():
    #Radio button
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό / Επιχειρηματικότητα")
     with ad_expander:
-        selected_option1 = st.radio("Επιλέξτε:", ["Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας", "Συνεταιριστές","Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος", "% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος", "Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος"])
+        selected_option1 = st.radio("Επιλέξτε:", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος", "% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος", "Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος"])
     
     # selected_option3 = st.sidebar.button("Αναλυτικός Πίνακας Δεδομένων")
 
@@ -90,13 +90,13 @@ def main():
 
 
     #RADIO OPTION ANTHROPINO DYNAMIKO
-    if selected_option1=="Εργαζόμενοι":
+    if selected_option1=="Συνεταιριστές":
         ad_button1(id,kpdf)
-    elif selected_option1=="Ώρες Απασχόλησης":
+    elif selected_option1=="Εργαζόμενοι":
         ad_button2(id,kpdf)
-    elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
+    elif selected_option1=="Ώρες Απασχόλησης":
         ad_button3(id,kpdf)
-    elif selected_option1=="Συνεταιριστές":
+    elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
         ad_button4(id)
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
