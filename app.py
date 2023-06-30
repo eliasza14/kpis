@@ -53,11 +53,12 @@ def main():
 
 
     kdata.drop(columns=['id_x', 'id_y','id'],inplace=True)
-    st.write(kdata)
+    # st.write(kdata)
     ###Start Creating DiktesDataframe
 
     kpdf=get_data_from_json(kdata)
-
+    st.title("Πίνακας Δεικτών")
+    st.write(kpdf)
    
 
 
