@@ -672,6 +672,29 @@ def ad_button4(id,kpdf):
                                         dict(text=str(val2)+"%", x=0.84, y=0.5, font_size=20, showarrow=False),
                                         ])
             st.plotly_chart(fig)
+    with st.container():
+         col1, col2 = st.columns(2)
+         with col1:
+            # Select the relevant columns
+            columns = ['D22', 'D23', 'D22_23_g']
+            kpdf_selected = kpdf[columns]
+            # Create the stacked bar plot using Plotly
+            fig = go.Figure()
+            for col in columns:
+                fig.add_trace(go.Bar(
+                    name=col,
+                    x=kpdf['year'].apply(str),
+                    y=kpdf_selected[col],
+                    text=kpdf[col],
+                    textposition='inside'
+                ))
+            # Update the layout
+            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
+            # Show the plot
+            st.plotly_chart(fig)
+
+             
+
 
 
         
