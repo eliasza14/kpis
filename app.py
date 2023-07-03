@@ -153,7 +153,7 @@ def ad_button1(id,kpdf):
         my_html = f"<script>{my_js}</script>"
 
         # # Execute your app
-        st.title("Javascript example")
+        st.title("Συνεταιριστες Κατηγορια Α")
         # html(my_html)
 
        
@@ -166,7 +166,7 @@ def ad_button1(id,kpdf):
        
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
-        text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
+        # text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         html(
             f"""
@@ -177,7 +177,7 @@ def ad_button1(id,kpdf):
             </script>
             """
         )
-        st.title(text)
+        # st.title(text)
         # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
         # with col2:
