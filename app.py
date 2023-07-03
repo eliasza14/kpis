@@ -634,16 +634,46 @@ def ad_button4(id,kpdf):
     with st.container():
         col1, col2 =st.columns(2)
         with col1:
-            labels = ['Chairs', 'Tables', 'Computers', 'Printers', 'Phones']
+            # labels = ['Chairs', 'Tables', 'Computers', 'Printers', 'Phones']
 
-            fig = make_subplots(rows=1, cols=1, specs=[[{'type':'domain'}]])
+            # fig = make_subplots(rows=1, cols=1, specs=[[{'type':'domain'}]])
 
-            # add both charts to figure
+            # # add both charts to figure
 
-            fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"), 1,1)
-            # make donut chart
-            fig.update_traces(hole=.4, hoverinfo="label+percent+name")
+            # fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"), 1,1)
+            # # make donut chart
+            # fig.update_traces(hole=.4, hoverinfo="label+percent+name")
+            val=50
+            val2=25
+            val3=75
+            # st.plotly_chart(fig)
+            fig = make_subplots(rows=1, cols=3,specs=[[{"type": "pie"}, {"type": "pie"}, {"type": "pie"}]])
 
+            fig.add_trace(go.Pie(labels=['',''],
+                                values=[val,100-val],
+                                hole=0.85,
+                                textinfo='none',
+                                marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
+                                ),row=1, col=1)
+
+            fig.add_trace(go.Pie(labels=['',''],
+                                values=[val2,100-val2],
+                                hole=0.85,
+                                textinfo='none',
+                                marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
+                                ),row=1, col=2)
+
+            fig.add_trace(go.Pie(labels=['',''],
+                                values=[val3,100-val3],
+                                hole=0.85,
+                                textinfo='none',
+                                marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
+                                ),row=1, col=3)
+            # update
+            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.1, y=0.5, font_size=20, showarrow=False),
+                                        dict(text=str(val2)+"%", x=0.5, y=0.5, font_size=20, showarrow=False),
+                                        dict(text=str(val3)+"%", x=0.9, y=0.5, font_size=20, showarrow=False),
+                                        ])
             st.plotly_chart(fig)
 
 
