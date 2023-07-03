@@ -142,7 +142,22 @@ def ad_button1(id,kpdf):
     with st.container():
         # col1, col2,col3 = st.columns(3)
         # with col1:
-            
+        st.markdown(""" 
+        <html>
+        <body>
+            hello
+            <form>
+                <input type=sumbit name click-me onclick=function1()>
+            </form>
+            <script>
+                alert("hello");
+            </script>
+        </body>
+        
+        </html>
+        
+        
+        """)
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
