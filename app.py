@@ -5,6 +5,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from streamlit.components.v1 import html
 
 from packageKPS import *
 from PIL import Image
@@ -142,6 +143,17 @@ def ad_button1(id,kpdf):
     with st.container():
         # col1, col2,col3 = st.columns(3)
         # with col1:
+        # Define your javascript
+        my_js = """
+        alert("Hola mundo");
+        """
+
+        # Wrapt the javascript as html code
+        my_html = f"<script>{my_js}</script>"
+
+        # Execute your app
+        st.title("Javascript example")
+        html(my_html)
         st.markdown(""" 
         <head>
             
