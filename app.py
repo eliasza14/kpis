@@ -549,7 +549,7 @@ def ad_button4(id,kpdf):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='Μεταβολή ωρών απασχόλησης ΕΚΟ',
+                title='% Ετήσια Μεταβολή Μονάδων Εργασίας ΛΥΨΥ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -599,7 +599,7 @@ def ad_button4(id,kpdf):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='Μεταβολή ωρών απασχόλησης ΕΚΟ',
+                title='% Ετήσια Μεταβολή Μονάδων Εργασίας ΕΚΟ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
