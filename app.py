@@ -173,13 +173,13 @@ def ad_button2(id,kpdf):
         with col1:
             
             text=str(kpdf['D3'][kpdf['year']==str(year_filter)].iloc[0])
-            st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού'+text)
+            st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
             #st.write(kpdf['D3'][kpdf['year']==str(year_filter)])
 
         with col2:
             
             text=kpdf['D5'][kpdf['year']==str(year_filter)].iloc[0]
-            st.write('Δ5-Εργαζόμενοι ΛΥΨΥ'+text)
+            st.write('Δ5-Εργαζόμενοι ΛΥΨΥ: '+text)
             #st.write(kpdf['D5'][kpdf['year']==str(year_filter)])
 
 
@@ -187,7 +187,7 @@ def ad_button2(id,kpdf):
         with col3:
             #st.write('D7-Εργαζόμενοι ΕΚΟ')
             text=kpdf['D7'][kpdf['year']==str(year_filter)].iloc[0]
-            st.write('D7-Εργαζόμενοι ΕΚΟ'+text)
+            st.write('D7-Εργαζόμενοι ΕΚΟ: '+text)
             #st.write(kpdf['D7'][kpdf['year']==str(year_filter)])
 
     with st.container():
