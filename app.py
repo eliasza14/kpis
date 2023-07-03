@@ -678,6 +678,7 @@ def ad_button4(id,kpdf):
         with col1:
             fig = go.Figure()
             fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
+                                 title="ΛΥΨΥ",
                                 values=[val,100-val],
                                 hole=0.85,
                                 textinfo='none',
@@ -688,6 +689,7 @@ def ad_button4(id,kpdf):
         with col2:
             fig = go.Figure()
             fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
+                                tile="ΕΚΟ",
                                 values=[val2,100-val2],
                                 hole=0.85,
                                 textinfo='none',
