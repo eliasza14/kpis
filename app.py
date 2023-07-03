@@ -735,7 +735,7 @@ def e_button5(id,kpdf):
             st.title(text27)
         with col3:
             val28=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
-            text28="**&#8943;** **"+str(val28)+"** "
+            text28="**🎏** **"+str(val28)+"** "
             st.title(text28)
     with st.container():
         col1, col2,col3 = st.columns(3)
