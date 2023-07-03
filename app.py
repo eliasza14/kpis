@@ -195,7 +195,6 @@ def ad_button1(id,kpdf):
         # html(my_html)
 
         st.markdown(""" 
-
         <html lang="en">
    <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
       integrity="sha384giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -230,9 +229,7 @@ def ad_button1(id,kpdf):
          </div>
       </div>
    </div>
-   </p>"""+
-   my_html+
-   """"</body></html>""",unsafe_allow_html=True)
+   </p></body></html>""",unsafe_allow_html=True)
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
