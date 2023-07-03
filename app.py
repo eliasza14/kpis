@@ -672,7 +672,16 @@ def ad_button4(id,kpdf):
                                         dict(text=str(val2)+"%", x=0.84, y=0.5, font_size=20, showarrow=False),
                                         ])
             st.plotly_chart(fig)
-            
+        with col2:
+            fig = go.Figure()
+            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
+                                values=[val,100-val],
+                                hole=0.85,
+                                textinfo='none',
+                                marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
+                                ))
+            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
+            st.plotly_chart(fig)
     with st.container():
          col1, col2 = st.columns(2)
          with col1:
