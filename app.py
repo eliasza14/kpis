@@ -198,11 +198,29 @@ def ad_button1(id,kpdf):
             
         </head>
         <body>
-            <button onclick= 'myFunction()' >Click me</button>
-            <script>
-                myFunction (){
-                alert("hello234");}
-            </script>
+           <body onload="load()">
+      <p>
+      <div class="d-flex justify-content-center fs-1 fw-bold ">Welcome To Tutorials Point</div>
+      <div class="d-flex justify-content-center fs-1 fw-bold "style="color: #016064;">Animation Counter</div>
+      </p>
+      <p>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm">
+               <p id='0101' class="fs-2 text-light">0</p>
+               <p class="text-light">Site visits</p>
+            </div>
+            <div class="col-sm">
+               <p id='0102' class="fs-2 text-light">876</p>
+               <p class="text-light">Members signed</p>
+         </div>
+         <div class="col-sm">
+            <p class="fs-2 text-light"><span id='0103'>12</span>%</p>
+            <p class="text-light align-content-center">Average complain rate</p>
+         </div>
+      </div>
+   </div>
+   </p>
         </body>
         
         
