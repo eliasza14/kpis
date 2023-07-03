@@ -166,7 +166,7 @@ def ad_button1(id,kpdf):
        
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
-        text="Συνεταιριστες Κατηγορια Α: "+html(
+        text="Συνεταιριστες Κατηγορια Α: "+str(html(
             f"""
             <div id="counter" style="font-size: 48px;"></div>
             <script type="text/javascript">
@@ -174,7 +174,7 @@ def ad_button1(id,kpdf):
             animateCounter("counter", 0, """+val+""", 1000);  // Increase from 0 to 100 in 1 second
             </script>
             """
-        )+" 👪" 
+        ))+" 👪" 
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         
         st.title(text)
