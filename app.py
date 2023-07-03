@@ -536,7 +536,7 @@ def ad_button4(id,kpdf):
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
-            values =kpdf['D18_lipsi'].tolist()
+            values =kpdf['D18_lipsi'].astype(int).tolist()
 
             # Calculate percentage change
             percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
