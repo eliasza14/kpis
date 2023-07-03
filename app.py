@@ -738,12 +738,8 @@ def e_button5(id,kpdf):
             text28="**🎏** **"+str(val28)+"** "
             st.title(text28)
     with st.container():
-        col1, col2,col3 = st.columns(3)
-        with col1:
-            st.write('D28')
-            st.write(kpdf['D28'])
-
-
+        st.write("conteinter test")
+  
 
 
 def e_button6(id,kpdf):
