@@ -570,15 +570,15 @@ def ad_button4(id,kpdf):
                 height=600,  # Set the height of the chart
                 width=400  # Set the width of the chart
             )
-            fig2 = go.Figure( layout=layout)
-            fig2.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
+            fig = go.Figure( layout=layout)
+            fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
                                 values=[val2,100-val2],
                                 hole=0.85,
                                 textinfo='none',
                                 marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
                                 ))
-            fig2.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
-            st.plotly_chart(fig2)
+            fig.update_layout(annotations=[dict(text=str(val2)+"%",  font_size=40, showarrow=False)])
+            st.plotly_chart(fig)
 
     
     with st.container():
