@@ -672,6 +672,7 @@ def ad_button4(id,kpdf):
                                         dict(text=str(val2)+"%", x=0.84, y=0.5, font_size=20, showarrow=False),
                                         ])
             st.plotly_chart(fig)
+            
     with st.container():
          col1, col2 = st.columns(2)
          with col1:
