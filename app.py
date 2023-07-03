@@ -676,9 +676,9 @@ def ad_button4(id,kpdf):
         #     # val=50
         val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
         with col1:
-            fig = go.Figure()
+            fig = go.Figure(                                 title="ΛΥΨΥ",
+)
             fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
-                                 title="ΛΥΨΥ",
                                 values=[val,100-val],
                                 hole=0.85,
                                 textinfo='none',
@@ -687,9 +687,9 @@ def ad_button4(id,kpdf):
             fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
             st.plotly_chart(fig)
         with col2:
-            fig = go.Figure()
+            fig = go.Figure(                                tile="ΕΚΟ"
+)
             fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
-                                title="ΕΚΟ",
                                 values=[val2,100-val2],
                                 hole=0.85,
                                 textinfo='none',
