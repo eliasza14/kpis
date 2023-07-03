@@ -97,7 +97,7 @@ def main():
     elif selected_option1=="Ώρες Απασχόλησης":
         ad_button3(id,kpdf)
     elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
-        ad_button4(id)
+        ad_button4(id,kpdf)
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
     if selected_option1=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
@@ -515,9 +515,20 @@ def ad_button3(id,kpdf):
 
 
 
-def ad_button4(id):
+def ad_button4(id,kpdf):
     st.subheader("button4 Submenu")
     st.write("Content of button4")
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+
+    with st.container():
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            st.write('D18')
+            st.write(kpdf['D18'][kpdf['year']==str(year_filter)])
+        with col2:
+            st.write('D19')
+            st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
+
 
 def e_button5(id,kpdf):
     st.subheader("button5 Submenu")
