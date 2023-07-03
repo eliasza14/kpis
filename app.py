@@ -636,11 +636,10 @@ def ad_button4(id,kpdf):
         with col1:
             labels = ['Chairs', 'Tables', 'Computers', 'Printers', 'Phones']
 
-            fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
+            fig = make_subplots(rows=1, cols=1, specs=[[{'type':'domain'}]])
 
             # add both charts to figure
-            fig.add_trace(go.Pie(labels=labels, values=values, name="Pie Chart 1"),
-                            1, 1)
+
             fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"),
                             1, 2)
             # make donut chart
