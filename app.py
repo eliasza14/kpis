@@ -647,10 +647,11 @@ def ad_button4(id,kpdf):
 
             val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
             # val=50
-            val2=25
+            val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
+
             val3=75
             # st.plotly_chart(fig)
-            fig = make_subplots(rows=1, cols=3,specs=[[{"type": "pie"}, {"type": "pie"}, {"type": "pie"}]])
+            fig = make_subplots(rows=1, cols=2,specs=[[{"type": "pie"}, {"type": "pie"}]])
 
             fig.add_trace(go.Pie(labels=['',''],
                                 values=[val,100-val],
@@ -666,16 +667,9 @@ def ad_button4(id,kpdf):
                                 marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
                                 ),row=1, col=2)
 
-            fig.add_trace(go.Pie(labels=['',''],
-                                values=[val3,100-val3],
-                                hole=0.85,
-                                textinfo='none',
-                                marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
-                                ),row=1, col=3)
             # update
             fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.1, y=0.5, font_size=20, showarrow=False),
                                         dict(text=str(val2)+"%", x=0.5, y=0.5, font_size=20, showarrow=False),
-                                        dict(text=str(val3)+"%", x=0.9, y=0.5, font_size=20, showarrow=False),
                                         ])
             st.plotly_chart(fig)
 
