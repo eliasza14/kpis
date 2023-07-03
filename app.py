@@ -147,6 +147,7 @@ def ad_button1(id,kpdf):
         my_js = """
         
       function animate(obj, initVal, lastVal, duration) {
+      console.log("works")
          let startTime = null;
 
       //get the current timestamp and assign it to the currentTime variable
