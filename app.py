@@ -742,7 +742,7 @@ def e_button5(id,kpdf):
         with col1:
             labels = ['Δ26','Δ27','Δ28']
 
-            fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
+            fig = go.Figure(data=[go.Pie(labels=labels, values=[(val26/val2)*100,(val27/val2)*100,(val28/val2)*100])])
             st.plotly_chart(fig)
    
 
