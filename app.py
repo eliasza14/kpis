@@ -4,6 +4,8 @@ import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
 from packageKPS import *
 from PIL import Image
 
@@ -629,6 +631,22 @@ def ad_button4(id,kpdf):
                     xanchor='center', yanchor='bottom'
                 )
             st.plotly_chart(fig)
+    with st.container():
+        col1, col2 =st.columns(2)
+        with col1:
+
+            fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
+
+            # add both charts to figure
+            fig.add_trace(go.Pie(labels=labels, values=values, name="Pie Chart 1"),
+                            1, 1)
+            fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"),
+                            1, 2)
+            # make donut chart
+            fig.update_traces(hole=.4, hoverinfo="label+percent+name")
+
+            st.plotly_chart(fig)
+
 
 
 
