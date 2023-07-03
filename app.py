@@ -386,7 +386,8 @@ def ad_button3(id,kpdf):
         with col2:
             #st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος)')
             #st.write(kpdf['D15'][kpdf['year']==str(year_filter)])
-            text=str(kpdf['D15'][kpdf['year']==str(year_filter)].iloc[0])
+            text=kpdf['D15'][kpdf['year']==str(year_filter)].iloc[0]
+            text=str(text.round())
             st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος): '+text)
             
     with st.container():
