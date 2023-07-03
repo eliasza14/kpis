@@ -572,9 +572,8 @@ def ad_button4(id,kpdf):
                                 ))
             fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
             st.plotly_chart(fig)
+
     
-
-
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
