@@ -689,7 +689,7 @@ def ad_button4(id,kpdf):
         with col2:
             fig = go.Figure()
             fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
-                                tile="ΕΚΟ",
+                                title="ΕΚΟ",
                                 values=[val2,100-val2],
                                 hole=0.85,
                                 textinfo='none',
