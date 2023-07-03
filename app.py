@@ -553,7 +553,7 @@ def ad_button4(id,kpdf):
                                 textinfo='none',
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
+            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.2, y=0.5, font_size=20, showarrow=False)])
             st.plotly_chart(fig)
         with col2:
             layout = go.Layout(
@@ -570,7 +570,7 @@ def ad_button4(id,kpdf):
                                 textinfo='none',
                                 marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
+            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.2, y=0.5, font_size=20, showarrow=False)])
             st.plotly_chart(fig)
 
     
