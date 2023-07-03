@@ -730,8 +730,9 @@ def e_button5(id,kpdf):
             text26="**🏠** **"+str(val26)+"** "
             st.title(text26)
         with col2:
-            st.write('D26')
-            st.write(kpdf['D26'])
+            val27=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
+            text27="**🍴** **"+str(val27)+"** "
+            st.title(text27)
         with col3:
             st.write('D27')
             st.write(kpdf['D27'])
