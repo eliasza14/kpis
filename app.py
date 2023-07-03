@@ -191,8 +191,8 @@ def ad_button1(id,kpdf):
         my_html = f"<script>{my_js}</script>"
 
         # Execute your app
-        st.title("Javascript example")
-        html(my_html)
+        # st.title("Javascript example")
+        # html(my_html)
 
         st.markdown(""" 
         <head>
@@ -220,9 +220,48 @@ def ad_button1(id,kpdf):
          </div>
       </div>
    </div>
-   </p>"""+
-   my_js+
-   """"</body>""",unsafe_allow_html=True)
+   </p>
+    <script>
+      function animate(obj, initVal, lastVal, duration) {
+         let startTime = null;
+
+      //get the current timestamp and assign it to the currentTime variable
+      let currentTime = Date.now();
+
+      //pass the current timestamp to the step function
+      const step = (currentTime ) => {
+
+      //if the start time is null, assign the current time to startTime
+      if (!startTime) {
+         startTime = currentTime ;
+      }
+
+      //calculate the value to be used in calculating the number to be displayed
+      const progress = Math.min((currentTime - startTime)/ duration, 1);
+
+      //calculate what to be displayed using the value gotten above
+      obj.innerHTML = Math.floor(progress * (lastVal - initVal) + initVal);
+
+      //checking to make sure the counter does not exceed the last value (lastVal)
+      if (progress < 1) {
+         window.requestAnimationFrame(step);
+      } else {
+            window.cancelAnimationFrame(window.requestAnimationFrame(step));
+         }
+      };
+      //start animating
+         window.requestAnimationFrame(step);
+      }
+      let text1 = document.getElementById('0101');
+      let text2 = document.getElementById('0102');
+      let text3 = document.getElementById('0103');
+      const load = () => {
+         animate(text1, 0, 511, 7000);
+         animate(text2, 0, 232, 7000);
+         animate(text3, 100, 25, 7000);
+      }
+   </script>
+   </body>""",unsafe_allow_html=True)
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
