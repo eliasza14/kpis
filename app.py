@@ -727,15 +727,15 @@ def e_button5(id,kpdf):
         col1, col2,col3 = st.columns(3)
         with col1:
             val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
-            text26="**🏠** **"+str(val26)+"** "
+            text26="**🏠** **"+str(val26)+"** &#8364; "
             st.title(text26)
         with col2:
             val27=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
-            text27="**🍴** **"+str(val27)+"** "
+            text27="**🍴** **"+str(val27)+"** &#8364; "
             st.title(text27)
         with col3:
             val28=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
-            text28="**🎏** **"+str(val28)+"** "
+            text28="**🎏** **"+str(val28)+"** &#8364; "
             st.title(text28)
     with st.container():
         col1, col2,col3 = st.columns(3)
