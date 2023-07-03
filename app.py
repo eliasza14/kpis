@@ -676,8 +676,15 @@ def ad_button4(id,kpdf):
         #     # val=50
         val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
         with col1:
-            fig = go.Figure(                                 title="ΛΥΨΥ",
-)
+             # Create the layout with two y-axes
+            layout = go.Layout(
+                title='ΛΥΨΥ',
+                yaxis=dict(title='Values', rangemode='nonnegative'),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=400  # Set the width of the chart
+            )
+            fig = go.Figure( layout=layout)
             fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
                                 values=[val,100-val],
                                 hole=0.85,
@@ -687,8 +694,14 @@ def ad_button4(id,kpdf):
             fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
             st.plotly_chart(fig)
         with col2:
-            fig = go.Figure(                                tile="ΕΚΟ"
-)
+            layout = go.Layout(
+                title='EKO',
+                yaxis=dict(title='Values', rangemode='nonnegative'),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=400  # Set the width of the chart
+            )
+            fig = go.Figure( layout=layout),
             fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
                                 values=[val2,100-val2],
                                 hole=0.85,
