@@ -634,6 +634,7 @@ def ad_button4(id,kpdf):
     with st.container():
         col1, col2 =st.columns(2)
         with col1:
+            labels = ['Chairs', 'Tables', 'Computers', 'Printers', 'Phones']
 
             fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
 
