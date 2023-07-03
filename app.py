@@ -744,8 +744,9 @@ def e_button5(id,kpdf):
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
             st.plotly_chart(fig)
+            
     with st.container():
-        col1,col2 = st.columns(3)
+        col1,col2 = st.columns(2)
         with col1:
              # Select the relevant columns
             columns = ['D26', 'D27', 'D28']
