@@ -150,7 +150,8 @@ def ad_button1(id,kpdf):
                 <input type=sumbit name click-me onclick=function1()>
             </form>
             <script>
-                alert("hello");
+                function1(){
+                alert("hello");}
             </script>
         </body>
         
