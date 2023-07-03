@@ -718,7 +718,11 @@ def e_button5(id,kpdf):
     st.write("Content of button5")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     val2=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
-    st.title(val2)
+    text="**Κυκλοι** **Εργασιών:** **"+str(val2)+"** **&#128182;** "
+        #st.write(first_alias_value)
+        #st.markdown(text)
+    st.title(text)
+   
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
