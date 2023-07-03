@@ -193,11 +193,11 @@ def ad_button1(id,kpdf):
         # Execute your app
         st.title("Javascript example")
         html(my_html)
+
         st.markdown(""" 
         <head>
             
         </head>
-        <body>
            <body onload="load()">
       <p>
       <div class="d-flex justify-content-center fs-1 fw-bold ">Welcome To Tutorials Point</div>
@@ -220,13 +220,9 @@ def ad_button1(id,kpdf):
          </div>
       </div>
    </div>
-   </p>
-        </body>
-        
-        
-        
-        
-        """,unsafe_allow_html=True)
+   </p>"""+
+   
+   """"</body>""",unsafe_allow_html=True)
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
