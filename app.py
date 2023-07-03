@@ -716,6 +716,9 @@ def ad_button4(id,kpdf):
 def e_button5(id,kpdf):
     st.subheader("button5 Submenu")
     st.write("Content of button5")
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    val2=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
+    st.write(val2)
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
