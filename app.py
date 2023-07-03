@@ -157,7 +157,7 @@ def ad_button1(id,kpdf):
         
         
         
-        """,unsafe_allow_html=False)
+        """,unsafe_allow_html=True)
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
