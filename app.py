@@ -540,11 +540,15 @@ def ad_button4(id,kpdf):
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
-            st.write('D18')
-            st.write(kpdf['D18'][kpdf['year']==str(year_filter)])
+            #st.write('D18')
+            #st.write(kpdf['D18'][kpdf['year']==str(year_filter)])
+            text=str(kpdf['D18'][kpdf['year']==str(year_filter)].iloc[0])
+            st.write('D18 Ετησιες μοναδες εργασιας: '+text)
         with col2:
-            st.write('D19')
-            st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
+            #st.write('D19')
+            #st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
+            text=str(kpdf['D19'][kpdf['year']==str(year_filter)].iloc[0])
+            st.write('D19 Ετησιες μοναδες εργασιας: '+text)
 
     with st.container():
         col1, col2 =st.columns(2)
