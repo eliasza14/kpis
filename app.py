@@ -146,91 +146,32 @@ def ad_button1(id,kpdf):
         # Define your javascript
         my_js = """
         
-      function animate(obj, initVal, lastVal, duration) {
-      console.log("works")
-         let startTime = null;
-
-      //get the current timestamp and assign it to the currentTime variable
-      let currentTime = Date.now();
-
-      //pass the current timestamp to the step function
-      const step = (currentTime ) => {
-
-      //if the start time is null, assign the current time to startTime
-      if (!startTime) {
-         startTime = currentTime ;
-      }
-
-      //calculate the value to be used in calculating the number to be displayed
-      const progress = Math.min((currentTime - startTime)/ duration, 1);
-
-      //calculate what to be displayed using the value gotten above
-      obj.innerHTML = Math.floor(progress * (lastVal - initVal) + initVal);
-
-      //checking to make sure the counter does not exceed the last value (lastVal)
-      if (progress < 1) {
-         window.requestAnimationFrame(step);
-      } else {
-            window.cancelAnimationFrame(window.requestAnimationFrame(step));
-         }
-      };
-      //start animating
-         window.requestAnimationFrame(step);
-      }
-      let text1 = document.getElementById('0101');
-      let text2 = document.getElementById('0102');
-      let text3 = document.getElementById('0103');
-      const load = () => {
-         animate(text1, 0, 511, 7000);
-         animate(text2, 0, 232, 7000);
-         animate(text3, 100, 25, 7000);
-      }
-   
+      
         """
 
         # Wrapt the javascript as html code
         my_html = f"<script>{my_js}</script>"
 
         # # Execute your app
-        # st.title("Javascript example")
+        st.title("Javascript example")
         # html(my_html)
 
-        st.markdown(""" 
-        <html lang="en">
-   <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
-      integrity="sha384giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-   <style>
-      .container{
-         background-color: #016064;
-      }
-      p{
-      text-align: center;
-      }
-   </style>
+       
         
-    <body onload="load()">
-      <p>
-      <div class="d-flex justify-content-center fs-1 fw-bold ">Welcome To Tutorials Point</div>
-      <div class="d-flex justify-content-center fs-1 fw-bold "style="color: #016064;">Animation Counter</div>
-      </p>
-      <p>
-      <div class="container">
-         <div class="row">
-            <div class="col-sm">
-               <p id='0101' class="fs-2 text-light">0</p>
-               <p class="text-light">Site visits</p>
-            </div>
-            <div class="col-sm">
-               <p id='0102' class="fs-2 text-light">876</p>
-               <p class="text-light">Members signed</p>
-         </div>
-         <div class="col-sm">
-            <p class="fs-2 text-light"><span id='0103'>12</span>%</p>
-            <p class="text-light align-content-center">Average complain rate</p>
-         </div>
-      </div>
-   </div>
-   </p></body></html>""",unsafe_allow_html=True)
+        # Load the JavaScript function code
+        with open("animated_counter.js", "r") as file:
+            js_code = file.read()
+
+        # Display the HTML and JavaScript code
+        html(
+            f"""
+            <div id="counter" style="font-size: 48px;"></div>
+            <script type="text/javascript">
+            {js_code}
+            animateCounter("counter", 0, 100, 1000);  // Increase from 0 to 100 in 1 second
+            </script>
+            """
+        )
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
