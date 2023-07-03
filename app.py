@@ -640,8 +640,7 @@ def ad_button4(id,kpdf):
 
             # add both charts to figure
 
-            fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"),
-                            1, 2)
+            fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"), 1, 2)
             # make donut chart
             fig.update_traces(hole=.4, hoverinfo="label+percent+name")
 
