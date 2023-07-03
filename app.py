@@ -150,7 +150,7 @@ def ad_button1(id,kpdf):
             </script>
         </head>
         <body>
-            <button onclick= myFunction() >Click me</button>
+            <button onclick= 'myFunction()' >Click me</button>
             
         </body>
         
