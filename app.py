@@ -221,7 +221,7 @@ def ad_button1(id,kpdf):
       </div>
    </div>
    </p>"""+
-   
+   my_js+
    """"</body>""",unsafe_allow_html=True)
         #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
