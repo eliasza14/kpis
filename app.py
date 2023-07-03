@@ -377,13 +377,17 @@ def ad_button3(id,kpdf):
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
-            st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
-            st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
+            #st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
+            text=str(kpdf['D14'][kpdf['year']==str(year_filter)].iloc[0])
+            #st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
+            st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος): '+text)
             # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
         with col2:
-            st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος)')
-            st.write(kpdf['D15'][kpdf['year']==str(year_filter)])
+            #st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος)')
+            #st.write(kpdf['D15'][kpdf['year']==str(year_filter)])
+            text=str(kpdf['D15'][kpdf['year']==str(year_filter)].iloc[0])
+            st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος): '+text)
             
     with st.container():
         col1, col2 = st.columns(2)
