@@ -744,6 +744,26 @@ def e_button5(id,kpdf):
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
             st.plotly_chart(fig)
+    with st.container():
+        col1,col2 = st.columns(3)
+        with col1:
+             # Select the relevant columns
+            columns = ['D26', 'D27', 'D28']
+            kpdf_selected = kpdf[columns]
+            # Create the stacked bar plot using Plotly
+            fig = go.Figure()
+            for col in columns:
+                fig.add_trace(go.Bar(
+                    name=col,
+                    x=kpdf['year'].apply(str),
+                    y=kpdf_selected[col],
+                    text=kpdf[col],
+                    textposition='inside'
+                ))
+            # Update the layout
+            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
+            # Show the plot
+            st.plotly_chart(fig)
    
 
 
