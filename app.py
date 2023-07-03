@@ -534,15 +534,14 @@ def ad_button4(id,kpdf):
     with st.container():
         col1, col2 =st.columns(2)
         
-        val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
         #     # val=50
-        val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
 
         with col1:
              # Create the layout with two y-axes
-            st.write(val)
-            st.write(val2)
 
+            val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
+            st.write(val)
+            # st.write(val2)
             layout = go.Layout(
                 title='ΛΥΨΥ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
@@ -560,9 +559,10 @@ def ad_button4(id,kpdf):
             fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
             st.plotly_chart(fig)
         with col2:
-            st.write(val)
+        
+            val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
+            # st.write(val)
             st.write(val2)
-
             layout = go.Layout(
                 title='EKO',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
