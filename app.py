@@ -738,8 +738,15 @@ def e_button5(id,kpdf):
             text28="**🎏** **"+str(val28)+"** "
             st.title(text28)
     with st.container():
-        st.write("conteinter test")
-  
+        col1, col2,col3 = st.columns(3)
+        with col1:
+            labels = ['Δ26','Δ27','Δ28']
+
+            fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
+            st.plotly_chart(fig)
+   
+
+
 
 
 def e_button6(id,kpdf):
