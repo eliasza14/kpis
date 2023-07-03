@@ -145,19 +145,19 @@ def ad_button1(id,kpdf):
             
             #st.write('Col1 show D1')
             val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
-            text="Συνεταιριστες Κατηγορια Α:"+str(val)+" " 
+            text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
             #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
             st.title(text)
             # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
-        with col2:
-            st.write('Col2 Caption for first chart')
+        # with col2:
+        #     st.write('Col2 Caption for first chart')
 
           
-        with col3:
-            st.write('Col3 Caption for first chart')
+        # with col3:
+        #     st.write('Col3 Caption for first chart')
 
-            st.write("Content of column3")
+        #     st.write("Content of column3")
 
 
 
