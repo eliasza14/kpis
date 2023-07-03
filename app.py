@@ -632,7 +632,7 @@ def ad_button4(id,kpdf):
                 )
             st.plotly_chart(fig)
     with st.container():
-        col1, col2 =st.columns(1)
+        col1 =st.columns(1)
         with col1:
             # labels = ['Chairs', 'Tables', 'Computers', 'Printers', 'Phones']
 
