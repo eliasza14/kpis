@@ -653,14 +653,14 @@ def ad_button4(id,kpdf):
             # st.plotly_chart(fig)
             fig = make_subplots(rows=1, cols=2,specs=[[{"type": "pie"}, {"type": "pie"}]])
 
-            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',''],
+            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
                                 values=[val,100-val],
                                 hole=0.85,
                                 textinfo='none',
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ),row=1, col=1)
 
-            fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',''],
+            fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
                                 values=[val2,100-val2],
                                 hole=0.85,
                                 textinfo='none',
