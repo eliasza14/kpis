@@ -643,7 +643,10 @@ def ad_button4(id,kpdf):
             # fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"), 1,1)
             # # make donut chart
             # fig.update_traces(hole=.4, hoverinfo="label+percent+name")
-            val=50
+            # values =kpdf['D18_lipsi'].astype(int).tolist()
+
+            val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
+            # val=50
             val2=25
             val3=75
             # st.plotly_chart(fig)
