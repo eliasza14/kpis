@@ -726,8 +726,8 @@ def e_button5(id,kpdf):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('D24')
-            st.write(kpdf['D24'])
+            val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
+            text="**Κυκλοι** **Εργασιών:** **🏠** **"+str(val26)+"** "
         with col2:
             st.write('D26')
             st.write(kpdf['D26'])
