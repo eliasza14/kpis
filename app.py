@@ -701,7 +701,7 @@ def ad_button4(id,kpdf):
                 height=600,  # Set the height of the chart
                 width=400  # Set the width of the chart
             )
-            fig = go.Figure( layout=layout),
+            fig = go.Figure( layout=layout)
             fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
                                 values=[val2,100-val2],
                                 hole=0.85,
