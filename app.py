@@ -532,6 +532,50 @@ def ad_button4(id,kpdf):
             st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
 
     with st.container():
+        col1, col2 =st.columns(2)
+        
+        val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
+        #     # val=50
+        val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
+        with col1:
+             # Create the layout with two y-axes
+            layout = go.Layout(
+                title='ΛΥΨΥ',
+                yaxis=dict(title='Values', rangemode='nonnegative'),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=400  # Set the width of the chart
+            )
+            fig = go.Figure( layout=layout)
+            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
+                                values=[val,100-val],
+                                hole=0.85,
+                                textinfo='none',
+                                marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
+                                ))
+            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
+            st.plotly_chart(fig)
+        with col2:
+            layout = go.Layout(
+                title='EKO',
+                yaxis=dict(title='Values', rangemode='nonnegative'),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=400  # Set the width of the chart
+            )
+            fig = go.Figure( layout=layout)
+            fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
+                                values=[val2,100-val2],
+                                hole=0.85,
+                                textinfo='none',
+                                marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
+                                ))
+            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
+            st.plotly_chart(fig)
+    
+
+
+    with st.container():
         col1, col2 = st.columns(2)
         with col1:
             st.write('D18')
@@ -631,85 +675,8 @@ def ad_button4(id,kpdf):
                     xanchor='center', yanchor='bottom'
                 )
             st.plotly_chart(fig)
-    with st.container():
-        col1, col2 =st.columns(2)
-        # with col1:
-        #     # labels = ['Chairs', 'Tables', 'Computers', 'Printers', 'Phones']
 
-        #     # fig = make_subplots(rows=1, cols=1, specs=[[{'type':'domain'}]])
 
-        #     # # add both charts to figure
-
-        #     # fig.add_trace(go.Pie(labels=labels, values=[20, 40, 20, 5, 18], name="Pie Chart 2"), 1,1)
-        #     # # make donut chart
-        #     # fig.update_traces(hole=.4, hoverinfo="label+percent+name")
-        #     # values =kpdf['D18_lipsi'].astype(int).tolist()
-
-        #     val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
-        #     # val=50
-        #     val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
-
-        #     val3=75
-        #     # st.plotly_chart(fig)
-        #     fig = make_subplots(rows=1, cols=2,specs=[[{"type": "pie"}, {"type": "pie"}]])
-
-        #     fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
-        #                         values=[val,100-val],
-        #                         hole=0.85,
-        #                         textinfo='none',
-        #                         marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
-        #                         ),row=1, col=1)
-
-        #     fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
-        #                         values=[val2,100-val2],
-        #                         hole=0.85,
-        #                         textinfo='none',
-        #                         marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
-        #                         ),row=1, col=2)
-
-        #     # update
-        #     fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False),
-        #                                 dict(text=str(val2)+"%", x=0.84, y=0.5, font_size=20, showarrow=False),
-        #                                 ])
-        #     st.plotly_chart(fig)
-        val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
-        #     # val=50
-        val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
-        with col1:
-             # Create the layout with two y-axes
-            layout = go.Layout(
-                title='ΛΥΨΥ',
-                yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=600,  # Set the height of the chart
-                width=400  # Set the width of the chart
-            )
-            fig = go.Figure( layout=layout)
-            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
-                                values=[val,100-val],
-                                hole=0.85,
-                                textinfo='none',
-                                marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
-                                ))
-            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
-            st.plotly_chart(fig)
-        with col2:
-            layout = go.Layout(
-                title='EKO',
-                yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=600,  # Set the height of the chart
-                width=400  # Set the width of the chart
-            )
-            fig = go.Figure( layout=layout)
-            fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
-                                values=[val2,100-val2],
-                                hole=0.85,
-                                textinfo='none',
-                                marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
-                                ))
-            fig.update_layout(annotations=[dict(text=str(val)+"%", x=0.125, y=0.5, font_size=20, showarrow=False)])
-            st.plotly_chart(fig)
     with st.container():
          col1, col2 = st.columns(2)
          with col1:
