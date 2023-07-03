@@ -143,7 +143,7 @@ def ad_button1(id,kpdf):
         # col1, col2,col3 = st.columns(3)
         # with col1:
         st.markdown(""" 
-        <html>
+        
         <body>
             hello
             <form>
@@ -154,7 +154,7 @@ def ad_button1(id,kpdf):
             </script>
         </body>
         
-        </html>
+        
         
         
         """)
