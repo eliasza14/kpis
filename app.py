@@ -229,7 +229,7 @@ def ad_button2(id,kpdf,js_code):
 
             html(
                 f"""
-                <p id="counter" style="text-align:center;font-weight:bold; font-size: 75px;"></p>
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 75px; background-color: #f1f1f1; width: 150px; height: 150px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
