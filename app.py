@@ -658,7 +658,9 @@ def ad_button4(id,kpdf,js_code):
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
-                width=400  # Set the width of the chart
+                width=400,  # Set the width of the chart
+                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+
             )
             fig = go.Figure( layout=layout)
             fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
@@ -667,8 +669,7 @@ def ad_button4(id,kpdf,js_code):
                                 textinfo='none',
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)],                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
-)
+            fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
             st.plotly_chart(fig)
         with col2:
         
@@ -689,7 +690,7 @@ def ad_button4(id,kpdf,js_code):
                                 textinfo='none',
                                 marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val2)+"%",  font_size=40, showarrow=False)],                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True))
+            fig.update_layout(annotations=[dict(text=str(val2)+"%",  font_size=40, showarrow=False)])
             st.plotly_chart(fig)
 
     
