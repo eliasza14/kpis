@@ -1112,6 +1112,9 @@ def e_button7(id,kpdf):
                     xanchor='center', yanchor='bottom'
                 )
             st.plotly_chart(fig)
+        with col2:
+            fig = px.line(kpdf, x='year', y='D38', markers=True)
+            st.plotly_chart(fig)
 
 
 
