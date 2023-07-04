@@ -1118,7 +1118,7 @@ def e_button7(id,kpdf):
             
             # st.write(val2)
             layout = go.Layout(
-                title='Συμμετοχή (%) Επιδοτήσεων στα έσοδα',
+                title='Συμμετοχή (%) Επιδοτήσεων στα έσοδα / Ετος',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
