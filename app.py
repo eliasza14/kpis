@@ -1129,7 +1129,7 @@ def e_button7(id,kpdf):
                                 values=[val39,100-val39],
                                 hole=0.85,
                                 textinfo='none',
-                                marker_colors=['rgb(0 153 153)','rgb(160 160 160)'],
+                                marker_colors=['rgb(135 202 236)','rgb(192 192 192)'],
                                 ))
             fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=False)])
             st.plotly_chart(fig)
