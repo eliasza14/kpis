@@ -1047,11 +1047,13 @@ def e_button6(id,kpdf):
 def e_button7(id,kpdf):
     st.subheader("button7 Submenu")
     st.write("Content of button7")
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    val1=float(kpdf['D36_overal'][kpdf['year']==str(year_filter)].iloc[0])
+    val2=float(kpdf['D36'][kpdf['year']==str(year_filter)].iloc[0])
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('D40')
-            st.write(kpdf['D40'])
+            st.metric(label="% Ετήσια Μεταβολή Καθαρών αποτελεσμάτων", value=val1, delta=f'{val2}%')
 
 
 def display_pinkas_submenu(id):
