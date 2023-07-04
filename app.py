@@ -1120,21 +1120,20 @@ def e_button7(id,kpdf):
             with open("progressbar.js", "r") as file:
                 js_code2 = file.read()
             html(f"""
-            <!DOCTYPE html>
-                        <html>
+            
                         <style>
                         #myProgress {
-                        width: 100%;
-                        background-color: #ddd;
+                            width: 100%;
+                            background-color: #ddd;
                         }
 
                         #myBar {
-                        width: 10%;
-                        height: 30px;
-                        background-color: #04AA6D;
-                        text-align: center;
-                        line-height: 30px;
-                        color: white;
+                            width: 10%;
+                            height: 30px;
+                            background-color: #04AA6D;
+                            text-align: center;
+                            line-height: 30px;
+                            color: white;
                         }
                         </style>
                         <body>
@@ -1153,7 +1152,7 @@ def e_button7(id,kpdf):
                         </script>
 
                         </body>
-                        </html>
+                        
             
             
             
