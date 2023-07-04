@@ -212,7 +212,7 @@ def ad_button2(id,kpdf,js_code):
 
             html(
                 f"""
-                <div id="counter" style="text-align:center;font-weight:bold; font-size: 30px;"></div>
+                <div id="counter" style="text-align:center;font-weight:bold; font-size: 75px;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+text+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -224,7 +224,9 @@ def ad_button2(id,kpdf,js_code):
         with col2:
             
             text=kpdf['D5'][kpdf['year']==str(year_filter)].iloc[0]
-            st.write('Δ5-Εργαζόμενοι ΛΥΨΥ: '+text)
+            # st.write('Δ5-Εργαζόμενοι ΛΥΨΥ: '+text)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Δ5-Εργαζόμενοι ΛΥΨΥ</h3>", unsafe_allow_html=True)
+
             html(
                 f"""
                 <div id="counter" style="font-weight:bold; font-size: 30px;"></div>
@@ -241,7 +243,18 @@ def ad_button2(id,kpdf,js_code):
         with col3:
             #st.write('D7-Εργαζόμενοι ΕΚΟ')
             text=kpdf['D7'][kpdf['year']==str(year_filter)].iloc[0]
-            st.write('D7-Εργαζόμενοι ΕΚΟ: '+text)
+            # st.write('D7-Εργαζόμενοι ΕΚΟ: '+text)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Δ7-Εργαζόμενοι ΕΚΟ</h3>", unsafe_allow_html=True)
+
+            html(
+                f"""
+                <div id="counter" style="text-align:center;font-weight:bold; font-size: 75px;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+text+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script>
+                """
+            )
             #st.write(kpdf['D7'][kpdf['year']==str(year_filter)])
 
     with st.container():
