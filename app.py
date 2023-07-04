@@ -177,6 +177,16 @@ def ad_button1(id,kpdf):
             </script>
             """
         )
+
+        html(
+            f"""
+            <div id="counter" style="font-size: 48px;"></div>
+            <script type="text/javascript">
+            {js_code}
+            animateCounter("counter", 0, """+50+""", 1000);  // Increase from 0 to 100 in 1 second
+            </script>
+            """
+        )
         # st.title(text)
         # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
