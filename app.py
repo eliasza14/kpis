@@ -603,8 +603,8 @@ def ad_button3(id,kpdf,js_code):
 
 
 def ad_button4(id,kpdf,js_code):
-    st.subheader("button4 Submenu")
-    st.write("Content of button4")
+    st.subheader("Ετήσιες Μονάδες Εργασίας")
+    
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
 
     with st.container():
@@ -629,7 +629,7 @@ def ad_button4(id,kpdf,js_code):
             #st.write('D19')
             #st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D19'][kpdf['year']==str(year_filter)].iloc[0])
-            st.write('D19 Ετησιες μοναδες εργασιας: '+text)
+            # st.write('D19 Ετησιες μοναδες εργασιας: '+text)
             st.markdown("<h3 style='text-align: center; color: grey;'>Ετησιες μοναδες εργασιας(Μέσος Όρος)</h3>", unsafe_allow_html=True)
 
             html(
@@ -651,7 +651,7 @@ def ad_button4(id,kpdf,js_code):
              # Create the layout with two y-axes
 
             val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
-            st.write(val)
+            # st.write(val)
             # st.write(val2)
             layout = go.Layout(
                 title='ΛΥΨΥ',
@@ -667,13 +667,14 @@ def ad_button4(id,kpdf,js_code):
                                 textinfo='none',
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
+            fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)],                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+)
             st.plotly_chart(fig)
         with col2:
         
             val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
             # st.write(val)
-            st.write(val2)
+            # st.write(val2)
             layout = go.Layout(
                 title='EKO',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
@@ -688,7 +689,7 @@ def ad_button4(id,kpdf,js_code):
                                 textinfo='none',
                                 marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val2)+"%",  font_size=40, showarrow=False)])
+            fig.update_layout(annotations=[dict(text=str(val2)+"%",  font_size=40, showarrow=False)],                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True))
             st.plotly_chart(fig)
 
     
