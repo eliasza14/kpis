@@ -829,7 +829,7 @@ def e_button6(id,kpdf):
     with st.container():
         col1, col2,col3,col4 = st.columns(4)
         with col1:
-            st.metric(label="Gas price", value=val1, delta=val2)
+            st.metric(label="Gas price", value=f'{val1}%', delta=val2)
     
     with st.container():
         col1, col2,col3 = st.columns(3)
