@@ -823,6 +823,14 @@ def e_button5(id,kpdf):
 def e_button6(id,kpdf):
     st.subheader("button6 Submenu")
     st.write("Content of button6")
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    val1=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
+    val2=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
+    with st.container():
+        col1, col2,col3,col4 = st.columns(4)
+        with col1:
+            st.metric(label="Gas price", value=val1, delta=val2)
+    
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
