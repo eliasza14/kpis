@@ -602,7 +602,7 @@ def ad_button3(id,kpdf,js_code):
 
 
 
-def ad_button4(id,kpdf):
+def ad_button4(id,kpdf,js_code):
     st.subheader("button4 Submenu")
     st.write("Content of button4")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
@@ -613,12 +613,34 @@ def ad_button4(id,kpdf):
             #st.write('D18')
             #st.write(kpdf['D18'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D18'][kpdf['year']==str(year_filter)].iloc[0])
-            st.write('D18 Ετησιες μοναδες εργασιας: '+text)
+            # st.write('D18 Ετησιες μοναδες εργασιας: '+text)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ετησιες μοναδες εργασιας</h3>", unsafe_allow_html=True)
+
+            html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+            )
         with col2:
             #st.write('D19')
             #st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D19'][kpdf['year']==str(year_filter)].iloc[0])
             st.write('D19 Ετησιες μοναδες εργασιας: '+text)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ετησιες μοναδες εργασιας(Μέσος Όρος)</h3>", unsafe_allow_html=True)
+
+            html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+            )
 
     with st.container():
         col1, col2 =st.columns(2)
