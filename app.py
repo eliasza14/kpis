@@ -140,22 +140,12 @@ def main():
 
 
 def ad_button1(id,kpdf,js_code):
-    st.subheader("button1 Submenu")
+    st.subheader("Συνεταιριστες")
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     
-    st.write("Content of button1")
     with st.container():
-        # col1, col2,col3 = st.columns(3)
-        # with col1:
-        # Define your javascript
 
-        # # Execute your app
-        st.title("Συνεταιριστες Κατηγορια Α")
-        # html(my_html)
-
-       
-        
 
         # Display the HTML and JavaScript code
        
@@ -163,36 +153,19 @@ def ad_button1(id,kpdf,js_code):
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         # text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
+        st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστες Κατηγορια Α</h3>", unsafe_allow_html=True)
+
         html(
-            f"""
-            <div id="counter" style="font-size: 48px;"></div>
-            <script type="text/javascript">
-            {js_code}
-            animateCounter("counter", 0, """+val+""", 1000);  // Increase from 0 to 100 in 1 second
-            </script>
-            """
-        )
-        val2=10
-        html(
-            f"""
-            <div id="counter" style="font-weight:bold; font-size: 30px;"></div>
-            <script type="text/javascript">
-            {js_code}
-            animateCounter("counter", 0, """+str(val2)+""", 1000);  // Increase from 0 to 100 in 1 second
-            </script>
-            """
-        )
-        # st.title(text)
-        # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+            )
 
-        # with col2:
-        #     st.write('Col2 Caption for first chart')
 
-          
-        # with col3:
-        #     st.write('Col3 Caption for first chart')
-
-        #     st.write("Content of column3")
 
 
 
