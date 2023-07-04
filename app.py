@@ -177,13 +177,13 @@ def ad_button1(id,kpdf):
             </script>
             """
         )
-
+        val2=2
         html(
             f"""
             <div id="counter" style="font-size: 48px;"></div>
             <script type="text/javascript">
             {js_code}
-            animateCounter("counter", 0, """+50+""", 1000);  // Increase from 0 to 100 in 1 second
+            animateCounter("counter", 0, """+val2+""", 1000);  // Increase from 0 to 100 in 1 second
             </script>
             """
         )
