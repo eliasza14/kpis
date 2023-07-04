@@ -1051,12 +1051,16 @@ def e_button7(id,kpdf):
     val1=float(kpdf['D36_overal'][kpdf['year']==str(year_filter)].iloc[0])
     val2=float(kpdf['D36'][kpdf['year']==str(year_filter)].iloc[0])
     val3=float(kpdf['D38'][kpdf['year']==str(year_filter)].iloc[0])
+    val4=float(kpdf['D40'][kpdf['year']==str(year_filter)].iloc[0])
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
             st.metric(label="% Ετήσια Μεταβολή Καθαρών αποτελεσμάτων", value=val1, delta=f'{val2}%')
         with col2:
             st.metric(label="Αριθμοδείκτη καθαρών αποτελεσμάτων", value=val3)
+        with col3:
+            st.metric(label="Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή", value=val4)
+
 
 
 
