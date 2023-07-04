@@ -826,10 +826,23 @@ def e_button6(id,kpdf):
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     val1=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
     val2=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
+    val3=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
+    val4=float(kpdf['D30'][kpdf['year']==str(year_filter)].iloc[0])
+    val5=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
+    val6=float(kpdf['D31'][kpdf['year']==str(year_filter)].iloc[0])
+    val7=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
+    val8=float(kpdf['D32'][kpdf['year']==str(year_filter)].iloc[0])
     with st.container():
         col1, col2,col3,col4 = st.columns(4)
         with col1:
-            st.metric(label="Gas price", value=f'{val1}%', delta=val2)
+            st.metric(label="% Μεταβολή Κύκλου Εργασιών", value=val1, delta=f'{val2}%')
+        with col2:
+            st.metric(label="% Μεταβολή Κύκλου Εργασιών-Κτήρια/Εξωτερικοί Χώροι ", value=val3, delta=f'{val4}%')
+        with col3:
+            st.metric(label="% Μεταβολή Κύκλου Εργασιών-Υπηρεσίες Εστίασης", value=val5, delta=f'{val6}%')
+        with col4:
+            st.metric(label="% Μεταβολή Κύκλου Εργασιών-Λοιπές εργασίες", value=val7, delta=f'{val8}%')
+
     
     with st.container():
         col1, col2,col3 = st.columns(3)
