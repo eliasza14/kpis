@@ -1117,6 +1117,48 @@ def e_button7(id,kpdf):
             st.plotly_chart(fig)
         with col3:
             st.write("test")
+            with open("progressbar.js", "r") as file:
+                js_code2 = file.read()
+            html(f"""
+            <!DOCTYPE html>
+                        <html>
+                        <style>
+                        #myProgress {
+                        width: 100%;
+                        background-color: #ddd;
+                        }
+
+                        #myBar {
+                        width: 10%;
+                        height: 30px;
+                        background-color: #04AA6D;
+                        text-align: center;
+                        line-height: 30px;
+                        color: white;
+                        }
+                        </style>
+                        <body>
+
+                        <h1>JavaScript Progress Bar</h1>
+
+                        <div id="myProgress">
+                        <div id="myBar">10%</div>
+                        </div>
+
+                        <br>
+                        <button onclick="move()">Click Me</button> 
+                        <script type="text/javascript">
+                            {js_code2}
+                            move();
+                        </script>
+
+                        </body>
+                        </html>
+            
+            
+            
+            """)
+           
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
 
