@@ -203,13 +203,13 @@ def ad_button2(id,kpdf):
         with col1:
             
             text=str(kpdf['D3'][kpdf['year']==str(year_filter)].iloc[0])
-            st.title('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
+            st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
             #st.write(kpdf['D3'][kpdf['year']==str(year_filter)])
 
         with col2:
             
             text=kpdf['D5'][kpdf['year']==str(year_filter)].iloc[0]
-            st.title('Δ5-Εργαζόμενοι ΛΥΨΥ: '+text)
+            st.write('Δ5-Εργαζόμενοι ΛΥΨΥ: '+text)
             #st.write(kpdf['D5'][kpdf['year']==str(year_filter)])
 
 
@@ -217,7 +217,7 @@ def ad_button2(id,kpdf):
         with col3:
             #st.write('D7-Εργαζόμενοι ΕΚΟ')
             text=kpdf['D7'][kpdf['year']==str(year_filter)].iloc[0]
-            st.title('D7-Εργαζόμενοι ΕΚΟ: '+text)
+            st.write('D7-Εργαζόμενοι ΕΚΟ: '+text)
             #st.write(kpdf['D7'][kpdf['year']==str(year_filter)])
 
     with st.container():
@@ -410,7 +410,7 @@ def ad_button3(id,kpdf):
             #st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
             text=str(kpdf['D14'][kpdf['year']==str(year_filter)].iloc[0])
             #st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
-            st.title('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος): '+text)
+            st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος): '+text)
             # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
         with col2:
@@ -418,7 +418,7 @@ def ad_button3(id,kpdf):
             #st.write(kpdf['D15'][kpdf['year']==str(year_filter)])
             text=kpdf['D15'][kpdf['year']==str(year_filter)].iloc[0]
             text=str(text.round())
-            st.title('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος): '+text)
+            st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος): '+text)
         
     with st.container():
         col1, col2 = st.columns(2)
@@ -574,12 +574,12 @@ def ad_button4(id,kpdf):
             #st.write('D18')
             #st.write(kpdf['D18'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D18'][kpdf['year']==str(year_filter)].iloc[0])
-            st.title('D18 Ετησιες μοναδες εργασιας: '+text)
+            st.write('D18 Ετησιες μοναδες εργασιας: '+text)
         with col2:
             #st.write('D19')
             #st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D19'][kpdf['year']==str(year_filter)].iloc[0])
-            st.title('D19 Ετησιες μοναδες εργασιας: '+text)
+            st.write('D19 Ετησιες μοναδες εργασιας: '+text)
 
     with st.container():
         col1, col2 =st.columns(2)
