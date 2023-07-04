@@ -6,7 +6,7 @@ function move(value) {
     var width = 10;
     var id = setInterval(frame, 10);
     function frame() {
-      if (width >= value) {
+      if (width >= 100) {
         clearInterval(id);
         i = 0;
       } else {
