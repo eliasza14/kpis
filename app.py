@@ -1117,35 +1117,13 @@ def e_button7(id,kpdf):
             st.plotly_chart(fig)
         with col3:
             st.write("test")
-            val29=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
-            with open("progressbar.js", "r") as file:
-                js_code2 = file.read()
-            html(
-                f"""
-            
-                        
-                        <body>
-
-                        <h1>JavaScript Progress Bar</h1>
-
-                        <div id="myProgress" style="width: 100%; background-color: #ddd;">
-                        <div id="myBar" style="width: 10%; height: 30px; background-color: #04AA6D; text-align: center; line-height: 30px; color: white;">10%</div>
-                        </div>
-
-                        <br>
-                        <button onclick="move()">Click Me</button> 
-                        <script type="text/javascript">
-                            {js_code2}
-                            move(50);
-                        </script>
-
-                        </body>
-                        
-            
-            
-            
-            """)
-           
+    with st.container():
+        col1,col2 = st.columns(2)  
+        with col1:
+            st.write();      
+        with col2:
+            fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
+            st.plotly_chart(fig)   
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
 
