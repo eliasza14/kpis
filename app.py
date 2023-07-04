@@ -424,7 +424,7 @@ def ad_button3(id,kpdf,js_code):
         col1, col2 = st.columns(2)
         with col1:
             #st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
-            text=str(kpdf['D14'][kpdf['year']==str(year_filter)].iloc[0])
+            text=kpdf['D14'][kpdf['year']==str(year_filter)].iloc[0]
             text=str(text.round())
             #st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
             # st.write('Δ14-'+text)
