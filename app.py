@@ -203,8 +203,7 @@ def ad_button1(id,kpdf):
 
 
 def ad_button2(id,kpdf):
-    st.subheader("button2 Submenu")
-    st.write("Content of button2")
+    st.subheader("Εργαζόμενοι")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
 
     st.write("Content of button1")
@@ -214,12 +213,30 @@ def ad_button2(id,kpdf):
             
             text=str(kpdf['D3'][kpdf['year']==str(year_filter)].iloc[0])
             st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
+            html(
+                f"""
+                <div id="counter" style="font-weight:bold; font-size: 30px;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+text+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script>
+                """
+            )
             #st.write(kpdf['D3'][kpdf['year']==str(year_filter)])
 
         with col2:
             
             text=kpdf['D5'][kpdf['year']==str(year_filter)].iloc[0]
             st.write('Δ5-Εργαζόμενοι ΛΥΨΥ: '+text)
+            html(
+                f"""
+                <div id="counter" style="font-weight:bold; font-size: 30px;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script>
+                """
+            )
             #st.write(kpdf['D5'][kpdf['year']==str(year_filter)])
 
 
