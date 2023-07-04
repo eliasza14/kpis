@@ -1114,8 +1114,8 @@ def e_button7(id,kpdf):
             st.plotly_chart(fig)
         with col2:
             st.write("smt"); 
-            val29=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
-            st.write(val29)
+            val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
+            st.write(val39)
             # st.write(val2)
             layout = go.Layout(
                 title='ΛΥΨΥ',
@@ -1126,12 +1126,12 @@ def e_button7(id,kpdf):
             )
             fig = go.Figure( layout=layout)
             fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
-                                values=[val29,100-val29],
+                                values=[val39,100-val39],
                                 hole=0.85,
                                 textinfo='none',
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val29)+"%",  font_size=40, showarrow=False)])
+            fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=False)])
             st.plotly_chart(fig)
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
