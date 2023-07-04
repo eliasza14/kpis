@@ -207,10 +207,12 @@ def ad_button2(id,kpdf,js_code):
         with col1:
             
             text=str(kpdf['D3'][kpdf['year']==str(year_filter)].iloc[0])
-            st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
+            # st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Δ3-Εργαζόμενοι Γενικού Πληθυσμού</h3>", unsafe_allow_html=True)
+
             html(
                 f"""
-                <div id="counter" style="font-weight:bold; font-size: 30px;"></div>
+                <div id="counter" style="text-align:center;font-weight:bold; font-size: 30px;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+text+""", 1000);  // Increase from 0 to 100 in 1 second
