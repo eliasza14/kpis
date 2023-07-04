@@ -1113,19 +1113,19 @@ def e_button7(id,kpdf):
                 )
             st.plotly_chart(fig)
         with col2:
-            st.write("smt"); 
+             
             val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
-            st.write(val39)
+            
             # st.write(val2)
             layout = go.Layout(
-                title='ΛΥΨΥ',
+                title='Συμμετοχή (%) Επιδοτήσεων στα έσοδα',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
                 width=400  # Set the width of the chart
             )
             fig = go.Figure( layout=layout)
-            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
+            fig.add_trace(go.Pie(labels=[' Συμμετοχή (%) Επιδοτήσεων στα έσοδα',' '],
                                 values=[val39,100-val39],
                                 hole=0.85,
                                 textinfo='none',
