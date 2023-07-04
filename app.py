@@ -1064,7 +1064,7 @@ def e_button7(id,kpdf):
             st.metric(label="Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή", value=val4, delta=f'{val5}%')
 
     with st.container():
-        col1,col2,col3 = st.columns(3)
+        col1,col2 = st.columns(2)
         with col1:
             categories=kpdf['year'].tolist()
             # Sample data
@@ -1114,10 +1114,27 @@ def e_button7(id,kpdf):
             st.plotly_chart(fig)
         with col2:
             st.write("smt"); 
+            val29=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
+            st.write(val29)
+            # st.write(val2)
+            layout = go.Layout(
+                title='ΛΥΨΥ',
+                yaxis=dict(title='Values', rangemode='nonnegative'),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=400  # Set the width of the chart
+            )
+            fig = go.Figure( layout=layout)
+            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
+                                values=[val29,100-val29],
+                                hole=0.85,
+                                textinfo='none',
+                                marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
+                                ))
+            fig.update_layout(annotations=[dict(text=str(val29)+"%",  font_size=40, showarrow=False)])
+            st.plotly_chart(fig)
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
-        with col3:
-            st.write("test")
     with st.container():
         col1,col2 = st.columns(2)  
         with col1:
