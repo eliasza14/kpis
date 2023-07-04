@@ -1126,8 +1126,8 @@ def e_button7(id,kpdf):
             st.plotly_chart(fig)        
         with col2:
             st.write("smt"); 
-            fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
-            st.plotly_chart(fig)   
+            # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
+            # st.plotly_chart(fig)   
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
 
