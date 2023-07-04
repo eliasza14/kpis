@@ -417,9 +417,9 @@ def ad_button2(id,kpdf,js_code):
     #         st.write(kpdf['D17'])
 
 def ad_button3(id,kpdf,js_code):
+    st.subheader("Ωρες απασχόλησης εργαζομένων")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
-    
-    st.write("Content of button1")
+   
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
