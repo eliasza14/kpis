@@ -208,7 +208,7 @@ def ad_button2(id,kpdf,js_code):
             
             text=str(kpdf['D3'][kpdf['year']==str(year_filter)].iloc[0])
             # st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
-            st.markdown("<h3 style='text-align: center; color: grey;'>Δ3-Εργαζόμενοι Γενικού Πληθυσμού</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Δ3-Εργαζόμενοι Γ.Π.</h3>", unsafe_allow_html=True)
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
