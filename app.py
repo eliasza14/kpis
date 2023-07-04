@@ -105,7 +105,7 @@ def main():
     elif selected_option1=="Ώρες Απασχόλησης":
         ad_button3(id,kpdf,js_code)
     elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
-        ad_button4(id,kpdf)
+        ad_button4(id,kpdf,js_code)
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
     if selected_option1=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
