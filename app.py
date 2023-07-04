@@ -211,12 +211,12 @@ def ad_button2(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>Δ3-Εργαζόμενοι Γενικού Πληθυσμού</h3>", unsafe_allow_html=True)
 
             html(
-                f"""
-                <div id="counter" style="text-align:center;font-weight:bold; font-size: 75px;"></div>
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
-                animateCounter("counter", 0, """+text+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script>
+                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
                 """
             )
             #st.write(kpdf['D3'][kpdf['year']==str(year_filter)])
@@ -228,11 +228,8 @@ def ad_button2(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>Δ5-Εργαζόμενοι ΛΥΨΥ</h3>", unsafe_allow_html=True)
 
             html(
-                f"""<body style="display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 75px; background-color: #f1f1f1; width: 150px; height: 150px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -250,12 +247,12 @@ def ad_button2(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>Δ7-Εργαζόμενοι ΕΚΟ</h3>", unsafe_allow_html=True)
 
             html(
-                f"""
-                <div id="counter" style="text-align:center;font-weight:bold; font-size: 75px;"></div>
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
-                animateCounter("counter", 0, """+text+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script>
+                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
                 """
             )
             #st.write(kpdf['D7'][kpdf['year']==str(year_filter)])
