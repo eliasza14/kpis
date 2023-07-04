@@ -425,6 +425,7 @@ def ad_button3(id,kpdf,js_code):
         with col1:
             #st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
             text=str(kpdf['D14'][kpdf['year']==str(year_filter)].iloc[0])
+            text=str(text.round())
             #st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
             # st.write('Δ14-'+text)
             st.markdown("<h3 style='text-align: center; color: grey;'>Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)</h3>", unsafe_allow_html=True)
