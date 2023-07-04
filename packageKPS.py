@@ -124,5 +124,5 @@ def get_data_from_json(kdata):
     kpdf['D18_general']=kdata['profile.eme_general.sum']
     kpdf['D22_23_g']=round(((kdata['profile.eme_general.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
     kpdf['D36_overal']=kdata['report.overall'].astype(int)
-    kpdf['D40_metaboli']=round((kpdf['D40'].astype(int).pct_change()*100),1)
+    kpdf['D40_metaboli']=round((kpdf['D40'].astype(float).pct_change()*100),1)
     return kpdf
