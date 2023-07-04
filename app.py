@@ -22,6 +22,11 @@ def main():
         layout="wide",
     )    
 
+            # Load the JavaScript function code
+    with open("animated_counter.js", "r") as file:
+            js_code = file.read()
+
+
     st.sidebar.title("Menu")
     id=get_url_params()
 
@@ -94,7 +99,7 @@ def main():
 
     #RADIO OPTION ANTHROPINO DYNAMIKO
     if selected_option1=="Συνεταιριστές":
-        ad_button1(id,kpdf)
+        ad_button1(id,kpdf,js_code)
     elif selected_option1=="Εργαζόμενοι":
         ad_button2(id,kpdf)
     elif selected_option1=="Ώρες Απασχόλησης":
@@ -134,7 +139,7 @@ def main():
 
 
 
-def ad_button1(id,kpdf):
+def ad_button1(id,kpdf,js_code):
     st.subheader("button1 Submenu")
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
@@ -144,13 +149,6 @@ def ad_button1(id,kpdf):
         # col1, col2,col3 = st.columns(3)
         # with col1:
         # Define your javascript
-        my_js = """
-        
-      
-        """
-
-        # Wrapt the javascript as html code
-        my_html = f"<script>{my_js}</script>"
 
         # # Execute your app
         st.title("Συνεταιριστες Κατηγορια Α")
@@ -158,9 +156,6 @@ def ad_button1(id,kpdf):
 
        
         
-        # Load the JavaScript function code
-        with open("animated_counter.js", "r") as file:
-            js_code = file.read()
 
         # Display the HTML and JavaScript code
        
