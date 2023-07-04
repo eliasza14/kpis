@@ -103,7 +103,7 @@ def main():
     elif selected_option1=="Εργαζόμενοι":
         ad_button2(id,kpdf,js_code)
     elif selected_option1=="Ώρες Απασχόλησης":
-        ad_button3(id,kpdf)
+        ad_button3(id,kpdf,js_code)
     elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
         ad_button4(id,kpdf)
 
@@ -416,7 +416,7 @@ def ad_button2(id,kpdf,js_code):
     #         st.write('D17')
     #         st.write(kpdf['D17'])
 
-def ad_button3(id,kpdf):
+def ad_button3(id,kpdf,js_code):
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     
     st.write("Content of button1")
@@ -426,7 +426,18 @@ def ad_button3(id,kpdf):
             #st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
             text=str(kpdf['D14'][kpdf['year']==str(year_filter)].iloc[0])
             #st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
-            st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος): '+text)
+            # st.write('Δ14-'+text)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)</h3>", unsafe_allow_html=True)
+
+            html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+            )
             # st.metric(label="Συνολο Μελών "+str(kpdf['D1'][kpdf['year']==str(year_filter)][0]), value=int(kpdf['D1'][kpdf['year']==str(year_filter)][0]), delta=-0.5,delta_color="inverse")
 
         with col2:
@@ -434,7 +445,18 @@ def ad_button3(id,kpdf):
             #st.write(kpdf['D15'][kpdf['year']==str(year_filter)])
             text=kpdf['D15'][kpdf['year']==str(year_filter)].iloc[0]
             text=str(text.round())
-            st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος): '+text)
+            # st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος): '+text)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος)</h3>", unsafe_allow_html=True)
+
+            html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+            )
         
     with st.container():
         col1, col2 = st.columns(2)
