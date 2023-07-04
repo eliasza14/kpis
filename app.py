@@ -1131,7 +1131,7 @@ def e_button7(id,kpdf):
                                 textinfo='none',
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ))
-            fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=True)])
+            fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=False)])
             st.plotly_chart(fig)
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
