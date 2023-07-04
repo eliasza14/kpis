@@ -1125,7 +1125,7 @@ def e_button7(id,kpdf):
                 width=400  # Set the width of the chart
             )
             fig = go.Figure( layout=layout)
-            fig.add_trace(go.Pie(labels=[' Συμμετοχή (%) Επιδοτήσεων στα έσοδα',' '],
+            fig.add_trace(go.Pie(labels=['% Συμμετοχή Επιδοτήσεων',' '],
                                 values=[val39,100-val39],
                                 hole=0.85,
                                 textinfo='none',
