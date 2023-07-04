@@ -826,8 +826,67 @@ def e_button6(id,kpdf):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-            st.write('D29')
-            st.write(kpdf['D29'])
+            
+            categories=kpdf['year'].tolist()
+            # Sample data
+            # categories = ['Category A', 'Category B', 'Category C', 'Category D']
+            values =kpdf['D24'].astype(int).tolist()
+
+            # Calculate percentage change
+            percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
+
+            # Create the bar trace
+            bar_trace = go.Bar(x=categories, y=values, name='Values')
+
+            # Create the line trace
+            line_trace = go.Scatter(x=categories[1:], y=percentage_change, name='Percentage Change', mode='lines+markers', yaxis='y2')
+
+            # Create the layout with two y-axes
+            layout = go.Layout(
+                title='% Ετήσια Μεταβολή Κύκλου Εργασιών',
+                yaxis=dict(title='Values', rangemode='nonnegative'),
+                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                height=600,  # Set the height of the chart
+                width=400  # Set the width of the chart
+            )
+
+            # Create the figure
+            fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
+
+            # Add labels to the bars
+            for i in range(len(categories)):
+                fig.add_annotation(
+                    x=categories[i], y=values[i],
+                    text=str(values[i]),
+                    showarrow=False,
+                    font=dict(color='black', size=12),
+                    xanchor='center', yanchor='bottom'
+                )
+
+            # Add labels to the percentage change
+            for i in range(len(percentage_change)):
+                fig.add_annotation(
+                    x=categories[i+1], y=percentage_change[i],
+                    text=f"{percentage_change[i]:.2f}%",
+                    showarrow=False,
+                    font=dict(color='red', size=12),
+                    xanchor='center', yanchor='bottom'
+                )
+            st.plotly_chart(fig)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         with col2:
             st.write('D30')
             st.write(kpdf['D30'])
