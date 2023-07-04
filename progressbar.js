@@ -1,12 +1,12 @@
 var i = 0;
-function move() {
+function move(value) {
   if (i == 0) {
     i = 1;
     var elem = document.getElementById("myBar");
     var width = 10;
     var id = setInterval(frame, 10);
     function frame() {
-      if (width >= 100) {
+      if (width >= value) {
         clearInterval(id);
         i = 0;
       } else {
