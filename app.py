@@ -101,7 +101,7 @@ def main():
     if selected_option1=="Συνεταιριστές":
         ad_button1(id,kpdf,js_code)
     elif selected_option1=="Εργαζόμενοι":
-        ad_button2(id,kpdf)
+        ad_button2(id,kpdf,js_code)
     elif selected_option1=="Ώρες Απασχόλησης":
         ad_button3(id,kpdf)
     elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
