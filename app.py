@@ -1120,7 +1120,8 @@ def e_button7(id,kpdf):
             val29=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
             with open("progressbar.js", "r") as file:
                 js_code2 = file.read()
-            html(f"""
+            html(
+                f"""
             
                         
                         <body>
@@ -1135,7 +1136,7 @@ def e_button7(id,kpdf):
                         <button onclick="move()">Click Me</button> 
                         <script type="text/javascript">
                             {js_code2}
-                            move("""+val29+""");
+                            move(50);
                         </script>
 
                         </body>
