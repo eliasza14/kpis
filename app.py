@@ -380,7 +380,7 @@ def ad_button2(id,kpdf,js_code):
                         textposition='inside'
                     ))
                 # Update the layout
-                fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου')
+                fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',height=300, width=400)
 
                 # Show the plot
                 st.plotly_chart(fig, use_container_width=True)
