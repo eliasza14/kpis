@@ -861,7 +861,7 @@ def ad_button4(id,kpdf,js_code):
 
 def e_button5(id,kpdf,js_code):
     st.subheader("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
-    colors = px.colors.qualitative.Plasma
+    colors = px.colors.qualitative.Plotly
 
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
