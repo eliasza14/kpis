@@ -233,6 +233,8 @@ def ad_button2(id,kpdf,js_code):
         col1, col2,col3 = st.columns(3)
         with col1:
             # Filter the dataframe based on the selected year
+            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι Γεν. Πληθυσμού (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
+
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
 
             # Select the value from the filtered dataframe
@@ -243,7 +245,6 @@ def ad_button2(id,kpdf,js_code):
                 mode="gauge+number",
                 value=d9_value,
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Εργαζόμενοι Γενικού Πληθυσμού (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
                 number={'suffix': '%'}
             ))
 
@@ -263,9 +264,9 @@ def ad_button2(id,kpdf,js_code):
                 number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
-                height=300,  # Adjust the height of the chart
-                width=400,   # Adjust the width of the chart
-                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+                height=170,  # Adjust the height of the chart
+                width=200,   # Adjust the width of the chart
+                margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
 
                 paper_bgcolor="white",
                 font={'color': "gray", 'family': "Arial"}
@@ -275,6 +276,8 @@ def ad_button2(id,kpdf,js_code):
 
         with col2:
             # Filter the dataframe based on the selected year
+            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΛΥΨΥ (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
+
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
 
             # Select the value from the filtered dataframe
@@ -285,7 +288,6 @@ def ad_button2(id,kpdf,js_code):
                 mode="gauge+number",
                 value=d10_value,
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Εργαζόμενοι Γενικού ΛΥΨΥ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
                 number={'suffix': '%'}
             ))
 
@@ -305,9 +307,10 @@ def ad_button2(id,kpdf,js_code):
                 number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
-                height=300,  # Adjust the height of the chart
-                width=400,   # Adjust the width of the chart
+                height=170,  # Adjust the height of the chart
+                width=200,   # Adjust the width of the chart
                 # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+                margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
 
                 paper_bgcolor="white",
                 font={'color': "gray", 'family': "Arial"}
