@@ -1034,7 +1034,7 @@ def e_button6(id,kpdf,js_code):
                 </script></body>
                 """
                         )
-            st.metric(label="% Μεταβολή Κύκλου Εργασιών", value=val1, delta=f'{val2}%')
+            st.metric(label="% Μεταβολή Κύκλου Εργασιών", value=None, delta=f'{val2}%')
         with col2:
             st.metric(label="% Μεταβολή Κύκλου Εργασιών-Κτήρια/Εξωτερικοί Χώροι ", value=val3, delta=f'{val4}%')
         with col3:
