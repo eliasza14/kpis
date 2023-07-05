@@ -1024,20 +1024,15 @@ def e_button6(id,kpdf):
     with st.container():
         col1, col2,col3,col4 = st.columns(4)
         with col1:
-            st.markdown("<h6 style='text-align: center; color: grey;'>% Μεταβολή Κύκλου Εργασιών</h6>", unsafe_allow_html=True)
-            st.metric(label="", value=val1, delta=f'{val2}%')
+            st.metric(label="% Μεταβολή Κύκλου Εργασιών", value=val1, delta=f'{val2}%')
         with col2:
-            st.markdown("<h6 style='text-align: center; color: grey;'>% Μεταβολή Κύκλου Εργασιών-Κτήρια/Εξωτερικοί Χώροι</h6>", unsafe_allow_html=True)
-            st.metric(label="", value=val3, delta=f'{val4}%')
+            st.metric(label="% Μεταβολή Κύκλου Εργασιών-Κτήρια/Εξωτερικοί Χώροι ", value=val3, delta=f'{val4}%')
         with col3:
             st.metric(label="% Μεταβολή Κύκλου Εργασιών-Υπηρεσίες Εστίασης", value=val5, delta=f'{val6}%')
         with col4:
             st.metric(label="% Μεταβολή Κύκλου Εργασιών-Λοιπές εργασίες", value=val7, delta=f'{val8}%')
 
-        col1.markdown("<h3 style='text-align: center;'>Custom Label 1</h3>", unsafe_allow_html=True)
-        col2.markdown("<h3 style='text-align: center;'>Custom Label 2</h3>", unsafe_allow_html=True)
-        col3.markdown("<h3 style='text-align: center;'>Custom Label 3</h3>", unsafe_allow_html=True)
-        col4.markdown("<h3 style='text-align: center;'>Custom Label 4</h3>", unsafe_allow_html=True)
+        
 
     
     with st.container():
