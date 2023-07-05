@@ -350,7 +350,7 @@ def ad_button2(id,kpdf,js_code):
                 number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
-                height=150,  # Adjust the height of the chart
+                height=170,  # Adjust the height of the chart
                 width=200,   # Adjust the width of the chart
                 paper_bgcolor="white",
                 # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
