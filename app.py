@@ -912,16 +912,25 @@ def e_button5(id,kpdf,js_code):
                 """
             )
         with col3:
+            st.markdown("<h3 style='text-align: center; color: grey;'>💬 Λοιπές Δραστηρίοτητες</h3>", unsafe_allow_html=True)
+
             val28=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
-            text28="**💬** **"+str(val28)+"** &#8364; "
-            st.title(text28)
+            html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter3("counter", 0, """+str(val28)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+            )
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
             labels = ['Δ26','Δ27','Δ28']
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
     with st.container():
         col1,col2 = st.columns(2)
@@ -942,7 +951,7 @@ def e_button5(id,kpdf,js_code):
             # Update the layout
             fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
             # Show the plot
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
    
 
 
