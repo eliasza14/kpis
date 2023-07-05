@@ -39,7 +39,7 @@ function animateCounter3(elementId, startValue, endValue, duration) {
     const element = document.getElementById(elementId);
     const timer = setInterval(() => {
         current += increment;
-        element.textContent = '€' + current.toFixed(decimalPlaces);
+        element.textContent =current.toFixed(decimalPlaces)+ ' €';
         if ((increment > 0 && current >= endValue) || (increment < 0 && current <= endValue)) {
             clearInterval(timer);
         }
