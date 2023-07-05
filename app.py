@@ -635,32 +635,70 @@ def ad_button4(id,kpdf,js_code):
         col1, col2 =st.columns(2)
         
         #     # val=50
-
         with col1:
-             # Create the layout with two y-axes
-            st.markdown("<h3 style='text-align: center; color: grey;'>% ΛΥΨΥ Επι του Συνόλου</h3>", unsafe_allow_html=True)
+                # Create the layout with two y-axes
+                st.markdown("<h3 style='text-align: center; color: grey;'>% ΛΥΨΥ Επι του Συνόλου</h3>", unsafe_allow_html=True)
 
-            val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
-            # st.write(val)
-            # st.write(val2)
-            layout = go.Layout(
-                # title='ΛΥΨΥ',
-                yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=600,  # Set the height of the chart
-                width=400,  # Set the width of the chart
-                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+                val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
 
-            )
-            fig = go.Figure( layout=layout)
-            fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
-                                values=[val,100-val],
-                                hole=0.85,
-                                textinfo='none',
-                                marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
-                                ))
-            fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
-            st.plotly_chart(fig,use_container_width=True)
+                layout = go.Layout(
+                    yaxis=dict(title='Values', rangemode='nonnegative'),
+                    yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                    height=600,  # Set the height of the chart
+                    width=600,  # Set the width of the chart
+                    legend=dict(
+                        orientation='h',
+                        yanchor='top',
+                        y=1.1,
+                        xanchor='center',
+                        x=0.5
+                    ),
+                    margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+                )
+
+                fig = go.Figure(layout=layout)
+                fig.add_trace(go.Pie(
+                    labels=['(%) ΛΥΨΥ επι του συνόλου', ' '],
+                    values=[val, 100 - val],
+                    hole=0.85,
+                    textinfo='none',
+                    marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
+                ))
+                fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
+                fig.update_layout(showlegend=True)  # Show the legend
+                fig.update_layout(legend=dict(
+                    orientation='h',
+                    yanchor='top',
+                    y=1.1,
+                    xanchor='center',
+                    x=0.5
+                ))
+                st.plotly_chart(fig, use_container_width=True)
+        # with col1:
+        #      # Create the layout with two y-axes
+        #     st.markdown("<h3 style='text-align: center; color: grey;'>% ΛΥΨΥ Επι του Συνόλου</h3>", unsafe_allow_html=True)
+
+        #     val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
+        #     # st.write(val)
+        #     # st.write(val2)
+        #     layout = go.Layout(
+        #         # title='ΛΥΨΥ',
+        #         yaxis=dict(title='Values', rangemode='nonnegative'),
+        #         yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+        #         height=600,  # Set the height of the chart
+        #         width=400,  # Set the width of the chart
+        #         # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+
+        #     )
+        #     fig = go.Figure( layout=layout)
+        #     fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
+        #                         values=[val,100-val],
+        #                         hole=0.85,
+        #                         textinfo='none',
+        #                         marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
+        #                         ))
+        #     fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
+        #     st.plotly_chart(fig,use_container_width=True)
 
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>% ΕΚΟ Επι του Συνόλου</h3>", unsafe_allow_html=True)
