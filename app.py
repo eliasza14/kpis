@@ -330,6 +330,8 @@ def ad_button2(id,kpdf,js_code):
             )
 
             col1.markdown('<div class="chart-container">{}</div>'.format(fig.to_html()), unsafe_allow_html=True)
+            st.plotly_chart(fig,use_container_width=True)
+
 
         with col2:
             # Filter the dataframe based on the selected year
