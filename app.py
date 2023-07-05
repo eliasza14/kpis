@@ -1011,7 +1011,7 @@ def e_button5(id,kpdf,js_code):
 
 
 def e_button6(id,kpdf):
-    st.subheader("% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος")
+    st.subheader("% Mεταβολή κύκλου εργασιών ανά δραστηριότητα ανά έτος")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     val1=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
     val2=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
@@ -1031,6 +1031,11 @@ def e_button6(id,kpdf):
             st.metric(label="% Μεταβολή Κύκλου Εργασιών-Υπηρεσίες Εστίασης", value=val5, delta=f'{val6}%')
         with col4:
             st.metric(label="% Μεταβολή Κύκλου Εργασιών-Λοιπές εργασίες", value=val7, delta=f'{val8}%')
+
+        col1.markdown("<h3 style='text-align: center;'>Custom Label 1</h3>", unsafe_allow_html=True)
+        col2.markdown("<h3 style='text-align: center;'>Custom Label 2</h3>", unsafe_allow_html=True)
+        col3.markdown("<h3 style='text-align: center;'>Custom Label 3</h3>", unsafe_allow_html=True)
+        col4.markdown("<h3 style='text-align: center;'>Custom Label 4</h3>", unsafe_allow_html=True)
 
     
     with st.container():
