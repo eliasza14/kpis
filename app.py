@@ -873,7 +873,7 @@ def e_button5(id,kpdf,js_code):
         <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
         <script type="text/javascript">
         {js_code}
-        animateCounter2("counter", 0, """+str(val2)+""", 1000);  // Increase from 0 to 100 in 1 second
+        animateCounter3("counter", 0, """+str(val2)+""", 1000);  // Increase from 0 to 100 in 1 second
         </script></body>
         """
     )
