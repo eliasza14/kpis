@@ -363,6 +363,8 @@ def ad_button2(id,kpdf,js_code):
                 pass
             with col2:
                 # Select the relevant columns
+                st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Εργαζομένων ΚοιΣΠΕ</h3>", unsafe_allow_html=True)
+
                 columns = ['D9', 'D10', 'D11']
                 kpdf_selected = kpdf[columns]
                 # Create the stacked bar plot using Plotly
