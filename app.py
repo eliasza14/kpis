@@ -940,8 +940,7 @@ def e_button5(id,kpdf,js_code):
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
 
             fig.update_traces(
-                # marker=dict(colors=colors),  # Assign colors from the color palette to the pie slices
-                marker_color=['red', 'cyan', 'blue'],
+                marker=dict(colors=colors),  # Assign colors from the color palette to the pie slices
                 textinfo='percent+label'
             )
 
@@ -985,7 +984,8 @@ def e_button5(id,kpdf,js_code):
                     y=kpdf_selected[col],
                     text=kpdf[col],
                     textposition='inside',
-                    marker_color=['red', 'cyan', 'blue']
+                    marker=dict(color=colors[i])  # Assign a color from the color palette
+
                 ))
             # Update the layout
             fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='Συχνότητα',legend=dict(
