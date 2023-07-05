@@ -885,8 +885,19 @@ def e_button5(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Υπηρεσίες Κτιρίων & Εξωτερικών Χώρων</h3>", unsafe_allow_html=True)
 
             val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
-            text26="**🏠** **"+str(val26)+"** &#8364; "
-            st.title(text26)
+            # text26="**🏠** **"+str(val26)+"** &#8364; "
+
+            html(
+                    f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                    <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                    <script type="text/javascript">
+                    {js_code}
+                    animateCounter3("counter", 0, """+str(val26)+""", 1000);  // Increase from 0 to 100 in 1 second
+                    </script></body>
+                    """
+                )
+
+
         with col2:
             val27=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
             text27="**🍴** **"+str(val27)+"** &#8364; "
