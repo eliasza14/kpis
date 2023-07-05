@@ -674,47 +674,12 @@ def ad_button4(id,kpdf,js_code):
                     x=0.5
                 ))
                 st.plotly_chart(fig, use_container_width=True)
-        # with col1:
-        #      # Create the layout with two y-axes
-        #     st.markdown("<h3 style='text-align: center; color: grey;'>% ΛΥΨΥ Επι του Συνόλου</h3>", unsafe_allow_html=True)
 
-        #     val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
-        #     # st.write(val)
-        #     # st.write(val2)
-        #     layout = go.Layout(
-        #         # title='ΛΥΨΥ',
-        #         yaxis=dict(title='Values', rangemode='nonnegative'),
-        #         yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-        #         height=600,  # Set the height of the chart
-        #         width=400,  # Set the width of the chart
-        #         # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
-
-        #     )
-        #     fig = go.Figure( layout=layout)
-        #     fig.add_trace(go.Pie(labels=['(%) ΛΥΨΥ επι του συνόλου',' '],
-        #                         values=[val,100-val],
-        #                         hole=0.85,
-        #                         textinfo='none',
-        #                         marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
-        #                         ))
-        #     fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
-        #     st.plotly_chart(fig,use_container_width=True)
 
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>% ΕΚΟ Επι του Συνόλου</h3>", unsafe_allow_html=True)
 
-        
             val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
-            # st.write(val)
-            # st.write(val2)
-            # layout = go.Layout(
-            #     # title='EKO',
-            #     yaxis=dict(title='Values', rangemode='nonnegative'),
-            #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-            #     height=400,  # Set the height of the chart
-            #     width=400  # Set the width of the chart
-            # )
-
             layout = go.Layout(
             yaxis=dict(title='Values', rangemode='nonnegative'),
             yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
@@ -746,22 +711,13 @@ def ad_button4(id,kpdf,js_code):
                 xanchor='center',
                 x=0.5
             ))
-
-            # fig = go.Figure( layout=layout)
-            # fig.add_trace(go.Pie(labels=['(%) ΕΚΟ επι του συνόλου',' '],
-            #                     values=[val2,100-val2],
-            #                     hole=0.85,
-            #                     textinfo='none',
-            #                     marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
-            #                     ))
-            # fig.update_layout(annotations=[dict(text=str(val2)+"%",  font_size=40, showarrow=False)])
             st.plotly_chart(fig,use_container_width=True)
 
     
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
-            st.write('D18')
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Μονάδων Εργασίας ΛΥΨΥ</h3>", unsafe_allow_html=True)
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
@@ -778,7 +734,6 @@ def ad_button4(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='% Ετήσια Μεταβολή Μονάδων Εργασίας ΛΥΨΥ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -807,11 +762,12 @@ def ad_button4(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
 
         with col2:
-            st.write('D19')
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Μονάδων Εργασίας ΕΚΟ</h3>", unsafe_allow_html=True)
+
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
@@ -828,7 +784,6 @@ def ad_button4(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='% Ετήσια Μεταβολή Μονάδων Εργασίας ΕΚΟ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -857,7 +812,7 @@ def ad_button4(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
 
     with st.container():
