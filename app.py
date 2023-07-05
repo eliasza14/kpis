@@ -1088,9 +1088,30 @@ def e_button6(id,kpdf,js_code):
                         )
             st.metric(label="% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτερικοί Χώροι ", label_visibility="hidden", value=val3, delta=f'{val4}%')
         with col3:
-            st.metric(label="% Μεταβολή Κύκλου Εργασιών-Υπηρεσίες Εστίασης", value=val5, delta=f'{val6}%')
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης</h3>", unsafe_allow_html=True)
+            html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter2("counter", 0, """+str(val5)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+                        )
+            st.metric(label="% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης",label_visibility="hidden", value=val5, delta=f'{val6}%')
         with col4:
-            st.metric(label="% Μεταβολή Κύκλου Εργασιών-Λοιπές εργασίες", value=val7, delta=f'{val8}%')
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης</h3>", unsafe_allow_html=True)
+            html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter2("counter", 0, """+str(val7)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+                        )
+
+            st.metric(label="% Μετ.Kυκλ.Εργ. Λοιπές εργασίες",label_visibility="hidden" value=val7, delta=f'{val8}%')
 
         
 
