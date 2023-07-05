@@ -316,7 +316,7 @@ def ad_button2(id,kpdf,js_code):
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             # Filter the dataframe based on the selected year
-            st.markdown("<h5 style='text-align: center; color: grey;'>Εργαζόμενοι ΕΚΟ (% επί του Συνόλου)</h5>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΕΚΟ (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
 
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
 
@@ -354,7 +354,7 @@ def ad_button2(id,kpdf,js_code):
                 width=400,   # Adjust the width of the chart
                 paper_bgcolor="white",
                 # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
-                margin=dict(l=0, r=0, t=10, b=0, autoexpand=True),  # Adjust the top margin value
+                margin=dict(l=0, r=0, t=10, b=0, autoexpand=False),  # Adjust the top margin value
 
                 font={'color': "gray", 'family': "Arial"}
             )
