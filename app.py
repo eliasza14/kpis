@@ -265,7 +265,7 @@ def ad_button2(id,kpdf,js_code):
             fig.update_layout(
                 height=300,  # Adjust the height of the chart
                 width=400,   # Adjust the width of the chart
-                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
 
                 paper_bgcolor="white",
                 font={'color': "gray", 'family': "Arial"}
@@ -306,7 +306,7 @@ def ad_button2(id,kpdf,js_code):
             fig.update_layout(
                 height=300,  # Adjust the height of the chart
                 width=400,   # Adjust the width of the chart
-                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
 
                 paper_bgcolor="white",
                 font={'color': "gray", 'family': "Arial"}
@@ -350,7 +350,7 @@ def ad_button2(id,kpdf,js_code):
                 height=300,  # Adjust the height of the chart
                 width=400,   # Adjust the width of the chart
                 paper_bgcolor="white",
-                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
 
                 font={'color': "gray", 'family': "Arial"}
             )
