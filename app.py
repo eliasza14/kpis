@@ -882,6 +882,8 @@ def e_button5(id,kpdf,js_code):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
+            st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Υπηρεσίες Κτιρίων & Εξωτερικών Χώρων</h3>", unsafe_allow_html=True)
+
             val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
             text26="**🏠** **"+str(val26)+"** &#8364; "
             st.title(text26)
