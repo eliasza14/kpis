@@ -109,7 +109,7 @@ def main():
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
     if selected_option1=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
-        e_button5(id,kpdf)
+        e_button5(id,kpdf,js_code)
     elif selected_option1=="% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος":
         e_button6(id,kpdf)
     elif selected_option1=="Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος":
@@ -859,7 +859,7 @@ def ad_button4(id,kpdf,js_code):
 
 
 
-def e_button5(id,kpdf):
+def e_button5(id,kpdf,js_code):
     st.subheader("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
@@ -867,7 +867,16 @@ def e_button5(id,kpdf):
         #st.write(first_alias_value)
         #st.markdown(text)
     st.markdown("<h3 style='text-align: center; color: grey;'>Κυκλοι Εργασιών</h3>", unsafe_allow_html=True)
-    text="**"+str(val2)+"** **&#8364;**"
+    # text="**"+str(val2)+"** **&#8364;**"
+    html(
+        f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+        <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+        <script type="text/javascript">
+        {js_code}
+        animateCounter2("counter", 0, """+str(val2)+""", 1000);  // Increase from 0 to 100 in 1 second
+        </script></body>
+        """
+    )
 
    
     with st.container():
