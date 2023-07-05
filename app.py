@@ -818,6 +818,8 @@ def ad_button4(id,kpdf,js_code):
     with st.container():
          col1, col2 = st.columns(2)
          with col1:
+            st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Μονάδων Εργασίας ΚοιΣΠΕ</h3>", unsafe_allow_html=True)
+
             # Select the relevant columns
             columns = ['D22', 'D23', 'D22_23_g']
             kpdf_selected = kpdf[columns]
@@ -832,9 +834,17 @@ def ad_button4(id,kpdf,js_code):
                     textposition='inside'
                 ))
             # Update the layout
-            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
+            fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
+                orientation="h",  # Horizontal legends
+                yanchor="bottom",
+                y=1.02,
+                xanchor="center",
+                x=0.5
+                    ),height=600, width=800)
+
             # Show the plot
-            st.plotly_chart(fig)
+            st.plotly_chart(fig, use_container_width=True)
+            # Show the plot
 
              
 
