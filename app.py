@@ -861,6 +861,8 @@ def ad_button4(id,kpdf,js_code):
 
 def e_button5(id,kpdf,js_code):
     st.subheader("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
+    colors = px.colors.qualitative.Plotly
+
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     val2=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
@@ -936,12 +938,20 @@ def e_button5(id,kpdf,js_code):
             labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
+
+            fig.update_traces(
+                marker=dict(colors=colors),  # Assign colors from the color palette to the pie slices
+                textinfo='percent+label'
+            )
+
             # Update the layout
             fig.update_layout(
                 legend=dict(
                     orientation="h",  # Horizontal legend
                     yanchor="bottom",    # Anchor legend to the top
-                    y=1.1           # Adjust the distance of the legend from the pie chart
+                    y=1.1,           # Adjust the distance of the legend from the pie chart
+                    bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
+                    traceorder='normal'  # Maintain the order of the legend labels
                 )
             )
             st.plotly_chart(fig,use_container_width=True)
@@ -973,7 +983,9 @@ def e_button5(id,kpdf,js_code):
                     x=kpdf['year'].apply(str),
                     y=kpdf_selected[col],
                     text=kpdf[col],
-                    textposition='inside'
+                    textposition='inside',
+                    marker=dict(color=colors[i])  # Assign a color from the color palette
+
                 ))
             # Update the layout
             fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='Συχνότητα',legend=dict(
@@ -981,23 +993,10 @@ def e_button5(id,kpdf,js_code):
             yanchor="bottom",
             y=1.02,
             xanchor="center",
-            x=0.5
+            x=0.5,
+            bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
+            traceorder='normal'  # Maintain the order of the legend labels
             ),height=600, width=800)
-
-
-            # fig = go.Figure()
-            # for col in columns:
-            #     fig.add_trace(go.Bar(
-            #         name=col,
-            #         x=kpdf['year'].apply(str),
-            #         y=kpdf_selected[col],
-            #         text=kpdf[col],
-            #         textposition='inside'
-            #     ))
-
-
-
-
 
 
             # Update the layout
