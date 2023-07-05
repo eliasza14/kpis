@@ -954,20 +954,54 @@ def e_button5(id,kpdf,js_code):
             pass
         with col2:
              # Select the relevant columns
+            st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Κύκλου Εργασιών ανά Κατηγορία</h3>", unsafe_allow_html=True)
+
+
+
+
+
             columns = ['D26', 'D27', 'D28']
             kpdf_selected = kpdf[columns]
             # Create the stacked bar plot using Plotly
+
+
             fig = go.Figure()
-            for col in columns:
+            legend_labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
+            for i, col in enumerate(columns):
                 fig.add_trace(go.Bar(
-                    name=col,
+                    name=legend_labels[i],  # Use the corresponding label
                     x=kpdf['year'].apply(str),
                     y=kpdf_selected[col],
                     text=kpdf[col],
                     textposition='inside'
                 ))
             # Update the layout
-            fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
+            fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='Συχνότητα',legend=dict(
+            orientation="h",  # Horizontal legends
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5
+            ),height=600, width=800)
+
+
+            # fig = go.Figure()
+            # for col in columns:
+            #     fig.add_trace(go.Bar(
+            #         name=col,
+            #         x=kpdf['year'].apply(str),
+            #         y=kpdf_selected[col],
+            #         text=kpdf[col],
+            #         textposition='inside'
+            #     ))
+
+
+
+
+
+
+            # Update the layout
+            fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='Συχνότητα')
             # Show the plot
             st.plotly_chart(fig,use_container_width=True)
         with col3:
