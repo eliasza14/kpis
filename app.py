@@ -884,7 +884,7 @@ def e_button5(id,kpdf,js_code):
         col1, col2,col3 = st.columns(3)
 
         with col1:
-            st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Κτιρίων & Εξ. Χώρων</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Κτηρίων & Εξ. Χώρων</h3>", unsafe_allow_html=True)
 
             val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
             # text26="**🏠** **"+str(val26)+"** &#8364; "
@@ -931,7 +931,9 @@ def e_button5(id,kpdf,js_code):
         with col1:
             pass
         with col2:
-            labels = ['Δ26','Δ27','Δ28']
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ποσοστό επί του Συνόλου ανά Κατηγορία Κύκλου Εργασιών</h3>", unsafe_allow_html=True)
+
+            labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
             st.plotly_chart(fig,use_container_width=True)
