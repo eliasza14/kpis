@@ -383,7 +383,7 @@ def ad_button2(id,kpdf,js_code):
                 fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
                 orientation="h",  # Horizontal legends
                 yanchor="bottom",
-                y=1.02,
+                y=1.00,
                 xanchor="center",
                 x=0.5
             ),height=600, width=800)
