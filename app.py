@@ -638,12 +638,13 @@ def ad_button4(id,kpdf,js_code):
 
         with col1:
              # Create the layout with two y-axes
+            st.markdown("<h3 style='text-align: center; color: grey;'>% ΛΥΨΥ Επι του Συνόλου</h3>", unsafe_allow_html=True)
 
             val=float(kpdf['D22'][kpdf['year']==str(year_filter)].iloc[0])
             # st.write(val)
             # st.write(val2)
             layout = go.Layout(
-                title='ΛΥΨΥ',
+                # title='ΛΥΨΥ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -659,14 +660,17 @@ def ad_button4(id,kpdf,js_code):
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ))
             fig.update_layout(annotations=[dict(text=str(val)+"%",  font_size=40, showarrow=False)])
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
+
         with col2:
+            st.markdown("<h3 style='text-align: center; color: grey;'>% ΕΚΟ Επι του Συνόλου</h3>", unsafe_allow_html=True)
+
         
             val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
             # st.write(val)
             # st.write(val2)
             layout = go.Layout(
-                title='EKO',
+                # title='EKO',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -680,7 +684,7 @@ def ad_button4(id,kpdf,js_code):
                                 marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
                                 ))
             fig.update_layout(annotations=[dict(text=str(val2)+"%",  font_size=40, showarrow=False)])
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
     
     with st.container():
