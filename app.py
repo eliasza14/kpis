@@ -1111,7 +1111,7 @@ def e_button6(id,kpdf,js_code):
                 """
                         )
 
-            st.metric(label="% Μετ.Kυκλ.Εργ. Λοιπές εργασίες",label_visibility="hidden" value=val7, delta=f'{val8}%')
+            st.metric(label="% Μετ.Kυκλ.Εργ. Λοιπές εργασίες",label_visibility="hidden", value=val7, delta=f'{val8}%')
 
         
 
