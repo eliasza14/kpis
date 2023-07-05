@@ -365,20 +365,22 @@ def ad_button2(id,kpdf,js_code):
                 # Select the relevant columns
                 st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Εργαζομένων ΚοιΣΠΕ</h3>", unsafe_allow_html=True)
 
+                # Select the relevant columns
                 columns = ['D9', 'D10', 'D11']
                 kpdf_selected = kpdf[columns]
                 # Create the stacked bar plot using Plotly
                 fig = go.Figure()
-                for col in columns:
+                legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
+                for i, col in enumerate(columns):
                     fig.add_trace(go.Bar(
-                        name=col,
+                        name=legend_labels[i],  # Use the corresponding label
                         x=kpdf['year'].apply(str),
                         y=kpdf_selected[col],
                         text=kpdf[col],
                         textposition='inside'
                     ))
                 # Update the layout
-                fig.update_layout(barmode='stack', xaxis_title='Year',yaxis_title='Percentage')
+                fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου')
 
                 # Show the plot
                 st.plotly_chart(fig, use_container_width=True)
