@@ -30,6 +30,21 @@ def main():
     .css-1xarl3l.e1vioofd1{
     display:none;
     }
+    .css-wnm74r{
+    text-align:center;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    font-weight: 400;
+    
+    /*
+    .e1ugi8lo1.css-jhkj9c.ex0cdmw0{
+    
+    }
+    */
+    }
        
     </style>"""
     st.markdown(css_style, unsafe_allow_html=True)
