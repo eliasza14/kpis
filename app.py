@@ -27,7 +27,7 @@ def main():
        # Define the CSS style
     css_style = """
     <style>
-    .css-1xarl3l .e1vioofd1{
+    .css-1xarl3l.e1vioofd1{
     display:none;
     }
        
