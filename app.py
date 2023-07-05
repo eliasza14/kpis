@@ -649,7 +649,7 @@ def ad_button4(id,kpdf,js_code):
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
                 width=400,  # Set the width of the chart
-                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
 
             )
             fig = go.Figure( layout=layout)
