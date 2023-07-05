@@ -140,7 +140,7 @@ def main():
 
 
 def ad_button1(id,kpdf,js_code):
-    st.subheader("Συνεταιριστες")
+    st.subheader("Συνεταιριστές")
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     
@@ -153,7 +153,7 @@ def ad_button1(id,kpdf,js_code):
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         # text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
-        st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστες Κατηγορια Α</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
 
         html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
@@ -180,7 +180,7 @@ def ad_button2(id,kpdf,js_code):
             
             text=str(kpdf['D3'][kpdf['year']==str(year_filter)].iloc[0])
             # st.write('Δ3-Εργαζόμενοι Γενικού Πληθυσμού: '+text)
-            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι Γ.Π.</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι Γεν. Πληθυσμού</h3>", unsafe_allow_html=True)
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
