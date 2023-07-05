@@ -270,7 +270,7 @@ def ad_button2(id,kpdf,js_code):
                 paper_bgcolor="white",
                 font={'color': "gray", 'family': "Arial"}
             )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
         with col2:
             # Filter the dataframe based on the selected year
@@ -312,7 +312,7 @@ def ad_button2(id,kpdf,js_code):
                 font={'color': "gray", 'family': "Arial"}
             )
             
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
         with col3:
             # Filter the dataframe based on the selected year
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
@@ -355,7 +355,7 @@ def ad_button2(id,kpdf,js_code):
                 font={'color': "gray", 'family': "Arial"}
             )
             # fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
         with st.container():
             col1, col2,col3 = st.columns(3)
