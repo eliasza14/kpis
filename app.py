@@ -860,8 +860,8 @@ def ad_button4(id,kpdf,js_code):
 
 
 def e_button5(id,kpdf):
-    st.subheader("button5 Submenu")
-    st.write("Content of button5")
+    st.subheader("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
+    
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     val2=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
     text="**Κυκλοι** **Εργασιών:** **"+str(val2)+"** **&#8364;** "
