@@ -927,14 +927,20 @@ def e_button5(id,kpdf,js_code):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
+            pass
+        with col2:
             labels = ['Δ26','Δ27','Δ28']
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
             st.plotly_chart(fig,use_container_width=True)
+        with col3:
+            pass
 
     with st.container():
-        col1,col2 = st.columns(2)
+        col1,col2,col3 = st.columns(3)
         with col1:
+            pass
+        with col2:
              # Select the relevant columns
             columns = ['D26', 'D27', 'D28']
             kpdf_selected = kpdf[columns]
@@ -952,6 +958,8 @@ def e_button5(id,kpdf,js_code):
             fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
             # Show the plot
             st.plotly_chart(fig,use_container_width=True)
+        with col3:
+            pass
    
 
 
