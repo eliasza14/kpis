@@ -878,10 +878,10 @@ def e_button5(id,kpdf,js_code):
         """
     )
 
-   
+    st.markdown("<h3 style='text-align: center; color: grey;'>Yπηρεσίες</h3>", unsafe_allow_html=True)
+
     with st.container():
         col1, col2,col3 = st.columns(3)
-        st.markdown("<h3 style='text-align: center; color: grey;'>Yπηρεσίες</h3>", unsafe_allow_html=True)
 
         with col1:
             st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Κτιρίων & Εξωτερικών Χώρων</h3>", unsafe_allow_html=True)
