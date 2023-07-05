@@ -936,6 +936,14 @@ def e_button5(id,kpdf,js_code):
             labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
+            # Update the layout
+            fig.update_layout(
+                legend=dict(
+                    orientation="h",  # Horizontal legend
+                    yanchor="top",    # Anchor legend to the top
+                    y=-0.2            # Adjust the distance of the legend from the pie chart
+                )
+            )
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             pass
