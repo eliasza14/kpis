@@ -315,6 +315,8 @@ def ad_button2(id,kpdf,js_code):
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             # Filter the dataframe based on the selected year
+            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΕΚΟ (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
+
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
 
             # Select the value from the filtered dataframe
@@ -325,7 +327,7 @@ def ad_button2(id,kpdf,js_code):
                 mode="gauge+number",
                 value=d11_value,
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
+                # title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
                 number={'suffix': '%'},
                 
             ))
