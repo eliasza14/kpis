@@ -402,41 +402,6 @@ def ad_button2(id,kpdf,js_code):
 
 
 
-
-
-
-
-
-
-
-    #     col1, col2,col3 = st.columns(3)
-    #     with col1:
-    #         st.write('D12')
-    #         st.metric(label="Συνολο"+str(kpdf['D12'][kpdf['year']=='2016'][0]), value=int(kpdf['D12'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-
-    #     with col2:
-    #         st.write('D13')
-    #         st.metric(label="Συνολο"+str(kpdf['D13'][kpdf['year']=='2016'][0]), value=int(kpdf['D13'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-
-  
-    #     with col3:
-    #         st.write('D14')
-    #         st.write(kpdf['D14'])
-    #         st.metric(label="Συνολο"+str(kpdf['D14'][kpdf['year']=='2016'][0]), value=int(kpdf['D14'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-    # with st.container():
-    #     col1, col2,col3 = st.columns(3)
-
-    #     with col1:
-    #         st.write('D15')
-    #         st.write(kpdf['D15'])
-    #         st.metric(label="Συνολο"+str(kpdf['D15'][kpdf['year']=='2016'][0]), value=int(kpdf['D15'][kpdf['year']=='2016'][0]), delta=-0.5,delta_color="inverse")
-    #     with col2:
-    #         st.write('D16')
-    #         st.write(kpdf['D16'])
-    #     with col3:
-    #         st.write('D17')
-    #         st.write(kpdf['D17'])
-
 def ad_button3(id,kpdf,js_code):
     st.subheader("Ωρες απασχόλησης εργαζομένων")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
@@ -484,6 +449,8 @@ def ad_button3(id,kpdf,js_code):
         col1, col2 = st.columns(2)
         with col1:
             #st.write('Δ12-Ωρες απασχολησης εργαζομένων ΛΥΨΥ')
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΛΥΨΥ</h3>", unsafe_allow_html=True)
+
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
@@ -500,7 +467,7 @@ def ad_button3(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='Μεταβολή ωρών απασχόλησης ΛΥΨΥ',
+                # title='Μεταβολή ωρών απασχόλησης ΛΥΨΥ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -529,11 +496,13 @@ def ad_button3(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
 
         with col2:
             #st.write('Δ13-Ωρες απασχολησης εργαζομένων ΕΚΟ')
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΕΚΟ</h3>", unsafe_allow_html=True)
+
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
@@ -550,7 +519,6 @@ def ad_button3(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='Μεταβολή ωρών απασχόλησης ΕΚΟ',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -579,7 +547,7 @@ def ad_button3(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
         
           
 
