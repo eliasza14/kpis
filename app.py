@@ -941,7 +941,7 @@ def e_button5(id,kpdf,js_code):
                 legend=dict(
                     orientation="h",  # Horizontal legend
                     yanchor="bottom",    # Anchor legend to the top
-                    y=-0.2            # Adjust the distance of the legend from the pie chart
+                    y=1.1           # Adjust the distance of the legend from the pie chart
                 )
             )
             st.plotly_chart(fig,use_container_width=True)
