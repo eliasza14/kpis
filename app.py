@@ -1011,8 +1011,7 @@ def e_button5(id,kpdf,js_code):
 
 
 def e_button6(id,kpdf):
-    st.subheader("button6 Submenu")
-    st.write("Content of button6")
+    st.subheader("% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     val1=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
     val2=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
