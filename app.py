@@ -940,7 +940,7 @@ def e_button5(id,kpdf,js_code):
             fig.update_layout(
                 legend=dict(
                     orientation="h",  # Horizontal legend
-                    yanchor="top",    # Anchor legend to the top
+                    yanchor="bottom",    # Anchor legend to the top
                     y=-0.2            # Adjust the distance of the legend from the pie chart
                 )
             )
