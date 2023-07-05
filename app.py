@@ -13,6 +13,16 @@ from PIL import Image
 
 
 def main():
+    # Define the CSS style
+    css_style = """
+    <style>
+    .css-1xarl3l .e1vioofd1{
+    display:none;
+    }
+       
+    </style>"""
+    st.markdown(css_style, unsafe_allow_html=True)
+
     
 
     #st.write(home())
