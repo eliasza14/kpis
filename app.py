@@ -13,15 +13,7 @@ from PIL import Image
 
 
 def main():
-    # Define the CSS style
-    css_style = """
-    <style>
-    .css-1xarl3l .e1vioofd1{
-    display:none;
-    }
-       
-    </style>"""
-    st.markdown(css_style, unsafe_allow_html=True)
+ 
 
     
 
@@ -31,6 +23,16 @@ def main():
         page_icon="✅",
         layout="wide",
     )    
+
+       # Define the CSS style
+    css_style = """
+    <style>
+    .css-1xarl3l .e1vioofd1{
+    display:none;
+    }
+       
+    </style>"""
+    st.markdown(css_style, unsafe_allow_html=True)
 
             # Load the JavaScript function code
     with open("animated_counter.js", "r") as file:
