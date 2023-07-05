@@ -231,51 +231,8 @@ def ad_button2(id,kpdf,js_code):
 
     with st.container():
         col1, col2,col3 = st.columns(3)
-        # with col1:
-        #     # Filter the dataframe based on the selected year
-        #     filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
-
-        #     # Select the value from the filtered dataframe
-        #     d9_value = filtered_kpdf["D9"].iloc[0]
-
-        #     # Create the figure and gauge chart
-        #     fig = go.Figure(go.Indicator(
-        #         mode="gauge+number",
-        #         value=d9_value,
-        #         domain={'x': [0, 1], 'y': [0, 1]},
-        #         title={'text': "Εργαζόμενοι Γενικού Πληθυσμού (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
-        #         number={'suffix': '%'}
-        #     ))
-
-        #     # Customize the appearance of the gauge chart
-        #     fig.update_traces(
-        #         gauge={
-        #             'axis': {'range': [None, 100]},
-        #             'bar': {'color': "royalblue",'thickness': 0.7},
-        #             'bgcolor': "white",
-        #             'borderwidth': 2,
-        #             'bordercolor': "gray",
-        #             'steps': [
-        #                 {'range': [0, 100], 'color': 'whitesmoke'},
-        #                 ]
-        #             },  # Set the range for the gauge axis
-        #         title_font={'size': 10,'color': 'gray'},  # Set the title font size
-        #         number_font={'size': 40},  # Set the number font size
-        #     )
-        #     fig.update_layout(
-        #         height=300,  # Adjust the height of the chart
-        #         width=400,   # Adjust the width of the chart
-        #         # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
-
-        #         paper_bgcolor="white",
-        #         font={'color': "gray", 'family': "Arial"}
-        #     )
-        #     st.plotly_chart(fig,use_container_width=True)
-
-
-
         with col1:
-        # Filter the dataframe based on the selected year
+            # Filter the dataframe based on the selected year
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
 
             # Select the value from the filtered dataframe
@@ -294,44 +251,27 @@ def ad_button2(id,kpdf,js_code):
             fig.update_traces(
                 gauge={
                     'axis': {'range': [None, 100]},
-                    'bar': {'color': "royalblue", 'thickness': 0.7},
+                    'bar': {'color': "royalblue",'thickness': 0.7},
                     'bgcolor': "white",
                     'borderwidth': 2,
                     'bordercolor': "gray",
                     'steps': [
                         {'range': [0, 100], 'color': 'whitesmoke'},
-                    ]
-                },  # Set the range for the gauge axis
-                title_font={'size': 10, 'color': 'gray'},  # Set the title font size
+                        ]
+                    },  # Set the range for the gauge axis
+                title_font={'size': 10,'color': 'gray'},  # Set the title font size
                 number_font={'size': 40},  # Set the number font size
             )
             fig.update_layout(
                 height=300,  # Adjust the height of the chart
-                width=400,  # Adjust the width of the chart
+                width=400,   # Adjust the width of the chart
                 # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
 
                 paper_bgcolor="white",
                 font={'color': "gray", 'family': "Arial"}
             )
-
-            # Apply CSS styling to center the chart
-            col1.markdown(
-                f"""
-                <style>
-                .chart-container {{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                }}
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-
-            col1.markdown('<div class="chart-container">{}</div>'.format(fig.to_html()), unsafe_allow_html=True)
             st.plotly_chart(fig,use_container_width=True)
-
+            
 
         with col2:
             # Filter the dataframe based on the selected year
