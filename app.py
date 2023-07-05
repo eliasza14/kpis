@@ -816,12 +816,11 @@ def ad_button4(id,kpdf,js_code):
 
 
     with st.container():
-         col1, col2 = st.columns(2)
+         col1, col2,col3 = st.columns(3)
          with col1:
+             pass
+         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Μονάδων Εργασίας ΚοιΣΠΕ</h3>", unsafe_allow_html=True)
-
-
-
 
             # Select the relevant columns
             columns = ['D22', 'D23', 'D22_23_g']
@@ -849,7 +848,8 @@ def ad_button4(id,kpdf,js_code):
             
             # Show the plot
             st.plotly_chart(fig, use_container_width=True)
-
+         with col3:
+            pass
              
 
 
