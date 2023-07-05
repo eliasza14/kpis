@@ -354,6 +354,7 @@ def ad_button2(id,kpdf,js_code):
                 width=400,   # Adjust the width of the chart
                 paper_bgcolor="white",
                 # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+                margin=dict(l=0, r=0, t=10, b=0, autoexpand=True),  # Adjust the top margin value
 
                 font={'color': "gray", 'family': "Arial"}
             )
