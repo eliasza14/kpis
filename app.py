@@ -174,7 +174,6 @@ def ad_button2(id,kpdf,js_code):
     st.subheader("Εργαζόμενοι")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
 
-    st.write("Content of button1")
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
@@ -361,6 +360,8 @@ def ad_button2(id,kpdf,js_code):
         with st.container():
             col1, col2,col3 = st.columns(3)
             with col1:
+                pass
+            with col2:
                 # Select the relevant columns
                 columns = ['D9', 'D10', 'D11']
                 kpdf_selected = kpdf[columns]
@@ -375,9 +376,18 @@ def ad_button2(id,kpdf,js_code):
                         textposition='inside'
                     ))
                 # Update the layout
-                fig.update_layout(barmode='stack', title='100% Stacked Bar Plot', xaxis_title='Year',yaxis_title='Percentage')
+                fig.update_layout(barmode='stack', xaxis_title='Year',yaxis_title='Percentage')
+                fig.update_layout(title={
+                    'text': '100% Stacked Bar Plot',
+                    'y': 0.95,
+                    'x': 0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'
+                })
                 # Show the plot
                 st.plotly_chart(fig)
+            with col3:
+                pass
 
 
 
