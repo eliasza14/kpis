@@ -173,15 +173,19 @@ def main():
     print(matching_columns)
     kdata[matching_columns] = kdata[matching_columns].fillna(0)
 
+    matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
+    kdata[matching_columns2] = kdata[matching_columns2].fillna(0)
+
+
 
     # kdata['report.kad.81.21.00.00']=kdata['report.kad.81.21.00.00'].fillna(0)
     # kdata['report.kad.81.30.00.00']= kdata['report.kad.81.30.00.00'].fillna(0)
     # kdata['report.kad.81.29.19.02']=kdata['report.kad.81.29.19.02'].fillna(0)
     # kdata['report.kad.81.29.19.03']=kdata['report.kad.81.29.19.03'].fillna(0)
 
-    kdata['report.kad.56.10.12.01']=kdata['report.kad.56.10.12.01'].fillna(0)
-    kdata['report.kad.56.10.11.02']= kdata['report.kad.56.10.11.02'].fillna(0)
-    kdata['report.kad.56.10.11.09']= kdata['report.kad.56.10.11.09'].fillna(0)
+    # kdata['report.kad.56.10.12.01']=kdata['report.kad.56.10.12.01'].fillna(0)
+    # kdata['report.kad.56.10.11.02']= kdata['report.kad.56.10.11.02'].fillna(0)
+    # kdata['report.kad.56.10.11.09']= kdata['report.kad.56.10.11.09'].fillna(0)
 
 
     st.write(kdata)
