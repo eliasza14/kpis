@@ -146,7 +146,10 @@ def main():
     kdata=merged[merged['koispe_id']==int(id)]
 
 
-    kdata.drop(columns=['id_x', 'id_y','id'],inplace=True)
+    # kdata.drop(columns=['id_x', 'id_y','id'],inplace=True)
+
+    kdata.drop(columns=['uid_x', 'uid_y','uid'],inplace=True)
+
     # st.write(kdata)
     ###Start Creating DiktesDataframe
 
