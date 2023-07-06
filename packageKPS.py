@@ -97,6 +97,8 @@ def get_data_from_json(kdata):
     #search for kad starts from .81
 
     matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
+    print(matching_columns)
+
     kdata[matching_columns] = kdata[matching_columns].astype(int)
 
     kpdf['D26'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns), axis=1)
