@@ -100,6 +100,10 @@ def main():
     df=pd.json_normalize(response, max_level=2,dtype={"year":str})
     st.write(df)
 
+    df['year'] = df['year'].map(lambda x: str(x) if pd.notnull(x) else None)
+
+    st.write(df)
+
     df['year'] = df['year'].apply(format_year)
     st.write(df)
 
