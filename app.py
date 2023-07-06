@@ -79,7 +79,7 @@ def main():
     st.write("ID from Flask application: ",id)
     # image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
 
-    st.image("https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png", width=120)
+    st.image("https://cmtprooptiki.gr/api/profile_images/"+str(id)+".png", width=120)
 
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
     response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
