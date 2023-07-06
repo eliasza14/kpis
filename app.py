@@ -89,8 +89,8 @@ def main():
     # https://app.koispesupport.gr/koispe/api/getkoispe?id=1128
 
     response = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getkoispe").text)
-    # response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment").text)
-    # response3 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getfinancial").text)
+    response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment").text)
+    response3 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getfinancial").text)
 
 
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
@@ -98,13 +98,17 @@ def main():
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
     df=pd.json_normalize(response, max_level=2)
-    # df['year'] = df['year'].apply(format_year)
+    df['year']=df['year'].astype(str)
+    df['year'] = df['year'].apply(format_year)
     st.write(df)
 
     df2=pd.json_normalize(response2, max_level=2)
+    df2['year']=df2['year'].astype(str)
     df2['year'] = df2['year'].apply(format_year)
 
     df3=pd.json_normalize(response3, max_level=2)
+    df3['year']=df3['year'].astype(str)
+
     df3['year'] = df3['year'].apply(format_year)
 
     # st.write(df)
