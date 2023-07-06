@@ -143,7 +143,8 @@ def main():
     # merged=pd.merge(dfs,on=['koispe_id','year'])
 
     st.write(merged)
-    kdata=merged[merged['koispe_id']==int(id)]
+
+    kdata=merged[merged['koispe_id']==str(id)]
 
 
     # kdata.drop(columns=['id_x', 'id_y','id'],inplace=True)
