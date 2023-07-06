@@ -1115,7 +1115,8 @@ def e_button6(id,kpdf,js_code):
 
         
 
-    
+    st.markdown("<br>", unsafe_allow_html=True)
+
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
@@ -1216,7 +1217,8 @@ def e_button6(id,kpdf,js_code):
                 )
             st.plotly_chart(fig,use_container_width=True)
 
-           
+    st.markdown("<br>", unsafe_allow_html=True)
+
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
@@ -1238,7 +1240,6 @@ def e_button6(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='% Ετήσια Μεταβολή Κύκλου Εργασιών-Υπηρεσίες Εστίασης',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -1316,7 +1317,6 @@ def e_button6(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
             st.plotly_chart(fig,use_container_width=True)
 
 
