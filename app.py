@@ -1375,6 +1375,8 @@ def e_button7(id,kpdf,js_code):
     with st.container():
         col1,col2 = st.columns(2)
         with col1:
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Καθαρών Αποτελεσμάτων</h3>", unsafe_allow_html=True)
+
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
@@ -1391,7 +1393,6 @@ def e_button7(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='% Ετήσια Μεταβολή Καθαρών Αποτελεσμάτων',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -1420,14 +1421,15 @@ def e_button7(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
         with col2:
+            st.markdown("<h3 style='text-align: center; color: grey;'>Συμμετοχή (%) Επιδοτήσεων στα έσοδα / Ετος</h3>", unsafe_allow_html=True)
+
              
             val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
             
             # st.write(val2)
             layout = go.Layout(
-                title='Συμμετοχή (%) Επιδοτήσεων στα έσοδα / Ετος',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -1441,7 +1443,7 @@ def e_button7(id,kpdf,js_code):
                                 marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
                                 ))
             fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=False)])
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
     with st.container():
