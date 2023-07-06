@@ -75,7 +75,7 @@ def main():
 
     st.sidebar.title("KPI's Dashboard")
     id=get_url_params()
-
+    st.write("URL ID FROM VIDAVO:",id)
     st.write("ID from Flask application: ",id)
     # image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
     with st.container():
