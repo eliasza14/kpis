@@ -97,17 +97,14 @@ def main():
     # response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
-    df=pd.json_normalize(response, max_level=2)
-    df['year']=df['year'].astype(str)
+    df=pd.json_normalize(response, max_level=2,dtype={"year": str})
     df['year'] = df['year'].apply(format_year)
     st.write(df)
 
-    df2=pd.json_normalize(response2, max_level=2)
-    df2['year']=df2['year'].astype(str)
+    df2=pd.json_normalize(response2, max_level=2,dtype={"year": str})
     df2['year'] = df2['year'].apply(format_year)
 
-    df3=pd.json_normalize(response3, max_level=2)
-    df3['year']=df3['year'].astype(str)
+    df3=pd.json_normalize(response3, max_level=2,dtype={"year": str})
 
     df3['year'] = df3['year'].apply(format_year)
 
