@@ -73,7 +73,7 @@ def main():
             js_code = file.read()
 
 
-    st.sidebar.title("Menu")
+    st.sidebar.title("KPI's Dashboard")
     id=get_url_params()
 
     st.write("ID from Flask application: ",id)
