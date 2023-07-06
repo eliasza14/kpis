@@ -127,7 +127,7 @@ def main():
     # st.write(df2)
     # st.write(df3)
 
-    merged= pd.merge(pd.merge(df, df2, on=['koispe_id', 'year']), df3, on=['koispe_id', 'year'])
+    merged= pd.merge(pd.merge(df, df2, on=['koispe_id', 'year'],how = 'inner'), df3, on=['koispe_id', 'year'], how = 'inner')
     # merged= pd.merge([df, df2, df3], on=['koispe_id', 'year'])
 
     # merged=pd.merge(dfs,on=['koispe_id','year'])
