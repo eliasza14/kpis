@@ -97,7 +97,7 @@ def main():
     # response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
-    df=pd.json_normalize(response, max_level=2,dtype={"year":str})
+    df=pd.json_normalize(response, max_level=2)
     st.write(df)
 
     df['year'] = df['year'].map(lambda x: str(x) if pd.notnull(x) else None)
