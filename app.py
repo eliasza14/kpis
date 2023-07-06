@@ -158,8 +158,9 @@ def main():
     kdata['report.kad.81.29.19.02']=kdata['report.kad.81.29.19.02'].fillna(0)
     kdata['report.kad.81.29.19.03']=kdata['report.kad.81.29.19.03'].fillna(0)
 
-    kdata['report.kad.51.10.13.00']=kdata['report.kad.51.10.13.00'].fillna(0)
-    kdata['report.kad.51.21.11.00']= kdata['report.kad.51.21.11.00'].fillna(0)
+    kdata['report.kad.56.10.12.01']=kdata['report.kad.56.10.12.01'].fillna(0)
+    kdata['report.kad.56.10.11.02']= kdata['report.kad.56.10.11.02'].fillna(0)
+    kdata['report.kad.56.10.11.09']= kdata['report.kad.56.10.11.09'].fillna(0)
 
 
     st.write(kdata)
