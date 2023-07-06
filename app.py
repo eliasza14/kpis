@@ -136,10 +136,10 @@ div[data-anim~=base] {
 
     </style>"""
     st.markdown(css_style, unsafe_allow_html=True)
-    st.amrkdown("""<div class="wrapper" data-anim="base wrapper">
-  <div class="circle" data-anim="base left"></div>
-  <div class="circle" data-anim="base right"></div>
-</div>""")
+    html(f"""<div class="wrapper" data-anim="base wrapper">
+            <div class="circle" data-anim="base left"></div>
+            <div class="circle" data-anim="base right"></div>
+            </div>""")
             # Load the JavaScript function code
     with open("animated_counter.js", "r") as file:
             js_code = file.read()
