@@ -193,7 +193,7 @@ def main():
     st.write(kdata)
 
     kpdf=get_data_from_json(kdata)
-    kpdf=kpdf.fillna(0)
+    # kpdf=kpdf.fillna(0)
  
 
     st.title("Πίνακας Δεικτών")
