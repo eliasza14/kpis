@@ -102,7 +102,7 @@ def main():
     st.write(df)
 
     df['year'] = df['year'].map(lambda x: str(x) if pd.notnull(x) else None)
-    df['year'] = df['year'].str.rstrip('.0')
+    df['year'] = df['year'].str.split('.').str[0]
 
     st.write("GET KOIPSE")
     st.write(df)
@@ -112,7 +112,7 @@ def main():
 
     df2=pd.json_normalize(response2, max_level=2)
     df2['year'] = df2['year'].map(lambda x: str(x) if pd.notnull(x) else None)
-    df2['year'] = df2['year'].str.rstrip('.0')
+    df2['year'] = df2['year'].str.split('.').str[0]
     
     st.write("GET employement")
 
@@ -122,8 +122,7 @@ def main():
 
     df3=pd.json_normalize(response3, max_level=2)
     df3['year'] = df3['year'].map(lambda x: str(x) if pd.notnull(x) else None)
-    df3['year'] = df3['year'].str.rstrip('.0')
-    
+    df3['year'] = df3['year'].str.split('.').str[0]
     st.write("GET financial")
 
     st.write(df3)
@@ -133,7 +132,10 @@ def main():
     # st.write(df2)
     # st.write(df3)
 
-    merged= pd.merge(pd.merge(df, df2, on=['koispe_id', 'year']), df3, on=['koispe_id', 'year'], how = 'inner')
+    # merged= pd.merge(pd.merge(df, df2, on=['koispe_id', 'year'],how = 'inner'), df3, on=['koispe_id', 'year'])
+
+    merged = pd.merge(pd.merge(df, df2, on=['koispe_id', 'year'], how='inner', validate='one_to_one'),
+                  df3, on=['koispe_id', 'year'], how='inner', validate='one_to_one')
     # merged= pd.merge([df, df2, df3], on=['koispe_id', 'year'])
 
     # merged=pd.merge(dfs,on=['koispe_id','year'])
