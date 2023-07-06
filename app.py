@@ -78,8 +78,14 @@ def main():
 
     st.write("ID from Flask application: ",id)
     # image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
-
-    st.image("https://cmtprooptiki.gr/api/profile_images/"+str(id)+".png", width=120)
+    with st.container():
+        col1,col2,col3=st.columns(3)
+        with col1:
+            pass
+        with col2:
+            st.image("https://cmtprooptiki.gr/api/profile_images/"+str(id)+".png", width=300)
+        with col3:
+            pass
 
     response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
     response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
