@@ -98,12 +98,13 @@ def main():
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
     df=pd.json_normalize(response, max_level=2)
+
     st.write(df)
 
     df['year'] = df['year'].map(lambda x: str(x) if pd.notnull(x) else None)
     df['year'] = df['year'].str.rstrip('.0')
 
-
+    st.write("GET KOIPSE")
     st.write(df)
 
     # df['year'] = df['year'].apply(format_year)
@@ -112,6 +113,9 @@ def main():
     df2=pd.json_normalize(response2, max_level=2)
     df2['year'] = df2['year'].map(lambda x: str(x) if pd.notnull(x) else None)
     df2['year'] = df2['year'].str.rstrip('.0')
+    
+    st.write("GET employement")
+
     st.write(df2)
 
     # df2['year'] = df2['year'].apply(format_year)
@@ -119,6 +123,8 @@ def main():
     df3=pd.json_normalize(response3, max_level=2)
     df3['year'] = df3['year'].map(lambda x: str(x) if pd.notnull(x) else None)
     df3['year'] = df3['year'].str.rstrip('.0')
+    
+    st.write("GET financial")
 
     st.write(df3)
     # df3['year'] = df3['year'].apply(format_year)
