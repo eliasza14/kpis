@@ -1119,7 +1119,8 @@ def e_button6(id,kpdf,js_code):
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
-            
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Κύκλου Εργασιών</h3>", unsafe_allow_html=True)
+
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
@@ -1136,7 +1137,6 @@ def e_button6(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='% Ετήσια Μεταβολή Κύκλου Εργασιών',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -1165,9 +1165,11 @@ def e_button6(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
         with col2:
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Κύκλου Εργασιών-Κτήρια/Εξωτερικοί Χώροι</h3>", unsafe_allow_html=True)
+
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
@@ -1184,7 +1186,6 @@ def e_button6(id,kpdf,js_code):
 
             # Create the layout with two y-axes
             layout = go.Layout(
-                title='% Ετήσια Μεταβολή Κύκλου Εργασιών-Κτήρια/Εξωτερικοί Χώροι',
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
                 height=600,  # Set the height of the chart
@@ -1213,7 +1214,7 @@ def e_button6(id,kpdf,js_code):
                     font=dict(color='red', size=12),
                     xanchor='center', yanchor='bottom'
                 )
-            st.plotly_chart(fig)
+            st.plotly_chart(fig,use_container_width=True)
 
            
     with st.container():
