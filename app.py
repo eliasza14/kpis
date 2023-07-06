@@ -78,18 +78,24 @@ def main():
     st.write("URL ID FROM VIDAVO:",id)
     st.write("ID from Flask application: ",id)
     # image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
-    with st.container():
-        col1,col2,col3=st.columns(3)
-        with col1:
-            pass
-        with col2:
-            st.image("https://cmtprooptiki.gr/api/profile_images/"+str(id)+".png", width=300)
-        with col3:
-            pass
+    # with st.container():
+    #     col1,col2,col3=st.columns(3)
+    #     with col1:
+    #         pass
+    #     with col2:
+    #         st.image("https://cmtprooptiki.gr/api/profile_images/"+str(id)+".png", width=300)
+    #     with col3:
+    #         pass
+    # https://app.koispesupport.gr/koispe/api/getkoispe?id=1128
 
-    response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
-    response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
-    response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
+    response = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getkoispe").text)
+    # response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment").text)
+    # response3 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getfinancial").text)
+
+
+    # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
+    # response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
+    # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
     df=pd.json_normalize(response, max_level=2)
     df['year'] = df['year'].apply(format_year)
