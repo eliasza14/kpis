@@ -1168,7 +1168,7 @@ def e_button6(id,kpdf,js_code):
             st.plotly_chart(fig,use_container_width=True)
 
         with col2:
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Κύκλου Εργασιών-Κτήρια/Εξωτερικοί Χώροι</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μετ.Kύκλ.Εργ. Κτήρια/Εξωτερικοί Χώροι</h3>", unsafe_allow_html=True)
 
             categories=kpdf['year'].tolist()
             # Sample data
