@@ -640,7 +640,7 @@ def ad_button4(id,kpdf,js_code):
             #st.write(kpdf['D18'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D18'][kpdf['year']==str(year_filter)].iloc[0])
             # st.write('D18 Ετησιες μοναδες εργασιας: '+text)
-            st.markdown("<h3 style='text-align: center; color: grey;'>Ετησιες μοναδες εργασιας</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας</h3>", unsafe_allow_html=True)
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
@@ -656,7 +656,7 @@ def ad_button4(id,kpdf,js_code):
             #st.write(kpdf['D19'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D19'][kpdf['year']==str(year_filter)].iloc[0])
             # st.write('D19 Ετησιες μοναδες εργασιας: '+text)
-            st.markdown("<h3 style='text-align: center; color: grey;'>Ετησιες μοναδες εργασιας(Μέσος Όρος)</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας(Μέσος Όρος)</h3>", unsafe_allow_html=True)
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
@@ -1371,6 +1371,8 @@ def e_button7(id,kpdf,js_code):
                 """    )
 
             st.metric(label="Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή", label_visibility="hidden", value=val4, delta=f'{val5}%')
+    
+    st.markdown("<br>", unsafe_allow_html=True)
 
     with st.container():
         col1,col2 = st.columns(2)
@@ -1423,41 +1425,115 @@ def e_button7(id,kpdf,js_code):
                 )
             st.plotly_chart(fig,use_container_width=True)
         with col2:
+                #             # Create the layout with two y-axes
+                # st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΛΥΨΥ % επί του Συνόλου</h3>", unsafe_allow_html=True)
+
+                # val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
+
+                # layout = go.Layout(
+                #     yaxis=dict(title='Values', rangemode='nonnegative'),
+                #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                #     height=400,  # Set the height of the chart
+                #     width=400,  # Set the width of the chart
+                #     legend=dict(
+                #         orientation='h',
+                #         yanchor='top',
+                #         y=1.1,
+                #         xanchor='center',
+                #         x=0.5
+                #     ),
+                #     margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+                # )
+
+                # fig = go.Figure(layout=layout)
+                # fig.add_trace(go.Pie(
+                #     labels=['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '],
+                #     values=[val, 100 - val],
+                #     hole=0.85,
+                #     textinfo='none',
+                #     marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
+                # ))
+                # fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
+                # fig.update_layout(showlegend=True)  # Show the legend
+                # fig.update_layout(legend=dict(
+                #     orientation='h',
+                #     yanchor='top',
+                #     y=1.1,
+                #     xanchor='center',
+                #     x=0.5
+                # ))
+                # st.plotly_chart(fig, use_container_width=True)
+
+
+            ######
             st.markdown("<h3 style='text-align: center; color: grey;'>Συμμετοχή (%) Επιδοτήσεων στα έσοδα / Ετος</h3>", unsafe_allow_html=True)
 
              
             val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
-            
-            # st.write(val2)
             layout = go.Layout(
                 yaxis=dict(title='Values', rangemode='nonnegative'),
                 yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=600,  # Set the height of the chart
-                width=400  # Set the width of the chart
+                height=400,  # Set the height of the chart
+                width=400,  # Set the width of the chart
+                legend=dict(
+                    orientation='h',
+                    yanchor='top',
+                    y=1.1,
+                    xanchor='center',
+                    x=0.5
+                ),
+                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
             )
-            fig = go.Figure( layout=layout)
-            fig.add_trace(go.Pie(labels=['% Συμμετοχή Επιδοτήσεων',' '],
-                                values=[val39,100-val39],
-                                hole=0.85,
-                                textinfo='none',
-                                marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
-                                ))
-            fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=False)])
-            st.plotly_chart(fig,use_container_width=True)
+            fig = go.Figure(layout=layout)
+            fig.add_trace(go.Pie(
+                labels=['% Συμμετοχή Επιδοτήσεων', ' '],
+                values=[val39,100-val39],
+                hole=0.85,
+                textinfo='none',
+                marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
+            ))
+            fig.update_layout(annotations=[dict(text=str(val39) + "%", font_size=40, showarrow=False)])
+            fig.update_layout(showlegend=True)  # Show the legend
+            fig.update_layout(legend=dict(
+                orientation='h',
+                yanchor='top',
+                y=1.1,
+                xanchor='center',
+                x=0.5
+            ))
+            st.plotly_chart(fig, use_container_width=True)
+        
+            # st.write(val2)
+            # layout = go.Layout(
+            #     yaxis=dict(title='Values', rangemode='nonnegative'),
+            #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+            #     height=600,  # Set the height of the chart
+            #     width=400  # Set the width of the chart
+            # )
+            # fig = go.Figure( layout=layout)
+            # fig.add_trace(go.Pie(labels=['% Συμμετοχή Επιδοτήσεων',' '],
+            #                     values=[val39,100-val39],
+            #                     hole=0.85,
+            #                     textinfo='none',
+            #                     marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
+            #                     ))
+            # fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=False)])
+            # st.plotly_chart(fig,use_container_width=True)
             # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
             # st.plotly_chart(fig)
+    st.markdown("<br>", unsafe_allow_html=True)
+
     with st.container():
-        col1,col2 = st.columns(2)  
+        col1,col2,col3 = st.columns(3)  
         with col1:
-            st.write("smt"); 
-            fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
-            st.plotly_chart(fig)        
+            pass
         with col2:
-            st.write("smt"); 
-            # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
-            # st.plotly_chart(fig)   
-            # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
-            # st.plotly_chart(fig)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος</h3>", unsafe_allow_html=True)
+
+            fig = px.area(kpdf,x='year', y='D38', markers=True)
+            st.plotly_chart(fig,use_container_width=True)
+        with col3:
+            pass
 
 
 
