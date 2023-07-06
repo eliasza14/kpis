@@ -153,8 +153,14 @@ def main():
     st.write(kdata)
     # st.write(kdata)
     ###Start Creating DiktesDataframe
+    kdata['report.kad.81.30.00.00']= kdata['report.kad.81.30.00.00'].fillna(0)
+    kdata['report.kad.81.29.19.02']=kdata['report.kad.81.29.19.02'].fillna(0)
+    kdata['report.kad.81.29.19.03']=kdata['report.kad.81.29.19.03'].fillna(0)
+    st.write(kdata)
 
     kpdf=get_data_from_json(kdata)
+ 
+
     st.title("Πίνακας Δεικτών")
     st.write(kpdf)
    #Radio button
