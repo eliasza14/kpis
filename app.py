@@ -88,11 +88,20 @@ def main():
     #         pass
     # https://app.koispesupport.gr/koispe/api/getkoispe?id=1128
 
-    response = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getkoispe").text)
-    response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment").text)
-    response3 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getfinancial").text)
+    #VIDAVO API CALL SPEICIFIC KOISPE WITH ID
+    response = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getkoispe?id="+str(id)).text)
+    response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment?id="+str(id)).text)
+    response3 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getfinancial?id="+str(id)).text)
 
 
+
+
+    #VIDAVO API CALL GENERAL
+    # response = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getkoispe").text)
+    # response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment").text)
+    # response3 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getfinancial").text)
+
+    #MYAPP ON MY API
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
     # response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
@@ -144,9 +153,11 @@ def main():
 
     st.write(merged)
     merged.rename(columns={'id': 'koispe_id'}, inplace=True)
-    kdata=merged[merged['koispe_id']==int(id)]
 
+    ##NOT NEED WHEN ID ON URL EXIST
+    # kdata=merged[merged['koispe_id']==int(id)]
 
+    kdata=merged.copy()
     # kdata.drop(columns=['id_x', 'id_y','id'],inplace=True)
 
     kdata.drop(columns=['uid_x', 'uid_y','uid'],inplace=True)
