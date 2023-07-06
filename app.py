@@ -137,10 +137,10 @@ def main():
 
     </style>"""
     st.markdown(css_style, unsafe_allow_html=True)
-    html(f"""<div class="wrapper" data-anim="base wrapper">
+    st.markdown(html(f"""<div class="wrapper" data-anim="base wrapper">
   <div class="circle" data-anim="base left"></div>
   <div class="circle" data-anim="base right"></div>
-</div>""")
+</div>"""))
             # Load the JavaScript function code
     with open("animated_counter.js", "r") as file:
             js_code = file.read()
