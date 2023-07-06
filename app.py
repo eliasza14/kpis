@@ -176,6 +176,8 @@ def main():
     matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
     kdata[matching_columns2] = kdata[matching_columns2].fillna(0)
 
+    matching_columns3 = kdata.columns[kdata.columns.str.startswith("report.kad.")]
+    kdata[matching_columns3] = kdata[matching_columns3].fillna(0)
 
 
     # kdata['report.kad.81.21.00.00']=kdata['report.kad.81.21.00.00'].fillna(0)
