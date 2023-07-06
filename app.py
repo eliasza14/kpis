@@ -116,6 +116,7 @@ def main():
     st.write("GET KOIPSE")
     st.write(df)
 
+    #this command is need on our api
     # df['year'] = df['year'].apply(format_year)
     st.write(df)
 
@@ -127,6 +128,8 @@ def main():
 
     st.write(df2)
 
+    #this command is need on our api
+
     # df2['year'] = df2['year'].apply(format_year)
 
     df3=pd.json_normalize(response3, max_level=2)
@@ -135,6 +138,9 @@ def main():
     st.write("GET financial")
 
     st.write(df3)
+    
+    #this command is need on our api
+
     # df3['year'] = df3['year'].apply(format_year)
 
     # st.write(df)
@@ -144,12 +150,9 @@ def main():
     merged=pd.merge(df,df2, left_on=['id', 'year'],right_on=['koispe_id','year'],how='inner')
     merged=pd.merge(merged,df3, left_on=['id', 'year'],right_on=['koispe_id','year'],how='inner')
 
-    # merged= pd.merge(pd.merge(df, df2, on=['koispe_id', 'year'],how = 'inner'), df3, on=['koispe_id', 'year'],how='inner')
+    # merged= pd.merge(pd.merge(df, df2, on=['koispe_id', 'year']), df3, on=['koispe_id', 'year'])
 
-    
-    # merged= pd.merge([df, df2, df3], on=['koispe_id', 'year'])
 
-    # merged=pd.merge(dfs,on=['koispe_id','year'])
 
     st.write(merged)
     merged.rename(columns={'id': 'koispe_id'}, inplace=True)
@@ -158,16 +161,23 @@ def main():
     # kdata=merged[merged['koispe_id']==int(id)]
 
     kdata=merged.copy()
+
+    #Our code
     # kdata.drop(columns=['id_x', 'id_y','id'],inplace=True)
 
     kdata.drop(columns=['uid_x', 'uid_y','uid'],inplace=True)
     st.write(kdata)
     # st.write(kdata)
     ###Start Creating DiktesDataframe
-    kdata['report.kad.81.21.00.00']=kdata['report.kad.81.21.00.00'].fillna(0)
-    kdata['report.kad.81.30.00.00']= kdata['report.kad.81.30.00.00'].fillna(0)
-    kdata['report.kad.81.29.19.02']=kdata['report.kad.81.29.19.02'].fillna(0)
-    kdata['report.kad.81.29.19.03']=kdata['report.kad.81.29.19.03'].fillna(0)
+    matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
+    print(matching_columns)
+    kdata[matching_columns] = kdata[matching_columns].fillna(0)
+
+
+    # kdata['report.kad.81.21.00.00']=kdata['report.kad.81.21.00.00'].fillna(0)
+    # kdata['report.kad.81.30.00.00']= kdata['report.kad.81.30.00.00'].fillna(0)
+    # kdata['report.kad.81.29.19.02']=kdata['report.kad.81.29.19.02'].fillna(0)
+    # kdata['report.kad.81.29.19.03']=kdata['report.kad.81.29.19.03'].fillna(0)
 
     kdata['report.kad.56.10.12.01']=kdata['report.kad.56.10.12.01'].fillna(0)
     kdata['report.kad.56.10.11.02']= kdata['report.kad.56.10.11.02'].fillna(0)
