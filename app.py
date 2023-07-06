@@ -99,7 +99,8 @@ def main():
 
     df=pd.json_normalize(response, max_level=2)
     df['year'] = df['year'].apply(format_year)
-
+    st.write(df)
+    
     df2=pd.json_normalize(response2, max_level=2)
     df2['year'] = df2['year'].apply(format_year)
 
