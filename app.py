@@ -27,6 +27,77 @@ def main():
        # Define the CSS style
     css_style = """
     <style>
+.wrapper {
+  width: 100px; /* Set the size of the progress bar */
+  height: 100px;
+  position: absolute; /* Enable clipping */
+  clip: rect(0px, 100px, 100px, 50px); /* Hide half of the progress bar */
+}
+/* Set the sizes of the elements that make up the progress bar */
+.circle {
+  width: 80px;
+  height: 80px;
+  border: 10px solid green;
+  border-radius: 50px;
+  position: absolute;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+/* Using the data attributes for the animation selectors. */
+/* Base settings for all animated elements */
+div[data-anim~=base] {
+  -webkit-animation-iteration-count: 1;  /* Only run once */
+  -webkit-animation-fill-mode: forwards; /* Hold the last keyframe */
+  -webkit-animation-timing-function:linear; /* Linear animation */
+}
+
+.wrapper[data-anim~=wrapper] {
+  -webkit-animation-duration: 0.01s; /* Complete keyframes asap */
+  -webkit-animation-delay: 3s; /* Wait half of the animation */
+  -webkit-animation-name: close-wrapper; /* Keyframes name */
+}
+
+.circle[data-anim~=left] {
+  -webkit-animation-duration: 6s; /* Full animation time */
+  -webkit-animation-name: left-spin;
+}
+
+.circle[data-anim~=right] {
+  -webkit-animation-duration: 3s; /* Half animation time */
+  -webkit-animation-name: right-spin;
+}
+/* Rotate the right side of the progress bar from 0 to 180 degrees */
+@-webkit-keyframes right-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+  }
+}
+/* Rotate the left side of the progress bar from 0 to 360 degrees */
+@-webkit-keyframes left-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* Set the wrapper clip to auto, effectively removing the clip */
+@-webkit-keyframes close-wrapper {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
+    
+
+
+
+
+
+
+
+
     .css-1xarl3l.e1vioofd1{
     display:none;
     }
@@ -56,9 +127,19 @@ def main():
     
     }
        
+    
+
+
+
+
+
+
     </style>"""
     st.markdown(css_style, unsafe_allow_html=True)
-
+    st.amrkdown("""<div class="wrapper" data-anim="base wrapper">
+  <div class="circle" data-anim="base left"></div>
+  <div class="circle" data-anim="base right"></div>
+</div>""")
             # Load the JavaScript function code
     with open("animated_counter.js", "r") as file:
             js_code = file.read()
@@ -1425,47 +1506,7 @@ def e_button7(id,kpdf,js_code):
                 )
             st.plotly_chart(fig,use_container_width=True)
         with col2:
-                #             # Create the layout with two y-axes
-                # st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΛΥΨΥ % επί του Συνόλου</h3>", unsafe_allow_html=True)
 
-                # val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
-
-                # layout = go.Layout(
-                #     yaxis=dict(title='Values', rangemode='nonnegative'),
-                #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                #     height=400,  # Set the height of the chart
-                #     width=400,  # Set the width of the chart
-                #     legend=dict(
-                #         orientation='h',
-                #         yanchor='top',
-                #         y=1.1,
-                #         xanchor='center',
-                #         x=0.5
-                #     ),
-                #     margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
-                # )
-
-                # fig = go.Figure(layout=layout)
-                # fig.add_trace(go.Pie(
-                #     labels=['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '],
-                #     values=[val, 100 - val],
-                #     hole=0.85,
-                #     textinfo='none',
-                #     marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
-                # ))
-                # fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
-                # fig.update_layout(showlegend=True)  # Show the legend
-                # fig.update_layout(legend=dict(
-                #     orientation='h',
-                #     yanchor='top',
-                #     y=1.1,
-                #     xanchor='center',
-                #     x=0.5
-                # ))
-                # st.plotly_chart(fig, use_container_width=True)
-
-
-            ######
             st.markdown("<h3 style='text-align: center; color: grey;'>Συμμετοχή (%) Επιδοτήσεων στα έσοδα / Ετος</h3>", unsafe_allow_html=True)
 
              
@@ -1503,24 +1544,7 @@ def e_button7(id,kpdf,js_code):
             ))
             st.plotly_chart(fig, use_container_width=True)
         
-            # st.write(val2)
-            # layout = go.Layout(
-            #     yaxis=dict(title='Values', rangemode='nonnegative'),
-            #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-            #     height=600,  # Set the height of the chart
-            #     width=400  # Set the width of the chart
-            # )
-            # fig = go.Figure( layout=layout)
-            # fig.add_trace(go.Pie(labels=['% Συμμετοχή Επιδοτήσεων',' '],
-            #                     values=[val39,100-val39],
-            #                     hole=0.85,
-            #                     textinfo='none',
-            #                     marker_colors=['rgb(135 206 235)','rgb(240,240,240)'],
-            #                     ))
-            # fig.update_layout(annotations=[dict(text=str(val39)+"%",  font_size=40, showarrow=False)])
-            # st.plotly_chart(fig,use_container_width=True)
-            # fig = px.area(kpdf, title="Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος",x='year', y='D38', markers=True)
-            # st.plotly_chart(fig)
+
     st.markdown("<br>", unsafe_allow_html=True)
 
     with st.container():
