@@ -1086,7 +1086,7 @@ def e_button6(id,kpdf,js_code):
                 </script></body>
                 """
                         )
-            st.metric(label="% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτερικοί Χώροι ", label_visibility="hidden", value=val3, delta=f'{val4}%')
+            st.metric(label="% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτ. Χώροι ", label_visibility="hidden", value=val3, delta=f'{val4}%')
         with col3:
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης</h3>", unsafe_allow_html=True)
             html(
@@ -1100,7 +1100,7 @@ def e_button6(id,kpdf,js_code):
                         )
             st.metric(label="% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης",label_visibility="hidden", value=val5, delta=f'{val6}%')
         with col4:
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Λοιπ. Εργασίες</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
                 <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
