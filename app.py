@@ -456,11 +456,26 @@ def ad_button3(id,kpdf,js_code):
         with col1:
             #st.write('Δ12-Ωρες απασχολησης εργαζομένων ΛΥΨΥ')
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΛΥΨΥ</h3>", unsafe_allow_html=True)
+            categories=kpdf['year'].tolist()
+            values =kpdf['D12'].tolist()
+            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+            st.plotly_chart(fig,use_container_width=True)
+
+
+        with col2:
+            #st.write('Δ13-Ωρες απασχολησης εργαζομένων ΕΚΟ')
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΕΚΟ</h3>", unsafe_allow_html=True)
 
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
-            values =kpdf['D12'].tolist()
+            values =kpdf['D13'].tolist()
+
+            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+
+
+
+
 
             # # Calculate percentage change
             # percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
@@ -473,7 +488,6 @@ def ad_button3(id,kpdf,js_code):
 
             # # Create the layout with two y-axes
             # layout = go.Layout(
-            #     # title='Μεταβολή ωρών απασχόλησης ΛΥΨΥ',
             #     yaxis=dict(title='Values', rangemode='nonnegative'),
             #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
             #     height=600,  # Set the height of the chart
@@ -502,58 +516,6 @@ def ad_button3(id,kpdf,js_code):
             #         font=dict(color='red', size=12),
             #         xanchor='center', yanchor='bottom'
             #     )
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
-            st.plotly_chart(fig,use_container_width=True)
-
-
-        with col2:
-            #st.write('Δ13-Ωρες απασχολησης εργαζομένων ΕΚΟ')
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΕΚΟ</h3>", unsafe_allow_html=True)
-
-            categories=kpdf['year'].tolist()
-            # Sample data
-            # categories = ['Category A', 'Category B', 'Category C', 'Category D']
-            values =kpdf['D13'].tolist()
-
-            # Calculate percentage change
-            percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
-
-            # Create the bar trace
-            bar_trace = go.Bar(x=categories, y=values, name='Values')
-
-            # Create the line trace
-            line_trace = go.Scatter(x=categories[1:], y=percentage_change, name='Percentage Change', mode='lines+markers', yaxis='y2')
-
-            # Create the layout with two y-axes
-            layout = go.Layout(
-                yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=600,  # Set the height of the chart
-                width=400  # Set the width of the chart
-            )
-
-            # Create the figure
-            fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
-
-            # Add labels to the bars
-            for i in range(len(categories)):
-                fig.add_annotation(
-                    x=categories[i], y=values[i],
-                    text=str(values[i]),
-                    showarrow=False,
-                    font=dict(color='black', size=12),
-                    xanchor='center', yanchor='bottom'
-                )
-
-            # Add labels to the percentage change
-            for i in range(len(percentage_change)):
-                fig.add_annotation(
-                    x=categories[i+1], y=percentage_change[i],
-                    text=f"{percentage_change[i]:.2f}%",
-                    showarrow=False,
-                    font=dict(color='red', size=12),
-                    xanchor='center', yanchor='bottom'
-                )
             st.plotly_chart(fig,use_container_width=True)
         
 
