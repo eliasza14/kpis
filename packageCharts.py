@@ -40,3 +40,32 @@ def gaugeChart(value,color):
 
         return fig
 
+def stackedChart(columns,kpdf,legend_labels):
+    # Create the stacked bar plot using Plotly
+    kpdf_selected = kpdf[columns]
+
+    fig = go.Figure()
+    legend_labels=legend_labels
+    # legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
+    
+    for i, col in enumerate(columns):
+        fig.add_trace(go.Bar(
+             
+            name=legend_labels[i],  # Use the corresponding label
+            x=kpdf['year'].apply(str),
+            y=kpdf_selected[col],
+            text=kpdf[col],
+            textposition='inside'
+        ))
+    # Update the layout
+    fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
+    orientation="h",  # Horizontal legends
+    yanchor="bottom",
+    y=1.02,
+    xanchor="center",
+    x=0.5
+    ),height=600, width=800)
+
+    return fig
+        
+
