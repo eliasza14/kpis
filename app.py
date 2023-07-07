@@ -57,7 +57,24 @@ def main():
     }
     
     
-       
+    #counter{
+    
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Source Sans Pro',sans-serif !important;
+    font-size: 50px;
+    background-color: #f1f1f1;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+    
+    }
     
 
 
