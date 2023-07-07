@@ -5,7 +5,7 @@ from plotly.subplots import make_subplots
 
 #GAUGE CHART
 
-def gaugeChart(value):
+def gaugeChart(value,color):
         # Create the figure and gauge chart
         fig = go.Figure(go.Indicator(
             mode="gauge+number",
@@ -18,7 +18,7 @@ def gaugeChart(value):
         fig.update_traces(
             gauge={
                 'axis': {'range': [None, 100]},
-                'bar': {'color': "royalblue",'thickness': 0.7},
+                'bar': {'color': color,'thickness': 0.7},
                 'bgcolor': "white",
                 'borderwidth': 2,
                 'bordercolor': "gray",

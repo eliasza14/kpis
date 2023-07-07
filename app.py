@@ -452,7 +452,7 @@ def ad_button2(id,kpdf,js_code):
 
             # Select the value from the filtered dataframe
             d11_value = filtered_kpdf["D11"].iloc[0]
-            fig=gaugeChart(d11_value)
+            fig=gaugeChart(d11_value,'red')
 
             # # Create the figure and gauge chart
             # fig = go.Figure(go.Indicator(
