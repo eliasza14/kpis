@@ -324,7 +324,7 @@ def ad_button2(id,kpdf,js_code):
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -343,7 +343,7 @@ def ad_button2(id,kpdf,js_code):
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -541,7 +541,7 @@ def ad_button3(id,kpdf,js_code):
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -560,7 +560,7 @@ def ad_button3(id,kpdf,js_code):
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center; font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -672,46 +672,6 @@ def ad_button3(id,kpdf,js_code):
                 )
             st.plotly_chart(fig,use_container_width=True)
         
-          
-
-   
-
-# def ad_button3(id,kpdf):
-#     st.subheader("button3 Submenu")
-#     st.write("Content of button3")
-#     with st.container():
-#         col1, col2,col3 = st.columns(3)
-#         with col1:
-#             st.write('D18')
-#             st.write(kpdf['D18'])
-
-#         with col2:
-#             st.write('D19')
-#             st.write(kpdf['D19'])
-#         with col3:
-#             st.write('D20')
-#             st.write(kpdf['D20'])
-
-#     with st.container():
-#         col1, col2,col3 = st.columns(3)
-#         with col1:
-#             st.write('D21')
-#             st.write(kpdf['D21'])
-
-#         with col2:
-#             st.write('D22')
-#             st.write(kpdf['D22'])
-
-#         with col3:
-#             st.write('D23')
-#             st.write(kpdf['D23'])
-
-
-          
-
-
-
-
 
 
 def ad_button4(id,kpdf,js_code):
@@ -730,7 +690,7 @@ def ad_button4(id,kpdf,js_code):
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -746,7 +706,7 @@ def ad_button4(id,kpdf,js_code):
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 60px; background-color: #f1f1f1; width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -995,7 +955,7 @@ def e_button5(id,kpdf,js_code):
     # text="**"+str(val2)+"** **&#8364;**"
     html(
         f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-        <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+        <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
         <script type="text/javascript">
         {js_code}
         animateCounter3("counter", 0, """+str(val2)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1016,7 +976,7 @@ def e_button5(id,kpdf,js_code):
 
             html(
                     f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                    <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                    <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                     <script type="text/javascript">
                     {js_code}
                     animateCounter3("counter", 0, """+str(val26)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1031,7 +991,7 @@ def e_button5(id,kpdf,js_code):
             val27=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter3("counter", 0, """+str(val27)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1044,7 +1004,7 @@ def e_button5(id,kpdf,js_code):
             val28=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter3("counter", 0, """+str(val28)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1150,7 +1110,7 @@ def e_button6(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Κύκλου Εργασιών</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val1)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1165,7 +1125,7 @@ def e_button6(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτερικοί Χώροι</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center; font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1177,7 +1137,7 @@ def e_button6(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val5)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1189,7 +1149,7 @@ def e_button6(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Λοιπ. Εργασίες</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val7)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1425,7 +1385,7 @@ def e_button7(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Καθαρών αποτελεσμάτων</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val1)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1437,7 +1397,7 @@ def e_button7(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>Αριθμοδείκτη καθαρών αποτελεσμάτων</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
@@ -1449,7 +1409,7 @@ def e_button7(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή</h3>", unsafe_allow_html=True)
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="counter" style="text-align: center;     font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val4)+""", 1000);  // Increase from 0 to 100 in 1 second
