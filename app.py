@@ -789,7 +789,7 @@ def e_button6(id,kpdf,js_code):
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D24'].astype(int).tolist()
 
-            fig=pctChangeChart(values,categories,'Ποσοστιαία μεταβολή','Values','Percentage Change','Values')
+            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
 
             # # Calculate percentage change
             # percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
