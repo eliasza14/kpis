@@ -472,50 +472,6 @@ def ad_button3(id,kpdf,js_code):
             values =kpdf['D13'].tolist()
 
             fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
-
-
-
-
-
-            # # Calculate percentage change
-            # percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
-
-            # # Create the bar trace
-            # bar_trace = go.Bar(x=categories, y=values, name='Values')
-
-            # # Create the line trace
-            # line_trace = go.Scatter(x=categories[1:], y=percentage_change, name='Percentage Change', mode='lines+markers', yaxis='y2')
-
-            # # Create the layout with two y-axes
-            # layout = go.Layout(
-            #     yaxis=dict(title='Values', rangemode='nonnegative'),
-            #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-            #     height=600,  # Set the height of the chart
-            #     width=400  # Set the width of the chart
-            # )
-
-            # # Create the figure
-            # fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
-
-            # # Add labels to the bars
-            # for i in range(len(categories)):
-            #     fig.add_annotation(
-            #         x=categories[i], y=values[i],
-            #         text=str(values[i]),
-            #         showarrow=False,
-            #         font=dict(color='black', size=12),
-            #         xanchor='center', yanchor='bottom'
-            #     )
-
-            # # Add labels to the percentage change
-            # for i in range(len(percentage_change)):
-            #     fig.add_annotation(
-            #         x=categories[i+1], y=percentage_change[i],
-            #         text=f"{percentage_change[i]:.2f}%",
-            #         showarrow=False,
-            #         font=dict(color='red', size=12),
-            #         xanchor='center', yanchor='bottom'
-            #     )
             st.plotly_chart(fig,use_container_width=True)
         
 
@@ -570,20 +526,20 @@ def ad_button4(id,kpdf,js_code):
 
                 val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
 
-                layout = go.Layout(
-                    yaxis=dict(title='Values', rangemode='nonnegative'),
-                    yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                    height=400,  # Set the height of the chart
-                    width=400,  # Set the width of the chart
-                    legend=dict(
-                        orientation='h',
-                        yanchor='top',
-                        y=1.1,
-                        xanchor='center',
-                        x=0.5
-                    ),
-                    margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
-                )
+                # layout = go.Layout(
+                #     yaxis=dict(title='Values', rangemode='nonnegative'),
+                #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+                #     height=400,  # Set the height of the chart
+                #     width=400,  # Set the width of the chart
+                #     legend=dict(
+                #         orientation='h',
+                #         yanchor='top',
+                #         y=1.1,
+                #         xanchor='center',
+                #         x=0.5
+                #     ),
+                #     margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+                # )
 
                 fig = go.Figure(layout=layout)
                 fig.add_trace(go.Pie(
