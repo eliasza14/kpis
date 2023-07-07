@@ -502,7 +502,7 @@ def ad_button3(id,kpdf,js_code):
             #         font=dict(color='red', size=12),
             #         xanchor='center', yanchor='bottom'
             #     )
-            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
 
