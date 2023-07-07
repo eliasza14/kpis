@@ -521,83 +521,16 @@ def ad_button4(id,kpdf,js_code):
         
         #     # val=50
         with col1:
-                # Create the layout with two y-axes
-                st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΛΥΨΥ % επί του Συνόλου</h3>", unsafe_allow_html=True)
-
-                val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
-
-                # layout = go.Layout(
-                #     yaxis=dict(title='Values', rangemode='nonnegative'),
-                #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                #     height=400,  # Set the height of the chart
-                #     width=400,  # Set the width of the chart
-                #     legend=dict(
-                #         orientation='h',
-                #         yanchor='top',
-                #         y=1.1,
-                #         xanchor='center',
-                #         x=0.5
-                #     ),
-                #     margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
-                # )
-
-                # fig = go.Figure(layout=layout)
-                # fig.add_trace(go.Pie(
-                #     labels=['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '],
-                #     values=[val, 100 - val],
-                #     hole=0.85,
-                #     textinfo='none',
-                #     marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
-                # ))
-                # fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
-                # fig.update_layout(showlegend=True)  # Show the legend
-                # fig.update_layout(legend=dict(
-                #     orientation='h',
-                #     yanchor='top',
-                #     y=1.1,
-                #     xanchor='center',
-                #     x=0.5
-                # ))
-                fig=donut_pct_Chart(val,'rgb(135 206 235)', 'rgb(240,240,240)',['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '])
-                st.plotly_chart(fig, use_container_width=True)
+            # Create the layout with two y-axes
+            st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΛΥΨΥ % επί του Συνόλου</h3>", unsafe_allow_html=True)
+            val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
+            fig=donut_pct_Chart(val,'rgb(135 206 235)', 'rgb(240,240,240)',['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '])
+            st.plotly_chart(fig, use_container_width=True)
 
 
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΕΚΟ % επί του Συνόλου</h3>", unsafe_allow_html=True)
-
             val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
-            # layout = go.Layout(
-            # yaxis=dict(title='Values', rangemode='nonnegative'),
-            # yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-            # height=400,  # Set the height of the chart
-            # width=400,  # Set the width of the chart
-            # legend=dict(
-            #     orientation='h',
-            #     yanchor='top',
-            #     y=1.1,
-            #     xanchor='center',
-            #     x=0.5
-            # ),
-            # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
-            # )
-            # fig = go.Figure(layout=layout)
-            # fig.add_trace(go.Pie(
-            #     labels=['(%) Μ.Ε. ΕΚΟ επι του συνόλου', ' '],
-            #     values=[val2,100-val2],
-            #     hole=0.85,
-            #     textinfo='none',
-            #     marker_colors=['rgb(113,209,145)','rgb(240,240,240)'],
-            # ))
-            # fig.update_layout(annotations=[dict(text=str(val2) + "%", font_size=40, showarrow=False)])
-            # fig.update_layout(showlegend=True)  # Show the legend
-            # fig.update_layout(legend=dict(
-            #     orientation='h',
-            #     yanchor='top',
-            #     y=1.1,
-            #     xanchor='center',
-            #     x=0.5
-            # ))
-
             fig=donut_pct_Chart(val2,'rgb(113,209,145)','rgb(240,240,240)',['(%) Μ.Ε. ΕΚΟ επι του συνόλου', ' '])
             st.plotly_chart(fig,use_container_width=True)
 
@@ -611,45 +544,48 @@ def ad_button4(id,kpdf,js_code):
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D18_lipsi'].astype(int).tolist()
 
-            # Calculate percentage change
-            percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
+            fig=pctChangeChart(values,categories,'Αρ.Μονάδων Εργασίας ΛΥΨΥ','Ποσοστιαία μεταβολή','% Μεταβολή','Μ.Ε. ΛΥΨΥ')
 
-            # Create the bar trace
-            bar_trace = go.Bar(x=categories, y=values, name='Μ.Ε. ΛΥΨΥ')
 
-            # Create the line trace
-            line_trace = go.Scatter(x=categories[1:], y=percentage_change, name='% Μεταβολή', mode='lines+markers', yaxis='y2')
+            # # Calculate percentage change
+            # percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
 
-            # Create the layout with two y-axes
-            layout = go.Layout(
-                yaxis=dict(title='Αρ.Μονάδων Εργασίας ΛΥΨΥ', rangemode='nonnegative'),
-                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=600,  # Set the height of the chart
-                width=400  # Set the width of the chart
-            )
+            # # Create the bar trace
+            # bar_trace = go.Bar(x=categories, y=values, name='Μ.Ε. ΛΥΨΥ')
 
-            # Create the figure
-            fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
+            # # Create the line trace
+            # line_trace = go.Scatter(x=categories[1:], y=percentage_change, name='% Μεταβολή', mode='lines+markers', yaxis='y2')
 
-            # Add labels to the bars
-            for i in range(len(categories)):
-                fig.add_annotation(
-                    x=categories[i], y=values[i],
-                    text=str(values[i]),
-                    showarrow=False,
-                    font=dict(color='black', size=12),
-                    xanchor='center', yanchor='bottom'
-                )
+            # # Create the layout with two y-axes
+            # layout = go.Layout(
+            #     yaxis=dict(title='Αρ.Μονάδων Εργασίας ΛΥΨΥ', rangemode='nonnegative'),
+            #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+            #     height=600,  # Set the height of the chart
+            #     width=400  # Set the width of the chart
+            # )
 
-            # Add labels to the percentage change
-            for i in range(len(percentage_change)):
-                fig.add_annotation(
-                    x=categories[i+1], y=percentage_change[i],
-                    text=f"{percentage_change[i]:.2f}%",
-                    showarrow=False,
-                    font=dict(color='red', size=12),
-                    xanchor='center', yanchor='bottom'
-                )
+            # # Create the figure
+            # fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
+
+            # # Add labels to the bars
+            # for i in range(len(categories)):
+            #     fig.add_annotation(
+            #         x=categories[i], y=values[i],
+            #         text=str(values[i]),
+            #         showarrow=False,
+            #         font=dict(color='black', size=12),
+            #         xanchor='center', yanchor='bottom'
+            #     )
+
+            # # Add labels to the percentage change
+            # for i in range(len(percentage_change)):
+            #     fig.add_annotation(
+            #         x=categories[i+1], y=percentage_change[i],
+            #         text=f"{percentage_change[i]:.2f}%",
+            #         showarrow=False,
+            #         font=dict(color='red', size=12),
+            #         xanchor='center', yanchor='bottom'
+            #     )
             st.plotly_chart(fig,use_container_width=True)
 
 
