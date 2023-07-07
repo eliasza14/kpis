@@ -568,26 +568,30 @@ def ad_button4(id,kpdf,js_code):
 
             # Select the relevant columns
             columns = ['D22', 'D23', 'D22_23_g']
-            kpdf_selected = kpdf[columns]
-            # Create the stacked bar plot using Plotly
-            fig = go.Figure()
             legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
-            for i, col in enumerate(columns):
-                fig.add_trace(go.Bar(
-                    name=legend_labels[i],  # Use the corresponding label
-                    x=kpdf['year'].apply(str),
-                    y=kpdf_selected[col],
-                    text=kpdf[col],
-                    textposition='inside'
-                ))
-            # Update the layout
-            fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
-            orientation="h",  # Horizontal legends
-            yanchor="bottom",
-            y=1.02,
-            xanchor="center",
-            x=0.5
-            ),height=600, width=800)
+
+            kpdf_selected = kpdf[columns]
+            fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επι του Συνόλου')
+
+            # # Create the stacked bar plot using Plotly
+            # fig = go.Figure()
+            # legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
+            # for i, col in enumerate(columns):
+            #     fig.add_trace(go.Bar(
+            #         name=legend_labels[i],  # Use the corresponding label
+            #         x=kpdf['year'].apply(str),
+            #         y=kpdf_selected[col],
+            #         text=kpdf[col],
+            #         textposition='inside'
+            #     ))
+            # # Update the layout
+            # fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
+            # orientation="h",  # Horizontal legends
+            # yanchor="bottom",
+            # y=1.02,
+            # xanchor="center",
+            # x=0.5
+            # ),height=600, width=800)
 
             
             # Show the plot
