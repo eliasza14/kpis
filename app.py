@@ -541,23 +541,24 @@ def ad_button4(id,kpdf,js_code):
                 #     margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
                 # )
 
-                fig = go.Figure(layout=layout)
-                fig.add_trace(go.Pie(
-                    labels=['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '],
-                    values=[val, 100 - val],
-                    hole=0.85,
-                    textinfo='none',
-                    marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
-                ))
-                fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
-                fig.update_layout(showlegend=True)  # Show the legend
-                fig.update_layout(legend=dict(
-                    orientation='h',
-                    yanchor='top',
-                    y=1.1,
-                    xanchor='center',
-                    x=0.5
-                ))
+                # fig = go.Figure(layout=layout)
+                # fig.add_trace(go.Pie(
+                #     labels=['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '],
+                #     values=[val, 100 - val],
+                #     hole=0.85,
+                #     textinfo='none',
+                #     marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
+                # ))
+                # fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
+                # fig.update_layout(showlegend=True)  # Show the legend
+                # fig.update_layout(legend=dict(
+                #     orientation='h',
+                #     yanchor='top',
+                #     y=1.1,
+                #     xanchor='center',
+                #     x=0.5
+                # ))
+                fig=donut_pct_Chart(val,'rgb(135 206 235)', 'rgb(240,240,240)',['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '])
                 st.plotly_chart(fig, use_container_width=True)
 
 
