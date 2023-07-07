@@ -396,7 +396,7 @@ def ad_button2(id,kpdf,js_code):
             #     paper_bgcolor="white",
             #     font={'color': "gray", 'family': "Arial"}
             # )
-            # fig=gaugeChart(d9_value)
+            fig=gaugeChart(d9_value)
             st.plotly_chart(fig,use_container_width=True)
             
 
