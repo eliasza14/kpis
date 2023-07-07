@@ -410,38 +410,39 @@ def ad_button2(id,kpdf,js_code):
             d10_value = filtered_kpdf["D10"].iloc[0]
 
             # Create the figure and gauge chart
-            fig = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=d10_value,
-                domain={'x': [0, 1], 'y': [0, 1]},
-                number={'suffix': '%'}
-            ))
+            # fig = go.Figure(go.Indicator(
+            #     mode="gauge+number",
+            #     value=d10_value,
+            #     domain={'x': [0, 1], 'y': [0, 1]},
+            #     number={'suffix': '%'}
+            # ))
 
-            # Customize the appearance of the gauge chart
-            fig.update_traces(
-                gauge={
-                    'axis': {'range': [None, 100]},
-                    'bar': {'color': "skyblue",'thickness': 0.7},
-                    'bgcolor': "white",
-                    'borderwidth': 2,
-                    'bordercolor': "gray",
-                    'steps': [
-                        {'range': [0, 100], 'color': 'whitesmoke'},
-                        ]
-                    },  # Set the range for the gauge axis
-                title_font={'size': 10,'color': 'gray'},  # Set the title font size
-                number_font={'size': 40},  # Set the number font size
-            )
-            fig.update_layout(
-                height=170,  # Adjust the height of the chart
-                width=200,   # Adjust the width of the chart
-                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
-                margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
+            # # Customize the appearance of the gauge chart
+            # fig.update_traces(
+            #     gauge={
+            #         'axis': {'range': [None, 100]},
+            #         'bar': {'color': "skyblue",'thickness': 0.7},
+            #         'bgcolor': "white",
+            #         'borderwidth': 2,
+            #         'bordercolor': "gray",
+            #         'steps': [
+            #             {'range': [0, 100], 'color': 'whitesmoke'},
+            #             ]
+            #         },  # Set the range for the gauge axis
+            #     title_font={'size': 10,'color': 'gray'},  # Set the title font size
+            #     number_font={'size': 40},  # Set the number font size
+            # )
+            # fig.update_layout(
+            #     height=170,  # Adjust the height of the chart
+            #     width=200,   # Adjust the width of the chart
+            #     # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+            #     margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
 
-                paper_bgcolor="white",
-                font={'color': "gray", 'family': "Arial"}
-            )
-            
+            #     paper_bgcolor="white",
+            #     font={'color': "gray", 'family': "Arial"}
+            # )
+            fig=gaugeChart(d10_value)
+
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             # Filter the dataframe based on the selected year
@@ -451,42 +452,43 @@ def ad_button2(id,kpdf,js_code):
 
             # Select the value from the filtered dataframe
             d11_value = filtered_kpdf["D11"].iloc[0]
+            fig=gaugeChart(d11_value)
 
-            # Create the figure and gauge chart
-            fig = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=d11_value,
-                domain={'x': [0, 1], 'y': [0, 1]},
-                # title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
-                number={'suffix': '%'},
+            # # Create the figure and gauge chart
+            # fig = go.Figure(go.Indicator(
+            #     mode="gauge+number",
+            #     value=d11_value,
+            #     domain={'x': [0, 1], 'y': [0, 1]},
+            #     # title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
+            #     number={'suffix': '%'},
                 
-            ))
+            # ))
             
 
-            # Customize the appearance of the gauge chart
-            fig.update_traces(
-                gauge={
-                    'axis': {'range': [None, 100]},
-                    'bar': {'color': "red",'thickness': 0.7},
-                    'bgcolor': "white",
-                    'borderwidth': 2,
-                    'bordercolor': "gray",
-                    'steps': [
-                        {'range': [0, 100], 'color': 'whitesmoke'},
-                        ]
-                    },  # Set the range for the gauge axis
-                title_font={'size': 10,'color': 'gray'},  # Set the title font size
-                number_font={'size': 40},  # Set the number font size
-            )
-            fig.update_layout(
-                height=170,  # Adjust the height of the chart
-                width=200,   # Adjust the width of the chart
-                paper_bgcolor="white",
-                # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
-                margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
+            # # Customize the appearance of the gauge chart
+            # fig.update_traces(
+            #     gauge={
+            #         'axis': {'range': [None, 100]},
+            #         'bar': {'color': "red",'thickness': 0.7},
+            #         'bgcolor': "white",
+            #         'borderwidth': 2,
+            #         'bordercolor': "gray",
+            #         'steps': [
+            #             {'range': [0, 100], 'color': 'whitesmoke'},
+            #             ]
+            #         },  # Set the range for the gauge axis
+            #     title_font={'size': 10,'color': 'gray'},  # Set the title font size
+            #     number_font={'size': 40},  # Set the number font size
+            # )
+            # fig.update_layout(
+            #     height=170,  # Adjust the height of the chart
+            #     width=200,   # Adjust the width of the chart
+            #     paper_bgcolor="white",
+            #     # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
+            #     margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
 
-                font={'color': "gray", 'family': "Arial"}
-            )
+            #     font={'color': "gray", 'family': "Arial"}
+            # )
             # fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
             st.plotly_chart(fig,use_container_width=True)
 
