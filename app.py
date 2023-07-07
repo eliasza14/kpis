@@ -1019,37 +1019,39 @@ def e_button7(id,kpdf,js_code):
 
              
             val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
-            layout = go.Layout(
-                yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=400,  # Set the height of the chart
-                width=400,  # Set the width of the chart
-                legend=dict(
-                    orientation='h',
-                    yanchor='top',
-                    y=1.1,
-                    xanchor='center',
-                    x=0.5
-                ),
-                margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
-            )
-            fig = go.Figure(layout=layout)
-            fig.add_trace(go.Pie(
-                labels=['% Συμμετοχή Επιδοτήσεων', ' '],
-                values=[val39,100-val39],
-                hole=0.85,
-                textinfo='none',
-                marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
-            ))
-            fig.update_layout(annotations=[dict(text=str(val39) + "%", font_size=40, showarrow=False)])
-            fig.update_layout(showlegend=True)  # Show the legend
-            fig.update_layout(legend=dict(
-                orientation='h',
-                yanchor='top',
-                y=1.1,
-                xanchor='center',
-                x=0.5
-            ))
+            fig=donut_pct_Chart(val39,'rgb(135 206 235)', 'rgb(240,240,240)',['% Συμμετοχή Επιδοτήσεων', ' '])
+
+            # layout = go.Layout(
+            #     yaxis=dict(title='Values', rangemode='nonnegative'),
+            #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+            #     height=400,  # Set the height of the chart
+            #     width=400,  # Set the width of the chart
+            #     legend=dict(
+            #         orientation='h',
+            #         yanchor='top',
+            #         y=1.1,
+            #         xanchor='center',
+            #         x=0.5
+            #     ),
+            #     margin=dict(l=0, r=0, t=30, b=0, autoexpand=True)  # Set the margin to auto
+            # )
+            # fig = go.Figure(layout=layout)
+            # fig.add_trace(go.Pie(
+            #     labels=['% Συμμετοχή Επιδοτήσεων', ' '],
+            #     values=[val39,100-val39],
+            #     hole=0.85,
+            #     textinfo='none',
+            #     marker_colors=['rgb(135 206 235)', 'rgb(240,240,240)'],
+            # ))
+            # fig.update_layout(annotations=[dict(text=str(val39) + "%", font_size=40, showarrow=False)])
+            # fig.update_layout(showlegend=True)  # Show the legend
+            # fig.update_layout(legend=dict(
+            #     orientation='h',
+            #     yanchor='top',
+            #     y=1.1,
+            #     xanchor='center',
+            #     x=0.5
+            # ))
             st.plotly_chart(fig, use_container_width=True)
         
 
