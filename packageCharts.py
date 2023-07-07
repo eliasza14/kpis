@@ -55,7 +55,9 @@ def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title):
             x=kpdf['year'].apply(str),
             y=kpdf_selected[col],
             text=kpdf[col],
-            textposition='inside'
+            textposition='inside',
+            marker=dict(color=colors[i])  # Assign a color from the color palette
+
         ))
     # Update the layout
     fig.update_layout(barmode='stack', xaxis_title=xaxis_title,yaxis_title=yaxis_title,legend=dict(
@@ -174,7 +176,37 @@ def pieChart(labels,values,colors):
     return fig
 
 
+def stackedChart2(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
+    # Create the stacked bar plot using Plotly
+    kpdf_selected = kpdf[columns]
 
+    fig = go.Figure()
+    legend_labels=legend_labels
+    # legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
+    
+    for i, col in enumerate(columns):
+        fig.add_trace(go.Bar(
+             
+            name=legend_labels[i],  # Use the corresponding label
+            x=kpdf['year'].apply(str),
+            y=kpdf_selected[col],
+            text=kpdf[col],
+            textposition='inside',
+            marker=dict(color=colors[i])  # Assign a color from the color palette
+
+        ))
+    # Update the layout
+    fig.update_layout(barmode='stack', xaxis_title=xaxis_title,yaxis_title=yaxis_title,legend=dict(
+    orientation="h",  # Horizontal legends
+    yanchor="bottom",
+    y=1.02,
+    xanchor="center",
+    x=0.5,
+    bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
+    traceorder='normal'  # Maintain the order of the legend labels
+    ),height=600, width=800)
+
+    return fig
      
      
 
