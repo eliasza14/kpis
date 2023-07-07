@@ -696,37 +696,11 @@ def e_button5(id,kpdf,js_code):
 
 
             columns = ['D26', 'D27', 'D28']
+            legend_labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
+
             kpdf_selected = kpdf[columns]
             # Create the stacked bar plot using Plotly
-
-
-            fig = go.Figure()
-            legend_labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
-            for i, col in enumerate(columns):
-                fig.add_trace(go.Bar(
-                    name=legend_labels[i],  # Use the corresponding label
-                    x=kpdf['year'].apply(str),
-                    y=kpdf_selected[col],
-                    text=kpdf[col],
-                    textposition='inside',
-                    marker=dict(color=colors[i])  # Assign a color from the color palette
-
-                ))
-            # Update the layout
-            fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='Συχνότητα',legend=dict(
-            orientation="h",  # Horizontal legends
-            yanchor="bottom",
-            y=1.02,
-            xanchor="center",
-            x=0.5,
-            bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
-            traceorder='normal'  # Maintain the order of the legend labels
-            ),height=600, width=800)
-
-
-            # Update the layout
-            fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='Συχνότητα')
-            # Show the plot
+            fig=stackedChart2(columns,kpdf,legend_labels,'Έτος','Συχνότητα',colors)
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             pass
@@ -815,45 +789,47 @@ def e_button6(id,kpdf,js_code):
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D24'].astype(int).tolist()
 
-            # Calculate percentage change
-            percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
+            fig=pctChangeChart(values,categories,'Ποσοστιαία μεταβολή','Values','Percentage Change','Values')
 
-            # Create the bar trace
-            bar_trace = go.Bar(x=categories, y=values, name='Values')
+            # # Calculate percentage change
+            # percentage_change = [(values[i] - values[i-1]) / values[i-1] * 100 for i in range(1, len(values))]
 
-            # Create the line trace
-            line_trace = go.Scatter(x=categories[1:], y=percentage_change, name='Percentage Change', mode='lines+markers', yaxis='y2')
+            # # Create the bar trace
+            # bar_trace = go.Bar(x=categories, y=values, name='Values')
 
-            # Create the layout with two y-axes
-            layout = go.Layout(
-                yaxis=dict(title='Values', rangemode='nonnegative'),
-                yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
-                height=600,  # Set the height of the chart
-                width=400  # Set the width of the chart
-            )
+            # # Create the line trace
+            # line_trace = go.Scatter(x=categories[1:], y=percentage_change, name='Percentage Change', mode='lines+markers', yaxis='y2')
 
-            # Create the figure
-            fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
+            # # Create the layout with two y-axes
+            # layout = go.Layout(
+            #     yaxis=dict(title='Values', rangemode='nonnegative'),
+            #     yaxis2=dict(title='Ποσοστιαία μεταβολή', overlaying='y', side='right', showgrid=False),
+            #     height=600,  # Set the height of the chart
+            #     width=400  # Set the width of the chart
+            # )
 
-            # Add labels to the bars
-            for i in range(len(categories)):
-                fig.add_annotation(
-                    x=categories[i], y=values[i],
-                    text=str(values[i]),
-                    showarrow=False,
-                    font=dict(color='black', size=12),
-                    xanchor='center', yanchor='bottom'
-                )
+            # # Create the figure
+            # fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
 
-            # Add labels to the percentage change
-            for i in range(len(percentage_change)):
-                fig.add_annotation(
-                    x=categories[i+1], y=percentage_change[i],
-                    text=f"{percentage_change[i]:.2f}%",
-                    showarrow=False,
-                    font=dict(color='red', size=12),
-                    xanchor='center', yanchor='bottom'
-                )
+            # # Add labels to the bars
+            # for i in range(len(categories)):
+            #     fig.add_annotation(
+            #         x=categories[i], y=values[i],
+            #         text=str(values[i]),
+            #         showarrow=False,
+            #         font=dict(color='black', size=12),
+            #         xanchor='center', yanchor='bottom'
+            #     )
+
+            # # Add labels to the percentage change
+            # for i in range(len(percentage_change)):
+            #     fig.add_annotation(
+            #         x=categories[i+1], y=percentage_change[i],
+            #         text=f"{percentage_change[i]:.2f}%",
+            #         showarrow=False,
+            #         font=dict(color='red', size=12),
+            #         xanchor='center', yanchor='bottom'
+            #     )
             st.plotly_chart(fig,use_container_width=True)
 
         with col2:
