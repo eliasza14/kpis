@@ -151,6 +151,30 @@ def donut_pct_Chart(val,color1,color2,labels):
     return fig
 
 
+def pieChart(labels,values,colors):
+
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
+
+    fig.update_traces(
+        marker=dict(colors=colors),  # Assign colors from the color palette to the pie slices
+        textinfo='percent+label'
+    )
+
+    # Update the layout
+    fig.update_layout(
+        legend=dict(
+            orientation="h",  # Horizontal legend
+            yanchor="bottom",    # Anchor legend to the top
+            y=1.1,           # Adjust the distance of the legend from the pie chart
+            bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
+            traceorder='normal'  # Maintain the order of the legend labels
+        )
+    )
+
+    return fig
+
+
+
      
      
 
