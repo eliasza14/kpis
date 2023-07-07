@@ -569,32 +569,8 @@ def ad_button4(id,kpdf,js_code):
             # Select the relevant columns
             columns = ['D22', 'D23', 'D22_23_g']
             legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
-
             kpdf_selected = kpdf[columns]
             fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επι του Συνόλου')
-
-            # # Create the stacked bar plot using Plotly
-            # fig = go.Figure()
-            # legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
-            # for i, col in enumerate(columns):
-            #     fig.add_trace(go.Bar(
-            #         name=legend_labels[i],  # Use the corresponding label
-            #         x=kpdf['year'].apply(str),
-            #         y=kpdf_selected[col],
-            #         text=kpdf[col],
-            #         textposition='inside'
-            #     ))
-            # # Update the layout
-            # fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
-            # orientation="h",  # Horizontal legends
-            # yanchor="bottom",
-            # y=1.02,
-            # xanchor="center",
-            # x=0.5
-            # ),height=600, width=800)
-
-            
-            # Show the plot
             st.plotly_chart(fig, use_container_width=True)
          with col3:
             pass
@@ -684,24 +660,25 @@ def e_button5(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>Ποσοστό επί του Συνόλου ανά Κατηγορία Κύκλου Εργασιών</h3>", unsafe_allow_html=True)
 
             labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
+            values=[val26,val27,val28]
+            fig=pieChart(labels,values,colors)
+            # fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
 
-            fig = go.Figure(data=[go.Pie(labels=labels, values=[val26,val27,val28])])
+            # fig.update_traces(
+            #     marker=dict(colors=colors),  # Assign colors from the color palette to the pie slices
+            #     textinfo='percent+label'
+            # )
 
-            fig.update_traces(
-                marker=dict(colors=colors),  # Assign colors from the color palette to the pie slices
-                textinfo='percent+label'
-            )
-
-            # Update the layout
-            fig.update_layout(
-                legend=dict(
-                    orientation="h",  # Horizontal legend
-                    yanchor="bottom",    # Anchor legend to the top
-                    y=1.1,           # Adjust the distance of the legend from the pie chart
-                    bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
-                    traceorder='normal'  # Maintain the order of the legend labels
-                )
-            )
+            # # Update the layout
+            # fig.update_layout(
+            #     legend=dict(
+            #         orientation="h",  # Horizontal legend
+            #         yanchor="bottom",    # Anchor legend to the top
+            #         y=1.1,           # Adjust the distance of the legend from the pie chart
+            #         bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
+            #         traceorder='normal'  # Maintain the order of the legend labels
+            #     )
+            # )
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             pass
