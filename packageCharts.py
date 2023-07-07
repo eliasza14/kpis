@@ -40,7 +40,7 @@ def gaugeChart(value,color):
 
         return fig
 
-def stackedChart(columns,kpdf,legend_labels):
+def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title):
     # Create the stacked bar plot using Plotly
     kpdf_selected = kpdf[columns]
 
@@ -58,7 +58,7 @@ def stackedChart(columns,kpdf,legend_labels):
             textposition='inside'
         ))
     # Update the layout
-    fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
+    fig.update_layout(barmode='stack', xaxis_title=xaxis_title,yaxis_title=yaxis_title,legend=dict(
     orientation="h",  # Horizontal legends
     yanchor="bottom",
     y=1.02,

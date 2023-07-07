@@ -415,7 +415,7 @@ def ad_button2(id,kpdf,js_code):
             #     xanchor="center",
             #     x=0.5
             # ),height=600, width=800)
-                fig=stackedChart(columns,kpdf,legend_labels)
+                fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επι του Συνόλου')
 
                 # Show the plot
                 st.plotly_chart(fig, use_container_width=True)
