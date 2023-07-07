@@ -359,43 +359,9 @@ def ad_button2(id,kpdf,js_code):
         with col1:
             # Filter the dataframe based on the selected year
             st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι Γεν. Πληθ. (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
-
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
-
             # Select the value from the filtered dataframe
             d9_value = filtered_kpdf["D9"].iloc[0]
-
-            # Create the figure and gauge chart
-            # fig = go.Figure(go.Indicator(
-            #     mode="gauge+number",
-            #     value=d9_value,
-            #     domain={'x': [0, 1], 'y': [0, 1]},
-            #     number={'suffix': '%'}
-            # ))
-
-            # # Customize the appearance of the gauge chart
-            # fig.update_traces(
-            #     gauge={
-            #         'axis': {'range': [None, 100]},
-            #         'bar': {'color': "royalblue",'thickness': 0.7},
-            #         'bgcolor': "white",
-            #         'borderwidth': 2,
-            #         'bordercolor': "gray",
-            #         'steps': [
-            #             {'range': [0, 100], 'color': 'whitesmoke'},
-            #             ]
-            #         },  # Set the range for the gauge axis
-            #     title_font={'size': 10,'color': 'gray'},  # Set the title font size
-            #     number_font={'size': 40},  # Set the number font size
-            # )
-            # fig.update_layout(
-            #     height=170,  # Adjust the height of the chart
-            #     width=200,   # Adjust the width of the chart
-            #     margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
-
-            #     paper_bgcolor="white",
-            #     font={'color': "gray", 'family': "Arial"}
-            # )
             fig=gaugeChart(d9_value,'royalblue')
             st.plotly_chart(fig,use_container_width=True)
             
@@ -403,93 +369,19 @@ def ad_button2(id,kpdf,js_code):
         with col2:
             # Filter the dataframe based on the selected year
             st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΛΥΨΥ (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
-
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
-
             # Select the value from the filtered dataframe
             d10_value = filtered_kpdf["D10"].iloc[0]
-
-            # Create the figure and gauge chart
-            # fig = go.Figure(go.Indicator(
-            #     mode="gauge+number",
-            #     value=d10_value,
-            #     domain={'x': [0, 1], 'y': [0, 1]},
-            #     number={'suffix': '%'}
-            # ))
-
-            # # Customize the appearance of the gauge chart
-            # fig.update_traces(
-            #     gauge={
-            #         'axis': {'range': [None, 100]},
-            #         'bar': {'color': "skyblue",'thickness': 0.7},
-            #         'bgcolor': "white",
-            #         'borderwidth': 2,
-            #         'bordercolor': "gray",
-            #         'steps': [
-            #             {'range': [0, 100], 'color': 'whitesmoke'},
-            #             ]
-            #         },  # Set the range for the gauge axis
-            #     title_font={'size': 10,'color': 'gray'},  # Set the title font size
-            #     number_font={'size': 40},  # Set the number font size
-            # )
-            # fig.update_layout(
-            #     height=170,  # Adjust the height of the chart
-            #     width=200,   # Adjust the width of the chart
-            #     # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
-            #     margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
-
-            #     paper_bgcolor="white",
-            #     font={'color': "gray", 'family': "Arial"}
-            # )
             fig=gaugeChart(d10_value,'skyblue')
 
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             # Filter the dataframe based on the selected year
             st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΕΚΟ (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
-
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
-
             # Select the value from the filtered dataframe
             d11_value = filtered_kpdf["D11"].iloc[0]
             fig=gaugeChart(d11_value,'red')
-
-            # # Create the figure and gauge chart
-            # fig = go.Figure(go.Indicator(
-            #     mode="gauge+number",
-            #     value=d11_value,
-            #     domain={'x': [0, 1], 'y': [0, 1]},
-            #     # title={'text': "Εργαζόμενοι ΕΚΟ (% επί του Συνόλου Εργαζομένων ΚοιΣΠΕ)"},
-            #     number={'suffix': '%'},
-                
-            # ))
-            
-
-            # # Customize the appearance of the gauge chart
-            # fig.update_traces(
-            #     gauge={
-            #         'axis': {'range': [None, 100]},
-            #         'bar': {'color': "red",'thickness': 0.7},
-            #         'bgcolor': "white",
-            #         'borderwidth': 2,
-            #         'bordercolor': "gray",
-            #         'steps': [
-            #             {'range': [0, 100], 'color': 'whitesmoke'},
-            #             ]
-            #         },  # Set the range for the gauge axis
-            #     title_font={'size': 10,'color': 'gray'},  # Set the title font size
-            #     number_font={'size': 40},  # Set the number font size
-            # )
-            # fig.update_layout(
-            #     height=170,  # Adjust the height of the chart
-            #     width=200,   # Adjust the width of the chart
-            #     paper_bgcolor="white",
-            #     # margin=dict(l=0, r=0, t=30, b=0, autoexpand=True),  # Set the margin to auto
-            #     margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
-
-            #     font={'color': "gray", 'family': "Arial"}
-            # )
-            # fig.update_layout(paper_bgcolor = "white", font = {'color': "gray", 'family': "Arial"})
             st.plotly_chart(fig,use_container_width=True)
 
         with st.container():
@@ -502,26 +394,28 @@ def ad_button2(id,kpdf,js_code):
 
                 # Select the relevant columns
                 columns = ['D9', 'D10', 'D11']
-                kpdf_selected = kpdf[columns]
+                # kpdf_selected = kpdf[columns]
                 # Create the stacked bar plot using Plotly
-                fig = go.Figure()
                 legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
-                for i, col in enumerate(columns):
-                    fig.add_trace(go.Bar(
-                        name=legend_labels[i],  # Use the corresponding label
-                        x=kpdf['year'].apply(str),
-                        y=kpdf_selected[col],
-                        text=kpdf[col],
-                        textposition='inside'
-                    ))
-                # Update the layout
-                fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
-                orientation="h",  # Horizontal legends
-                yanchor="bottom",
-                y=1.02,
-                xanchor="center",
-                x=0.5
-            ),height=600, width=800)
+
+            #     fig = go.Figure()
+            #     for i, col in enumerate(columns):
+            #         fig.add_trace(go.Bar(
+            #             name=legend_labels[i],  # Use the corresponding label
+            #             x=kpdf['year'].apply(str),
+            #             y=kpdf_selected[col],
+            #             text=kpdf[col],
+            #             textposition='inside'
+            #         ))
+            #     # Update the layout
+            #     fig.update_layout(barmode='stack', xaxis_title='Έτος',yaxis_title='% επι του Συνόλου',legend=dict(
+            #     orientation="h",  # Horizontal legends
+            #     yanchor="bottom",
+            #     y=1.02,
+            #     xanchor="center",
+            #     x=0.5
+            # ),height=600, width=800)
+                fig=stackedChart(columns,kpdf,legend_labels)
 
                 # Show the plot
                 st.plotly_chart(fig, use_container_width=True)
