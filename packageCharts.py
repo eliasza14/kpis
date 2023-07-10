@@ -66,7 +66,11 @@ def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
     y=1.02,
     xanchor="center",
     x=0.5
-    ),height=600, width=800)
+    ),
+    plot_bgcolor='rgba(0,0,0,0)',
+    paper_bgcolor='rgba(0,0,0,0)',
+    height=600, 
+    width=800)
 
     return fig
 
