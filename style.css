@@ -4,8 +4,8 @@
     src: "/fonts/SalmaproMedium-0Wooo.otf"; 
 }
 
-html, body, [class*="css"] {
-    font-family: SalmaproMedium; 
+h3 [class*="css"] {
+    font-family: Roboto; 
     font-size: 18px;
     font-weight: 500;
     color: #091747;
