@@ -252,8 +252,8 @@ def ad_button1(id,kpdf,js_code):
 
 def ad_button2(id,kpdf,js_code):
     st.subheader("Εργαζόμενοι")
-    colors = px.colors.qualitative.Plotly
-
+    #colors = px.colors.qualitative.Plotly
+    colors = ["red", "green", "blue"]
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
 
     with st.container():
