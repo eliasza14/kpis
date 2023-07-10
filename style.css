@@ -5,10 +5,23 @@
 }
 
 h3 [class*="css"] {
-    font-family: Roboto; 
+    /* font-family: Roboto; 
     font-size: 18px;
     font-weight: 500;
-    color: #091747;
+    color: #091747; */
+
+    color: var(--black, #242A2E);
+
+ 
+
+    /* H3 */
+    font-family: Roboto;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 88px;
+    letter-spacing: -3.2px;
+
 }
 .css-1xarl3l.e1vioofd1{
     display:none;
