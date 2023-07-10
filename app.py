@@ -244,9 +244,10 @@ def ad_button1(id,kpdf,js_code):
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
 
+
         html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div style=" padding:10px; background: rgb(34,193,195);background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); width:300px; border-radius:5px;">
+                <div style=" padding:10px; background: rgb(34,193,195);background: linear-gradient(45deg, rgba(218,255,78,1) 0%, rgba(255,37,37,1) 100%); width:300px; border-radius:5px;">
                     <div style="font-size:30px; "><p style=" margin:5px; background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">💀</p></div>
                     <div style="text-align:center;">Συνεταιριστές Κατηγορίας Α</div>
                     <div id="counter" style="text-align: left;     font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
