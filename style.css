@@ -58,7 +58,7 @@ h3 [class*="css"] {
     background: #e7e7e7;
     /*text-shadow: -2px -1px 0px rgb(0, 104, 201), 2px 1px red;*/
 }
-[data-testid="column"] :hover{
+[data-testid="stVerticalBlock"] :hover{
     /* position: relative;
     border: 1px solid transparent;
     border-radius: 20px;
