@@ -5,7 +5,7 @@
 }
 
 html, body, [class*="css"] {
-    font-family: 'SalmaproMedium'; 
+    font-family: SalmaproMedium; 
     font-size: 18px;
     font-weight: 500;
     color: #091747;
