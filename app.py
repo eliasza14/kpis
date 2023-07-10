@@ -58,7 +58,7 @@ def main():
     }
     [data-testid="stSidebar"] {
         background-color: #f2f6fc; /* Replace with your desired color */
-        font-family:papyrus;
+        font-family:Papyrus;
     }
 
     
