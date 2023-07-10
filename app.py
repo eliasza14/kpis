@@ -57,7 +57,7 @@ def main():
         margin: 0px 0.125rem 0px 0px;
     }
     [data-testid="stSidebar"] {
-        background-color: red; /* Replace with your desired color */
+        background-color: #f2f6fc; /* Replace with your desired color */
     }
 
     
