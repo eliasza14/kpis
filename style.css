@@ -10,7 +10,7 @@ h3 [class*="css"] {
     font-weight: 500;
     color: #091747; */
 
-    color: var(--black, #242A2E);
+    color: var(--black, hsla(210, 100%, 1%, 0.586));
 
  
 
