@@ -29,7 +29,7 @@ def main():
     css_style = """
     <style>
     *{
-    font-family:Helvetica;
+    font-family:Lucida Handwriting;
     }
     .css-1xarl3l.e1vioofd1{
     display:none;
