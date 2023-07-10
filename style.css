@@ -50,5 +50,10 @@ h3 [class*="css"] {
     margin: 0px 0.125rem 0px 0px;
 }
 [data-testid="column"] {
-    background-color: red; /* Replace with your desired color */
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    /* box-shadow: gray 10px 10px; */
+    box-shadow: 10px 11px 18px #888888;
+    background: #e7e7e7;
 }
