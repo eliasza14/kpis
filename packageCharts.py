@@ -40,7 +40,7 @@ def gaugeChart(value,color):
 
         return fig
 
-def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title):
+def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
     # Create the stacked bar plot using Plotly
     kpdf_selected = kpdf[columns]
 
