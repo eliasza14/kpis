@@ -68,3 +68,21 @@ h3 [class*="css"] {
     box-shadow: 10px 11px 18px #888888;
     text-shadow: -2px -1px 0px rgb(0, 104, 201), 2px 1px red;
 }
+.css-keje6w_esravye1{
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    /* box-shadow: gray 10px 10px; */
+    
+    background: #e7e7e7;
+    /*text-shadow: -2px -1px 0px rgb(0, 104, 201), 2px 1px red;*/
+}
+.css-keje6w_esravye1 :hover{
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    /* box-shadow: gray 10px 10px; */
+    
+    background: #e7e7e7;
+    /*text-shadow: -2px -1px 0px rgb(0, 104, 201), 2px 1px red;*/
+}
