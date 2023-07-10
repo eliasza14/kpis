@@ -49,3 +49,6 @@ h3 [class*="css"] {
     height: 40px;
     margin: 0px 0.125rem 0px 0px;
 }
+[data-testid="column"] {
+    background-color: #f2f6fc; /* Replace with your desired color */
+}
