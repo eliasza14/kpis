@@ -56,7 +56,7 @@ def main():
         height: 40px;
         margin: 0px 0.125rem 0px 0px;
     }
-    .sidebar .sidebar-content {
+    [data-testid="stSidebar"] {
         background-color: red; /* Replace with your desired color */
     }
 
