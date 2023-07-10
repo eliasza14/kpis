@@ -435,7 +435,8 @@ def ad_button3(id,kpdf,js_code):
 
 def ad_button4(id,kpdf,js_code):
     st.subheader("Ετήσιες Μονάδες Εργασίας")
-    
+    colors = px.colors.qualitative.Plotly
+
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
 
     with st.container():
@@ -527,7 +528,7 @@ def ad_button4(id,kpdf,js_code):
             columns = ['D22', 'D23', 'D22_23_g']
             legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
             kpdf_selected = kpdf[columns]
-            fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επι του Συνόλου')
+            fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επι του Συνόλου',colors)
             st.plotly_chart(fig, use_container_width=True)
          with col3:
             pass
