@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap'); 
 @import "fonts/SalmaproMedium-0Wooo.otf"; 
 html, body, [class*="css"] {
-    font-family: 'Salma Pro', sans-serif; 
+    font-family: 'Salma Pro'; 
     font-size: 18px;
     font-weight: 500;
     color: #091747;
