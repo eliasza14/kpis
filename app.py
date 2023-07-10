@@ -56,7 +56,9 @@ def main():
         height: 40px;
         margin: 0px 0.125rem 0px 0px;
     }
-    
+    .sidebar .sidebar-content {
+        background-color: red; /* Replace with your desired color */
+    }
 
     
     </style>"""
