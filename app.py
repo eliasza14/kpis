@@ -28,7 +28,9 @@ def main():
        # Define the CSS style
     css_style = """
     <style>
-
+    *{
+    font-family:Papyrus;
+    }
     .css-1xarl3l.e1vioofd1{
     display:none;
     }
@@ -58,8 +60,6 @@ def main():
     }
     [data-testid="stSidebar"] {
         background-color: #f2f6fc; /* Replace with your desired color */
-        font-family:Papyrus;
-        color: red;
     }
 
     
