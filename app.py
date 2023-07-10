@@ -28,6 +28,7 @@ def main():
        # Define the CSS style
     css_style = """
     <style>
+    
     *{
     font-family:Copperplate;
     }
@@ -64,6 +65,10 @@ def main():
 
     
     </style>"""
+
+    with open( "app\style.css" ) as css:
+        st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+
     st.markdown(css_style, unsafe_allow_html=True)
 
             # Load the JavaScript function code
