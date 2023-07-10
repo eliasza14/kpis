@@ -247,7 +247,7 @@ def ad_button1(id,kpdf,js_code):
         html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
                 <div style="background: rgb(34,193,195);background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); width:200px;">
-                    <div style="font-size:30px; "><p style="border:1px solid transparent; border-radius:50%;">💀</p></div>
+                    <div style="font-size:30px; "><p style="background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">💀</p></div>
                     <div id="counter" style="text-align: left;     font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
                 </div>
                 <script type="text/javascript">
