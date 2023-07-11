@@ -251,7 +251,7 @@ def ad_button1(id,kpdf,js_code):
                     <div style="text-align:center;">Συνεταιριστές Κατηγορίας Α</div>
                     <div style="display: flex; flex-wrap: nowrap; align-items: flex-end;">
                         <div id="counter" style="text-align: left; color:white;    font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
-                        <div>πληθος</div>
+                        <div>Συνεταιριστές</div>
                     </div>
                 </div>
                 <script type="text/javascript">
