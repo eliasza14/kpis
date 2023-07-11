@@ -247,7 +247,7 @@ def ad_button1(id,kpdf,js_code):
         html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
                 <div style="  width:300px; border-radius:10px; background: rgb(218,255,78); background: linear-gradient(45deg, rgba(218,255,78,1) 0%, rgba(255,37,37,1) 100%);">
-                    <div style="font-size:30px; "><p style=" margin:5px; background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">👤</p></div>
+                    <div style="font-size:30px; "><p style=" margin:5px; background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">💀</p></div>
                     <div style="text-align:center;">Συνεταιριστές Κατηγορίας Α</div>
                     <div id="counter" style="text-align: left; color:white;    font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
                 </div>
