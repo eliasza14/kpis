@@ -258,20 +258,20 @@ def ad_button1(id,kpdf,js_code):
         </style>
 
         <div class="rectangle"><p style="color: #111416;
-leading-trim: both;
-text-edge: cap;
-font-family: Sofia Sans;
-font-size: 160px;
-font-style: normal;
-font-weight: 700;
-line-height: 16.934px;
-letter-spacing: -8px;
-display: flex;
-width: 95px;
-height: 113px;
-flex-direction: column;
-justify-content: flex-end;
-flex-shrink: 0;">9</p></div>
+        leading-trim: both;
+        text-edge: cap;
+        font-family: Sofia Sans;
+        font-size: 160px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 16.934px;
+        letter-spacing: -8px;
+        display: flex;
+        width: 95px;
+        height: 113px;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex-shrink: 0;">9</p></div>
         '''
 
         st.markdown(html_code2, unsafe_allow_html=True)
