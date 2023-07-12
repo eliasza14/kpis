@@ -244,22 +244,22 @@ def ad_button1(id,kpdf,js_code):
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
         # antonis tab
-        html(
-                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div style="  width:300px; border-radius:10px; background: linear-gradient(45deg, rgba(220,255,89,1) 0%, rgba(255,104,104,1) 100%);">
-                    <div style="font-size:30px; "><p style=" margin:5px; background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">💀</p></div>
-                    <div style="text-align:center;">Συνεταιριστές Κατηγορίας Α</div>
-                    <div style="display: flex; flex-wrap: nowrap; align-items: flex-end;">
-                        <div id="counter" style="text-align: left; color:white;    font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
-                        <div>Συνεταιριστές</div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                {js_code}
-                animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script></body>
-                """
-            )
+        # html(
+        #         f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+        #         <div style="  width:300px; border-radius:10px; background: linear-gradient(45deg, rgba(220,255,89,1) 0%, rgba(255,104,104,1) 100%);">
+        #             <div style="font-size:30px; "><p style=" margin:5px; background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">💀</p></div>
+        #             <div style="text-align:center;">Συνεταιριστές Κατηγορίας Α</div>
+        #             <div style="display: flex; flex-wrap: nowrap; align-items: flex-end;">
+        #                 <div id="counter" style="text-align: left; color:white;    font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
+        #                 <div>Συνεταιριστές</div>
+        #             </div>
+        #         </div>
+        #         <script type="text/javascript">
+        #         {js_code}
+        #         animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
+        #         </script></body>
+        #         """
+        #     )
 
 
 
