@@ -245,6 +245,11 @@ def ad_button1(id,kpdf,js_code):
         html_code2 = '''
         <style>
         .rectangle {
+        display: flex;
+        width: 329px;
+        padding: 0px 0px 24px 24px;
+        align-items: flex-end;
+        gap: 32px;
         width: 329px;
         height: 210px;
         border-radius: 15px;
