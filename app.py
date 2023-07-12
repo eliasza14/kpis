@@ -260,7 +260,25 @@ def ad_button1(id,kpdf,js_code):
             flex-direction: column-reverse;
               }
         </style>
-
+        <div class="Component2" style="width: 100%; height: 100%; position: relative">
+            <div class="Rectangle19" style="width: 329px; height: 210px; left: 0px; top: 0px; position: absolute; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px"></div>
+            <div style="width: 56px; height: 56px; left: 245px; top: 18px; position: absolute">
+                <div class="Ellipse24" style="width: 55.79px; height: 55.79px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 9999px"></div>
+                <div class="Group" style="width: 28px; height: 22.99px; left: 14px; top: 15.75px; position: absolute">
+                    <div class="Vector" style="width: 10.18px; height: 10.18px; left: 0.85px; top: 0px; position: absolute; background: linear-gradient(138deg, #548CEE 0%, #15E7FF 100%)"></div>
+                    <div class="Vector" style="width: 28px; height: 10.69px; left: -0px; top: 7.55px; position: absolute; background: linear-gradient(138deg, #548CEE 0%, #15E7FF 100%)"></div>
+                    <div class="Vector" style="width: 18.67px; height: 22.99px; left: 7.64px; top: 0px; position: absolute; background: linear-gradient(138deg, #548CEE 0%, #15E7FF 100%)"></div>
+                    <div class="Vector" style="width: 10.18px; height: 10.18px; left: 8.48px; top: 4.67px; position: absolute; background: linear-gradient(138deg, #548CEE 0%, #15E7FF 100%)"></div>
+                </div>
+            </div>
+            <div class="Frame15" style="left: 29px; top: 79px; position: absolute; justify-content: flex-start; align-items: flex-end; gap: 24px; display: inline-flex">
+                <div style="color: #111416; font-size: 156px; font-family: Sofia Sans; font-weight: 700; line-height: 16.93px; word-wrap: break-word">9</div>
+                <div class="Frame9" style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+                    <div style="color: #8E8D8D; font-size: 12px; font-family: Ubuntu; font-weight: 300; line-height: 24px; word-wrap: break-word">Σύνολο Εργαζομένων</div>
+                    <div style="color: #6E7279; font-size: 24px; font-family: Ubuntu; font-weight: 300; line-height: 24px; word-wrap: break-word">Γεν. Πληθυσμού</div>
+                </div>
+            </div>
+        </div>
         <div class="rectangle">
         <p style="color: #111416;
         leading-trim: both;
@@ -322,6 +340,14 @@ def ad_button1(id,kpdf,js_code):
         </linearGradient>
         </defs>
         </svg>
+
+
+
+
+
+
+
+
         </div>
         '''
 
