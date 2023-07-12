@@ -245,19 +245,24 @@ def ad_button1(id,kpdf,js_code):
         html_code2 = '''
         <style>
         .rectangle {
-        display: flex;
-        width: 329px;
-        padding: 0px 0px 24px 24px;
-        align-items: flex-end;
-        gap: 32px;
-        width: 329px;
-        height: 210px;
-        border-radius: 15px;
-        background: var(--gradient-4, linear-gradient(138deg, rgba(199, 215, 244, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%));
-        }
+            display: flex;
+            width: 329px;
+            padding: 0px 0px 24px 24px;
+            align-items: flex-start;
+            gap: 32px;
+            width: 329px;
+            height: 210px;
+            border-radius: 15px;
+            background: var(--gradient-4, linear-gradient(138deg, rgba(199, 215, 244, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%));
+            justify-content: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+              }
         </style>
 
-        <div class="rectangle"><p style="color: #111416;
+        <div class="rectangle">
+        <p style="color: #111416;
         leading-trim: both;
         text-edge: cap;
         font-family:'Source Sans Pro',sans-serif;
@@ -272,6 +277,7 @@ def ad_button1(id,kpdf,js_code):
         flex-direction: column;
         justify-content: flex-end;
         flex-shrink: 0;">9</p>
+        
         <p style="color: #8E8D8D;
         leading-trim: both;
         text-edge: cap;
@@ -281,6 +287,7 @@ def ad_button1(id,kpdf,js_code):
         font-weight: 300;
         line-height: 24px;
         letter-spacing: -0.6px;">Σύνολο Εργαζομένων</p>
+
         <p style="color: #6E7279;
         leading-trim: both;
         text-edge: cap;
