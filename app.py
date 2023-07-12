@@ -246,7 +246,6 @@ def ad_button1(id,kpdf,js_code):
             <div class="Component2" style="width: 100%; height: 100%; position: relative">
             <div class="Rectangle19" style="width: 329px; height: 210px; left: 0px; top: 0px; position: absolute; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px"></div>
             <div style="width: 56px; height: 56px; left: 245px; top: 18px; position: absolute">
-                <div class="Ellipse24" style="width: 55.79px; height: 55.79px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 9999px"></div>
               
             </div>
             <div class="Frame15" style="left: 29px; top: 79px; position: absolute; justify-content: flex-start; align-items: flex-end; gap: 24px; display: inline-flex">
