@@ -271,7 +271,17 @@ def ad_button1(id,kpdf,js_code):
         height: 113px;
         flex-direction: column;
         justify-content: flex-end;
-        flex-shrink: 0;">9</p></div>
+        flex-shrink: 0;">9</p>
+        <p style="color: #8E8D8D;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: Ubuntu;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: -0.6px;">Σύνολο Εργαζομένων</p>
+        </div>
         '''
 
         st.markdown(html_code2, unsafe_allow_html=True)
