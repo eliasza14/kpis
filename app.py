@@ -260,7 +260,7 @@ def ad_button1(id,kpdf,js_code):
         #         </script></body>
         #         """
         #     )
-        st.markdown("""<div class="Frame10" style="width: 329px; height: 201px; padding-bottom: 24px; padding-left: 24px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px; justify-content: flex-start; align-items: flex-end; gap: 32px; display: inline-flex">
+        st.markdown(f"""<div class="Frame10" style="width: 329px; height: 201px; padding-bottom: 24px; padding-left: 24px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px; justify-content: flex-start; align-items: flex-end; gap: 32px; display: inline-flex">
  
   <div style="width: 95px; height: 113px; color: #111416; font-size: 160px; font-family: Sofia Sans; font-weight: 700; line-height: 16.93px; word-wrap: break-word">9</div>
 
