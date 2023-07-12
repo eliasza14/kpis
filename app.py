@@ -264,7 +264,7 @@ def ad_button1(id,kpdf,js_code):
         font-size: 160px;
         font-style: normal;
         font-weight: 700;
-        line-height: 16.934px;
+        line-height: 69.934px;
         letter-spacing: -8px;
         display: flex;
         width: 95px;
