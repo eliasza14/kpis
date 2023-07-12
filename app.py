@@ -273,10 +273,7 @@ def ad_button1(id,kpdf,js_code):
                     <div style="color: #6E7279; font-size: 24px; font-family: 'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Γεν. Πληθυσμού</div>
                 </div>
             </div>
-        </div>
-       
-
-        '''
+        </div>'''
 
         st.markdown(html_code2, unsafe_allow_html=True)
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
