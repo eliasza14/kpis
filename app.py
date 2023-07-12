@@ -260,7 +260,7 @@ def ad_button1(id,kpdf,js_code):
         <div class="rectangle"><p style="color: #111416;
         leading-trim: both;
         text-edge: cap;
-        font-family: Sofia Sans;
+        font-family:'Source Sans Pro',sans-serif;
         font-size: 160px;
         font-style: normal;
         font-weight: 700;
