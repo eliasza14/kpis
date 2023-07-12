@@ -245,9 +245,7 @@ def ad_button1(id,kpdf,js_code):
         html_code2 = '''
             <div class="Component2" style="width: 100%; height: 100%; position: relative">
             <div class="Rectangle19" style="width: 329px; height: 210px; left: 0px; top: 0px; position: absolute; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px"></div>
-            <div style="width: 56px; height: 56px; left: 245px; top: 18px; position: absolute">
-              
-            </div>
+            
             <div class="Frame15" style="left: 29px; top: 79px; position: absolute; justify-content: flex-start; align-items: flex-end; gap: 24px; display: inline-flex">
                 <div style="color: #111416; font-size: 156px; font-family: Sofia Sans; font-weight: 700; line-height: 16.93px; word-wrap: break-word">9</div>
                 <div class="Frame9" style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
