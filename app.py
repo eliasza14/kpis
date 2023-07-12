@@ -275,12 +275,21 @@ def ad_button1(id,kpdf,js_code):
         <p style="color: #8E8D8D;
         leading-trim: both;
         text-edge: cap;
-        font-family: Ubuntu;
+        font-family: "Source Sans Pro", sans-serif;
         font-size: 12px;
         font-style: normal;
         font-weight: 300;
         line-height: 24px;
         letter-spacing: -0.6px;">Σύνολο Εργαζομένων</p>
+        <p style="color: #6E7279;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: -1.2px;">Γεν. Πληθυσμού</p>
         </div>
         '''
 
