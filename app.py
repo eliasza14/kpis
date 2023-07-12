@@ -262,7 +262,6 @@ def ad_button1(id,kpdf,js_code):
         </style>
         <div class="Component2" style="width: 100%; height: 100%; position: relative">
             <div class="Rectangle19" style="width: 329px; height: 210px; left: 0px; top: 0px; position: absolute; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px"></div>
-            <div style="width: 56px; height: 56px; left: 245px; top: 18px; position: absolute">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
                 <circle cx="27.8947" cy="27.8947" r="27.8947" fill="white"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M19.9398 24.2349C20.8399 24.2349 21.7032 23.8773 22.3397 23.2408C22.9762 22.6043 23.3337 21.741 23.3337 20.8409C23.3337 19.9408 22.9762 19.0775 22.3397 18.441C21.7032 17.8046 20.8399 17.447 19.9398 17.447C19.0397 17.447 18.1764 17.8046 17.5399 18.441C16.9034 19.0775 16.5458 19.9408 16.5458 20.8409C16.5458 21.741 16.9034 22.6043 17.5399 23.2408C18.1764 23.8773 19.0397 24.2349 19.9398 24.2349ZM19.9398 25.9318C20.6083 25.9318 21.2703 25.8001 21.888 25.5443C22.5056 25.2885 23.0669 24.9135 23.5396 24.4407C24.0123 23.968 24.3873 23.4068 24.6432 22.7891C24.899 22.1715 25.0307 21.5095 25.0307 20.8409C25.0307 20.1724 24.899 19.5104 24.6432 18.8927C24.3873 18.2751 24.0123 17.7138 23.5396 17.2411C23.0669 16.7684 22.5056 16.3934 21.888 16.1375C21.2703 15.8817 20.6083 15.75 19.9398 15.75C18.5896 15.75 17.2947 16.2864 16.34 17.2411C15.3852 18.1958 14.8489 19.4907 14.8489 20.8409C14.8489 22.1911 15.3852 23.486 16.34 24.4407C17.2947 25.3955 18.5896 25.9318 19.9398 25.9318Z" fill="url(#paint0_linear_21_718)"/>
@@ -288,7 +287,6 @@ def ad_button1(id,kpdf,js_code):
                     </linearGradient>
                 </defs>
                 </svg>
-            </div>
             <div class="Frame15" style="left: 29px; top: 79px; position: absolute; justify-content: flex-start; align-items: flex-end; gap: 24px; display: inline-flex">
                 <div style="color: #111416; font-size: 156px; font-family:'Source Sans Pro',sans-serif; font-weight: 700; line-height: 16.93px; word-wrap: break-word">9</div>
                 <div class="Frame9" style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
