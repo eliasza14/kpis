@@ -242,6 +242,19 @@ def ad_button1(id,kpdf,js_code):
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
         # text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
+        html_code2 = '''
+        <style>
+        .rectangle {
+        width: 329px;
+        height: 210px;
+        background: linear-gradient(138deg, #548CEE 0%, #15E7FF 100%);
+        }
+        </style>
+
+        <div class="rectangle"></div>
+        '''
+
+        st.markdown(html_code2, unsafe_allow_html=True)
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
 
         html(
