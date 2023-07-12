@@ -247,7 +247,8 @@ def ad_button1(id,kpdf,js_code):
         .rectangle {
         width: 329px;
         height: 210px;
-        background: linear-gradient(138deg, #548CEE 0%, #15E7FF 100%);
+        border-radius: 15px;
+        background: var(--gradient-4, linear-gradient(138deg, rgba(199, 215, 244, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%));
         }
         </style>
 
