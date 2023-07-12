@@ -243,23 +243,23 @@ def ad_button1(id,kpdf,js_code):
         # text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
-        #antonis tab
-        # html(
-        #         f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-        #         <div style="  width:300px; border-radius:10px; background: linear-gradient(45deg, rgba(220,255,89,1) 0%, rgba(255,104,104,1) 100%);">
-        #             <div style="font-size:30px; "><p style=" margin:5px; background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">💀</p></div>
-        #             <div style="text-align:center;">Συνεταιριστές Κατηγορίας Α</div>
-        #             <div style="display: flex; flex-wrap: nowrap; align-items: flex-end;">
-        #                 <div id="counter" style="text-align: left; color:white;    font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
-        #                 <div>Συνεταιριστές</div>
-        #             </div>
-        #         </div>
-        #         <script type="text/javascript">
-        #         {js_code}
-        #         animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
-        #         </script></body>
-        #         """
-        #     )
+        # antonis tab
+        html(
+                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+                <div style="  width:300px; border-radius:10px; background: linear-gradient(45deg, rgba(220,255,89,1) 0%, rgba(255,104,104,1) 100%);">
+                    <div style="font-size:30px; "><p style=" margin:5px; background:white; width:fit-content; border:1px solid transparent; border-radius:50%;">💀</p></div>
+                    <div style="text-align:center;">Συνεταιριστές Κατηγορίας Α</div>
+                    <div style="display: flex; flex-wrap: nowrap; align-items: flex-end;">
+                        <div id="counter" style="text-align: left; color:white;    font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;   "></div>
+                        <div>Συνεταιριστές</div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></body>
+                """
+            )
 
 
 
@@ -267,7 +267,10 @@ def ad_button1(id,kpdf,js_code):
         f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
         <div class="Frame10" style="width: 329px; height: 201px; padding-bottom: 24px; padding-left: 24px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px; justify-content: flex-start; align-items: flex-end; gap: 32px; display: inline-flex">
  
-  <div style="width: 95px; height: 113px; color: #111416; font-size: 160px; font-family: Sofia Sans; font-weight: 700; line-height: 16.93px; word-wrap: break-word">9</div>
+  <div style="width: 95px; height: 113px; color: #111416; font-size: 160px; font-family: Sofia Sans; font-weight: 700; line-height: 16.93px; word-wrap: break-word">                <script type="text/javascript">
+                {js_code}
+                animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
+                </script></div>
 
 <div class="Frame11" style="padding-top: 24px; padding-right: 24px; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 56px; display: inline-flex">
     <div style="width: 56px; height: 56px; position: relative">
