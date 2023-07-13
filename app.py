@@ -246,8 +246,7 @@ def ad_button1(id,kpdf,js_code):
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
         html(
             f"""
-                    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-
+            
                 <div class="Component3" style="width: 329px; height: 201px; padding-bottom: 24px; padding-left: 24px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px; justify-content: space-between; align-items: flex-end; gap: 24px; display: inline-flex">
             <div class="Rectangle19" style="width: 329px; height: 210px; left: 0px; top: 0px; position: absolute; border-radius: 15px"></div>
             <div style="width: 56px; height: 56px; left: 285px; top: 27px; position: absolute">
@@ -268,7 +267,6 @@ def ad_button1(id,kpdf,js_code):
                 <div style="color: #8E8D8D; font-size: 12px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Σύνολο Εργαζομένων</div>
                 <div style="color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Γεν. Πληθυσμού</div>
                 </div>
-            </div>
             </div>
             </div>
               <script type="text/javascript">
