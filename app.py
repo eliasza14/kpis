@@ -261,7 +261,7 @@ def ad_button1(id,kpdf,js_code):
             
             </div>
             <div class="Frame15" style="left: 29px; top: 115px; position: absolute; justify-content: flex-start; align-items: flex-end; gap: 24px; display: inline-flex">
-                <div style="color: #111416; font-size: 156px; font-family:  'Source Sans Pro',sans-serif; font-weight: 700; line-height: 45.93px; word-wrap: break-word">9</div>
+                <div style="color: #111416; font-size: 150px; font-family:  'Source Sans Pro',sans-serif; font-weight: 700; line-height: 47.93px; word-wrap: break-word">9</div>
                 <div class="Frame9" style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 0px; display: inline-flex">
                 <div style="color: #8E8D8D; font-size: 12px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Σύνολο Εργαζομένων</div>
                 <div style="color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Γεν. Πληθυσμού</div>
