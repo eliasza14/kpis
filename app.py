@@ -244,7 +244,7 @@ def ad_button1(id,kpdf,js_code):
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
-        st.markdown(
+        html(
             f"""
                 <div class="Component3" style="width: 329px; height: 201px; padding-bottom: 24px; padding-left: 24px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px; justify-content: space-between; align-items: flex-end; gap: 24px; display: inline-flex">
             <div class="Rectangle19" style="width: 329px; height: 210px; left: 0px; top: 0px; position: absolute; border-radius: 15px"></div>
@@ -272,8 +272,7 @@ def ad_button1(id,kpdf,js_code):
                 {js_code}
                 animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
                 </script>
-            """,
-            unsafe_allow_html=True
+            """
         )
         html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
