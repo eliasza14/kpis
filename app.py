@@ -272,7 +272,7 @@ def ad_button1(id,kpdf,js_code):
                 {js_code}
                 animateCounter("counter", 0, """+str(val)+""", 1000);  // Increase from 0 to 100 in 1 second
                 </script>
-            """,height = 300
+            """,height = 250
         )
         # html(
         #         f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
@@ -337,7 +337,7 @@ def ad_button2(id,kpdf,js_code):
                     {js_code}
                     animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
                     </script>
-                """,height = 300
+                """,height = 250
             )
             # html(
             #     f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
@@ -383,7 +383,7 @@ def ad_button2(id,kpdf,js_code):
                     {js_code}
                     animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
                     </script>
-                """,height = 300
+                """,height = 250
             )
             # html(
             #     f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
@@ -431,7 +431,7 @@ def ad_button2(id,kpdf,js_code):
                                 {js_code}
                                 animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
                                 </script>
-                            """,height = 600
+                            """,height = 250
                         )
             # html(
             #     f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
