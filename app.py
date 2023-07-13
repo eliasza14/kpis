@@ -311,9 +311,9 @@ def ad_button2(id,kpdf,js_code):
             # st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι Γεν. Πληθυσμού</h3>", unsafe_allow_html=True)
             html(
                 f"""
-                    <div class="Component3" style="width: 329px; height: 201px; padding-bottom: 24px; padding-left: 24px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px; justify-content: space-between; align-items: flex-end; gap: 24px; display: inline-flex">
+                    <div class="Component3" style="width: 290px; height: 183px; padding-bottom: 24px; padding-left: 24px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); border-radius: 15px; justify-content: space-between; align-items: flex-end; gap: 24px; display: inline-flex">
                 <div class="Rectangle19" style="width: 329px; height: 210px; left: 0px; top: 0px; position: absolute; border-radius: 15px"></div>
-                <div style="width: 56px; height: 56px; left: 285px; top: 27px; position: absolute">
+                <div style="width: 56px; height: 56px; left: 256px; top: 19px; position: absolute">
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                 <circle id="Ellipse 24" cx="27.8947" cy="27.8947" r="27.8947" fill="white"/>
