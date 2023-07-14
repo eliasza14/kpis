@@ -405,13 +405,13 @@ def ad_button1(id,kpdf,js_code):
 </linearGradient>
 </defs>
 </svg>
-        <span id="counter" class="num" data-val="343">000</span>
+        <span class="num" data-val="343">000</span>
         <span class="text">Σύνολο Εργαζομένων</span>
 		<span class="text2">Γεν. Πληθυσμού</span>
       </div></body>
         <script type="text/javascript">
         {js_code}
-        animateCounter1_vspan("data-val", 2000);  // Increase from 0 to 100 in 1 second
+        animateCounter_v2span("num", 2000);  // Increase from 0 to 100 in 1 second
         </script>""",height=250)
 
 

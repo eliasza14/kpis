@@ -46,20 +46,24 @@ function animateCounter3(elementId, startValue, endValue, duration) {
     }, stepTime);
 }
 
-function animateCounter1_vspan(elementId, duration) {
-    const element = document.getElementById(elementId);
-    const startValue = parseInt(element.getAttribute('data-val'), 10);
-    const endValue = parseInt(element.textContent, 10);
-    let current = startValue;
-    const range = endValue - startValue;
-    const increment = endValue > startValue ? 1 : -1;
-    const stepTime = Math.abs(Math.floor(duration / range));
+function animateCounter_v2span(className, duration) {
+    const elements = document.getElementsByClassName(className);
+  
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      const startValue = parseInt(element.getAttribute('data-val'), 10);
+      const endValue = parseInt(element.textContent, 10);
+      let current = startValue;
+      const range = endValue - startValue;
+      const increment = endValue > startValue ? 1 : -1;
+      const stepTime = Math.abs(Math.floor(duration / range));
     
-    const timer = setInterval(() => {
-      current += increment;
-      element.textContent = current;
-      if (current === endValue) {
-        clearInterval(timer);
-      }
-    }, stepTime);
+      const timer = setInterval(() => {
+        current += increment;
+        element.textContent = current;
+        if (current === endValue) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
   }
