@@ -316,7 +316,7 @@ def ad_button1(id,kpdf,js_code):
             span.text2{
             color: #8E8D8D; font-size: 12px; font-weight: 300; line-height: 24px; word-wrap: break-word;text-align: center;
             }
-            """+""""
+        
             @media screen and (max-width: 1024px) {
             .wrapper {
             width: 85vw;
