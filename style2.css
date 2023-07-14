@@ -4,13 +4,13 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     }
-    body {
+    /* body {
     background:none;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
-    }
+    } */
     .wrapper {
     position: absolute;
     width: 80vw;
