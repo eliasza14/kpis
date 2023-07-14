@@ -392,7 +392,7 @@ def ad_button1(id,kpdf,js_code):
                     <span class="text2">Γεν. Πληθυσμού</span>
                 </div>
                 
-            </div>"""+""""
+            </div>
         <script type="text/javascript">"""+{js_code}+"""animateCounter("counter", 0, """+str(val)+""", 1000);</script>    
         </body>    
         """,
