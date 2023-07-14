@@ -262,15 +262,125 @@ def ad_button1(id,kpdf,js_code):
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
-        with open( "style2.css" ) as css:
-            st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
-        html(f""" <div class="wrapper">
+
+        html(f"""<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+                <!-- Google Fonts -->
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"
+                />
+             <style media="screen">"""+"""
+            *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            }
+            body {
+            background:none;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            }
+            .wrapper {
+            position: absolute;
+            width: 80vw;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            }
+            .container {
+           
+            width: 314px;
+                height: 210px;
+                display: flex;
+                flex-direction: column;
+                padding: 1em 0;
+                position: relative;
+                font-size: 16px;
+                background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%);
+                border-radius: 0.5em;
+                box-shadow: -1px -1px 4px #aaa9a9a2, 1px 1px 7px rgba(147, 149, 151, 0.671);
+            }
+
+
+
+
+
+
+
+            i {
+            color: #42f9e8;
+            font-size: 3.8em;
+            text-align: center;
+            }
+            span.num {
+            color: black;
+            display: grid;
+            place-items: center;
+            font-weight: 600;
+            font-size: 3em;
+            }
+            span.text {
+            /*color: #e0e0e0;
+            font-size: 1em;
+            text-align: center;
+            pad: 0.7em 0;
+            font-weight: 400;
+            line-height: 0;
+            */
+            color: #6E7279; font-size: 20px; font-weight: 300; line-height: 20px; word-wrap: break-word;text-align: center;
+            }
+
+            span.text2{
+            color: #8E8D8D; font-size: 12px; font-weight: 300; line-height: 24px; word-wrap: break-word;text-align: center;
+            }
+            @media screen and (max-width: 1024px) {
+            .wrapper {
+            width: 85vw;
+            }
+            .container {
+            height: 26vmin;
+            width: 26vmin;
+            font-size: 12px;
+            }
+            }
+            @media screen and (max-width: 768px) {
+            .wrapper {
+            width: 90vw;
+            flex-wrap: wrap;
+            gap: 30px;
+            }
+            .container {
+            width: calc(50% - 40px);
+            height: 30vmin;
+            margin-bottom: 25px;
+            font-size: 14px;
+            }
+            }
+            @media screen and (max-width: 480px) {
+            .wrapper {
+            gap: 15px;
+            }
+            .container {
+            width: 100%;
+            height: 25vmin;
+            font-size: 8px;
+            margin-bottom: 25px;
+            }
+            }
+            </style>
+            </head>
+            <body>
+    <div class="wrapper">
       <div class="container">
 
         <span class="num" data-val="365">212</span>
         <span class="text">Σύνολο Εργαζομένων</span>
 		<span class="text2">Γεν. Πληθυσμού</span>
-      </div>""")
+      </div></body>""")
 
 
 
