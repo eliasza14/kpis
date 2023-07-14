@@ -263,7 +263,7 @@ def ad_button1(id,kpdf,js_code):
         
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
 
-        html(f"""<style media="screen">"""+"""
+        html(f"""<style>"""+""""
             *{
             padding: 0;
             margin: 0;
