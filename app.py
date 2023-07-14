@@ -284,9 +284,13 @@ def ad_button1(id,kpdf,js_code):
         background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%);
         border-radius: 0.5em;
         box-shadow: -1px -1px 4px #aaa9a9a2, 1px 1px 7px rgba(147, 149, 151, 0.671);">
-                    <span id="counter" style="color: #111416; font-size: 150px; font-family:  'Source Sans Pro',sans-serif; font-weight: 700; line-height: 47.93px; word-wrap: break-word"></span>
-                    <span class="text">Σύνολο Εργαζομένων</span>
-                    <span class="text2">Γεν. Πληθυσμού</span>
+                    <span id="counter" style="    color: black;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 3em;"></span>
+                    <span style="color: #6E7279; font-size: 20px; font-weight: 300; line-height: 20px; word-wrap: break-word;text-align: center;">Σύνολο Εργαζομένων</span>
+                    <span style="color: #8E8D8D; font-size: 12px; font-weight: 300; line-height: 24px; word-wrap: break-word;text-align: center;">Γεν. Πληθυσμού</span>
                 </div>
             </div>
             </div>
