@@ -119,7 +119,7 @@ def get_data_from_json(kdata):
     kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
     kpdf['D38'] = round(((kdata['report.overall'].astype(float))/(kdata['report.turnover_total'].astype(float))),1)
     kpdf['D39'] = round(((kdata['report.grants'].astype(float))/(kdata['report.turnover_total'].astype(float))*100),1)
-    kpdf['D40'] = round(((kdata['report.turnover_total'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))),1)
+    kpdf['D40'] = round(((kdata['report.turnover_total'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))),1)
     #Extra diktes
     kpdf['D18_lipsi']=kdata['profile.eme.sum']
     kpdf['D18_eko']=kdata['profile.eme_eko.sum']
