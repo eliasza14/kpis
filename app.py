@@ -266,9 +266,25 @@ def ad_button1(id,kpdf,js_code):
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
             rel="stylesheet"
             />
-            <div id="wrap" class="wrapper">
-                <div class="container">
-                  
+            <div style="position: absolute;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;">
+                <div style=" width: 314px;
+        height: 210px;
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0;
+        position: relative;
+        font-size: 16px;
+        background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%);
+        border-radius: 0.5em;
+        box-shadow: -1px -1px 4px #aaa9a9a2, 1px 1px 7px rgba(147, 149, 151, 0.671);">
+                    <span id="counter" style="color: #111416; font-size: 150px; font-family:  'Source Sans Pro',sans-serif; font-weight: 700; line-height: 47.93px; word-wrap: break-word"></span>
                     <span class="text">Σύνολο Εργαζομένων</span>
                     <span class="text2">Γεν. Πληθυσμού</span>
                 </div>
