@@ -64,9 +64,7 @@ def main():
     # }
     # </style>"""
     
-    css2 = '''
-    <link rel="stylesheet" type="text/css" href="style2.css">
-    '''
+ 
 
     st.markdown(
         """
@@ -88,7 +86,6 @@ def main():
     with open( "style.css" ) as css:
         st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
-    st.markdown(css2, unsafe_allow_html=True)
 
     #st.markdown(css_style, unsafe_allow_html=True)
 
@@ -255,6 +252,10 @@ def ad_button1(id,kpdf,js_code):
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     
     with st.container():
+        css2 = '''
+            <link rel="stylesheet" type="text/css" href="style2.css">
+            '''
+        st.markdown(css2, unsafe_allow_html=True)
 
 
         # Display the HTML and JavaScript code
