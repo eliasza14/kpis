@@ -249,8 +249,7 @@ def ad_button1(id,kpdf,js_code):
         #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
         
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
-        html(
-            f"""
+        html(f"""
             <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />"""+
@@ -291,12 +290,6 @@ def ad_button1(id,kpdf,js_code):
                 border-radius: 0.5em;
                 box-shadow: -1px -1px 4px #aaa9a9a2, 1px 1px 7px rgba(147, 149, 151, 0.671);
             }
-
-
-
-
-
-
 
             i {
             color: #42f9e8;
