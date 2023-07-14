@@ -267,7 +267,7 @@ def ad_button1(id,kpdf,js_code):
         html(f""" <div class="wrapper">
       <div class="container">
 
-        <span class="num" data-val="365"><div id="counter">{js_code}</div></span>
+        <span class="num" data-val="365">212</span>
         <span class="text">Σύνολο Εργαζομένων</span>
 		<span class="text2">Γεν. Πληθυσμού</span>
       </div>""")
