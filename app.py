@@ -266,9 +266,9 @@ def ad_button1(id,kpdf,js_code):
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
             rel="stylesheet"
             />
-            <div class="wrapper">
+            <div id="wrap" class="wrapper">
                 <div class="container">
-                    <span id="counter" style="color: #111416; font-size: 150px; font-family:  'Source Sans Pro',sans-serif; font-weight: 700; line-height: 47.93px; word-wrap: break-word"></span>
+                  
                     <span class="text">Σύνολο Εργαζομένων</span>
                     <span class="text2">Γεν. Πληθυσμού</span>
                 </div>
