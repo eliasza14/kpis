@@ -267,7 +267,6 @@ def ad_button1(id,kpdf,js_code):
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
 
         html(f"""
-            <body>
     <div class="wrapper">
       <div class="container">
 <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:auto;>
@@ -302,9 +301,9 @@ def ad_button1(id,kpdf,js_code):
         <span class="num" data-val="343"></span>
         <span class="text">Σύνολο Εργαζομένων</span>
 		<span class="text2">Γεν. Πληθυσμού</span>
-      </div></body>
-        <script type="text/javascript">"""+
-        {js_code}+""""
+      </div>
+        <script type="text/javascript">
+        {js_code}
         animateCounter_v2span("num", 2000);  // Increase from 0 to 100 in 1 second
         </script>""",height=250)
 
