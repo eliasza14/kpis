@@ -26,43 +26,43 @@ def main():
     )    
 
        # Define the CSS style
-    css_style = """
-    <style>
+    # css_style = """
+    # <style>
     
-    *{
-    font-family:Copperplate;
-    }
-    .css-1xarl3l.e1vioofd1{
-    display:none;
-    }
+    # *{
+    # font-family:Copperplate;
+    # }
+    # .css-1xarl3l.e1vioofd1{
+    # display:none;
+    # }
 
-    .css-wnm74r{
-    text-align:center;
-    font-size: 2rem;
-    display: flex;
-    flex-direction: row;
-    -webkit-box-align: center;
-    align-items: center;
-    font-weight: 400;
-    }
+    # .css-wnm74r{
+    # text-align:center;
+    # font-size: 2rem;
+    # display: flex;
+    # flex-direction: row;
+    # -webkit-box-align: center;
+    # align-items: center;
+    # font-weight: 400;
+    # }
     
-    .e1ugi8lo1.css-jhkj9c.ex0cdmw0{
-        vertical-align: middle;
-        overflow: hidden;
-        color: inherit;
-        fill: currentcolor;
-        display: inline-flex;
-        -webkit-box-align: center;
-        align-items: center;
-        font-size: 1.25rem;
-        width: 40px;
-        height: 40px;
-        margin: 0px 0.125rem 0px 0px;
-    }
-    [data-testid="stSidebar"] {
-        background-color: #f2f6fc; /* Replace with your desired color */
-    }
-    </style>"""
+    # .e1ugi8lo1.css-jhkj9c.ex0cdmw0{
+    #     vertical-align: middle;
+    #     overflow: hidden;
+    #     color: inherit;
+    #     fill: currentcolor;
+    #     display: inline-flex;
+    #     -webkit-box-align: center;
+    #     align-items: center;
+    #     font-size: 1.25rem;
+    #     width: 40px;
+    #     height: 40px;
+    #     margin: 0px 0.125rem 0px 0px;
+    # }
+    # [data-testid="stSidebar"] {
+    #     background-color: #f2f6fc; /* Replace with your desired color */
+    # }
+    # </style>"""
     
     
 
