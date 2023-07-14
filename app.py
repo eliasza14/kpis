@@ -406,7 +406,7 @@ def ad_button1(id,kpdf,js_code):
 </defs>
 </svg>
 
-        <span class="num" data-val="{val}">000</span>
+        <span class="num" data-val="57">000</span>
         <span class="text">Σύνολο Εργαζομένων</span>
 		<span class="text2">Γεν. Πληθυσμού</span>
       </div></body><script type="text/javascript">
