@@ -353,7 +353,7 @@ def ad_button1(id,kpdf,js_code):
             margin-bottom: 25px;
             }
             }
-            </style>"""+""""
+            </style>
             </head>     
             <body>
             <div class="wrapper">
