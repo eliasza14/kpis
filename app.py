@@ -250,7 +250,6 @@ def ad_button1(id,kpdf,js_code):
         
         st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
         html(f"""
-            <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />"""+
         """<style >
@@ -347,8 +346,6 @@ def ad_button1(id,kpdf,js_code):
             }
             }
             </style>
-            </head>     
-            <body>
             <div class="wrapper">
                 <div class="container">
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:auto;>
