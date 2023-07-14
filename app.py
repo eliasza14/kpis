@@ -409,7 +409,7 @@ def ad_button1(id,kpdf,js_code):
         <span class="num" data-val="365">212</span>
         <span class="text">Σύνολο Εργαζομένων</span>
 		<span class="text2">Γεν. Πληθυσμού</span>
-      </div></body>""",height=500)
+      </div></body>""",height=250)
 
 
 
