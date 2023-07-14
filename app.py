@@ -862,7 +862,7 @@ def e_button6(id,kpdf,js_code):
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
-            values =kpdf['D24'].astype(int).tolist()
+            values =kpdf['D24'].astype(float).tolist()
 
             fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
