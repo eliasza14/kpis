@@ -405,7 +405,7 @@ def ad_button1(id,kpdf,js_code):
 </linearGradient>
 </defs>
 </svg>
-        <div id="counter" class="num"></div>
+        <div id="counter" ></div>
         <span class="num" data-val="000"></span>
         <span class="text">Σύνολο Εργαζομένων</span>
 		<span class="text2">Γεν. Πληθυσμού</span>
