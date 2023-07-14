@@ -77,8 +77,8 @@ def get_data_from_json(kdata):
     kpdf['D10']=kpdf.apply(calculate_d10, axis=1)
     kpdf['D11']=kpdf.apply(calculate_d11, axis=1)
     #ores apasxolisis
-    kpdf['D12']=(kdata['profile.eme.sum'].astype(int))*2080
-    kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(int))*2080
+    kpdf['D12']=(kdata['profile.eme.sum'].astype(float))*2080
+    kpdf['D13']=(kdata['profile.eme_eko.sum'].astype(float))*2080
     kpdf['D14']=kpdf.apply(calculate_d14, axis=1)
     kpdf['D15']=kpdf.apply(calculate_d15, axis=1)
     kpdf['D16']=round((kpdf['D12'].pct_change() * 100),1)
@@ -86,10 +86,10 @@ def get_data_from_json(kdata):
     #etisies monades ergasias
     kpdf['D18']=kdata['profile.sum_eme_kispe']
     kpdf['D19']=kpdf.apply(calculate_d19, axis=1)
-    kpdf['D20']=round((kdata['profile.eme.sum'].astype(int).pct_change()*100),1)
-    kpdf['D21']=round((kdata['profile.eme_eko.sum'].astype(int).pct_change()*100),1)
-    kpdf['D22']=round(((kdata['profile.eme.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
-    kpdf['D23']=round(((kdata['profile.eme_eko.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
+    kpdf['D20']=round((kdata['profile.eme.sum'].astype(float).pct_change()*100),1)
+    kpdf['D21']=round((kdata['profile.eme_eko.sum'].astype(float).pct_change()*100),1)
+    kpdf['D22']=round(((kdata['profile.eme.sum'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))*100),1)
+    kpdf['D23']=round(((kdata['profile.eme_eko.sum'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))*100),1)
 
 
     #Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος
@@ -124,7 +124,7 @@ def get_data_from_json(kdata):
     kpdf['D18_lipsi']=kdata['profile.eme.sum']
     kpdf['D18_eko']=kdata['profile.eme_eko.sum']
     kpdf['D18_general']=kdata['profile.eme_general.sum']
-    kpdf['D22_23_g']=round(((kdata['profile.eme_general.sum'].astype(int))/(kdata['profile.sum_eme_kispe'].astype(int))*100),1)
+    kpdf['D22_23_g']=round(((kdata['profile.eme_general.sum'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))*100),1)
     kpdf['D36_overal']=kdata['report.overall'].astype(float)
     kpdf['D40_metaboli']=round((kpdf['D40'].astype(float).pct_change()*100),1)
     return kpdf
