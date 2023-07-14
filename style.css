@@ -59,6 +59,19 @@ h3 [class*="css"] {
     /*text-shadow: -2px -1px 0px rgb(0, 104, 201), 2px 1px red;*/
 }
 
+
+span.num {
+    color: black;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 3em;
+    }
+span.text {
+ 
+    color: #6E7279; font-size: 20px; font-weight: 300; line-height: 20px; word-wrap: break-word;text-align: center;
+    }
+
 span.text2{
     color: #8E8D8D; font-size: 12px; font-weight: 300; line-height: 24px; word-wrap: break-word;text-align: center;
     }
