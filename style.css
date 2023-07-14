@@ -75,6 +75,31 @@ span.text {
 span.text2{
     color: #8E8D8D; font-size: 12px; font-weight: 300; line-height: 24px; word-wrap: break-word;text-align: center;
     }
+
+
+.wrapper {
+    position: absolute;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    }
+    .container {
+
+    width: 314px;
+        height: 210px;
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0;
+        position: relative;
+        font-size: 16px;
+        background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%);
+        border-radius: 0.5em;
+        box-shadow: -1px -1px 4px #aaa9a9a2, 1px 1px 7px rgba(147, 149, 151, 0.671);
+    }    
 /* [data-testid="column"] :hover {
     box-shadow: 5px 10px 18px #888888;
     text-shadow: -2px -1px 0px rgb(0, 104, 201), 2px 1px red;
