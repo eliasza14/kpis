@@ -238,11 +238,9 @@ def ad_button1(id,kpdf,js_code):
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     
     with st.container():
-        css2 = '''
-            <link rel="stylesheet" type="text/css" href="style2.css">
-            '''
-        st.markdown(css2, unsafe_allow_html=True)
 
+        with open( "style2.css" ) as css:
+            st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
         # Display the HTML and JavaScript code
        
@@ -257,7 +255,6 @@ def ad_button1(id,kpdf,js_code):
             <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="style2.css">
         
             </head>     
             <body>
