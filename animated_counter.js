@@ -47,23 +47,22 @@ function animateCounter3(elementId, startValue, endValue, duration) {
 }
 
 function animateCounter_v2span(className, duration) {
-    const elements = document.getElementsByClassName(className);
-  
-    for (let i = 0; i < elements.length; i++) {
-      const element = elements[i];
-      const startValue = parseInt(element.getAttribute('data-val'), 10);
-      const endValue = parseInt(element.textContent, 10);
-      let current = startValue;
-      const range = endValue - startValue;
-      const increment = endValue > startValue ? 1 : -1;
-      const stepTime = Math.abs(Math.floor(duration / range));
+    const elements = Array.from(document.getElementsByClassName(className));
     
-      const timer = setInterval(() => {
+    elements.forEach((element) => {
+        const startValue = parseInt(element.getAttribute('data-val'), 10);
+        const endValue = parseInt(element.textContent, 10);
+        let current = startValue;
+        const range = endValue - startValue;
+        const increment = endValue > startValue ? 1 : -1;
+        const stepTime = Math.abs(Math.floor(duration / range));
+    
+        const timer = setInterval(() => {
         current += increment;
         element.textContent = current;
         if (current === endValue) {
-          clearInterval(timer);
+            clearInterval(timer);
         }
-      }, stepTime);
+        }, stepTime);
+    });
     }
-  }
