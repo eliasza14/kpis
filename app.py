@@ -1049,7 +1049,7 @@ def e_button5(id,kpdf,js_code):
    <div class="column" style="display: flex;
    flex-direction: column;">
       <h3 class="icon-header" style="font-size: 18px;
-      line-height: 32px;
+      line-height: 0px;
       display: block;
       padding-right: 20px;"><div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;"></div>
         </h3>
