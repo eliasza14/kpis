@@ -644,7 +644,7 @@ def ad_button2(id,kpdf,js_code):
 
         with col2:
             # Filter the dataframe based on the selected year
-            st.markdown("<h3 style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΛΥΨΥ (% επί του Συνόλου)</h3>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΛΥΨΥ (% επί του Συνόλου)</p><p style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
             # Select the value from the filtered dataframe
             d10_value = filtered_kpdf["D10"].iloc[0]
