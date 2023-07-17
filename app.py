@@ -1116,7 +1116,7 @@ def e_button5(id,kpdf,js_code):
         col1, col2,col3 = st.columns(3)
 
         with col1:
-            st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Κτηρίων & Εξ. Χώρων</h3>", unsafe_allow_html=True)
+            #st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Κτηρίων & Εξ. Χώρων</h3>", unsafe_allow_html=True)
 
             val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
             # text26="**🏠** **"+str(val26)+"** &#8364; "
@@ -1170,7 +1170,7 @@ def e_button5(id,kpdf,js_code):
             )
 
         with col2:
-            st.markdown("<h3 style='text-align: center; color: grey;'>🍴 Εστίασης</h3>", unsafe_allow_html=True)
+            #st.markdown("<h3 style='text-align: center; color: grey;'>🍴 Εστίασης</h3>", unsafe_allow_html=True)
 
             val27=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
             # html(
@@ -1221,7 +1221,7 @@ def e_button5(id,kpdf,js_code):
             """,height=250
             )
         with col3:
-            st.markdown("<h3 style='text-align: center; color: grey;'>💬 Λοιπές Δραστηρίοτητες</h3>", unsafe_allow_html=True)
+            #st.markdown("<h3 style='text-align: center; color: grey;'>💬 Λοιπές Δραστηρίοτητες</h3>", unsafe_allow_html=True)
 
             val28=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
             # html(
