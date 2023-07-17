@@ -46,23 +46,39 @@ function animateCounter3(elementId, startValue, endValue, duration) {
     }, stepTime);
 }
 
-function animateCounter_v2span(className, duration) {
-    const elements = Array.from(document.getElementsByClassName(className));
+// function animateCounter_v2span(className, duration) {
+//     const elements = Array.from(document.getElementsByClassName(className));
     
-    elements.forEach((element) => {
-        const startValue = parseInt(element.getAttribute('data-val'), 10);
-        const endValue = parseInt(element.textContent, 10);
-        let current = startValue;
-        const range = endValue - startValue;
-        const increment = endValue > startValue ? 1 : -1;
-        const stepTime = Math.abs(Math.floor(duration / range));
+//     elements.forEach((element) => {
+//         const startValue = parseInt(element.getAttribute('data-val'), 10);
+//         const endValue = parseInt(element.textContent, 10);
+//         let current = startValue;
+//         const range = endValue - startValue;
+//         const increment = endValue > startValue ? 1 : -1;
+//         const stepTime = Math.abs(Math.floor(duration / range));
     
-        const timer = setInterval(() => {
+//         const timer = setInterval(() => {
+//         current += increment;
+//         element.textContent = current;
+//         if (current === endValue) {
+//             clearInterval(timer);
+//         }
+//         }, stepTime);
+//     });
+//     }
+
+function animateCounter3test(elementId, startValue, endValue, duration, intervalFactor) {
+    let current = startValue;
+    const range = endValue - startValue;
+    const increment = endValue > startValue ? 0.1 : -0.1;
+    const stepTime = Math.abs(Math.floor(duration / Math.abs(range))) * intervalFactor;
+    const decimalPlaces = (endValue.toString().split('.')[1] || []).length;
+    const element = document.getElementById(elementId);
+    const timer = setInterval(() => {
         current += increment;
-        element.textContent = current;
-        if (current === endValue) {
+        element.textContent = current.toFixed(decimalPlaces) + ' €';
+        if ((increment > 0 && current >= endValue) || (increment < 0 && current <= endValue)) {
             clearInterval(timer);
         }
-        }, stepTime);
-    });
-    }
+    }, stepTime);
+}
