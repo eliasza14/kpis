@@ -1035,7 +1035,7 @@ def e_button5(id,kpdf,js_code):
     display: flex;
     align-items: center;
     border-radius: 16px;
-    background:rgba(84, 140, 238, 1), rgba(21, 231, 255, 1);
+    background: linear-gradient(164deg, #548CEE 0%, #15E7FF 100%);
     padding-left: 20px;
     /* max-width: 80ch; */
 "> <p>
@@ -1053,7 +1053,7 @@ def e_button5(id,kpdf,js_code):
       display: block;
       padding-right: 20px;"><div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;"></div>
         </h3>
-       <p>A full count</p>
+       <p>Κύκλοι Εργασιών</p>
    </div>
 </div>
     <script type="text/javascript">
