@@ -303,7 +303,7 @@ def ad_button1(id,kpdf,js_code):
         html(
             f"""
                 <body>
-                    <div style="display:flex; " >
+                    <div style="display:flex; justify-content: center; " >
                         <div style="width:310px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); display: flex;align-items: center;flex-direction: column;flex-wrap: nowrap;border: 1px solid transparent;border-radius: 16px;padding-top: 15px; padding-bottom: 15px;">
                             <svg width="56" height="auto" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle id="Ellipse 24" cx="27.8947" cy="27.8947" r="27.8947" fill="white"/>
