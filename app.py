@@ -520,7 +520,7 @@ def ad_button3(id,kpdf,js_code):
             text=str(text.round())
             #st.write(kpdf['D14'][kpdf['year']==str(year_filter)])
             # st.write('Δ14-'+text)
-            st.markdown("<p style='text-align: center; color: grey; font-size:24px;'>Ωρες απασχολησης εργαζομένων ΛΥΨΥ</p><p style='text-align: center; color: grey;'>(Μεσος Όρος)</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: grey; font-size:24px; font-family:Roboto;'>Ωρες απασχολησης εργαζομένων ΛΥΨΥ</p><p style='text-align: center; color: grey; font-size:18px; font-family:Roboto;'>(Μεσος Όρος)</p>", unsafe_allow_html=True)
 
             html(
                 f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
