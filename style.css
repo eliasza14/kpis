@@ -150,26 +150,24 @@ span.text2{
     width: 50px;
   }
   
-  .icon-header {
+.icon-header {
       font-size: 18px;
       line-height: 32px;
       display: block;
       padding-right: 20px
   }
   
-  .icon-area {
+.icon-area {
    display: flex;
    align-items: center;
    max-width: 80ch; /* for demo */
   }
   
-  .column {
+.column {
    display: flex;
    flex-direction: column;
   }
   
-  .column h3,
-  .column p,
-  .icon-area p {
+.column h3, .column p, .icon-area p {
     margin: 0;
   }
