@@ -144,3 +144,32 @@ span.text2{
     
     background: #ffffff;
 }
+
+
+.soccer-icon {
+    width: 50px;
+  }
+  
+  .icon-header {
+      font-size: 18px;
+      line-height: 32px;
+      display: block;
+      padding-right: 20px
+  }
+  
+  .icon-area {
+   display: flex;
+   align-items: center;
+   max-width: 80ch; /* for demo */
+  }
+  
+  .column {
+   display: flex;
+   flex-direction: column;
+  }
+  
+  .column h3,
+  .column p,
+  .icon-area p {
+    margin: 0;
+  }
