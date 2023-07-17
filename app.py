@@ -324,7 +324,7 @@ def ad_button1(id,kpdf,js_code):
 
 
 
-            """,width="100%",height="100%"
+            """
         )
 
 
