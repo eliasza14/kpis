@@ -1031,9 +1031,14 @@ def e_button5(id,kpdf,js_code):
 
     html(f""" 
 <body >
- 	  <div class="icon-area" style=" display: flex;
-   align-items: center;
-   max-width: 80ch;"> <p>
+ 	  <div class="icon-area" style="
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    background: #c1f1fd;
+    padding-left: 20px;
+    /* max-width: 80ch; */
+"> <p>
  <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
 <circle id="Ellipse 24" cx="27.8947" cy="27.8947" r="27.8947" fill="white"/>
