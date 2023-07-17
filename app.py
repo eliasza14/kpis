@@ -1036,8 +1036,10 @@ def e_button5(id,kpdf,js_code):
     align-items: center;
     border-radius: 16px;
     background: linear-gradient(164deg, #548CEE 0%, #15E7FF 100%);
-    padding-left: 20px;
+   padding-left: 30px;
     /* max-width: 80ch; */
+    padding-top: 15px;
+    padding-bottom: 15px;
 "> <p>
  <svg width="100" height="100" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
@@ -1052,9 +1054,15 @@ def e_button5(id,kpdf,js_code):
       <h3 class="icon-header" style="font-size: 18px;
       line-height: 0px;
       display: block;
-      padding-right: 20px;"><div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;"></div>
+      padding-right: 20px;"><div id="counter" style="text-align: left; color:white;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;"></div>
         </h3>
-       <p>Κύκλοι Εργασιών</p>
+       <p style="
+    color: #002970;
+    font-size: 24px;
+    /* font-family: Ubuntu; */
+    font-weight: 300;
+    line-height: 24px;
+    word-wrap: break-word;">Κύκλοι Εργασιών</p>
    </div>
 </div>
     <script type="text/javascript">
