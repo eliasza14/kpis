@@ -1064,7 +1064,7 @@ def e_button5(id,kpdf,js_code):
 
 
 
-            """,height=250
+            """,height=300
         )
     st.markdown("<h3 style='text-align: center; color: grey;'>Yπηρεσίες</h3>", unsafe_allow_html=True)
 
