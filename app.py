@@ -1035,7 +1035,7 @@ def e_button5(id,kpdf,js_code):
     display: flex;
     align-items: center;
     border-radius: 16px;
-    background: #c1f1fd;
+    background:rgba(84, 140, 238, 1), rgba(21, 231, 255, 1);
     padding-left: 20px;
     /* max-width: 80ch; */
 "> <p>
