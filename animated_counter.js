@@ -94,7 +94,7 @@ function animateCounter3test2(elementId, startValue, endValue, duration, interva
     
     const timer = setInterval(() => {
         current += increment * valuePerIteration;
-        element.textContent = current.toFixed(decimalPlaces) + ' €';
+        element.textContent = current.toFixed(decimalPlaces) + '€';
         iteration++;
 
         if ((increment > 0 && current >= endValue) || (increment < 0 && current <= endValue) || iteration >= iterations) {
