@@ -1030,7 +1030,7 @@ def e_button5(id,kpdf,js_code):
     # )
     html(
             f"""
-                <body>
+                <body style="background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%);">
                     <div style="display:flex; justify-content: center; " >
                         <div style="width:310px; background: linear-gradient(138deg, rgba(198.55, 215.22, 244.37, 0.56) 0%, rgba(96, 239, 255, 0.55) 100%); display: flex;align-items: center;flex-direction: column;flex-wrap: nowrap;border: 1px solid transparent;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
                             <div style="text-align:right;">
