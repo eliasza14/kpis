@@ -1047,7 +1047,8 @@ def e_button5(id,kpdf,js_code):
 </svg>
    </p>
    <div class="column" style="display: flex;
-   flex-direction: column;">
+   flex-direction: column;padding-left: 30px;
+    padding-top: 30px;">
       <h3 class="icon-header" style="font-size: 18px;
       line-height: 0px;
       display: block;
