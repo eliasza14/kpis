@@ -1031,7 +1031,9 @@ def e_button5(id,kpdf,js_code):
 
     html(f""" 
 <body >
- 	  <div class="icon-area"><p>
+ 	  <div class="icon-area" style=" display: flex;
+   align-items: center;
+   max-width: 80ch;"> <p>
  <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
 <circle id="Ellipse 24" cx="27.8947" cy="27.8947" r="27.8947" fill="white"/>
@@ -1039,8 +1041,12 @@ def e_button5(id,kpdf,js_code):
 
 </svg>
    </p>
-   <div class="column">
-      <h3 class="icon-header"><div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;"></div>
+   <div class="column" style="display: flex;
+   flex-direction: column;">
+      <h3 class="icon-header" style="font-size: 18px;
+      line-height: 32px;
+      display: block;
+      padding-right: 20px;"><div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;"></div>
         </h3>
        <p>A full count</p>
    </div>
