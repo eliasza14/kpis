@@ -117,7 +117,7 @@ def main():
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
     df=pd.json_normalize(response, max_level=2)
-    print(df.dtypes)
+    st.write(df.dtypes)
 
     st.write(df)
 
@@ -125,7 +125,7 @@ def main():
     df['year'] = df['year'].str.split('.').str[0]
     df['year'] = df['year'].astype(str)
     df['year'] = df['year'].str.replace(',', '')
-    print(df.dtypes)
+    st.write(df.dtypes)
 
     st.write("GET KOIPSE")
     st.write(df)
