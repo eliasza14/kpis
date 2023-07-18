@@ -1591,11 +1591,9 @@ def e_button7(id,kpdf,js_code,css_code):
                             </div>
                             <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
                             <div>
-                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Αριθμοδείκτη καθαρών αποτελεσμάτων</div>
+                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Αριθμοδείκτης καθαρών αποτελεσμάτων</div>
                             </div>
-                            <div>
-                                <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val3)} %</div>
-                            </div>
+
                         </div>
 	                </div>
                 <script type="text/javascript">
@@ -1651,7 +1649,7 @@ def e_button7(id,kpdf,js_code,css_code):
                             </div>
                             <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
                             <div>
-                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή</div>
+                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Έσοδα ανά εργαζόμενο</div>
                             </div>
                             <div>
                                 <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val5)} %</div>
