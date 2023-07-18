@@ -1526,7 +1526,7 @@ def e_button7(id,kpdf,js_code,css_code):
                             </div>
                             <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
                             <div>
-                                <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">% Ετήσια Μεταβολή Καθαρών αποτελεσμάτων</div>
+                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">% Ετήσια Μεταβολή Καθαρών αποτελεσμάτων</div>
                             </div>
                             <div>
                                 <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val2)} %</div>
@@ -1552,15 +1552,65 @@ def e_button7(id,kpdf,js_code,css_code):
 
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Αριθμοδείκτη καθαρών αποτελεσμάτων</h3>", unsafe_allow_html=True)
+
+            # html(
+            #     f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+            #     <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+            #     <script type="text/javascript">
+            #     {js_code}
+            #     animateCounter2("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
+            #     </script></body>
+            #     """
+            #             )
+
             html(
-                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+            f"""<head><style>{css_code}</style></head>
+                <body>
+                    <div style="display:flex; justify-content: center; " >
+                        <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
+                            <div style="text-align:right;">
+                          <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="&#206;&#149;&#207;&#131;&#207;&#132;&#206;&#175;&#206;&#177;&#207;&#131;&#206;&#183;">
+                                <circle id="Ellipse 27" cx="16" cy="16" r="16" fill="url(#paint0_linear_103_212)"/>
+                                <g id="Group 2">
+                                <path id="Vector" d="M10.1502 14.2243C8.72043 12.7945 8.72043 10.5398 10.1502 9.10999L16.2545 15.2142L18.2892 17.249L21.4238 20.3836C21.9738 20.9335 21.9738 21.7584 21.4238 22.3083C20.8739 22.8583 19.884 22.8583 19.3891 22.1983L17.1344 19.3937C16.5844 18.6788 15.5946 18.4588 14.7147 18.7888L10.1502 14.2243Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_2" d="M18.2893 13.4544L21.2589 10.4848" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_3" d="M17.0793 16.0391C17.2993 15.9841 17.4643 15.9841 17.6843 15.9291C18.3992 15.8741 19.2241 15.4892 20.049 14.6643L22.7436 11.9696" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_4" d="M13.3398 17.4139L9.49027 20.5485C8.88535 20.9885 8.83035 21.8684 9.38028 22.3633C9.93022 22.9133 10.7551 22.8033 11.1951 22.2533L14.3297 18.3488" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector_5" d="M19.7739 9L17.0242 11.6947C16.1993 12.5196 15.7594 13.3445 15.7594 14.0594C15.7594 14.2793 15.7044 14.4443 15.6494 14.6643" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                </g>
+                                <defs>
+                                <linearGradient id="paint0_linear_103_212" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#548CEE"/>
+                                <stop offset="1" stop-color="#15E7FF"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+
+                            </div>
+                            <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
+                            <div>
+                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Αριθμοδείκτη καθαρών αποτελεσμάτων</div>
+                            </div>
+                            <div>
+                                <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val3)} %</div>
+                            </div>
+                        </div>
+	                </div>
                 <script type="text/javascript">
                 {js_code}
                 animateCounter2("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script></body>
-                """
-                        )
+                </script>
+                </body>
+
+
+
+            """,height=250
+            )
+
+            
+
             st.metric(label="Αριθμοδείκτη καθαρών αποτελεσμάτων", label_visibility="hidden",value=val3)
         with col3:
             st.markdown("<h3 style='text-align: center; color: grey;'>Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή</h3>", unsafe_allow_html=True)
