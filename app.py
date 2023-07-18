@@ -1547,7 +1547,7 @@ def e_button7(id,kpdf,js_code,css_code):
 
 
 
-            st.metric(label="% Ετήσια Μεταβολή Καθαρών αποτελεσμάτων",label_visibility="hidden", value=val1, delta=f'{val2}%')
+            # st.metric(label="% Ετήσια Μεταβολή Καθαρών αποτελεσμάτων",label_visibility="hidden", value=val1, delta=f'{val2}%')
 
 
         with col2:
@@ -1609,7 +1609,7 @@ def e_button7(id,kpdf,js_code,css_code):
 
             
 
-            st.metric(label="Αριθμοδείκτη καθαρών αποτελεσμάτων", label_visibility="hidden",value=val3)
+            # st.metric(label="Αριθμοδείκτη καθαρών αποτελεσμάτων", label_visibility="hidden",value=val3)
         with col3:
             # st.markdown("<h3 style='text-align: center; color: grey;'>Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή</h3>", unsafe_allow_html=True)
             # html(
@@ -1674,7 +1674,7 @@ def e_button7(id,kpdf,js_code,css_code):
 
 
 
-            st.metric(label="Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή", label_visibility="hidden", value=val4, delta=f'{val5}%')
+            # st.metric(label="Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή", label_visibility="hidden", value=val4, delta=f'{val5}%')
     
     st.markdown("<br>", unsafe_allow_html=True)
 
