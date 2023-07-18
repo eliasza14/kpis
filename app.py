@@ -1475,7 +1475,7 @@ def e_button6(id,kpdf,js_code):
 
 
 def e_button7(id,kpdf,js_code,css_code):
-    st.subheader("Κατανομή πλήθους με βάση το καθαρό εισόδημα")
+    st.subheader("Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών αποτελεσμάτων ανά έτος")
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     val1=float(kpdf['D36_overal'][kpdf['year']==str(year_filter)].iloc[0])
