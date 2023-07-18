@@ -836,8 +836,8 @@ def ad_button4(id,kpdf,js_code):
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
 
     with st.container():
-        col1 = st.columns(1)
-        with col1:
+        # col1, col2 = st.columns(2)
+        # with col1:
             #st.write('D18')
             #st.write(kpdf['D18'][kpdf['year']==str(year_filter)])
             text=str(kpdf['D18'][kpdf['year']==str(year_filter)].iloc[0])
