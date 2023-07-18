@@ -79,6 +79,9 @@ def main():
     with open("animated_counter.js", "r") as file:
             js_code = file.read()
 
+    with open("style2.css", "r") as file:
+            css_code = file.read()
+
 
     st.sidebar.title("KPI's Dashboard")
     id=get_url_params()
@@ -224,7 +227,7 @@ def main():
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
     if selected_option1=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
-        e_button5(id,kpdf,js_code)
+        e_button5(id,kpdf,js_code,css_code)
     elif selected_option1=="% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος":
         e_button6(id,kpdf,js_code)
     elif selected_option1=="Κατανομή πλήθους ΚοιΣΠΕ βάσει προσίμου καθαρών ανά έτος":
@@ -1008,7 +1011,7 @@ def ad_button4(id,kpdf,js_code):
 
 
 
-def e_button5(id,kpdf,js_code):
+def e_button5(id,kpdf,js_code,css_code):
     st.subheader("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
     colors = px.colors.qualitative.Plotly
 
@@ -1029,7 +1032,7 @@ def e_button5(id,kpdf,js_code):
     #     """
     # )
 
-    html(f""" 
+    html(f"""
 <body >
  	  <div class="icon-area" style="
     display: flex;
@@ -1140,7 +1143,7 @@ def e_button5(id,kpdf,js_code):
             #         """
             #     )
             html(
-            f"""
+            f"""<head><style>{css_code}</style></head>
                 <body>
                     <div style="display:flex; justify-content: center; " >
                         <div style="width:310px; display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
