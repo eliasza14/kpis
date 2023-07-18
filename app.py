@@ -1352,73 +1352,75 @@ def e_button5(id,kpdf,js_code,css_code):
 
 def e_button6(id,kpdf,js_code):
     st.subheader("% Mεταβολή κύκλου εργασιών ανά δραστηριότητα ανά έτος")
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
-    val1=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
-    val2=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
-    val3=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
-    val4=float(kpdf['D30'][kpdf['year']==str(year_filter)].iloc[0])
-    val5=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
-    val6=float(kpdf['D31'][kpdf['year']==str(year_filter)].iloc[0])
-    val7=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
-    val8=float(kpdf['D32'][kpdf['year']==str(year_filter)].iloc[0])
-    with st.container():
-        col1, col2,col3,col4 = st.columns(4)
-        with col1:
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Κύκλου Εργασιών</h3>", unsafe_allow_html=True)
-            html(
-                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
-                <script type="text/javascript">
-                {js_code}
-                animateCounter2("counter", 0, """+str(val1)+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script></body>
-                """
-                        )
-            st.metric(label="% Μεταβολή Κύκλου Εργασιών",label_visibility="hidden", value=val1, delta=f'{val2}%')
+    # year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    # val1=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
+    # val2=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
+    # val3=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
+    # val4=float(kpdf['D30'][kpdf['year']==str(year_filter)].iloc[0])
+    # val5=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
+    # val6=float(kpdf['D31'][kpdf['year']==str(year_filter)].iloc[0])
+    # val7=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
+    # val8=float(kpdf['D32'][kpdf['year']==str(year_filter)].iloc[0])
+
+    #METABOLES
+    # with st.container():
+    #     col1, col2,col3,col4 = st.columns(4)
+    #     with col1:
+    #         st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Κύκλου Εργασιών</h3>", unsafe_allow_html=True)
+    #         html(
+    #             f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+    #             <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+    #             <script type="text/javascript">
+    #             {js_code}
+    #             animateCounter2("counter", 0, """+str(val1)+""", 1000);  // Increase from 0 to 100 in 1 second
+    #             </script></body>
+    #             """
+    #                     )
+    #         st.metric(label="% Μεταβολή Κύκλου Εργασιών",label_visibility="hidden", value=val1, delta=f'{val2}%')
 
 
 
-        with col2:
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτερικοί Χώροι</h3>", unsafe_allow_html=True)
-            html(
-                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center; font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
-                <script type="text/javascript">
-                {js_code}
-                animateCounter2("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script></body>
-                """
-                        )
-            st.metric(label="% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτ. Χώροι ", label_visibility="hidden", value=val3, delta=f'{val4}%')
-        with col3:
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης</h3>", unsafe_allow_html=True)
-            html(
-                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
-                <script type="text/javascript">
-                {js_code}
-                animateCounter2("counter", 0, """+str(val5)+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script></body>
-                """
-                        )
-            st.metric(label="% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης",label_visibility="hidden", value=val5, delta=f'{val6}%')
-        with col4:
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Λοιπ. Εργασίες</h3>", unsafe_allow_html=True)
-            html(
-                f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
-                <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
-                <script type="text/javascript">
-                {js_code}
-                animateCounter2("counter", 0, """+str(val7)+""", 1000);  // Increase from 0 to 100 in 1 second
-                </script></body>
-                """
-                        )
+    #     with col2:
+    #         st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτερικοί Χώροι</h3>", unsafe_allow_html=True)
+    #         html(
+    #             f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+    #             <div id="counter" style="text-align: center; font-family: 'Source Sans Pro',sans-serif;font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+    #             <script type="text/javascript">
+    #             {js_code}
+    #             animateCounter2("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
+    #             </script></body>
+    #             """
+    #                     )
+    #         st.metric(label="% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτ. Χώροι ", label_visibility="hidden", value=val3, delta=f'{val4}%')
+    #     with col3:
+    #         st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης</h3>", unsafe_allow_html=True)
+    #         html(
+    #             f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+    #             <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+    #             <script type="text/javascript">
+    #             {js_code}
+    #             animateCounter2("counter", 0, """+str(val5)+""", 1000);  // Increase from 0 to 100 in 1 second
+    #             </script></body>
+    #             """
+    #                     )
+    #         st.metric(label="% Μετ.Κύκλ.Εργ. Υπηρ. Εστίασης",label_visibility="hidden", value=val5, delta=f'{val6}%')
+    #     with col4:
+    #         st.markdown("<h3 style='text-align: center; color: grey;'>% Μετ.Κύκλ.Εργ. Λοιπ. Εργασίες</h3>", unsafe_allow_html=True)
+    #         html(
+    #             f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
+    #             <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
+    #             <script type="text/javascript">
+    #             {js_code}
+    #             animateCounter2("counter", 0, """+str(val7)+""", 1000);  // Increase from 0 to 100 in 1 second
+    #             </script></body>
+    #             """
+    #                     )
 
-            st.metric(label="% Μετ.Kυκλ.Εργ. Λοιπές εργασίες",label_visibility="hidden", value=val7, delta=f'{val8}%')
+    #         st.metric(label="% Μετ.Kυκλ.Εργ. Λοιπές εργασίες",label_visibility="hidden", value=val7, delta=f'{val8}%')
 
         
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    # st.markdown("<br>", unsafe_allow_html=True)
 
     with st.container():
         col1, col2 = st.columns(2)
