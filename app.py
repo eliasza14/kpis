@@ -122,7 +122,7 @@ def main():
 
     df['year'] = df['year'].map(lambda x: str(x) if pd.notnull(x) else None)
     df['year'] = df['year'].str.split('.').str[0]
-    df['Year'] = df['Year'].str.replace(',', '')
+    df['year'] = df['year'].str.replace(',', '')
 
     st.write("GET KOIPSE")
     st.write(df)
