@@ -1517,7 +1517,7 @@ def e_button7(id,kpdf,js_code,css_code):
                     <div style="display:flex; justify-content: center; " >
                         <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
                             <div style="text-align:right;">
-                          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="&#206;&#173;&#207;&#131;&#206;&#191;&#206;&#180;&#206;&#177; &#206;&#177;&#206;&#189;&#206;&#177; &#206;&#181;&#207;&#129;&#206;&#179;&#206;&#177;&#206;&#182;&#207;&#140;&#206;&#188;&#206;&#181;&#206;&#189;&#206;&#191;">
 <circle id="Ellipse 33" cx="16" cy="16" r="16" fill="url(#paint0_linear_111_338)"/>
 <g id="Camada 2">
@@ -1582,24 +1582,13 @@ def e_button7(id,kpdf,js_code,css_code):
                     <div style="display:flex; justify-content: center; " >
                         <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
                             <div style="text-align:right;">
-                          <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="&#206;&#149;&#207;&#131;&#207;&#132;&#206;&#175;&#206;&#177;&#207;&#131;&#206;&#183;">
-                                <circle id="Ellipse 27" cx="16" cy="16" r="16" fill="url(#paint0_linear_103_212)"/>
-                                <g id="Group 2">
-                                <path id="Vector" d="M10.1502 14.2243C8.72043 12.7945 8.72043 10.5398 10.1502 9.10999L16.2545 15.2142L18.2892 17.249L21.4238 20.3836C21.9738 20.9335 21.9738 21.7584 21.4238 22.3083C20.8739 22.8583 19.884 22.8583 19.3891 22.1983L17.1344 19.3937C16.5844 18.6788 15.5946 18.4588 14.7147 18.7888L10.1502 14.2243Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path id="Vector_2" d="M18.2893 13.4544L21.2589 10.4848" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path id="Vector_3" d="M17.0793 16.0391C17.2993 15.9841 17.4643 15.9841 17.6843 15.9291C18.3992 15.8741 19.2241 15.4892 20.049 14.6643L22.7436 11.9696" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path id="Vector_4" d="M13.3398 17.4139L9.49027 20.5485C8.88535 20.9885 8.83035 21.8684 9.38028 22.3633C9.93022 22.9133 10.7551 22.8033 11.1951 22.2533L14.3297 18.3488" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path id="Vector_5" d="M19.7739 9L17.0242 11.6947C16.1993 12.5196 15.7594 13.3445 15.7594 14.0594C15.7594 14.2793 15.7044 14.4443 15.6494 14.6643" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                </g>
-                                </g>
-                                <defs>
-                                <linearGradient id="paint0_linear_103_212" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#548CEE"/>
-                                <stop offset="1" stop-color="#15E7FF"/>
-                                </linearGradient>
-                                </defs>
-                            </svg>
+                          <svg width="56" height="56" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#206;&#145;&#207;&#129;&#206;&#185;&#206;&#184;&#206;&#188;&#206;&#191;&#206;&#180;&#206;&#181;&#206;&#175;&#206;&#186;&#207;&#132;&#206;&#183;&#207;&#130;">
+<path id="Arrow 1" d="M3.7025 18.5475C3.8668 18.7118 4.1332 18.7118 4.2975 18.5475L6.97502 15.87C7.13933 15.7057 7.13933 15.4393 6.97502 15.275C6.81072 15.1107 6.54432 15.1107 6.38002 15.275L4 17.655L1.61998 15.275C1.45568 15.1107 1.18928 15.1107 1.02498 15.275C0.860671 15.4393 0.860671 15.7057 1.02498 15.87L3.7025 18.5475ZM3.57927 3.52439L3.57927 18.25H4.42073L4.42073 3.52439H3.57927Z" fill="white"/>
+<path id="Arrow 2" d="M11.0292 0.702496C10.8649 0.53819 10.5985 0.53819 10.4342 0.702496L7.75667 3.38002C7.59236 3.54432 7.59236 3.81071 7.75667 3.97502C7.92097 4.13933 8.18737 4.13933 8.35167 3.97502L10.7317 1.595L13.1117 3.97502C13.276 4.13933 13.5424 4.13933 13.7067 3.97502C13.871 3.81071 13.871 3.54432 13.7067 3.38002L11.0292 0.702496ZM11.1524 18.25L11.1524 0.999998L10.311 0.999998L10.311 18.25L11.1524 18.25Z" fill="white"/>
+</g>
+</svg>
+
 
                             </div>
                             <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
