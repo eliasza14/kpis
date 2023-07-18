@@ -65,7 +65,7 @@ def format_year(year):
 
 def get_data_from_json(kdata):
     kpdf=kdata[['koispe_id','year']]
-    
+    print(kpdf)
 
     # kpdf['year']=kpdf['year'].astype(str)
     kpdf['D1'] = kdata['profile.meli_a']
