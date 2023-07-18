@@ -145,10 +145,10 @@ span.text2{
     background: #ffffff;
 }
 
-#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.css-uf99v8.e1g8pov65 > div.block-container.css-z5fcl4.e1g8pov64 > div:nth-child(1) > div > div:nth-child(21) > div > div > div:nth-child(1){
+/* #root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.css-uf99v8.e1g8pov65 > div.block-container.css-z5fcl4.e1g8pov64 > div:nth-child(1) > div > div:nth-child(21) > div > div > div:nth-child(1){
     
     background: red;
-}
+} */
 
 #root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.css-uf99v8.e1g8pov65 > div.block-container.css-z5fcl4.e1g8pov64 > div:nth-child(1) > div > div:nth-child(21) > div > div > div:nth-child(3){
     position: relative;
