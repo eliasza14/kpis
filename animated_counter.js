@@ -102,3 +102,16 @@ function animateCounter3test2(elementId, startValue, endValue, duration, interva
         }
     }, interval);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const numberDiv = document.querySelector('.number');
+    const number = parseFloat(numberDiv.textContent);
+
+    if (number < 0) {
+      numberDiv.classList.add('negative');
+      numberDiv.setAttribute('data-sign', '-');
+    } else {
+      numberDiv.classList.add('positive');
+      numberDiv.setAttribute('data-sign', '+');
+    }
+  });

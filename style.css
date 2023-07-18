@@ -234,3 +234,34 @@ span.text2{
 .column h3, .column p, .icon-area p {
     margin: 0;
   }
+
+
+
+  .number {
+    position: relative;
+    font-size: 20px;
+    }
+
+    .number::before {
+    content: attr(data-sign);
+    position: absolute;
+    left: -20px;
+    }
+
+    .number.positive::before {
+    color: green;
+    content: '▲';
+    }
+
+    .number.negative::before {
+    color: red;
+    content: '▼';
+    }
+
+    .number.positive {
+    color: green;
+    }
+
+    .number.negative {
+    color: red;
+    }
