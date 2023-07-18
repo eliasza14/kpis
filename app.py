@@ -211,7 +211,7 @@ def main():
    #Radio button
     ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό / Επιχειρηματικότητα",expanded=True)
     with ad_expander:
-        selected_option1 = st.radio("Επιλέξτε:", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος", "% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"])
+        selected_option1 = st.radio("Επιλέξτε:", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"])
     
 
 
@@ -226,9 +226,9 @@ def main():
         ad_button4(id,kpdf,js_code)
 
     #RADIO OPTION EPIXEIRIMATIKOTITA
-    if selected_option1=="Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος":
+    if selected_option1=="Κύκλοι εργασιών":
         e_button5(id,kpdf,js_code,css_code)
-    elif selected_option1=="% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος":
+    elif selected_option1=="Διαχρονική (%) μεταβολή Κύκλων Εργασιών":
         e_button6(id,kpdf,js_code)
     elif selected_option1=="Κατανομή πλήθους με βάση το καθαρό εισόδημα":
         e_button7(id,kpdf,js_code,css_code)
@@ -1014,7 +1014,7 @@ def ad_button4(id,kpdf,js_code):
 
 
 def e_button5(id,kpdf,js_code,css_code):
-    st.subheader("Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος")
+    st.subheader("Κύκλοι εργασιών")
     colors = px.colors.qualitative.Plotly
 
 
@@ -1351,7 +1351,7 @@ def e_button5(id,kpdf,js_code,css_code):
 
 
 def e_button6(id,kpdf,js_code):
-    st.subheader("% Mεταβολή κύκλου εργασιών ανά δραστηριότητα ανά έτος")
+    st.subheader("Διαχρονική (%) μεταβολή Κύκλων Εργασιών")
     # year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
     # val1=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
     # val2=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
