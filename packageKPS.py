@@ -14,12 +14,12 @@ def calculate_d26_d27(row,matching_columns):
 
 
 
-def calculate_d19(row):
-    d18=row['D18']
-    d3 = row['D3']
-    d5 = row['D5']
-    d7 = row['D7']
-    return round((int(d18) / (int(d3) + int(d5) + int(d7))),1)
+# def calculate_d19(row):
+#     d18=row['D18']
+#     d3 = row['D3']
+#     d5 = row['D5']
+#     d7 = row['D7']
+#     return round((float(d18) / (int(d3) + int(d5) + int(d7))),1)
 
 
 
@@ -85,8 +85,8 @@ def get_data_from_json(kdata):
     kpdf['D16']=round((kpdf['D12'].pct_change() * 100),1)
     kpdf['D17']=round((kpdf['D13'].pct_change() * 100),1)
     #etisies monades ergasias
-    kpdf['D18']=kdata['profile.sum_eme_kispe']
-    kpdf['D19']=kpdf.apply(calculate_d19, axis=1)
+    kpdf['D18']=kdata['profile.sum_eme_kispe'].astype(float)
+    # kpdf['D19']=kpdf.apply(calculate_d19, axis=1)
     kpdf['D20']=round((kdata['profile.eme.sum'].astype(float).pct_change()*100),1)
     kpdf['D21']=round((kdata['profile.eme_eko.sum'].astype(float).pct_change()*100),1)
     kpdf['D22']=round(((kdata['profile.eme.sum'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))*100),1)
