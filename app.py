@@ -1172,7 +1172,7 @@ def e_button5(id,kpdf,js_code,css_code):
                                 <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Κτηρίων & Εξ. Χώρων</div>
                             </div>
                             <div>
-                                <div class="number" style="text-align:center; font-size: 24px;right:20px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val4)}</div>
+                                <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val4)}</div>
                             </div>
                         </div>
 	                </div>

@@ -6,7 +6,7 @@
   .number::before {
   content: attr(data-sign);
   position: absolute;
-  right: 20px;
+  left: 0px;
   }
 
   .number.positive::before {
