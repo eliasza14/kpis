@@ -1168,6 +1168,9 @@ def e_button5(id,kpdf,js_code):
                             <div>
                                 <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Κτηρίων & Εξ. Χώρων</div>
                             </div>
+                            <div>
+                                <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{val4}</div>
+                            </div>
                         </div>
 	                </div>
                 <script type="text/javascript">
