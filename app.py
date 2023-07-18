@@ -1187,13 +1187,13 @@ def e_button5(id,kpdf,js_code,css_code):
             """,height=250
             )
 
-            st.metric(label="% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτ. Χώροι ", label_visibility="hidden", value=val26, delta=f'{val4}%')
 
 
         with col2:
             #st.markdown("<h3 style='text-align: center; color: grey;'>🍴 Εστίασης</h3>", unsafe_allow_html=True)
 
             val27=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
+            val6=float(kpdf['D31'][kpdf['year']==str(year_filter)].iloc[0])
             # html(
             #     f"""<body style="display: flex;flex-wrap: nowrap;align-content: center;justify-content: center;">
             #     <div id="counter" style="text-align: center;    font-family: 'Source Sans Pro',sans-serif; font-weight: bold; font-size: 50px; background-color: #f1f1f1; width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"></div>
@@ -1204,7 +1204,7 @@ def e_button5(id,kpdf,js_code,css_code):
             #     """
             # )
             html(
-            f"""
+            f"""<head><style>{css_code}</style></head>
                 <body>
                     <div style="display:flex; justify-content: center; " >
                         <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
@@ -1232,6 +1232,9 @@ def e_button5(id,kpdf,js_code,css_code):
                             <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
                             <div>
                                 <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Εστίασης</div>
+                            </div>
+                            <div>
+                                <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val6)}</div>
                             </div>
                         </div>
 	                </div>
