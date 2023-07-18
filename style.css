@@ -4,6 +4,16 @@
     src: "/fonts/SalmaproMedium-0Wooo.otf"; 
 }
 
+
+.sidebar .sidebar-content {
+    background-image: linear-gradient(#2e7bcf,#2e7bcf);
+    color: white;
+}
+
+
+
+
+
 h3 [class*="css"] {
     /* font-family: Roboto; 
     font-size: 18px;
