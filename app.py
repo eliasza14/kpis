@@ -1124,6 +1124,8 @@ def e_button5(id,kpdf,js_code):
             #st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Κτηρίων & Εξ. Χώρων</h3>", unsafe_allow_html=True)
 
             val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
+            
+            val4=float(kpdf['D30'][kpdf['year']==str(year_filter)].iloc[0])
             # text26="**🏠** **"+str(val26)+"** &#8364; "
 
             # html(
@@ -1176,6 +1178,9 @@ def e_button5(id,kpdf,js_code):
 
             """,height=250
             )
+
+            st.metric(label="% Μετ.Kύκλ.Εργ. Κτήρια/Εξωτ. Χώροι ", label_visibility="hidden", value=val26, delta=f'{val4}%')
+
 
         with col2:
             #st.markdown("<h3 style='text-align: center; color: grey;'>🍴 Εστίασης</h3>", unsafe_allow_html=True)
