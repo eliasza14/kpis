@@ -1097,6 +1097,8 @@ def e_button5(id,kpdf,js_code,css_code):
    </div>
     <div>
         <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val29)} %</div>
+    <p>{val2}</p>
+      <p>{str(val2)}</p>
     </div>
 </div>
     <script type="text/javascript">
