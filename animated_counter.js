@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
       numberDiv.setAttribute('data-sign', '+');
     }
   });
+
   function animateCounter3test2(elementId, startValue, endValue, duration, interval) {
     let current = startValue;
     const range = endValue - startValue;
@@ -134,3 +135,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, interval);
 }
+
+function animateCounter3test2noEuro(elementId, startValue, endValue, duration, interval) {
+    let current = startValue;
+    const range = endValue - startValue;
+    const decimalPlaces = (endValue.toString().split('.')[1] || []).length;
+    const element = document.getElementById(elementId);
+    const iterations = Math.ceil(duration / interval);
+    const increment = range / iterations;
+    let iteration = 0;
+
+    const timer = setInterval(() => {
+        current += increment;
+        element.textContent = current.toFixed(decimalPlaces);
+        iteration++;
+
+        if ((increment > 0 && current >= endValue) || (increment < 0 && current <= endValue) || iteration >= iterations) {
+            clearInterval(timer);
+        }
+    }, interval);
+}
+
