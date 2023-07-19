@@ -109,7 +109,7 @@ def get_data_from_json(kdata):
     
     kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
 
-    kpdf['D28'] = kdata['report.turnover_other']
+    kpdf['D28'] = kdata['report.turnover_other'].astype(float)
 
     #% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος
     kpdf['D29'] = round((kdata['report.turnover_total'].astype(float).pct_change()*100),1)
@@ -118,9 +118,9 @@ def get_data_from_json(kdata):
     kpdf['D31'] = round((kpdf['D27'].astype(float).pct_change()*100),1)
     kpdf['D32'] = round((kpdf['D28'].astype(float).pct_change()*100),1)
     kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
-    kpdf['D38'] = round(((kdata['report.overall'].astype(float))/(kdata['report.turnover_total'].astype(float))),1)
-    kpdf['D39'] = round(((kdata['report.grants'].astype(float))/(kdata['report.turnover_total'].astype(float))*100),1)
-    kpdf['D40'] = round(((kdata['report.turnover_total'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))),1)
+    kpdf['D38'] = round(((kdata['report.overall'].astype(float))/(kdata['report.turnover_total'].astype(float))),2)
+    kpdf['D39'] = round(((kdata['report.grants'].astype(float))/(kdata['report.turnover_total'].astype(float))*100),2)
+    kpdf['D40'] = round(((kdata['report.turnover_total'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))),2)
     #Extra diktes
     kpdf['D18_lipsi']=kdata['profile.eme.sum'].astype(float)
     kpdf['D18_eko']=kdata['profile.eme_eko.sum'].astype(float)
