@@ -1476,7 +1476,7 @@ def e_button6(id,kpdf,js_code):
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D24'].astype(float).tolist()
 
-            line_labels=kpdf['D29']
+            line_labels=kpdf['D29'].tolist()
 
             fig=pctChangeV2(categories,values,line_labels,'Κύκλοι Εργασιών','Κυκλ.Εργασιών')
 

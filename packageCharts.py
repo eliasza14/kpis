@@ -97,7 +97,7 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
     fig.add_trace(line_trace)
 
     # Add labels between the years with dynamic y-positioning
-    y_offset = max(values) * 0.05 # Adjust this value to change the vertical offset
+    y_offset = max(values) * 0.1 # Adjust this value to change the vertical offset
     for i in range(len(categories) - 1):
         label = line_labels[i + 1]
         if not pd.isna(label):
