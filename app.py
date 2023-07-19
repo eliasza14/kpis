@@ -1629,7 +1629,7 @@ def e_button7(id,kpdf,js_code,css_code):
 	                </div>
                 <script type="text/javascript">
                 {js_code}
-                animateCounter2("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
+                animateCounterd38("counter", 0, """+str(val3)+""", 1000);  // Increase from 0 to 100 in 1 second
                 </script>
                 </body>
 
