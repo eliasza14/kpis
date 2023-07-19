@@ -83,12 +83,12 @@ def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
 
     return fig
 
-def pctChangeV2(categories,values,line_labels):
+def pctChangeV2(categories,values,line_labels,yaxis_title,legend_bar):
     
     categories=list(map(int, categories))
     # Create the bar plot
     fig = go.Figure()
-    fig.add_trace(go.Bar(x=categories, y=values, name='Ώρες Απασχόλησης', marker_color='steelblue'))
+    fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='steelblue'))
 
     # Create the line plot with labels from 'd16' column
     line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='red')
@@ -115,7 +115,7 @@ def pctChangeV2(categories,values,line_labels):
             tickmode='linear',
             dtick=1
         ),
-        yaxis_title='Ώρες Απασχόλησης',
+        yaxis_title=yaxis_title,
     )
     return fig
 
