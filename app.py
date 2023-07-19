@@ -818,7 +818,7 @@ def ad_button3(id,kpdf,js_code):
             values =kpdf['D12'].tolist()
 
             line_labels=kpdf['D16'].tolist()
-            fig=pctChangeV2(categories,values,line_labels)
+            fig=pctChangeV2(categories,values,line_labels,'Ώρες Απασχόλησης ΛΥΨΥ','Ώρες Απασχόλησης')
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
@@ -831,7 +831,7 @@ def ad_button3(id,kpdf,js_code):
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D13'].tolist()
             line_labels=kpdf['D17'].tolist()
-            fig=pctChangeV2(categories,values,line_labels)
+            fig=pctChangeV2(categories,values,line_labels,'Ώρες Απασχόλησης ΕΚΟ','Ώρες Απασχόλησης')
 
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
@@ -982,8 +982,11 @@ def ad_button4(id,kpdf,js_code):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D18_lipsi'].astype(float).tolist()
+            
+            line_labels=kpdf['D20'].tolist()
 
-            fig=pctChangeChart(values,categories,'Αρ.Μονάδων Εργασίας ΛΥΨΥ','Ποσοστιαία μεταβολή','% Μεταβολή','Μ.Ε. ΛΥΨΥ')
+            fig=pctChangeV2(categories,values,line_labels,'Αρ.Μονάδων Εργασίας ΛΥΨΥ','Μ.Ε. ΛΥΨΥ')
+            # fig=pctChangeChart(values,categories,'Αρ.Μονάδων Εργασίας ΛΥΨΥ','Ποσοστιαία μεταβολή','% Μεταβολή','Μ.Ε. ΛΥΨΥ')
             st.plotly_chart(fig,use_container_width=True)
 
 
