@@ -1754,7 +1754,7 @@ def e_button7(id,kpdf,js_code,css_code):
             fig = px.area(kpdf,x=kpdf['year'].astype(int), y='D38', markers=True)
             fig.update_layout(
             xaxis=dict(
-                label='year',
+                title='Έτος',
                 tickmode='linear',
                 dtick=1
              )
