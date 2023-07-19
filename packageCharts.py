@@ -201,7 +201,7 @@ def stackedChart2(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
         fig.add_trace(go.Bar(
              
             name=legend_labels[i],  # Use the corresponding label
-            x=kpdf['year'].apply(str),
+            x=kpdf['year'].astype(int),
             y=kpdf_selected[col],
             text=kpdf[col],
             textposition='inside',
@@ -209,15 +209,26 @@ def stackedChart2(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
 
         ))
     # Update the layout
-    fig.update_layout(barmode='stack', xaxis_title=xaxis_title,yaxis_title=yaxis_title,legend=dict(
-    orientation="h",  # Horizontal legends
-    yanchor="bottom",
-    y=1.02,
-    xanchor="center",
-    x=0.5,
-    bgcolor='rgba(255, 255, 255, 0)',  # Set legend background color as transparent
-    traceorder='normal'  # Maintain the order of the legend labels
-    ),height=600, width=800)
+    fig.update_layout(
+        barmode='stack',
+        xaxis=dict(
+            title=xaxis_title,
+            tickmode='linear',
+            dtick=1
+        ),
+        yaxis=dict(title=yaxis_title),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5,
+            bgcolor='rgba(255, 255, 255, 0)',
+            traceorder='normal'
+        ),
+        height=600,
+        width=800
+    )
 
     return fig
      
