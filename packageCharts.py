@@ -98,11 +98,18 @@ def pctChangeChart(values, categories, yaxis_title, yaxis2_title, line_legend, b
 
     # Create the layout with two y-axes
     layout = go.Layout(
+        # title='Μεταβολή ωρών απασχόλησης ΛΥΨΥ',
         yaxis=dict(title=yaxis_title, rangemode='nonnegative'),
         yaxis2=dict(title=yaxis2_title, overlaying='y', side='right', showgrid=False),
-        height=600,
-        width=400
+        height=600,  # Set the height of the chart
+        width=400  # Set the width of the chart
     )
+
+    # Convert categories to integers
+    categories_int = [int(category) for category in categories]
+
+    # Update the x-axis tick values to integers
+    layout.update(xaxis=dict(tickmode='array', tickvals=categories_int))
 
     # Create the figure
     fig = go.Figure(data=[bar_trace, line_trace], layout=layout)
@@ -120,18 +127,14 @@ def pctChangeChart(values, categories, yaxis_title, yaxis2_title, line_legend, b
     # Add labels to the percentage change
     for i in range(len(percentage_change)):
         fig.add_annotation(
-            x=categories[i+1], y=percentage_change[i],
+            x=categories[i + 1], y=percentage_change[i],
             text=f"{percentage_change[i]:.2f}%",
             showarrow=False,
             font=dict(color='red', size=12),
             xanchor='center', yanchor='bottom'
         )
 
-    # Update the x-axis trace configuration to display integer values
-    fig.update_traces(x=[int(category) for category in categories])
-
     return fig
-
 
 
 
