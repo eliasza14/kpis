@@ -1100,9 +1100,12 @@ def e_button5(id,kpdf,js_code,css_code):
 
     </div>
 </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
     <script type="text/javascript">
+
     {js_code}
-    animateCounter3test2("counter", 0, """+str(val2)+""", 1000,100);  // Increase from 0 to 100 in 1 second
+    animateCounter3test3("counter", 0, """+str(val2)+""", 1000,100);  // Increase from 0 to 100 in 1 second
     </script>
     </body>
         """,height=250)

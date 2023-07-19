@@ -156,6 +156,7 @@ function animateCounter3test2noEuro(elementId, startValue, endValue, duration, i
     }, interval);
 }
 
+
 function animateCounter3test3(elementId, startValue, endValue, duration, interval) {
     let current = startValue;
     const range = endValue - startValue;
@@ -168,11 +169,8 @@ function animateCounter3test3(elementId, startValue, endValue, duration, interva
     const timer = setInterval(() => {
       current += increment;
   
-      // Format the number with thousands and decimal separators
-      const formattedNumber = current.toLocaleString(undefined, {
-        minimumFractionDigits: decimalPlaces,
-        maximumFractionDigits: decimalPlaces
-      });
+      // Format the number with thousands and decimal separators using numeral.js
+      const formattedNumber = numeral(current).format('0,0.00');
   
       element.textContent = formattedNumber + '€';
       iteration++;
@@ -186,3 +184,6 @@ function animateCounter3test3(elementId, startValue, endValue, duration, interva
       }
     }, interval);
   }
+
+  
+  
