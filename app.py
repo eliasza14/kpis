@@ -888,7 +888,7 @@ def ad_button4(id,kpdf,js_code):
 	                </div>
                 <script type="text/javascript">
                 {js_code}
-                animateCounter3test2("counter", 0, """+str(val2)+""", 1000,100);
+                animateCounter3test2("counter", 0, """+str(text)+""", 1000,100);
                 </script>
                 </body>
 
