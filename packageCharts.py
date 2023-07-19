@@ -111,12 +111,11 @@ def pctChangeV2(categories,values,line_labels):
     # Set the layout
     fig.update_layout(
         xaxis=dict(
-            title='Year',
+            title='Έτος',
             tickmode='linear',
             dtick=1
         ),
-        title='d12 Bar Plot with Line Labels',
-        yaxis_title='d12',
+        yaxis_title='Ώρες Απασχόλησης ΛΥΨΥ',
     )
     return fig
 
