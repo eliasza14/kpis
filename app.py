@@ -1763,7 +1763,12 @@ def e_button7(id,kpdf,js_code,css_code):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D36_overal'].astype(float).tolist()
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+
+            line_labels=kpdf['D36'].tolist()
+
+            fig=pctChangeV2(categories,values,line_labels,'Καθαρά Αποτελέσματα','Καθ. Αποτελέσμ.')
+
+            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
         with col2:
 
