@@ -979,6 +979,7 @@ def ad_button4(id,kpdf,js_code):
         with col1:
             st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Μονάδων Εργασίας ΛΥΨΥ</h3>", unsafe_allow_html=True)
             categories=kpdf['year'].tolist()
+            st.write(categories)
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             # values =kpdf['D18_lipsi'].astype(float).tolist()
