@@ -105,7 +105,7 @@ def pctChangeV2(categories,values,line_labels):
 
     # Add d12 values at the center of each bar
     for i in range(len(values)):
-        fig.add_annotation(x=categories[i], y=values[i] / 2, text=str(values[i]), showarrow=False,
+        fig.add_annotation(x=categories[i], y=values[i] / 2, text=str(round((values[i]),1)), showarrow=False,
                         font=dict(color='white', size=15), xanchor='center', yanchor='middle')
 
     # Set the layout
