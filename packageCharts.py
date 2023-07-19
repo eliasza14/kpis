@@ -88,7 +88,7 @@ def pctChangeV2(categories,values,line_labels):
     categories=list(map(int, categories))
     # Create the bar plot
     fig = go.Figure()
-    fig.add_trace(go.Bar(x=categories, y=values, name='Ώρες ', marker_color='steelblue'))
+    fig.add_trace(go.Bar(x=categories, y=values, name='Ώρες Απασχόλησης', marker_color='steelblue'))
 
     # Create the line plot with labels from 'd16' column
     line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='red')
