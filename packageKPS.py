@@ -27,7 +27,7 @@ def calculate_d15(row):
     d7 = row['D7']
     d13 = row['D13']
   
-    return round(int(d13) / int(d7),1)
+    return round(float(d13) / int(d7),1)
 
 
 
