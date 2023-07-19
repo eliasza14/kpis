@@ -370,7 +370,7 @@ def ad_button2(id,kpdf,js_code):
     st.subheader("Εργαζόμενοι")
     #colors = px.colors.qualitative.Plotly
     colors = ["rgb(65,105,225)", "rgb(135,206,235)", "rgb(255,0,0)"]
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
 
     with st.container():
         col1, col2,col3 = st.columns(3)
@@ -693,8 +693,8 @@ def ad_button2(id,kpdf,js_code):
 
 
 def ad_button3(id,kpdf,js_code):
-    st.subheader("Ωρες απασχόλησης εργαζομένων")
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    st.subheader("Ωρες απασχόλησης")
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
    
     with st.container():
         col1, col2 = st.columns(2)
@@ -838,7 +838,7 @@ def ad_button4(id,kpdf,js_code):
     st.subheader("Ετήσιες Μονάδες Εργασίας")
     colors = px.colors.qualitative.Plotly
 
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
 
     with st.container():
         # col1, col2 = st.columns(2)
@@ -1023,7 +1023,7 @@ def e_button5(id,kpdf,js_code,css_code):
     colors = px.colors.qualitative.Plotly
 
 
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
     val2=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
     val29=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
 
@@ -1506,7 +1506,7 @@ def e_button6(id,kpdf,js_code):
 def e_button7(id,kpdf,js_code,css_code):
     st.subheader("Κατανομή πλήθους με βάση το καθαρό εισόδημα")
 
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
     val1=float(kpdf['D36_overal'][kpdf['year']==str(year_filter)].iloc[0])
     val2=float(kpdf['D36'][kpdf['year']==str(year_filter)].iloc[0])
 
