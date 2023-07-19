@@ -888,7 +888,7 @@ def ad_button4(id,kpdf,js_code):
 	                </div>
                 <script type="text/javascript">
                 {js_code}
-                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                animateCounter2("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
                 </script>
                 </body>
 
