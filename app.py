@@ -1491,8 +1491,11 @@ def e_button6(id,kpdf,js_code):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D26'].astype(int).tolist()
+            line_labels=kpdf['D30'].tolist()
 
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+            fig=pctChangeV2(categories,values,line_labels,'Κύκλοι Εργασιών','Κτ/Εξωτ. Χώροι')
+
+            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
@@ -1506,17 +1509,26 @@ def e_button6(id,kpdf,js_code):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D27'].astype(float).tolist()
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+            line_labels=kpdf['D31'].tolist()
+
+
+            fig=pctChangeV2(categories,values,line_labels,'Κύκλοι Εργασιών','Υπηρ. Εστίασης')
+
+            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μετ.Κύκλ.Εργ. Λοιπ. Δραστ.</h3>", unsafe_allow_html=True)
 
             categories=kpdf['year'].tolist()
+
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D28'].astype(float).tolist()
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+            line_labels=kpdf['D32'].tolist()
+            fig=pctChangeV2(categories,values,line_labels,'Κύκλοι Εργασιών','Λοιπ. Δραστ.')
+
+            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
 
