@@ -1751,8 +1751,16 @@ def e_button7(id,kpdf,js_code,css_code):
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος</h3>", unsafe_allow_html=True)
 
-            fig = px.area(kpdf,x='year', y='D38', markers=True)
+            fig = px.area(kpdf,x=kpdf['year'].astype(int), y='D38', markers=True)
+            fig.update_layout(
+            xaxis=dict(
+                tickmode='linear',
+                dtick=1
+             )
+            )
             st.plotly_chart(fig,use_container_width=True)
+
+            
         with col3:
             pass
 
@@ -1774,22 +1782,11 @@ def display_pinkas_submenu(id):
     # dffilter['year'] = dffilter['year'].apply(format_year)
     # dffilter
     # data_canada = px.data.gapminder().query("country == 'Canada'")
-    #WORKINGGGGG
-    # fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
-    # st.plotly_chart(fig)
+    fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
+    st.plotly_chart(fig)
 
     # Add content for pinkas submenu here
-    fig = px.bar(dffilter, x=dffilter['year'].astype(int), y='profile.eko.sum', orientation='v')
-
-# Configure x-axis to show only integer values
-    fig.update_layout(
-        xaxis=dict(
-            tickmode='linear',
-            dtick=1
-        )
-    )
-
-    st.plotly_chart(fig)
+    
 
 
 
