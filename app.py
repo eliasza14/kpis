@@ -206,6 +206,8 @@ def main():
 
 
     st.write(kdata)
+    
+    kdata=kdata.sort_values(by=['year'], ascending=True)
 
     kpdf=get_data_from_json(kdata)
     # kpdf=kpdf.fillna(0)
