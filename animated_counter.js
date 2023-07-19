@@ -186,18 +186,3 @@ function animateCounter3test3(elementId, startValue, endValue, duration, interva
   }
 
   
-  function animateCounterd38(elementId, startValue, endValue, duration) {
-    let current = startValue;
-    const range = endValue - startValue;
-    const increment = endValue > startValue ? 0.01 : -0.01;
-    const stepTime = Math.abs(Math.floor(duration / Math.abs(range)));
-    const decimalPlaces = (endValue.toString().split('.')[1] || []).length;
-    const element = document.getElementById(elementId);
-    const timer = setInterval(() => {
-        current += increment;
-        element.textContent = current.toFixed(decimalPlaces);
-        if ((increment > 0 && current >= endValue) || (increment < 0 && current <= endValue)) {
-            clearInterval(timer);
-        }
-    }, stepTime);
-}
