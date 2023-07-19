@@ -1757,7 +1757,10 @@ def e_button7(id,kpdf,js_code,css_code):
                 title='Έτος',
                 tickmode='linear',
                 dtick=1
-             )
+             ),
+             yaxis=dict(
+                title='Αριθμοδείκτης Καθαρών Αποτελεσμάτων'
+             ) 
             )
             st.plotly_chart(fig,use_container_width=True)
 
