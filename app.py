@@ -1774,10 +1774,22 @@ def display_pinkas_submenu(id):
     # dffilter['year'] = dffilter['year'].apply(format_year)
     # dffilter
     # data_canada = px.data.gapminder().query("country == 'Canada'")
-    fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
-    st.plotly_chart(fig)
+    #WORKINGGGGG
+    # fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
+    # st.plotly_chart(fig)
 
     # Add content for pinkas submenu here
+    fig = px.bar(dffilter, x=dffilter['year'].astype(int), y='profile.eko.sum', orientation='v')
+
+# Configure x-axis to show only integer values
+    fig.update_layout(
+        xaxis=dict(
+            tickmode='linear',
+            dtick=1
+        )
+    )
+
+    st.plotly_chart(fig)
 
 
 
