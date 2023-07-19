@@ -1476,7 +1476,12 @@ def e_button6(id,kpdf,js_code):
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D24'].astype(float).tolist()
 
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+            line_labels=kpdf['D29']
+
+            fig=pctChangeV2(categories,values,line_labels,'Κύκλοι Εργασιών','Κυκλ.Εργασιών')
+
+
+            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
         with col2:
