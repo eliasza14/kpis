@@ -816,7 +816,10 @@ def ad_button3(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΛΥΨΥ</h3>", unsafe_allow_html=True)
             categories=kpdf['year'].tolist()
             values =kpdf['D12'].tolist()
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+
+            line_labels=kpdf['D16'].tolist()
+            fig=pctChangeV2(categories,values,line_labels)
+            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
 
