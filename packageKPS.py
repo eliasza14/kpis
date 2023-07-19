@@ -36,7 +36,7 @@ def calculate_d14(row):
     d5 = row['D5']
     d12 = row['D12']
   
-    return round(int(d12) / int(d5),1)
+    return round(float(d12) / int(d5),1)
 
 
 
