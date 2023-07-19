@@ -243,7 +243,7 @@ def main():
 def ad_button1(id,kpdf,js_code):
     st.subheader("Συνεταιριστές")
 
-    year_filter = st.selectbox("Έτος", kpdf['year'].tolist())
+    year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
     
     with st.container():
 
