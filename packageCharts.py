@@ -83,30 +83,33 @@ def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
 
     return fig
 
-def pctChangeV2(categories,values,line_labels,yaxis_title,legend_bar):
-    
-    categories=list(map(int, categories))
+
+
+def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
+    categories = list(map(int, categories))
+
     # Create the bar plot
     fig = go.Figure()
     fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='steelblue'))
 
-    # Create the line plot with labels from 'd16' column
+    # Create the line plot with labels
     line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='red')
     fig.add_trace(line_trace)
 
-    # Add labels between the years
+    # Add labels between the years with dynamic y-positioning
+    y_offset = max(values) * 0.05  # Adjust this value to change the vertical offset
     for i in range(len(categories) - 1):
         label = line_labels[i + 1]
         if not pd.isna(label):
             x_label = [categories[i], categories[i + 1]]
-            y_label = [values[i],values[i + 1]]
-            fig.add_annotation(x=sum(x_label) / 2, y=sum(y_label) / 2 + 1, text=f"{label} %", showarrow=False,
-                            font=dict(color='red', size=15))  # Adjust the font size as needed
+            y_label = [values[i], values[i + 1]]
+            fig.add_annotation(x=sum(x_label) / 2, y=sum(y_label) / 2 + y_offset, text=f"{label} %", showarrow=False,
+                               font=dict(color='red', size=15))  # Adjust the font size as needed
 
-    # Add d12 values at the center of each bar
+    # Add values at the center of each bar
     for i in range(len(values)):
-        fig.add_annotation(x=categories[i], y=values[i] / 2, text=str(round((values[i]),1)), showarrow=False,
-                        font=dict(color='white', size=15), xanchor='center', yanchor='middle')
+        fig.add_annotation(x=categories[i], y=values[i] / 2, text=str(round((values[i]), 1)), showarrow=False,
+                           font=dict(color='white', size=15), xanchor='center', yanchor='middle')
 
     # Set the layout
     fig.update_layout(
@@ -118,6 +121,50 @@ def pctChangeV2(categories,values,line_labels,yaxis_title,legend_bar):
         yaxis_title=yaxis_title,
     )
     return fig
+
+
+
+
+
+
+
+
+
+# def pctChangeV2(categories,values,line_labels,yaxis_title,legend_bar):
+    
+#     categories=list(map(int, categories))
+#     # Create the bar plot
+#     fig = go.Figure()
+#     fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='steelblue'))
+
+#     # Create the line plot with labels from 'd16' column
+#     line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='red')
+#     fig.add_trace(line_trace)
+
+#     # Add labels between the years
+#     for i in range(len(categories) - 1):
+#         label = line_labels[i + 1]
+#         if not pd.isna(label):
+#             x_label = [categories[i], categories[i + 1]]
+#             y_label = [values[i],values[i + 1]]
+#             fig.add_annotation(x=sum(x_label) / 2, y=sum(y_label) / 2 + 1, text=f"{label} %", showarrow=False,
+#                             font=dict(color='red', size=15))  # Adjust the font size as needed
+
+#     # Add d12 values at the center of each bar
+#     for i in range(len(values)):
+#         fig.add_annotation(x=categories[i], y=values[i] / 2, text=str(round((values[i]),1)), showarrow=False,
+#                         font=dict(color='white', size=15), xanchor='center', yanchor='middle')
+
+#     # Set the layout
+#     fig.update_layout(
+#         xaxis=dict(
+#             title='Έτος',
+#             tickmode='linear',
+#             dtick=1
+#         ),
+#         yaxis_title=yaxis_title,
+#     )
+#     return fig
 
 
 def pctChangeChart(values, categories, yaxis_title, yaxis2_title, line_legend, bar_trace_legend):
