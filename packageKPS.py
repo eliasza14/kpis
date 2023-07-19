@@ -7,7 +7,8 @@ def calculate_d26_d27(row,matching_columns):
     values = row[matching_columns]
     column_sum = values.sum()
     d26=column_sum
-    return d26
+    formatted_number = format(d26, ",.2f") 
+    return formatted_number
 
 
 
@@ -94,7 +95,7 @@ def get_data_from_json(kdata):
 
 
     #Σύνολο κύκλου εργασιών ανά τομέα & κατανομή ανά δραστηριότητα ανά έτος
-    kpdf['D24']=kdata['report.turnover_total']
+    kpdf['D24']=kdata['report.turnover_total'].astype(float)
     #search for kad starts from .81
 
     matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
