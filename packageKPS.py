@@ -7,8 +7,8 @@ def calculate_d26_d27(row,matching_columns):
     values = row[matching_columns]
     column_sum = values.sum()
     d26=column_sum
-    formatted_number = format(d26, ",.2f") 
-    return float(formatted_number)
+    formatted_number = f"{d26:,.2f}" 
+    return formatted_number
 
 
 
