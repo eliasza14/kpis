@@ -1734,7 +1734,7 @@ def e_button7(id,kpdf,js_code,css_code):
             st.plotly_chart(fig,use_container_width=True)
         with col2:
 
-            st.markdown("<h3 style='text-align: center; color: grey;'>Συμμετοχή (%) Επιδοτήσεων στα έσοδα / Ετος</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Συμμετοχή (%) Επιδοτήσεων στα έσοδα</h3>", unsafe_allow_html=True)
 
              
             val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
