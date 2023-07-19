@@ -156,3 +156,33 @@ function animateCounter3test2noEuro(elementId, startValue, endValue, duration, i
     }, interval);
 }
 
+function animateCounter3test3(elementId, startValue, endValue, duration, interval) {
+    let current = startValue;
+    const range = endValue - startValue;
+    const decimalPlaces = (endValue.toString().split('.')[1] || []).length;
+    const element = document.getElementById(elementId);
+    const iterations = Math.ceil(duration / interval);
+    const increment = range / iterations;
+    let iteration = 0;
+  
+    const timer = setInterval(() => {
+      current += increment;
+  
+      // Format the number with thousands and decimal separators
+      const formattedNumber = current.toLocaleString(undefined, {
+        minimumFractionDigits: decimalPlaces,
+        maximumFractionDigits: decimalPlaces
+      });
+  
+      element.textContent = formattedNumber + '€';
+      iteration++;
+  
+      if (
+        (increment > 0 && current >= endValue) ||
+        (increment < 0 && current <= endValue) ||
+        iteration >= iterations
+      ) {
+        clearInterval(timer);
+      }
+    }, interval);
+  }
