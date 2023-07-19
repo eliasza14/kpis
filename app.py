@@ -831,8 +831,10 @@ def ad_button3(id,kpdf,js_code):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D13'].tolist()
+            line_labels=kpdf['D17'].tolist()
+            fig=pctChangeV2(categories,values,line_labels)
 
-            fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
+            # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
         
 
