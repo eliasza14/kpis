@@ -115,7 +115,7 @@ def pctChangeV2(categories,values,line_labels):
             tickmode='linear',
             dtick=1
         ),
-        yaxis_title='Ώρες Απασχόλησης ΛΥΨΥ',
+        yaxis_title='Ώρες Απασχόλησης',
     )
     return fig
 

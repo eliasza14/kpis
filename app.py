@@ -826,7 +826,6 @@ def ad_button3(id,kpdf,js_code):
         with col2:
             #st.write('Δ13-Ωρες απασχολησης εργαζομένων ΕΚΟ')
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΕΚΟ</h3>", unsafe_allow_html=True)
-
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
