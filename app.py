@@ -981,8 +981,9 @@ def ad_button4(id,kpdf,js_code):
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
-            values =kpdf['D18_lipsi'].astype(float).tolist()
-            
+            # values =kpdf['D18_lipsi'].astype(float).tolist()
+            values =kpdf['D18_lipsi'].tolist()
+
             line_labels=kpdf['D20'].tolist()
 
             fig=pctChangeV2(categories,values,line_labels,'Αρ.Μονάδων Εργασίας ΛΥΨΥ','Μ.Ε. ΛΥΨΥ')
