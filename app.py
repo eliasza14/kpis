@@ -981,7 +981,6 @@ def ad_button4(id,kpdf,js_code):
         with col1:
             st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Μονάδων Εργασίας ΛΥΨΥ</h3>", unsafe_allow_html=True)
             categories=kpdf['year'].tolist()
-            st.write(categories)
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             # values =kpdf['D18_lipsi'].astype(float).tolist()
@@ -1001,7 +1000,12 @@ def ad_button4(id,kpdf,js_code):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D18_eko'].astype(float).tolist()
-            fig=pctChangeChart(values,categories,'Αρ.Μονάδων Εργασίας ΕΚΟ','Ποσοστιαία μεταβολή','% Μεταβολή','Μ.Ε. ΕΚΟ')
+            line_labels=kpdf['D21'].tolist()
+
+            
+            fig=pctChangeV2(categories,values,line_labels,'Αρ.Μονάδων Εργασίας ΕΚΟ','Μ.Ε. ΕΚΟ')
+
+            # fig=pctChangeChart(values,categories,'Αρ.Μονάδων Εργασίας ΕΚΟ','Ποσοστιαία μεταβολή','% Μεταβολή','Μ.Ε. ΕΚΟ')
             st.plotly_chart(fig,use_container_width=True)
 
 
