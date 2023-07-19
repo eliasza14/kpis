@@ -883,6 +883,7 @@ def ad_button4(id,kpdf,js_code):
                             <div>
                                 <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 30px; word-wrap: break-word">Ετήσιες Μονάδες Εργασίας</div>
                             </div>
+                            <p>{str(text)}</p>
                         </div>
 	                </div>
                 <script type="text/javascript">
