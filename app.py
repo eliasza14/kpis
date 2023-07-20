@@ -179,6 +179,14 @@ def main():
     with ad_expander:
         selected_option1 = st.radio("Επιλέξτε:", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"])
     
+    # Check if the radio button option has changed
+    if st.session_state.previous_selected_option != selected_option1:
+        # If the option has changed, rerun the app to refresh the page
+        st.experimental_rerun()
+
+    # Store the currently selected option in session state for comparison next time
+    st.session_state.previous_selected_option = selected_option1
+
 
 
     #RADIO OPTION ANTHROPINO DYNAMIKO
