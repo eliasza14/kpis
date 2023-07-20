@@ -30,8 +30,8 @@ def gaugeChart(value,color):
             number_font={'size': 40},  # Set the number font size
         )
         fig.update_layout(
-            # height=170,  # Adjust the height of the chart
-            # width=200,   # Adjust the width of the chart
+            height=170,  # Adjust the height of the chart
+            width=200,   # Adjust the width of the chart
             margin=dict(l=0, r=0, t=12, b=5, autoexpand=True),  # Adjust the top margin value
 
             paper_bgcolor="white",
