@@ -102,7 +102,7 @@ function animateCounter3test3(elementId, startValue, endValue, duration, interva
         }
     }, interval);
 }
-
+//Put sign on the number of delta
 document.addEventListener('DOMContentLoaded', function() {
     const numberDiv = document.querySelector('.number');
     const number = parseFloat(numberDiv.textContent);
