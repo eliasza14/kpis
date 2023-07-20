@@ -102,7 +102,7 @@ function animateCounter3test3(elementId, startValue, endValue, duration, interva
         }
     }, interval);
 }
-
+/*
 document.addEventListener('DOMContentLoaded', function() {
     const numberDiv = document.querySelector('.number');
     const number = parseFloat(numberDiv.textContent);
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, interval);
 }
-
+*/
 function animateCounter3test2noEuro(elementId, startValue, endValue, duration, interval) {
     let current = startValue;
     const range = endValue - startValue;
