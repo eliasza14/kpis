@@ -1288,6 +1288,7 @@ def e_button7(id,kpdf,js_code,css_code):
                 xaxis=dict(
                     title='Έτος',
                     tickmode='linear',
+                    tickfont=dict( size=20 ),
                     dtick=1
                 ),
                 yaxis=dict(
