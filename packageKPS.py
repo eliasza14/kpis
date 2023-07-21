@@ -254,7 +254,8 @@ def get_data_from_json(id):
 
     #D36 fixing code
     # kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
-    st.write(kdata['report.overall'])
+    st.write(kdata['report.overall'].sort_values(by=['year'], ascending=True))
+    kdata=kdata.sort_values(by=['year'], ascending=True)
     kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36(row['report.overall'], kdata.loc[row.name - 1, 'report.overall']), axis=1)
 
 
