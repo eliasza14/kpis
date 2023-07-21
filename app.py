@@ -1263,7 +1263,7 @@ def e_button7(id,kpdf,js_code,css_code):
 
              
             val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
-            fig=donut_pct_Chart(val39,'rgb(135 206 235)', 'rgb(240,240,240)',['% Συμμετοχή Επιδοτήσεων', ' '])
+            fig=donut_pct_Chart(val39,'#00235e', 'rgb(240,240,240)',['% Συμμετοχή Επιδοτήσεων', ' '])
             st.plotly_chart(fig, use_container_width=True)
         
 
