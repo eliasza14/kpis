@@ -66,7 +66,7 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             cumulative_height += val
             fig.add_annotation(x=kpdf['year'].iloc[j], y=cumulative_height - val / 2,
                                text=f"<b>{str(round(val, 1))}%</b>", showarrow=False,
-                               font=dict(family='Roboto',color='white', size=16), xanchor='center', yanchor='middle')
+                               font=dict(family='Roboto', color='white', size=16), xanchor='center', yanchor='middle')
     
     # Update the layout
     fig.update_layout(
@@ -75,7 +75,10 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             title=xaxis_title,
             tickmode='linear',  # Display linear sequence of ticks
             dtick=1,  # Specify tick interval as 1 for integer values
-            tickfont=dict(family='Roboto',size=20)
+            tickfont=dict(family='Roboto', size=20, color='black', # Set the font size and color for the x-axis labels
+                           ),
+            ticktext=['<b>{}</b>'.format(str(tick)) for tick in kpdf['year'].astype(int)], # Add <b></b> tags to tick labels
+            tickvals=kpdf['year'].astype(int), # Set the tick values
         ),
         yaxis=dict(title=yaxis_title),
         legend=dict(
