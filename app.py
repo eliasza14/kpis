@@ -572,7 +572,8 @@ def ad_button3(id,kpdf,js_code):
 
 def ad_button4(id,kpdf,js_code):
     st.subheader("Ετήσιες Μονάδες Εργασίας")
-    colors = px.colors.qualitative.Plotly
+    colors = ['#00235e','#F0894F','#618abb']
+    # legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
 
