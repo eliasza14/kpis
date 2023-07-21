@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-
+import streamlit as st
 
 def calculate_d26_d27(row,matching_columns):
     
@@ -62,7 +62,7 @@ def calculate_d9(row):
 def format_year(year):
     return "{:d}".format(year)  # Removes the comma separator
 
-
+@st.experimental_memo
 def get_data_from_json(kdata):
     kpdf=kdata[['koispe_id','year']]
     kpdf=kpdf.sort_values(by=['year'], ascending=True)
