@@ -697,7 +697,7 @@ def ad_button4(id,kpdf,js_code):
 
 def e_button5(id,kpdf,js_code,css_code):
     st.subheader("Κύκλοι εργασιών")
-    colors = px.colors.qualitative.Plotly
+    colors = ['#00235e','#F0894F','#618abb']
 
 
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
