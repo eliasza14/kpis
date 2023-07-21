@@ -3,6 +3,23 @@ import pandas as pd
 import streamlit as st
 import requests
 
+
+def calculate_percentage_change_d36(old_value, new_value):
+    if old_value > 0 and new_value > 0:
+        percentage_change = (new_value - old_value) / old_value
+    elif old_value < 0 and new_value < 0:
+        percentage_change = (old_value - new_value) / abs(old_value)
+    elif old_value > 0 and new_value < 0:
+        percentage_change = (new_value - old_value) / old_value
+    elif old_value < 0 and new_value > 0:
+        percentage_change = (new_value - old_value) / abs(old_value)
+    else:
+        # Handle the case when both old_value and new_value are zero
+        percentage_change = 0.0
+
+    return round(percentage_change*100,1)
+
+
 def calculate_d26_d27(row,matching_columns):
     
     values = row[matching_columns]
@@ -234,7 +251,13 @@ def get_data_from_json(id):
     kpdf['D30'] = round((kpdf['D26'].astype(float).pct_change()*100),1)
     kpdf['D31'] = round((kpdf['D27'].astype(float).pct_change()*100),1)
     kpdf['D32'] = round((kpdf['D28'].astype(float).pct_change()*100),1)
-    kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
+
+    #D36 fixing code
+    # kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
+
+    kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36(row['report.overall'], kdata.loc[row.name - 1, 'report.overall']), axis=1)
+
+
     kpdf['D38'] = round(((kdata['report.overall'].astype(float))/(kdata['report.turnover_total'].astype(float))),2)
     kpdf['D39'] = round(((kdata['report.grants'].astype(float))/(kdata['report.turnover_total'].astype(float))*100),2)
     kpdf['D40'] = round(((kdata['report.turnover_total'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))),2)
