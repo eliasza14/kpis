@@ -393,7 +393,7 @@ def ad_button2(id,kpdf,js_code):
             d9_value = filtered_kpdf["D9"].iloc[0]
             # fig=gaugeChart(d9_value,'royalblue')
 
-            fig=donut_pct_Chart(d9_value,'#00235e', 'rgb(240,240,240)',['% Γεν. Πληθυσμού', ' '])
+            fig=donut_pct_Chart(d9_value,'#618abb', 'rgb(240,240,240)',['% Γεν. Πληθυσμού', ' '])
 
 
             st.plotly_chart(fig,use_container_width=True)
@@ -408,7 +408,7 @@ def ad_button2(id,kpdf,js_code):
             # Select the value from the filtered dataframe
             d10_value = filtered_kpdf["D10"].iloc[0]
             # fig=gaugeChart(d10_value,'skyblue')
-            fig=donut_pct_Chart(d10_value,'#F0894F', 'rgb(240,240,240)',['% ΛΥΨΥ', ' '])
+            fig=donut_pct_Chart(d10_value,'#00235e', 'rgb(240,240,240)',['% ΛΥΨΥ', ' '])
 
             st.plotly_chart(fig,use_container_width=True)
         with col3:
