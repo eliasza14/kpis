@@ -392,7 +392,7 @@ def ad_button2(id,kpdf,js_code):
             d9_value = filtered_kpdf["D9"].iloc[0]
             # fig=gaugeChart(d9_value,'royalblue')
 
-            fig=donut_pct_Chart(d9_value,'rgb(135 206 235)', 'rgb(240,240,240)',['(% επί του Συνόλου)', ' '])
+            fig=donut_pct_Chart(d9_value,'rgb(135 206 235)', 'rgb(240,240,240)',['% Γεν. Πληθυσμού', ' '])
 
 
             st.plotly_chart(fig,use_container_width=True)
