@@ -969,7 +969,7 @@ def e_button5(id,kpdf,js_code,css_code):
 
             kpdf_selected = kpdf[columns]
             # Create the stacked bar plot using Plotly
-            fig=stackedChart2(columns,kpdf,legend_labels,'Έτος','Συχνότητα',colors)
+            fig=stackedChart(columns,kpdf,legend_labels,'Έτος','Συχνότητα',colors)
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             pass
