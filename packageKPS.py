@@ -198,7 +198,7 @@ def get_data_from_json(id):
 
     st.write(kdata)
     
-    kdata=kdata.sort_values(by=['year'], ascending=True)
+    kdata=kdata.sort_values(by=['year'], ascending=True,ignore_index=True)
 
 
 
