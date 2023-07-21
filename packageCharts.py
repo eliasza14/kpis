@@ -60,6 +60,14 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             textfont=dict(size=14, color='white')  # Set the font size and color for the labels
         ))
     
+    # Add values at the center of each bar
+    for col in columns:
+        values = kpdf_selected[col]
+        categories = kpdf['year'].astype(int)
+        for i in range(len(values)):
+            fig.add_annotation(x=categories[i], y=values[i] / 2, text=str(round((values[i]), 1)), showarrow=False,
+                               font=dict(color='white', size=15), xanchor='center', yanchor='middle')
+    
     # Update the layout
     fig.update_layout(
         barmode='stack',
@@ -83,8 +91,6 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
     )
 
     return fig
-
-
 
 # def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
 #     # Create the stacked bar plot using Plotly
