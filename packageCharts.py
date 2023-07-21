@@ -78,6 +78,7 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
         ),
         yaxis=dict(title=yaxis_title),
         legend=dict(
+            size=15,
             orientation="h",
             yanchor="bottom",
             y=1.02,
