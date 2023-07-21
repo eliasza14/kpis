@@ -1276,18 +1276,26 @@ def e_button7(id,kpdf,js_code,css_code):
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Αριθμοδείκτης Καθαρών Αποτελεσμάτων / Έτος</h3>", unsafe_allow_html=True)
 
-            fig = px.area(kpdf,x=kpdf['year'].astype(int), y='D38', markers=True)
+            fig = px.area(kpdf, x=kpdf['year'].astype(int), y='D38', markers=True)
+
+            # Update the line color
+            fig.update_traces(line=dict(color='#00235e'))
+
+            # Update the area color
+            fig.update_traces(fillcolor='#618abb', fill='tozeroy')
+
             fig.update_layout(
-            xaxis=dict(
-                title='Έτος',
-                tickmode='linear',
-                dtick=1
-             ),
-             yaxis=dict(
-                title='Αριθμοδείκτης Καθαρών Αποτελεσμάτων'
-             ) 
+                xaxis=dict(
+                    title='Έτος',
+                    tickmode='linear',
+                    dtick=1
+                ),
+                yaxis=dict(
+                    title='Αριθμοδείκτης Καθαρών Αποτελεσμάτων'
+                )
             )
-            st.plotly_chart(fig,use_container_width=True)
+
+            st.plotly_chart(fig, use_container_width=True)
 
             
         with col3:
