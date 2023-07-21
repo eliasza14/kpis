@@ -259,9 +259,10 @@ def get_data_from_json(id):
 
     st.write(kdata['report.overall'])
     # kdata=kdata.sort_values(by=['year'], ascending=True)
-    # kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36( 9442.24 ,-11496.98), axis=1)
-    x=calculate_percentage_change_d36( float(kdata['report.overall'][0]),float(kdata['report.overall'][1]))
-    st.write(x)
+    kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36(float(row['report.overall']), float(kdata.loc[row.name - 1, 'report.overall'])), axis=1)
+    # x=calculate_percentage_change_d36( float(kdata['report.overall'][0]),float(kdata['report.overall'][1]))
+
+
     kpdf['D38'] = round(((kdata['report.overall'].astype(float))/(kdata['report.turnover_total'].astype(float))),2)
     kpdf['D39'] = round(((kdata['report.grants'].astype(float))/(kdata['report.turnover_total'].astype(float))*100),2)
     kpdf['D40'] = round(((kdata['report.turnover_total'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))),2)
