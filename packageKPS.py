@@ -8,6 +8,7 @@ def calculate_percentage_change_d36(old_value2, new_value2):
     old_value=float(old_value2)
     new_value=float(new_value2)
     st.write(old_value)
+    st.write(new_value)
     if old_value > 0 and new_value > 0:
         percentage_change = (new_value - old_value) / old_value
         # st.write("result")
