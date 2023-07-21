@@ -172,6 +172,8 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
         xaxis=dict(
             title='Έτος',
             tickmode='linear',
+            tickfont=dict( size=20 # Set the font size and color for the x-axis labels
+                           ),
             dtick=1
         ),
         yaxis_title=yaxis_title,
