@@ -439,7 +439,7 @@ def ad_button2(id,kpdf,js_code):
                 legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
 
 
-                fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επι του Συνόλου',colors)
+                fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επί του Συνόλου',colors)
 
                 # Show the plot
                 st.plotly_chart(fig, use_container_width=True)
@@ -628,14 +628,14 @@ def ad_button4(id,kpdf,js_code):
             # Create the layout with two y-axes
             st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΛΥΨΥ % επί του Συνόλου</h3>", unsafe_allow_html=True)
             val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
-            fig=donut_pct_Chart(val,'rgb(135 206 235)', 'rgb(240,240,240)',['(%) Μ.Ε. ΛΥΨΥ επι του συνόλου', ' '])
+            fig=donut_pct_Chart(val,'rgb(135 206 235)', 'rgb(240,240,240)',['(%) Μ.Ε. ΛΥΨΥ επί του συνόλου', ' '])
             st.plotly_chart(fig, use_container_width=True)
 
 
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΕΚΟ % επί του Συνόλου</h3>", unsafe_allow_html=True)
             val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
-            fig=donut_pct_Chart(val2,'rgb(113,209,145)','rgb(240,240,240)',['(%) Μ.Ε. ΕΚΟ επι του συνόλου', ' '])
+            fig=donut_pct_Chart(val2,'rgb(113,209,145)','rgb(240,240,240)',['(%) Μ.Ε. ΕΚΟ επί του συνόλου', ' '])
             st.plotly_chart(fig,use_container_width=True)
 
     
@@ -683,7 +683,7 @@ def ad_button4(id,kpdf,js_code):
             columns = ['D22', 'D23', 'D22_23_g']
             legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
             kpdf_selected = kpdf[columns]
-            fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επι του Συνόλου',colors)
+            fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επί του Συνόλου',colors)
             st.plotly_chart(fig, use_container_width=True)
          with col3:
             pass

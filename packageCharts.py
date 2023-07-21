@@ -146,10 +146,10 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
 
     # Create the bar plot
     fig = go.Figure()
-    fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='steelblue'))
+    fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='#00235e'))
 
     # Create the line plot with labels
-    line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='red')
+    line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='#F0894F')
     fig.add_trace(line_trace)
 
     # Add labels between the years with dynamic y-positioning
@@ -160,7 +160,7 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
             x_label = [categories[i], categories[i + 1]]
             y_label = [values[i], values[i + 1]]
             fig.add_annotation(x=sum(x_label) / 2, y=sum(y_label) / 2 + y_offset, text=f"{label} %", showarrow=False,
-                               font=dict(color='red', size=15))  # Adjust the font size as needed
+                               font=dict(color='#F0894F', size=15))  # Adjust the font size as needed
 
     # Add values at the center of each bar
     for i in range(len(values)):
