@@ -400,20 +400,27 @@ def ad_button2(id,kpdf,js_code):
 
         with col2:
             # Filter the dataframe based on the selected year
-            st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΛΥΨΥ</p><p style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΛΥΨΥ</h3><h3 style='text-align: center; color: grey;'>(% επί του Συνόλου)</h3>", unsafe_allow_html=True)
+
+            # st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΛΥΨΥ</p><p style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
             # Select the value from the filtered dataframe
             d10_value = filtered_kpdf["D10"].iloc[0]
-            fig=gaugeChart(d10_value,'skyblue')
+            # fig=gaugeChart(d10_value,'skyblue')
+            fig=donut_pct_Chart(d10_value,'rgb(135 206 235)', 'rgb(240,240,240)',['% ΛΥΨΥ', ' '])
 
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             # Filter the dataframe based on the selected year
-            st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΕΚΟ</p><p style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΕΚΟ</h3><h3 style='text-align: center; color: grey;'>(% επί του Συνόλου)</h3>", unsafe_allow_html=True)
+
+            # st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΕΚΟ</p><p style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
             # Select the value from the filtered dataframe
             d11_value = filtered_kpdf["D11"].iloc[0]
-            fig=gaugeChart(d11_value,'red')
+            # fig=gaugeChart(d11_value,'red')
+            fig=donut_pct_Chart(d11_value,'rgb(135 206 235)', 'rgb(240,240,240)',['% ΕΚΟ', ' '])
+
             st.plotly_chart(fig,use_container_width=True)
 
         with st.container():
