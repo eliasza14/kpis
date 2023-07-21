@@ -294,6 +294,7 @@ def donut_pct_Chart(val,color1,color2,labels):
     textinfo='none',
     marker_colors=[color1, color2],
     direction='clockwise',  # Set the direction to clockwise for right-side starting
+    sort=False, 
 
 
     ))
