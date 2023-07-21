@@ -5,8 +5,8 @@ import requests
 
 
 def calculate_percentage_change_d36(old_value, new_value):
-    oldvalue=float(old_value)
-    newvalue=float(newvalue)
+    old_value=old_value.astype(float)
+    newvalue=newvalue.astype(float)
     st.write(old_value)
     if old_value > 0 and new_value > 0:
         percentage_change = (new_value - old_value) / old_value
