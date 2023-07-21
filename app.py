@@ -420,7 +420,7 @@ def ad_button2(id,kpdf,js_code):
             # Select the value from the filtered dataframe
             d11_value = filtered_kpdf["D11"].iloc[0]
             # fig=gaugeChart(d11_value,'red')
-            fig=donut_pct_Chart(d11_value,'#618abb', 'rgb(240,240,240)',['% ΕΚΟ', ' '])
+            fig=donut_pct_Chart(d11_value,'#F0894F', 'rgb(240,240,240)',['% ΕΚΟ', ' '])
 
             st.plotly_chart(fig,use_container_width=True)
 
