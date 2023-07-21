@@ -75,7 +75,7 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             title=xaxis_title,
             tickmode='linear',  # Display linear sequence of ticks
             dtick=1,  # Specify tick interval as 1 for integer values
-            tickfont=dict(family='Roboto', size=20 # Set the font size and color for the x-axis labels
+            tickfont=dict( size=20 # Set the font size and color for the x-axis labels
                            ),
             ticktext=['<b>{}</b>'.format(str(tick)) for tick in kpdf['year'].astype(int)], # Add <b></b> tags to tick labels
             tickvals=kpdf['year'].astype(int), # Set the tick values
