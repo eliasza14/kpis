@@ -41,7 +41,6 @@ def gaugeChart(value,color):
         return fig
 
 
-
 def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors):
     # Create the stacked bar plot using Plotly
     kpdf_selected = kpdf[columns]
@@ -54,17 +53,18 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             x=kpdf['year'].astype(int),
             y=kpdf_selected[col],
             text=kpdf[col],
-            # textposition='inside',  # 'inside' places the text at the center of the bars
+            textposition='inside',  # 'inside' places the text at the center of the bars
             marker=dict(color=colors[i]),  # Assign a color from the color palette
-            # textfont=dict(size=14, color='white')  # Set the font size and color for the labels
+            textfont=dict(size=14, color='white')  # Set the font size and color for the labels
         ))
     
-    # Add values at the center of each stacked bar
-    for i, col in enumerate(columns):
-        values = kpdf_selected[col]
-        cumulative_height = kpdf_selected.iloc[:, :i].sum(axis=1)
-        for j, val in enumerate(values):
-            fig.add_annotation(x=kpdf['year'].iloc[j], y=cumulative_height.iloc[j] + val / 2,
+    # Add values at the center and middle of each stacked bar
+    for j in range(len(kpdf)):
+        cumulative_height = 0
+        for i, col in enumerate(columns):
+            val = kpdf_selected[col].iloc[j]
+            cumulative_height += val
+            fig.add_annotation(x=kpdf['year'].iloc[j], y=cumulative_height - val / 2,
                                text=str(round(val, 1)), showarrow=False,
                                font=dict(color='white', size=15), xanchor='center', yanchor='middle')
     
