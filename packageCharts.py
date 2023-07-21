@@ -66,7 +66,7 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             cumulative_height += val
             fig.add_annotation(x=kpdf['year'].iloc[j], y=cumulative_height - val / 2,
                                text=str(round(val, 1)), showarrow=False,
-                               font=dict(family='Roboto',color='white', size=17), xanchor='center', yanchor='middle')
+                               font=dict(family='Roboto',color='white', size=17,weight='bold'), xanchor='center', yanchor='middle')
     
     # Update the layout
     fig.update_layout(
