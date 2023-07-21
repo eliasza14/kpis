@@ -388,7 +388,11 @@ def ad_button2(id,kpdf,js_code):
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
             # Select the value from the filtered dataframe
             d9_value = filtered_kpdf["D9"].iloc[0]
-            fig=gaugeChart(d9_value,'royalblue')
+            # fig=gaugeChart(d9_value,'royalblue')
+
+            fig=donut_pct_Chart(d9_value,'rgb(135 206 235)', 'rgb(240,240,240)',['(% επί του Συνόλου)', ' '])
+
+
             st.plotly_chart(fig,use_container_width=True)
             
 
