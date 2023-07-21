@@ -75,7 +75,7 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             title=xaxis_title,
             tickmode='linear',  # Display linear sequence of ticks
             dtick=1,  # Specify tick interval as 1 for integer values
-            tickfont=dict(family='Roboto',size=20)
+            tickfont=f"<b>{dict(family='Roboto',size=20)}</b>"
         ),
         yaxis=dict(title=yaxis_title),
         legend=dict(
