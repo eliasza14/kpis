@@ -41,9 +41,10 @@ def main():
 
     with open("style2.css", "r") as file:
             css_code = file.read()
+    st.sidebar.image("https://koispesupport.gr/wp-content/uploads/2023/06/Logo-Koispe-203x90.png", width=100)
 
 
-    st.sidebar.title("KPI's Dashboard")
+    # st.sidebar.title("KPI's Dashboard")
     id=get_url_params()
     st.write("URL ID FROM VIDAVO:",id)
     st.write("ID from Flask application: ",id)
