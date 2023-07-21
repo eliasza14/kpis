@@ -286,13 +286,15 @@ def donut_pct_Chart(val,color1,color2,labels):
     )
 
     fig = go.Figure(layout=layout)
+
     fig.add_trace(go.Pie(
     labels=labels,
     values=[val, 100 - val],
     hole=0.85,
     textinfo='none',
     marker_colors=[color1, color2],
-    startangle=90,
+    direction='clockwise',  # Set the direction to clockwise for right-side starting
+
 
     ))
     fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
