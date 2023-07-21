@@ -74,11 +74,11 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
         xaxis=dict(
             title=xaxis_title,
             tickmode='linear',  # Display linear sequence of ticks
-            dtick=1  # Specify tick interval as 1 for integer values
+            dtick=1,  # Specify tick interval as 1 for integer values
+            tikfont=dict(size=25)
         ),
         yaxis=dict(title=yaxis_title),
         legend=dict(
-            size=15,
             orientation="h",
             yanchor="bottom",
             y=1.02,
