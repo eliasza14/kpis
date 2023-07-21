@@ -261,7 +261,7 @@ def get_data_from_json(id):
     kpdf['D32'] = round((kpdf['D28'].astype(float).pct_change()*100),1)
 
     #D36 fixing code
-    kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
+    # kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
     st.write(kdata)
 
     st.write(kdata['report.overall'])
