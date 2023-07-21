@@ -293,6 +293,7 @@ def donut_pct_Chart(val,color1,color2,labels):
     textinfo='none',
     marker_colors=[color1, color2],
     startangle=90,
+
     ))
     fig.update_layout(annotations=[dict(text=str(val) + "%", font_size=40, showarrow=False)])
     fig.update_layout(showlegend=True)  # Show the legend
