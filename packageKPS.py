@@ -21,7 +21,8 @@ def calculate_percentage_change_d36(old_value2, new_value2):
     else:
         # Handle the case when both old_value and new_value are zero
         percentage_change = 0.0
-
+    st.write("result2")
+    st.write(percentage_change)
 
     return round(percentage_change*100,1)
 
