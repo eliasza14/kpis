@@ -40,26 +40,27 @@ def gaugeChart(value,color):
 
         return fig
 
-def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
+
+
+
+def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors):
     # Create the stacked bar plot using Plotly
     kpdf_selected = kpdf[columns]
 
     fig = go.Figure()
-    legend_labels=legend_labels
-    # legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
-    
+
     for i, col in enumerate(columns):
         fig.add_trace(go.Bar(
-             
             name=legend_labels[i],  # Use the corresponding label
             x=kpdf['year'].astype(int),
             y=kpdf_selected[col],
             text=kpdf[col],
             textposition='inside',
-            marker=dict(color=colors[i])  # Assign a color from the color palette
-
+            marker=dict(color=colors[i]),  # Assign a color from the color palette
+            textfont=dict(size=14)  # Set the font size for the labels
         ))
-     # Update the layout
+    
+    # Update the layout
     fig.update_layout(
         barmode='stack',
         xaxis=dict(
@@ -82,6 +83,56 @@ def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
     )
 
     return fig
+
+
+
+
+
+
+
+
+# def stackedChart(columns,kpdf,legend_labels,xaxis_title,yaxis_title,colors):
+#     # Create the stacked bar plot using Plotly
+#     kpdf_selected = kpdf[columns]
+
+#     fig = go.Figure()
+#     legend_labels=legend_labels
+#     # legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
+    
+#     for i, col in enumerate(columns):
+#         fig.add_trace(go.Bar(
+             
+#             name=legend_labels[i],  # Use the corresponding label
+#             x=kpdf['year'].astype(int),
+#             y=kpdf_selected[col],
+#             text=kpdf[col],
+#             textposition='inside',
+#             marker=dict(color=colors[i])  # Assign a color from the color palette
+
+#         ))
+#      # Update the layout
+#     fig.update_layout(
+#         barmode='stack',
+#         xaxis=dict(
+#             title=xaxis_title,
+#             tickmode='linear',  # Display linear sequence of ticks
+#             dtick=1  # Specify tick interval as 1 for integer values
+#         ),
+#         yaxis=dict(title=yaxis_title),
+#         legend=dict(
+#             orientation="h",
+#             yanchor="bottom",
+#             y=1.02,
+#             xanchor="center",
+#             x=0.5
+#         ),
+#         plot_bgcolor='rgba(0,0,0,0)',
+#         paper_bgcolor='rgba(0,0,0,0)',
+#         height=600,
+#         width=800
+#     )
+
+#     return fig
 
 
 
