@@ -5,7 +5,8 @@ import requests
 
 
 def calculate_percentage_change_d36(old_value, new_value):
-    
+    st.write(old_value)
+    st.write(new_value)
     if old_value > 0 and new_value > 0:
         percentage_change = (new_value - old_value) / old_value
     elif old_value < 0 and new_value < 0:
@@ -258,9 +259,8 @@ def get_data_from_json(id):
     st.write(kdata)
 
     st.write(kdata['report.overall'])
-    kdata['report.overall']=kdata['report.overall'].astype(float)
     # kdata=kdata.sort_values(by=['year'], ascending=True)
-    kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36(kdata.loc[row.name - 1, 'report.overall'],row['report.overall']), axis=1)
+    kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36(row['report.overall'], kdata.loc[row.name - 1, 'report.overall']), axis=1)
     # x=calculate_percentage_change_d36( float(kdata['report.overall'][0]),float(kdata['report.overall'][1]))
 
 
