@@ -628,14 +628,14 @@ def ad_button4(id,kpdf,js_code):
             # Create the layout with two y-axes
             st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΛΥΨΥ % επί του Συνόλου</h3>", unsafe_allow_html=True)
             val = float(kpdf['D22'][kpdf['year'] == str(year_filter)].iloc[0])
-            fig=donut_pct_Chart(val,'rgb(135 206 235)', 'rgb(240,240,240)',['(%) Μ.Ε. ΛΥΨΥ επί του συνόλου', ' '])
+            fig=donut_pct_Chart(val,'#00235e', 'rgb(240,240,240)',['(%) Μ.Ε. ΛΥΨΥ επί του συνόλου', ' '])
             st.plotly_chart(fig, use_container_width=True)
 
 
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΕΚΟ % επί του Συνόλου</h3>", unsafe_allow_html=True)
             val2=float(kpdf['D23'][kpdf['year']==str(year_filter)].iloc[0])
-            fig=donut_pct_Chart(val2,'rgb(113,209,145)','rgb(240,240,240)',['(%) Μ.Ε. ΕΚΟ επί του συνόλου', ' '])
+            fig=donut_pct_Chart(val2,'#F0894F','rgb(240,240,240)',['(%) Μ.Ε. ΕΚΟ επί του συνόλου', ' '])
             st.plotly_chart(fig,use_container_width=True)
 
     
