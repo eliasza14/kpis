@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+from streamlit_option_menu import option_menu
 import json
 import pandas as pd
 import plotly.express as px
@@ -174,10 +175,60 @@ def main():
 
     st.title("Πίνακας Δεικτών")
     st.write(kpdf)
+
+        # 1. as sidebar menu
+    with st.sidebar:
+
+        selected_option1 = option_menu("Μενού", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"],
+                            icons=['people', 'person-gear','clock-history','person-workspace','cash-stack','graph-up-arrow','piggy-bank'],
+                            menu_icon="cast", default_index=1,
+                            
+                            styles={
+                                "menu-title":{"display":"none"},
+                                "icon": {"font-size": "25px"}, 
+
+                                "container": {"padding": "0!important", "background-color": "#D3ECFA", "color": "#ffffff"},
+                                "nav-link": {"font-family": "Roboto","font-style": "normal","font-weight": "700","line-height": "220%" ,"background-color": "#D3ECFA", "color": "#004BCF", "text-align": "left", "margin": "0px", "--hover-color": "#004BCF"},
+                                "nav-link-selected": {"color": "#ffffff", "background-color": "#004BCF"},
+                            }
+                            )
+        
+
+    # Empty container for the right side content
+    content_container = st.empty()
+
+    # Content for different options
+    # if selected_option1 == "Συνεταιριστές":
+    #     content_container.write("Welcome to the Home Page!")
+    # elif selected_option1 == "Εργαζόμενοι":
+    #     content_container.write("You are now in the Settings Page!")
+    # elif selected_option1 == "Ώρες Απασχόλησης":
+    #     content_container.write("your ara ores apasxolis")
+        
+        
+    #RADIO OPTION ANTHROPINO DYNAMIKO
+    if selected_option1=="Συνεταιριστές":
+        
+        ad_button1(id,kpdf,js_code)
+    elif selected_option1=="Εργαζόμενοι":
+        ad_button2(id,kpdf,js_code)
+    elif selected_option1=="Ώρες Απασχόλησης":
+        ad_button3(id,kpdf,js_code)
+    elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
+        ad_button4(id,kpdf,js_code)
+
+    #RADIO OPTION EPIXEIRIMATIKOTITA
+    elif selected_option1=="Κύκλοι εργασιών":
+        e_button5(id,kpdf,js_code,css_code)
+    elif selected_option1=="Διαχρονική (%) μεταβολή Κύκλων Εργασιών":
+        e_button6(id,kpdf,js_code)
+    elif selected_option1=="Κατανομή πλήθους με βάση το καθαρό εισόδημα":
+        e_button7(id,kpdf,js_code,css_code)    
+        
    #Radio button
-    ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό / Επιχειρηματικότητα",expanded=True)
-    with ad_expander:
-        selected_option1 = st.radio("Επιλέξτε:", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"])
+    # ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό / Επιχειρηματικότητα",expanded=True)
+    # with ad_expander:
+    #     selected_option1 = st.radio("Επιλέξτε:", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"])
     
         # # Check if the radio button option has changed
         # if st.session_state.previous_selected_option != selected_option1:
@@ -188,24 +239,24 @@ def main():
         # st.session_state.previous_selected_option = selected_option1
 
 
+#OLD OPTIONS RADIOS
+    # #RADIO OPTION ANTHROPINO DYNAMIKO
+    # if selected_option1=="Συνεταιριστές":
+    #     ad_button1(id,kpdf,js_code)
+    # elif selected_option1=="Εργαζόμενοι":
+    #     ad_button2(id,kpdf,js_code)
+    # elif selected_option1=="Ώρες Απασχόλησης":
+    #     ad_button3(id,kpdf,js_code)
+    # elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
+    #     ad_button4(id,kpdf,js_code)
 
-    #RADIO OPTION ANTHROPINO DYNAMIKO
-    if selected_option1=="Συνεταιριστές":
-        ad_button1(id,kpdf,js_code)
-    elif selected_option1=="Εργαζόμενοι":
-        ad_button2(id,kpdf,js_code)
-    elif selected_option1=="Ώρες Απασχόλησης":
-        ad_button3(id,kpdf,js_code)
-    elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
-        ad_button4(id,kpdf,js_code)
-
-    #RADIO OPTION EPIXEIRIMATIKOTITA
-    if selected_option1=="Κύκλοι εργασιών":
-        e_button5(id,kpdf,js_code,css_code)
-    elif selected_option1=="Διαχρονική (%) μεταβολή Κύκλων Εργασιών":
-        e_button6(id,kpdf,js_code)
-    elif selected_option1=="Κατανομή πλήθους με βάση το καθαρό εισόδημα":
-        e_button7(id,kpdf,js_code,css_code)
+    # #RADIO OPTION EPIXEIRIMATIKOTITA
+    # if selected_option1=="Κύκλοι εργασιών":
+    #     e_button5(id,kpdf,js_code,css_code)
+    # elif selected_option1=="Διαχρονική (%) μεταβολή Κύκλων Εργασιών":
+    #     e_button6(id,kpdf,js_code)
+    # elif selected_option1=="Κατανομή πλήθους με βάση το καθαρό εισόδημα":
+    #     e_button7(id,kpdf,js_code,css_code)
    
 
 
