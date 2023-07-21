@@ -55,7 +55,7 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
             x=kpdf['year'].astype(int),
             y=kpdf_selected[col],
             text=kpdf[col],
-            textposition='auto',  # 'auto' places the text inside the bars
+            textposition='inside',  # 'inside' places the text at the center of the bars
             marker=dict(color=colors[i]),  # Assign a color from the color palette
             textfont=dict(size=14, color='white')  # Set the font size and color for the labels
         ))
@@ -83,8 +83,6 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
     )
 
     return fig
-
-
 
 
 
