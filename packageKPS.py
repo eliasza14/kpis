@@ -267,7 +267,7 @@ def get_data_from_json(id):
 
     st.write(kdata['report.overall'])
     # kdata=kdata.sort_values(by=['year'], ascending=True)
-    kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change_d36(row['D36_overal'], kpdf.loc[row.name + 1, 'D36_overal']), axis=1)
+    # kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change_d36(row['D36_overal'], kpdf.loc[row.name + 1, 'D36_overal']), axis=1)
 
     for i in range(len(kpdf['D36_overal'])):
         if kpdf['D36_overal'][i] > 0 and kpdf['D36_overal'][i+1] > 0:
