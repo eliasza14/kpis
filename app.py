@@ -1304,7 +1304,7 @@ def e_button7(id,kpdf,js_code,css_code):
         with col3:
             pass
 
-def e_button8(id,kpdf,js_code):
+def e_button8(id,kpdf,js_code,css_code):
     st.subheader("Αναλυτικός Πίνακας Δεικτών")
     st.write(kpdf[:,0:5])
 
