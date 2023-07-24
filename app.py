@@ -1321,7 +1321,7 @@ def e_button8(id,kpdf,js_code,css_code):
             found_year = True
             new_cols[old_col] = old_col  # Keep 'year' column unchanged
         elif found_year:
-            new_cols[old_col] = f'd{len(new_cols) - 1}'  # Start enumeration from 1 after 'year'
+            new_cols[old_col] = f'Δ{len(new_cols) - 1}'  # Start enumeration from 1 after 'year'
         else:
             new_cols[old_col] = old_col  # Keep columns before 'year' unchanged
 
