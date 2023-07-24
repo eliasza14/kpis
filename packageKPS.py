@@ -120,8 +120,8 @@ def calculate_d9(row):
 
 def format_year(year):
     return "{:d}".format(year)  # Removes the comma separator
-
-@st.experimental_memo
+#@st.cache_data 
+# @st.experimental_memo
 def get_data_from_json(id):
     response = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getkoispe?id="+str(id)).text)
     response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment?id="+str(id)).text)
