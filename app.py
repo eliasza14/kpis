@@ -1306,7 +1306,7 @@ def e_button7(id,kpdf,js_code,css_code):
 
 def e_button8(id,kpdf,js_code,css_code):
     st.subheader("Αναλυτικός Πίνακας Δεικτών")
-    st.write(kpdf[:,0:5])
+    st.write(kpdf.loc[:, ~kpdf.columns.isin(['D36_overal', 'D18_lipsi','D18_eko','D18_general','D22_23_g','D40_metaboli'])])
 
 
 def display_pinkas_submenu(id):
