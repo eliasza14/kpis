@@ -72,8 +72,8 @@ def main():
         # 1. as sidebar menu
     with st.sidebar:
 
-        selected_option1 = option_menu("Μενού", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"],
-                            icons=['people', 'person-gear','clock-history','person-workspace','cash-stack','graph-up-arrow','piggy-bank'],
+        selected_option1 = option_menu("Μενού", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα","Αναλυτικός Πίνακας Δεικτών"],
+                            icons=['people', 'person-gear','clock-history','person-workspace','cash-stack','graph-up-arrow','piggy-bank','table'],
                             menu_icon="cast", default_index=1,
                             
                             styles={
@@ -117,6 +117,8 @@ def main():
         e_button6(id,kpdf,js_code)
     elif selected_option1=="Κατανομή πλήθους με βάση το καθαρό εισόδημα":
         e_button7(id,kpdf,js_code,css_code)    
+    elif selected_option1=="Αναλυτικός Πίνακας Δεικτών":
+        e_button8(id,kpdf,js_code,css_code)  
         
    #Radio button
     # ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό / Επιχειρηματικότητα",expanded=True)
@@ -1302,6 +1304,9 @@ def e_button7(id,kpdf,js_code,css_code):
         with col3:
             pass
 
+def e_button8(id,kpdf,js_code):
+    st.subheader("Αναλυτικός Πίνακας Δεικτών")
+    st.write(kpdf[:,0:5])
 
 
 def display_pinkas_submenu(id):
