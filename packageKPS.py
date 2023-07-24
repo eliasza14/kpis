@@ -26,7 +26,8 @@ def calculate_percentage_change(old_value2, new_value2):
     else:
         # Handle the case when both old_value and new_value are zero
         percentage_change = np.nan
-
+    st.write(percentage_change)
+    st.write(round(percentage_change*100,1))
     return round((float(percentage_change)*100),1)
 # def calculate_percentage_change_d36(old_value2, new_value2):
 #     old_value=float(old_value2)
