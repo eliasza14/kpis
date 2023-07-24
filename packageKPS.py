@@ -259,13 +259,16 @@ def get_data_from_json(id):
     kpdf['D30'] = round((kpdf['D26'].astype(float).pct_change()*100),1)
     kpdf['D31'] = round((kpdf['D27'].astype(float).pct_change()*100),1)
     kpdf['D32'] = round((kpdf['D28'].astype(float).pct_change()*100),1)
+    kpdf['D36_overal']=kdata['report.overall'].astype(float)
 
     #D36 fixing code
-    kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
+    # kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
     st.write(kdata)
 
     st.write(kdata['report.overall'])
     # kdata=kdata.sort_values(by=['year'], ascending=True)
+    kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change_d36(row['D36_overal'], kdata.loc[row.name - 1, 'D36_overal']), axis=1)
+
     # kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36(row['report.overall'], kdata.loc[row.name - 1, 'report.overall']), axis=1)
     # x=calculate_percentage_change_d36( float(kdata['report.overall'][0]),float(kdata['report.overall'][1]))
 
@@ -278,6 +281,5 @@ def get_data_from_json(id):
     kpdf['D18_eko']=kdata['profile.eme_eko.sum'].astype(float)
     kpdf['D18_general']=kdata['profile.eme_general.sum'].astype(float)
     kpdf['D22_23_g']=round(((kdata['profile.eme_general.sum'].astype(float))/(kdata['profile.sum_eme_kispe'].astype(float))*100),1)
-    kpdf['D36_overal']=kdata['report.overall'].astype(float)
     kpdf['D40_metaboli']=round((kpdf['D40'].astype(float).pct_change()*100),1)
     return kpdf
