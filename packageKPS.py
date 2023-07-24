@@ -218,14 +218,14 @@ def get_data_from_json(id):
     st.write(kdata)
     
     kdata=kdata.sort_values(by=['year'], ascending=True)
-
+    kdata=kdata.reset_index(drop=True)
 
 
 
     #Try
     kpdf=kdata[['koispe_id','year']]
     kpdf=kpdf.sort_values(by=['year'], ascending=True)
-
+    
     print("Test kpdf")
     print(kpdf)
 
