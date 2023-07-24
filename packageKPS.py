@@ -11,8 +11,8 @@ import numpy as np
 
 def calculate_percentage_change(old_value2, new_value2):
 
-    old_value=float(old_value2)
-    new_value=float(new_value2)
+    old_value=float(old_value2*100)
+    new_value=float(new_value2*100)
     st.write(old_value)
     st.write(new_value)
     if old_value > 0 and new_value > 0:
