@@ -149,7 +149,7 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
     fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='#00235e'))
 
     # Create the line plot with labels
-    line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='#F0894F', symbol= "arrow-bar-up", angleref="previous",line=dict(dash='dash'))
+    line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='#F0894F', symbol= "arrow-bar-up",line=dict(dash='dash'))
     fig.add_trace(line_trace)
 
     # Add labels between the years with dynamic y-positioning
