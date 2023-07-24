@@ -9,7 +9,7 @@ import numpy as np
 
 
 
-def calculate_percentage_change(new_value2,old_value2):
+def calculate_percentage_change(old_value2, new_value2):
 
     old_value=float(old_value2)
     new_value=float(new_value2)
@@ -293,7 +293,7 @@ def get_data_from_json(id):
     # kdata=kdata.sort_values(by=['year'], ascending=True)
     # kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change_d36(row['D36_overal'], kpdf.loc[row.name + 1, 'D36_overal']), axis=1)
 # Calculate the percentage change for each row using the custom function
-    kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change(row['report.overall'], kdata.loc[row.name - 1, 'report.overall'])
+    kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change( kpdf.loc[row.name - 1, 'D36_overal'],row['D36_overal'])
                             if row.name != 0 else np.nan, axis=1)
     # for i in range(len(kpdf['D36_overal'])):
     #     if kpdf['D36_overal'][i] > 0 and kpdf['D36_overal'][i+1] > 0:
