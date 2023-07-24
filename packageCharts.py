@@ -159,12 +159,12 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
         if not pd.isna(label):
             x_label = [categories[i], categories[i + 1]]
             y_label = [values[i], values[i + 1]]
-            fig.add_annotation(x=sum(x_label) / 2, y=sum(y_label) / 2 + y_offset, text=f"<b>{label} %</b>", showarrow=True,
+            fig.add_annotation(x=sum(x_label) / 2, y=sum(y_label) / 2 + y_offset, text=f"<b>{label} %</b>", showarrow=False,
                                font=dict(color='#F0894F', size=15))  # Adjust the font size as needed
 
     # Add values at the center of each bar
     for i in range(len(values)):
-        fig.add_annotation(x=categories[i], y=values[i] / 2, text=f"<b>{str(round((values[i]), 1))}</b>", showarrow=False,
+        fig.add_annotation(x=categories[i], y=values[i] / 2, text=f"<b>{str(round((values[i]), 1))}</b>", showarrow=True,
                            font=dict(color='white', size=15), xanchor='center', yanchor='middle')
 
     # Set the layout
