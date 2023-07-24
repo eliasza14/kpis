@@ -1308,10 +1308,22 @@ def e_button8(id,kpdf,js_code,css_code):
     st.subheader("Αναλυτικός Πίνακας Δεικτών")
     kpdf_filtered=kpdf.loc[:, ~kpdf.columns.isin(['D36_overal', 'D18_lipsi','D18_eko','D18_general','D22_23_g','D40_metaboli'])]
     # st.write(kpdf.loc[:, ~kpdf.columns.isin(['D36_overal', 'D18_lipsi','D18_eko','D18_general','D22_23_g','D40_metaboli'])])
+   # Get the current column names in a list
     current_cols = kpdf_filtered.columns.tolist()
-    exclude_cols = ['koispe_id', 'year']
 
-    new_cols = {old_col: f'd{index+1}' if old_col not in exclude_cols else old_col for index, old_col in enumerate(current_cols)}
+    # Create a dictionary to map old column names to new column names
+    new_cols = {}
+    found_year = False
+
+    # Enumerate through the current column names and rename them accordingly
+    for old_col in current_cols:
+        if old_col == 'year':
+            found_year = True
+            new_cols[old_col] = old_col  # Keep 'year' column unchanged
+        elif found_year:
+            new_cols[old_col] = f'd{len(new_cols) - 1}'  # Start enumeration from 1 after 'year'
+        else:
+            new_cols[old_col] = old_col  # Keep columns before 'year' unchanged
 
     # Rename the columns using the .rename() method
     kpdf_filtered.rename(columns=new_cols, inplace=True)
