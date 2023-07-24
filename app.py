@@ -1306,7 +1306,17 @@ def e_button7(id,kpdf,js_code,css_code):
 
 def e_button8(id,kpdf,js_code,css_code):
     st.subheader("Αναλυτικός Πίνακας Δεικτών")
-    st.write(kpdf.loc[:, ~kpdf.columns.isin(['D36_overal', 'D18_lipsi','D18_eko','D18_general','D22_23_g','D40_metaboli'])])
+    kpdf_filtered=kpdf.loc[:, ~kpdf.columns.isin(['D36_overal', 'D18_lipsi','D18_eko','D18_general','D22_23_g','D40_metaboli'])]
+    # st.write(kpdf.loc[:, ~kpdf.columns.isin(['D36_overal', 'D18_lipsi','D18_eko','D18_general','D22_23_g','D40_metaboli'])])
+    current_cols = kpdf_filtered.columns.tolist()
+    exclude_cols = ['koispe_id', 'year']
+
+    new_cols = {old_col: f'd{index+1}' if old_col not in exclude_cols else old_col for index, old_col in enumerate(current_cols)}
+
+    # Rename the columns using the .rename() method
+    kpdf_filtered.rename(columns=new_cols, inplace=True)
+
+    st.write(kpdf_filtered)
 
 
 def display_pinkas_submenu(id):
