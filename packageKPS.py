@@ -17,15 +17,23 @@ def calculate_percentage_change(old_value2, new_value2):
     st.write(new_value)
     if old_value > 0 and new_value > 0:
         percentage_change = (new_value - old_value) / old_value
+        st.write("if1")
     elif old_value < 0 and new_value < 0:
         percentage_change = (old_value - new_value) / abs(old_value)
+        st.write("if2")
+
     elif old_value > 0 and new_value < 0:
         percentage_change = (new_value - old_value) / old_value
+        st.write("if3")
+
     elif old_value < 0 and new_value > 0:
         percentage_change = (new_value - old_value) / abs(old_value)
+        st.write("if4")
+
     else:
         # Handle the case when both old_value and new_value are zero
         percentage_change = np.nan
+        st.write("ifelse")
     st.write(percentage_change)
     st.write(round(percentage_change*100,1))
     return round((float(percentage_change)*100),1)
