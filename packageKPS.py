@@ -2,17 +2,16 @@ import json
 import pandas as pd
 import streamlit as st
 import requests
+import numpy as np
 
 
-def calculate_percentage_change_d36(old_value2, new_value2):
-    old_value=float(old_value2)
-    new_value=float(new_value2)
-    st.write(old_value)
-    st.write(new_value)
+
+
+
+
+def calculate_percentage_change(old_value, new_value):
     if old_value > 0 and new_value > 0:
         percentage_change = (new_value - old_value) / old_value
-        # st.write("result")
-        # st.write(percentage_change)
     elif old_value < 0 and new_value < 0:
         percentage_change = (old_value - new_value) / abs(old_value)
     elif old_value > 0 and new_value < 0:
@@ -21,11 +20,31 @@ def calculate_percentage_change_d36(old_value2, new_value2):
         percentage_change = (new_value - old_value) / abs(old_value)
     else:
         # Handle the case when both old_value and new_value are zero
-        percentage_change = 0.0
-    st.write("result2")
-    st.write(percentage_change)
+        percentage_change = np.nan
 
-    return round(percentage_change*100,1)
+    return percentage_change
+# def calculate_percentage_change_d36(old_value2, new_value2):
+#     old_value=float(old_value2)
+#     new_value=float(new_value2)
+#     st.write(old_value)
+#     st.write(new_value)
+#     if old_value > 0 and new_value > 0:
+#         percentage_change = (new_value - old_value) / old_value
+#         # st.write("result")
+#         # st.write(percentage_change)
+#     elif old_value < 0 and new_value < 0:
+#         percentage_change = (old_value - new_value) / abs(old_value)
+#     elif old_value > 0 and new_value < 0:
+#         percentage_change = (new_value - old_value) / old_value
+#     elif old_value < 0 and new_value > 0:
+#         percentage_change = (new_value - old_value) / abs(old_value)
+#     else:
+#         # Handle the case when both old_value and new_value are zero
+#         percentage_change = 0.0
+#     st.write("result2")
+#     st.write(percentage_change)
+
+#     return round(percentage_change*100,1)
 
 
 def calculate_d26_d27(row,matching_columns):
@@ -268,24 +287,26 @@ def get_data_from_json(id):
     st.write(kdata['report.overall'])
     # kdata=kdata.sort_values(by=['year'], ascending=True)
     # kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change_d36(row['D36_overal'], kpdf.loc[row.name + 1, 'D36_overal']), axis=1)
-
-    for i in range(len(kpdf['D36_overal'])):
-        if kpdf['D36_overal'][i] > 0 and kpdf['D36_overal'][i+1] > 0:
-            percentage_change = (kpdf['D36_overal'][i+1] - kpdf['D36_overal'][i]) / kpdf['D36_overal'][i]
-            # st.write("result")
-            # st.write(percentage_change)
-        elif kpdf['D36_overal'][i] < 0 and kpdf['D36_overal'][i+1] < 0:
-            percentage_change = (kpdf['D36_overal'][i] - kpdf['D36_overal'][i+1]) / abs(kpdf['D36_overal'][i])
-        elif kpdf['D36_overal'][i] > 0 and kpdf['D36_overal'][i+1] < 0:
-            percentage_change = (kpdf['D36_overal'][i+1] - kpdf['D36_overal'][i]) / kpdf['D36_overal'][i]
-        elif kpdf['D36_overal'][i] < 0 and kpdf['D36_overal'][i+1] > 0:
-            percentage_change = (kpdf['D36_overal'][i+1] - kpdf['D36_overal'][i]) / abs(kpdf['D36_overal'][i])
-        else:
-            # Handle the case when both old_value and new_value are zero
-            percentage_change = 0.0
-        st.write("mesa sto for")
-        st.write(percentage_change)
-    st.write(percentage_change)
+# Calculate the percentage change for each row using the custom function
+    kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change(row['D36_overal'], kpdf.loc[row.name - 1, 'D36_overal'])
+                            if row.name != 0 else np.nan, axis=1)
+    # for i in range(len(kpdf['D36_overal'])):
+    #     if kpdf['D36_overal'][i] > 0 and kpdf['D36_overal'][i+1] > 0:
+    #         percentage_change = (kpdf['D36_overal'][i+1] - kpdf['D36_overal'][i]) / kpdf['D36_overal'][i]
+    #         # st.write("result")
+    #         # st.write(percentage_change)
+    #     elif kpdf['D36_overal'][i] < 0 and kpdf['D36_overal'][i+1] < 0:
+    #         percentage_change = (kpdf['D36_overal'][i] - kpdf['D36_overal'][i+1]) / abs(kpdf['D36_overal'][i])
+    #     elif kpdf['D36_overal'][i] > 0 and kpdf['D36_overal'][i+1] < 0:
+    #         percentage_change = (kpdf['D36_overal'][i+1] - kpdf['D36_overal'][i]) / kpdf['D36_overal'][i]
+    #     elif kpdf['D36_overal'][i] < 0 and kpdf['D36_overal'][i+1] > 0:
+    #         percentage_change = (kpdf['D36_overal'][i+1] - kpdf['D36_overal'][i]) / abs(kpdf['D36_overal'][i])
+    #     else:
+    #         # Handle the case when both old_value and new_value are zero
+    #         percentage_change = 0.0
+    #     st.write("mesa sto for")
+    #     st.write(percentage_change)
+    # st.write(percentage_change)
 
     # kpdf['D36'] = kdata.apply(lambda row: calculate_percentage_change_d36(row['report.overall'], kdata.loc[row.name - 1, 'report.overall']), axis=1)
     # x=calculate_percentage_change_d36( float(kdata['report.overall'][0]),float(kdata['report.overall'][1]))
