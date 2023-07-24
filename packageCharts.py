@@ -141,6 +141,47 @@ def stackedChart(columns, kpdf, legend_labels, xaxis_title, yaxis_title, colors)
 
 
 
+# def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
+#     categories = list(map(int, categories))
+
+#     # Create the bar plot
+#     fig = go.Figure()
+#     fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='#00235e'))
+
+#     # Create the line plot with labels
+#     line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='#F0894F', line=dict(dash='dash'))
+#     fig.add_trace(line_trace)
+
+#     # Add labels between the years with dynamic y-positioning
+#     y_offset = max(values) * 0.1 # Adjust this value to change the vertical offset
+#     for i in range(len(categories) - 1):
+#         label = line_labels[i + 1]
+#         if not pd.isna(label):
+#             x_label = [categories[i], categories[i + 1]]
+#             y_label = [values[i], values[i + 1]]
+#             fig.add_annotation(x=sum(x_label) / 2, y=sum(y_label) / 2 + y_offset, text=f"<b>{label} %</b>", showarrow=False,
+#                                font=dict(color='#F0894F', size=15))  # Adjust the font size as needed
+
+#     # Add values at the center of each bar
+#     for i in range(len(values)):
+#         fig.add_annotation(x=categories[i], y=values[i] / 2, text=f"<b>{str(round((values[i]), 1))}</b>", showarrow=False,
+#                            font=dict(color='white', size=15), xanchor='center', yanchor='middle')
+
+#     # Set the layout
+#     fig.update_layout(
+#         xaxis=dict(
+#             title='Έτος',
+#             tickmode='linear',
+#             tickfont=dict( size=20    ),
+#             dtick=1
+#         ),
+#         yaxis_title=yaxis_title,
+#     )
+#     return fig
+
+
+
+
 def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
     categories = list(map(int, categories))
 
@@ -149,7 +190,13 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
     fig.add_trace(go.Bar(x=categories, y=values, name=legend_bar, marker_color='#00235e'))
 
     # Create the line plot with labels
-    line_trace = go.Scatter(x=categories, y=values, name='% Μεταβολή', mode='lines', line_color='#F0894F', line=dict(dash='dash'))
+    line_trace = go.Scatter(
+        x=categories,
+        y=values,
+        name='% Μεταβολή',
+        mode='lines+markers',
+        line=dict(color='#F0894F', width=3, dash='dash', shape='linear', arrowhead='end')
+    )
     fig.add_trace(line_trace)
 
     # Add labels between the years with dynamic y-positioning
@@ -172,17 +219,12 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
         xaxis=dict(
             title='Έτος',
             tickmode='linear',
-            tickfont=dict( size=20    ),
+            tickfont=dict(size=20),
             dtick=1
         ),
         yaxis_title=yaxis_title,
     )
     return fig
-
-
-
-
-
 
 
 
