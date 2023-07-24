@@ -164,7 +164,7 @@ def pctChangeV2(categories, values, line_labels, yaxis_title, legend_bar):
 
     # Add values at the center of each bar
     for i in range(len(values)):
-        fig.add_annotation(x=categories[i], y=values[i] / 2, text=f"<b>{str(round((values[i]), 1))}</b>", showarrow=True,
+        fig.add_annotation(x=categories[i], y=values[i] / 2, text=f"<b>{str(round((values[i]), 1))}</b>", showarrow=False,
                            font=dict(color='white', size=15), xanchor='center', yanchor='middle')
 
     # Set the layout
