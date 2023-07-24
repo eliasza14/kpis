@@ -134,30 +134,30 @@ def get_data_from_json(id):
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
 
     df=pd.json_normalize(response, max_level=2)
-    st.write(df.dtypes)
+    # st.write(df.dtypes)
 
-    st.write(df)
+    # st.write(df)
 
     df['year'] = df['year'].map(lambda x: str(x) if pd.notnull(x) else None)
     df['year'] = df['year'].str.split('.').str[0]
     df['year'] = df['year'].astype(str)
     df['year'] = df['year'].str.replace(',', '')
-    st.write(df.dtypes)
+    # st.write(df.dtypes)
 
-    st.write("GET KOIPSE")
-    st.write(df)
+    # st.write("GET KOIPSE")
+    # st.write(df)
 
     #this command is need on our api
     # df['year'] = df['year'].apply(format_year)
-    st.write(df)
+    # st.write(df)
 
     df2=pd.json_normalize(response2, max_level=2)
     df2['year'] = df2['year'].map(lambda x: str(x) if pd.notnull(x) else None)
     df2['year'] = df2['year'].str.split('.').str[0]
     
-    st.write("GET employement")
+    # st.write("GET employement")
 
-    st.write(df2)
+    # st.write(df2)
 
     #this command is need on our api
 
@@ -166,9 +166,9 @@ def get_data_from_json(id):
     df3=pd.json_normalize(response3, max_level=2)
     df3['year'] = df3['year'].map(lambda x: str(x) if pd.notnull(x) else None)
     df3['year'] = df3['year'].str.split('.').str[0]
-    st.write("GET financial")
+    # st.write("GET financial")
 
-    st.write(df3)
+    # st.write(df3)
     
     #this command is need on our api
 
@@ -179,14 +179,14 @@ def get_data_from_json(id):
     # st.write(df3)
 
     merged=pd.merge(df,df2, left_on=['id', 'year'],right_on=['koispe_id','year'],how='inner')
-    st.write(merged)
+    # st.write(merged)
     merged=pd.merge(merged,df3, left_on=['id', 'year'],right_on=['koispe_id','year'],how='inner')
 
     # merged= pd.merge(pd.merge(df, df2, on=['koispe_id', 'year']), df3, on=['koispe_id', 'year'])
 
 
 
-    st.write(merged)
+    # st.write(merged)
     merged.rename(columns={'id': 'koispe_id'}, inplace=True)
 
     ##NOT NEED WHEN ID ON URL EXIST
@@ -198,11 +198,11 @@ def get_data_from_json(id):
     # kdata.drop(columns=['id_x', 'id_y','id'],inplace=True)
 
     kdata.drop(columns=['uid_x', 'uid_y','uid'],inplace=True)
-    st.write(kdata)
+    # st.write(kdata)
     # st.write(kdata)
     ###Start Creating DiktesDataframe
     matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
-    print(matching_columns)
+    # print(matching_columns)
     kdata[matching_columns] = kdata[matching_columns].fillna(0)
 
     matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
@@ -222,7 +222,7 @@ def get_data_from_json(id):
     # kdata['report.kad.56.10.11.09']= kdata['report.kad.56.10.11.09'].fillna(0)
 
 
-    st.write(kdata)
+    # st.write(kdata)
     
     kdata=kdata.sort_values(by=['year'], ascending=True)
     kdata=kdata.reset_index(drop=True)
@@ -233,8 +233,8 @@ def get_data_from_json(id):
     kpdf=kdata[['koispe_id','year']]
     kpdf=kpdf.sort_values(by=['year'], ascending=True)
     
-    print("Test kpdf")
-    print(kpdf)
+    # print("Test kpdf")
+    # print(kpdf)
 
     # kpdf['year']=kpdf['year'].astype(str)
     kpdf['D1'] = kdata['profile.meli_a']
@@ -266,7 +266,7 @@ def get_data_from_json(id):
     #search for kad starts from .81
 
     matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
-    print(matching_columns)
+    # print(matching_columns)
 
     kdata[matching_columns] = kdata[matching_columns].astype(float)
 
@@ -289,9 +289,9 @@ def get_data_from_json(id):
 
     #D36 fixing code
     # kpdf['D36'] = round((kdata['report.overall'].astype(float).pct_change()*100),1)
-    st.write(kdata)
+    # st.write(kdata)
 
-    st.write(kdata['report.overall'])
+    # st.write(kdata['report.overall'])
     # kdata=kdata.sort_values(by=['year'], ascending=True)
     # kpdf['D36'] = kpdf.apply(lambda row: calculate_percentage_change_d36(row['D36_overal'], kpdf.loc[row.name + 1, 'D36_overal']), axis=1)
 # Calculate the percentage change for each row using the custom function
