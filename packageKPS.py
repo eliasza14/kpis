@@ -114,7 +114,7 @@ def calculate_d9(row):
 def format_year(year):
     return "{:d}".format(year)  # Removes the comma separator
 
-@st.cache
+@st.cache_data(experimental_allow_widgets=True)
 def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')

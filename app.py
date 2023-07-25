@@ -1335,7 +1335,7 @@ def e_button8(id,kpdf,js_code,css_code):
     csv = convert_df(kpdf_filtered)
 
     st.download_button(
-    label="Download data as CSV",
+    label="Λήψη Πίνακα Δεικτών",
     data=csv,
     file_name='large_df.csv',
     mime='text/csv',
