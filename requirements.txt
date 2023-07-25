@@ -4,4 +4,4 @@ plotly
 requests
 pillow
 streamlit-option-menu
-openpyxl
+openpyxl==3.0.5
