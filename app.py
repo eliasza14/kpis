@@ -1332,10 +1332,11 @@ def e_button8(id,kpdf,js_code,css_code):
     kpdf_filtered.rename(columns=new_cols, inplace=True)
 
     st.write(kpdf_filtered)
+    
     towrite = io.BytesIO()
     downloaded_file = kpdf_filtered.to_excel(towrite, encoding='utf-8', index=False, header=True) # write to BytesIO buffer
     towrite.seek(0)  # reset pointer
-    b64 = base64.b64encode(towrite.read()).decode() 
+    b64 = base64.b64encode(towrite.read()).decode()
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="myfilename.xlsx">Download excel file</a>'
     st.markdown(linko, unsafe_allow_html=True)
 
