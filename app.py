@@ -7,7 +7,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from streamlit.components.v1 import html
-
+import base64
+import io
 from packageKPS import *
 from packageCharts import *
 
@@ -49,7 +50,7 @@ def main():
     # st.write("URL ID FROM VIDAVO:",id)
     # st.write("ID from Flask application: ",id)
 
-    
+
     # image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
     # with st.container():
     #     col1,col2,col3=st.columns(3)
@@ -1331,6 +1332,12 @@ def e_button8(id,kpdf,js_code,css_code):
     kpdf_filtered.rename(columns=new_cols, inplace=True)
 
     st.write(kpdf_filtered)
+    towrite = io.BytesIO()
+    downloaded_file = kpdf_filtered.to_excel(towrite, encoding='utf-8', index=False, header=True) # write to BytesIO buffer
+    towrite.seek(0)  # reset pointer
+    b64 = base64.b64encode(towrite.read()).decode() 
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="myfilename.xlsx">Download excel file</a>'
+    st.markdown(linko, unsafe_allow_html=True)
 
 
 def display_pinkas_submenu(id):
@@ -1351,7 +1358,8 @@ def display_pinkas_submenu(id):
     # data_canada = px.data.gapminder().query("country == 'Canada'")
     fig = px.bar(dffilter, x=dffilter['year'].astype(str), y='profile.eko.sum',orientation='v')
     st.plotly_chart(fig)
-
+    
+    
     # Add content for pinkas submenu here
     
 
