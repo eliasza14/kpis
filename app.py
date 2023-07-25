@@ -1337,7 +1337,7 @@ def e_button8(id,kpdf,js_code,css_code):
     st.download_button(
     label="Λήψη Πίνακα Δεικτών",
     data=csv,
-    file_name=f'table{id}.csv',
+    file_name='kpis_table.csv',
     mime='text/csv',
     )
 
