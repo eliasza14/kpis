@@ -75,12 +75,19 @@ def calculate_d26_d27(row,matching_columns):
 
 
 
+# def calculate_d15(row):    
+#     d7 = row['D7']
+#     d13 = row['D13']
+  
+#     return round(float(d13) / int(d7),1)
 def calculate_d15(row):    
     d7 = row['D7']
     d13 = row['D13']
-  
-    return round(float(d13) / int(d7),1)
-
+    
+    if int(d7) == 0:
+        return np.nan
+    else:
+        return round(float(d13) / int(d7), 1)
 
 
 
