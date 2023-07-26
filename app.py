@@ -377,7 +377,8 @@ def ad_button2(id,kpdf,js_code):
 	                </div>
                 <script type="text/javascript">
                 {js_code}
-                animateCounter("counter", 0, """+str(text)+""", 1000);  // Increase from 0 to 100 in 1 second
+                animateCounter3test2noEuro("counter", 0, """+str(text)+""", 1000,100);
+
                 </script>
                 </body>
 
