@@ -69,8 +69,8 @@ def main():
     # kpdf=kpdf.fillna(0)
  
 
-    # st.title("Πίνακας Δεικτών")
-    # st.write(kpdf)
+    st.title("Πίνακας Δεικτών")
+    st.write(kpdf)
 
         # 1. as sidebar menu
     with st.sidebar:
