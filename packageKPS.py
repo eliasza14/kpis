@@ -101,28 +101,38 @@ def calculate_d15(row):
 def calculate_d14(row):    
     d5 = row['D5']
     d12 = row['D12']
-  
-    return round(float(d12) / int(d5),1)
-
+    try:
+        return round(float(d12) / int(d5),1)
+    except ZeroDivisionError:
+        return np.nan
 
 
 def calculate_d11(row):    
     d3 = row['D3']
     d5 = row['D5']
     d7 = row['D7']
-    return round((int(d7) / (int(d3) + int(d5) + int(d7))*100),1)
-
+    try:
+        return round((int(d7) / (int(d3) + int(d5) + int(d7))*100),1)
+    except ZeroDivisionError:
+        return np.nan
+    
 def calculate_d10(row):    
     d3 = row['D3']
     d5 = row['D5']
     d7 = row['D7']
-    return round((int(d5) / (int(d3) + int(d5) + int(d7))*100),1)
+    try:
+        return round((int(d5) / (int(d3) + int(d5) + int(d7))*100),1)
+    except ZeroDivisionError:
+        return np.nan
 
 def calculate_d9(row):    
     d3 = row['D3']
     d5 = row['D5']
     d7 = row['D7']
-    return round((int(d3) / (int(d3) + int(d5) + int(d7))*100),1)
+    try:
+        return round((int(d3) / (int(d3) + int(d5) + int(d7))*100),1)
+    except ZeroDivisionError:
+        return np.nan
 
 
 def format_year(year):
