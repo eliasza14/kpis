@@ -87,7 +87,7 @@ def calculate_d15(row):
     if d7 == 0:
         return np.nan
     
-    if d7 == 0 and d13 == 0:
+    elif d7 == 0 and d13 == 0:
         return np.nan
     else:
         return round(float(d13) / int(d7), 1)
