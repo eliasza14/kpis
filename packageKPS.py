@@ -84,13 +84,12 @@ def calculate_d15(row):
     d7 = row['D7']
     d13 = row['D13']
     
-    if d7 == 0:
+    if d7 != 0 and d13 != 0:
+        return round(float(d13) / int(d7), 1)
+    else:
         return np.nan
     
-    elif d7 == 0 and d13 == 0:
-        return np.nan
-    else:
-        return round(float(d13) / int(d7), 1)
+
 
 
 
