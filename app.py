@@ -989,7 +989,7 @@ def e_button5(id,kpdf,js_code,css_code):
 
 def e_button6(id,kpdf,js_code):
     st.subheader("Διαχρονική (%) μεταβολή Κύκλων Εργασιών")
- 
+    st.markdown("<hr>")
 
     with st.container():
         col1, col2 = st.columns(2)
