@@ -47,8 +47,8 @@ def main():
 
     # st.sidebar.title("KPI's Dashboard")
     id=get_url_params()
-    st.write("URL ID FROM VIDAVO:",id)
-    st.write("ID from Flask application: ",id)
+    # st.write("URL ID FROM VIDAVO:",id)
+    # st.write("ID from Flask application: ",id)
 
 
     # image = Image.open('https://dreamleague-soccerkits.com/wp-content/uploads/2021/07/Real-Madrid-Logo.png','rb')
@@ -69,8 +69,8 @@ def main():
     # kpdf=kpdf.fillna(0)
  
 
-    st.title("Πίνακας Δεικτών")
-    st.write(kpdf)
+    # st.title("Πίνακας Δεικτών")
+    # st.write(kpdf)
 
         # 1. as sidebar menu
     with st.sidebar:
