@@ -18,7 +18,7 @@ def calculate_percentage_change(old_value2, new_value2):
     if old_value > 0 and new_value > 0:
         percentage_change = (new_value - old_value) / old_value
     elif old_value < 0 and new_value < 0:
-        percentage_change = (old_value - new_value) / abs(old_value)
+        percentage_change = (new_value - old_value) / abs(old_value)
 
     elif old_value > 0 and new_value < 0:
         percentage_change = (new_value - old_value) / old_value
