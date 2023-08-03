@@ -230,17 +230,21 @@ def get_data_from_json(id):
     kdata.drop(columns=['uid_x', 'uid_y','uid'],inplace=True)
     # st.write(kdata)
     # st.write(kdata)
+
+##########################################################################################
+
     ###Start Creating DiktesDataframe
-    matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
-    # print(matching_columns)
-    kdata[matching_columns] = kdata[matching_columns].fillna(0)
+    # matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
+    # # print(matching_columns)
+    # kdata[matching_columns] = kdata[matching_columns].fillna(0)
 
-    matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
-    kdata[matching_columns2] = kdata[matching_columns2].fillna(0)
+    # matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
+    # kdata[matching_columns2] = kdata[matching_columns2].fillna(0)
 
-    matching_columns3 = kdata.columns[kdata.columns.str.startswith("report.kad.")]
-    kdata[matching_columns3] = kdata[matching_columns3].fillna(0)
+    # matching_columns3 = kdata.columns[kdata.columns.str.startswith("report.kad.")]
+    # kdata[matching_columns3] = kdata[matching_columns3].fillna(0)
 
+###########################################################################################
 
     # kdata['report.kad.81.21.00.00']=kdata['report.kad.81.21.00.00'].fillna(0)
     # kdata['report.kad.81.30.00.00']= kdata['report.kad.81.30.00.00'].fillna(0)
@@ -295,18 +299,21 @@ def get_data_from_json(id):
     kpdf['D24']=kdata['report.turnover_total'].astype(float)
     #search for kad starts from .81
 
-    matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
+    # matching_columns = kdata.columns[kdata.columns.str.startswith("report.kad.81.")]
     # print(matching_columns)
 
-    kdata[matching_columns] = kdata[matching_columns].astype(float)
+    # kdata[matching_columns] = kdata[matching_columns].astype(float)
 
-    kpdf['D26'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns), axis=1)
+    kpdf['D26']=kdata['report.outside'].astype(float)
+    # kpdf['D26'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns), axis=1)
     #search for kad starts from .56
-    matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
-    kdata[matching_columns2] = kdata[matching_columns2].astype(float)
+    # matching_columns2 = kdata.columns[kdata.columns.str.startswith("report.kad.56.")]
+    # kdata[matching_columns2] = kdata[matching_columns2].astype(float)
     
-    kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
+    kpdf['D27']=kdata['report.inside'].astype(float)
+    # kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
 
+    
     kpdf['D28'] = kdata['report.turnover_other'].astype(float)
 
     #% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος
