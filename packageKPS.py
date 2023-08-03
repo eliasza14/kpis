@@ -54,12 +54,12 @@ def calculate_percentage_change(old_value2, new_value2):
 #     return round(percentage_change*100,1)
 
 
-def calculate_d26_d27(row,matching_columns):
+# def calculate_d26_d27(row,matching_columns):
     
-    values = row[matching_columns]
-    column_sum = values.sum()
-    d26=column_sum
-    return d26
+#     values = row[matching_columns]
+#     column_sum = values.sum()
+#     d26=column_sum
+#     return d26
 
 
 
@@ -313,7 +313,7 @@ def get_data_from_json(id):
     kpdf['D27']=kdata['report.inside'].astype(float)
     # kpdf['D27'] = kdata.apply(lambda row: calculate_d26_d27(row, matching_columns2), axis=1)
 
-    
+
     kpdf['D28'] = kdata['report.turnover_other'].astype(float)
 
     #% μεταβολής κύκλου εργασιών ανά δραστηριότητα ανά έτος
