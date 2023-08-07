@@ -94,13 +94,6 @@ def main():
     # Empty container for the right side content
     content_container = st.empty()
 
-    # Content for different options
-    # if selected_option1 == "Συνεταιριστές":
-    #     content_container.write("Welcome to the Home Page!")
-    # elif selected_option1 == "Εργαζόμενοι":
-    #     content_container.write("You are now in the Settings Page!")
-    # elif selected_option1 == "Ώρες Απασχόλησης":
-    #     content_container.write("your ara ores apasxolis")
         
         
     #RADIO OPTION ANTHROPINO DYNAMIKO
@@ -124,40 +117,6 @@ def main():
     elif selected_option1=="Αναλυτικός Πίνακας Δεικτών":
         e_button8(id,kpdf,js_code,css_code)  
         
-   #Radio button
-    # ad_expander = st.sidebar.expander("Ανθρώπινο Δυναμικό / Επιχειρηματικότητα",expanded=True)
-    # with ad_expander:
-    #     selected_option1 = st.radio("Επιλέξτε:", ["Συνεταιριστές","Εργαζόμενοι", "Ώρες Απασχόλησης", "Ετήσιες Μονάδες Εργασίας","Κύκλοι εργασιών", "Διαχρονική (%) μεταβολή Κύκλων Εργασιών", "Κατανομή πλήθους με βάση το καθαρό εισόδημα"])
-    
-        # # Check if the radio button option has changed
-        # if st.session_state.previous_selected_option != selected_option1:
-        #     # If the option has changed, rerun the app to refresh the page
-        #     st.experimental_rerun()
-
-        # # Store the currently selected option in session state for comparison next time
-        # st.session_state.previous_selected_option = selected_option1
-
-
-#OLD OPTIONS RADIOS
-    # #RADIO OPTION ANTHROPINO DYNAMIKO
-    # if selected_option1=="Συνεταιριστές":
-    #     ad_button1(id,kpdf,js_code)
-    # elif selected_option1=="Εργαζόμενοι":
-    #     ad_button2(id,kpdf,js_code)
-    # elif selected_option1=="Ώρες Απασχόλησης":
-    #     ad_button3(id,kpdf,js_code)
-    # elif selected_option1=="Ετήσιες Μονάδες Εργασίας":
-    #     ad_button4(id,kpdf,js_code)
-
-    # #RADIO OPTION EPIXEIRIMATIKOTITA
-    # if selected_option1=="Κύκλοι εργασιών":
-    #     e_button5(id,kpdf,js_code,css_code)
-    # elif selected_option1=="Διαχρονική (%) μεταβολή Κύκλων Εργασιών":
-    #     e_button6(id,kpdf,js_code)
-    # elif selected_option1=="Κατανομή πλήθους με βάση το καθαρό εισόδημα":
-    #     e_button7(id,kpdf,js_code,css_code)
-   
-
 
 def ad_button1(id,kpdf,js_code):
     st.subheader("Συνεταιριστές")
@@ -198,23 +157,18 @@ def ad_button2(id,kpdf,js_code):
         with col1:
             
             text=str(kpdf['D3'][kpdf['year']==str(year_filter)].iloc[0])
-       
-        
             html_content2 = html_button2(js_code, text)
             html(html_content2,height=250)
+
         with col2:
-            
+
             text=kpdf['D5'][kpdf['year']==str(year_filter)].iloc[0]
-       
-        
             html_content3 = html_button3(js_code, text)
             html(html_content3,height=250)
           
         with col3:
             #st.write('D7-Εργαζόμενοι ΕΚΟ')
             text=kpdf['D7'][kpdf['year']==str(year_filter)].iloc[0]
-     
-        
             html_content4 = html_button4(js_code, text)
             html(html_content4,height=250)
 
@@ -223,42 +177,34 @@ def ad_button2(id,kpdf,js_code):
         with col1:
             # Filter the dataframe based on the selected year
             st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι Γεν. Πληθ.</h3><h3 style='text-align: center; color: grey;'>(% επί του Συνόλου)</h3>", unsafe_allow_html=True)
-
             # st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι Γεν. Πληθ.</p><p  style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
             # Select the value from the filtered dataframe
             d9_value = filtered_kpdf["D9"].iloc[0]
             # fig=gaugeChart(d9_value,'royalblue')
-
             fig=donut_pct_Chart(d9_value,'#618abb', 'rgb(240,240,240)',['% Γεν. Πληθυσμού', ' '])
-
-
             st.plotly_chart(fig,use_container_width=True)
             
 
         with col2:
             # Filter the dataframe based on the selected year
             st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΛΥΨΥ</h3><h3 style='text-align: center; color: grey;'>(% επί του Συνόλου)</h3>", unsafe_allow_html=True)
-
             # st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΛΥΨΥ</p><p style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
             # Select the value from the filtered dataframe
             d10_value = filtered_kpdf["D10"].iloc[0]
             # fig=gaugeChart(d10_value,'skyblue')
             fig=donut_pct_Chart(d10_value,'#00235e', 'rgb(240,240,240)',['% ΛΥΨΥ', ' '])
-
             st.plotly_chart(fig,use_container_width=True)
         with col3:
             # Filter the dataframe based on the selected year
             st.markdown("<h3 style='text-align: center; color: grey;'>Εργαζόμενοι ΕΚΟ</h3><h3 style='text-align: center; color: grey;'>(% επί του Συνόλου)</h3>", unsafe_allow_html=True)
-
             # st.markdown("<p style='text-align: center; color: black; font-size:24px; font-family:Roboto;'>Εργαζόμενοι ΕΚΟ</p><p style='text-align: center; color: black; font-size:18px; font-family:Roboto;'>(% επί του Συνόλου)</p>", unsafe_allow_html=True)
             filtered_kpdf = kpdf[kpdf["year"] == str(year_filter)]
             # Select the value from the filtered dataframe
             d11_value = filtered_kpdf["D11"].iloc[0]
             # fig=gaugeChart(d11_value,'red')
             fig=donut_pct_Chart(d11_value,'#F0894F', 'rgb(240,240,240)',['% ΕΚΟ', ' '])
-
             st.plotly_chart(fig,use_container_width=True)
 
         with st.container():
@@ -268,16 +214,12 @@ def ad_button2(id,kpdf,js_code):
             with col2:
                 # Select the relevant columns
                 st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Εργαζομένων ΚοιΣΠΕ</h3>", unsafe_allow_html=True)
-
                 # Select the relevant columns
                 columns = ['D9', 'D10', 'D11']
                 # kpdf_selected = kpdf[columns]
                 # Create the stacked bar plot using Plotly
                 legend_labels = ['Γενικού Πληθυσμού', 'ΛΥΨΥ', 'ΕΚΟ']
-
-
                 fig=stackedChart(columns,kpdf,legend_labels,'Έτος','% επί του Συνόλου',colors)
-
                 # Show the plot
                 st.plotly_chart(fig, use_container_width=True)
             with col3:
@@ -295,19 +237,17 @@ def ad_button3(id,kpdf,js_code):
             #st.write('Δ14-Ωρες απασχολησης εργαζομένων ΛΥΨΥ(Μεσος Όρος)')
             text=kpdf['D14'][kpdf['year']==str(year_filter)].iloc[0]
             text=str(text.round())
-
-        
             html_content5 = html_button5(js_code, text)
             html(html_content5,height=250)
+
         with col2:
             #st.write('Δ15-Ωρες απασχολησης εργαζομένων ΕΚΟ(Μεσος Όρος)')
             #st.write(kpdf['D15'][kpdf['year']==str(year_filter)])
             text=kpdf['D15'][kpdf['year']==str(year_filter)].iloc[0]
             text=str(text.round())
-
-            
             html_content6 = html_button6(js_code, text)
             html(html_content6,height=250)
+
     with st.container():
         col1, col2 = st.columns(2)
         with col1:
@@ -315,7 +255,6 @@ def ad_button3(id,kpdf,js_code):
             st.markdown("<h3 style='text-align: center; color: grey;'>% Μεταβολή Ωρών Απασχόλησης ΛΥΨΥ</h3>", unsafe_allow_html=True)
             categories=kpdf['year'].tolist()
             values =kpdf['D12'].tolist()
-
             line_labels=kpdf['D16'].tolist()
             fig=pctChangeV2(categories,values,line_labels,'Ώρες Απασχόλησης ΛΥΨΥ','Ώρες Απασχόλησης')
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
@@ -331,7 +270,6 @@ def ad_button3(id,kpdf,js_code):
             values =kpdf['D13'].tolist()
             line_labels=kpdf['D17'].tolist()
             fig=pctChangeV2(categories,values,line_labels,'Ώρες Απασχόλησης ΕΚΟ','Ώρες Απασχόλησης')
-
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
         
@@ -347,9 +285,6 @@ def ad_button4(id,kpdf,js_code):
     with st.container():
 
             text=str(kpdf['D18'][kpdf['year']==str(year_filter)].iloc[0])
-
-            
-
             html_content7 = html_button7(js_code, text)
             html(html_content7,height=250)
 
@@ -357,7 +292,6 @@ def ad_button4(id,kpdf,js_code):
     with st.container():
         col1, col2 =st.columns(2)
         
-        #     # val=50
         with col1:
             # Create the layout with two y-axes
             st.markdown("<h3 style='text-align: center; color: grey;'>Ετήσιες Μονάδες Εργασίας ΛΥΨΥ % επί του Συνόλου</h3>", unsafe_allow_html=True)
@@ -378,33 +312,22 @@ def ad_button4(id,kpdf,js_code):
         with col1:
             st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Μονάδων Εργασίας ΛΥΨΥ</h3>", unsafe_allow_html=True)
             categories=kpdf['year'].tolist()
-            # Sample data
-            # categories = ['Category A', 'Category B', 'Category C', 'Category D']
-            # values =kpdf['D18_lipsi'].astype(float).tolist()
             values =kpdf['D18_lipsi'].tolist()
-
             line_labels=kpdf['D20'].tolist()
-
             fig=pctChangeV2(categories,values,line_labels,'Αρ.Μονάδων Εργασίας ΛΥΨΥ','Μ.Ε. ΛΥΨΥ')
             # fig=pctChangeChart(values,categories,'Αρ.Μονάδων Εργασίας ΛΥΨΥ','Ποσοστιαία μεταβολή','% Μεταβολή','Μ.Ε. ΛΥΨΥ')
             st.plotly_chart(fig,use_container_width=True)
 
-
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Μονάδων Εργασίας ΕΚΟ</h3>", unsafe_allow_html=True)
-
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D18_eko'].astype(float).tolist()
             line_labels=kpdf['D21'].tolist()
-
-            
             fig=pctChangeV2(categories,values,line_labels,'Αρ.Μονάδων Εργασίας ΕΚΟ','Μ.Ε. ΕΚΟ')
-
             # fig=pctChangeChart(values,categories,'Αρ.Μονάδων Εργασίας ΕΚΟ','Ποσοστιαία μεταβολή','% Μεταβολή','Μ.Ε. ΕΚΟ')
             st.plotly_chart(fig,use_container_width=True)
-
 
     with st.container():
          col1, col2,col3 = st.columns(3)
@@ -412,7 +335,6 @@ def ad_button4(id,kpdf,js_code):
              pass
          with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Μονάδων Εργασίας ΚοιΣΠΕ</h3>", unsafe_allow_html=True)
-
             # Select the relevant columns
             columns = ['D22', 'D23', 'D22_23_g']
             legend_labels = ['Μ.Ε. ΛΥΨΥ', 'Μ.Ε. ΕΚΟ', 'Μ.Ε. Γεν.Πληθ.']
