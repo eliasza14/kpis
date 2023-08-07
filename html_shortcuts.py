@@ -1,4 +1,4 @@
-def html_button1():
+def html_button1(js_code,val):
     html_content_1=f"""
                     <body>
                         <div style="display:flex; justify-content: center; " >
