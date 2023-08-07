@@ -11,7 +11,7 @@ import base64
 import io
 from packageKPS import *
 from packageCharts import *
-
+from html_shortcuts import *
 from PIL import Image
 
 
@@ -283,7 +283,7 @@ def ad_button1(id,kpdf,js_code):
 
 
             """
-        html(html_content,height=250)
+        html(html_button1,height=250)
 
 
 
