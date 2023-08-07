@@ -283,7 +283,8 @@ def ad_button1(id,kpdf,js_code):
 
 
             """
-        html(html_button1(js_code,val),height=250)
+        html_content1 = html_button1(js_code, val)
+        html(html_content1,height=250)
 
 
 
