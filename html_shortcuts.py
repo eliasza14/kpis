@@ -294,7 +294,7 @@ def html_button7(js_code,text):
 
             """
     return html_content7
-def html_button8(js_code,val2,css_code):
+def html_button8(js_code,val2,css_code,val29):
     html_content8=f"""<head><style>{css_code}</style></head>
 <body >
  	  <div class="icon-area" style="

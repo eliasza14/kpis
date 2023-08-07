@@ -797,7 +797,7 @@ def e_button5(id,kpdf,js_code,css_code):
 #     </body>
 #         """,height=250)
 
-    html_content8 = html_button8(js_code, val2,css_code)
+    html_content8 = html_button8(js_code, val2,css_code,val29)
     html(html_content8,height=250)
     with st.container():
         col1, col2,col3 = st.columns(3)
