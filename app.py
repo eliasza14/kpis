@@ -1258,8 +1258,8 @@ def e_button7(id,kpdf,js_code,css_code):
             # """,height=250
             # )
 
-            html_content13= html_button13(js_code, val4,css_code,val5)
-            html(html_content13,height=250)
+            html_content14= html_button14(js_code, val4,css_code,val5)
+            html(html_content14,height=250)
 
 
 
