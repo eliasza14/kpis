@@ -546,3 +546,47 @@ def html_button12(js_code, val1,css_code,val2):
 
             """
     return html_content12
+def html_button13(js_code, val3,css_code):
+    html_content13=f"""<head><style>{css_code}</style></head>
+                <body>
+                    <div style="display:flex; justify-content: center; " >
+                        <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
+                            <div style="text-align:right;">
+                                <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="&#206;&#145;&#207;&#129;&#206;&#185;&#206;&#184;&#206;&#188;&#206;&#191;&#206;&#180;&#206;&#181;&#206;&#175;&#206;&#186;&#207;&#132;&#206;&#183;&#207;&#130;" clip-path="url(#clip0_111_384)">
+                                <circle id="Ellipse 34" cx="16" cy="16" r="16" fill="url(#paint0_linear_111_384)"/>
+                                <path id="Arrow 1" d="M11.7025 24.5475C11.8668 24.7118 12.1332 24.7118 12.2975 24.5475L14.975 21.87C15.1393 21.7057 15.1393 21.4393 14.975 21.275C14.8107 21.1107 14.5443 21.1107 14.38 21.275L12 23.655L9.61998 21.275C9.45568 21.1107 9.18928 21.1107 9.02498 21.275C8.86067 21.4393 8.86067 21.7057 9.02498 21.87L11.7025 24.5475ZM11.5793 9.52439L11.5793 24.25H12.4207L12.4207 9.52439H11.5793Z" fill="white"/>
+                                <path id="Arrow 2" d="M19.0292 6.7025C18.8649 6.53819 18.5985 6.53819 18.4342 6.7025L15.7567 9.38002C15.5924 9.54432 15.5924 9.81071 15.7567 9.97502C15.921 10.1393 16.1874 10.1393 16.3517 9.97502L18.7317 7.595L21.1117 9.97502C21.276 10.1393 21.5424 10.1393 21.7067 9.97502C21.871 9.81071 21.871 9.54432 21.7067 9.38002L19.0292 6.7025ZM19.1524 24.25L19.1524 7L18.311 7L18.311 24.25L19.1524 24.25Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <linearGradient id="paint0_linear_111_384" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#548CEE"/>
+                                <stop offset="1" stop-color="#15E7FF"/>
+                                </linearGradient>
+                                <clipPath id="clip0_111_384">
+                                <rect width="32" height="32" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+
+
+
+                            </div>
+                            <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
+                            <div>
+                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Αριθμοδείκτης καθαρών αποτελεσμάτων</div>
+                            </div>
+
+                        </div>
+	                </div>
+                <script type="text/javascript">
+                {js_code}
+                animateCounter3test2noEuro("counter", 0, """+str(val3)+""", 1000,100);
+
+                </script>
+                </body>
+
+
+
+            """
+    return html_content13

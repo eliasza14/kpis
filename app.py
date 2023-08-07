@@ -1092,108 +1092,110 @@ def e_button7(id,kpdf,js_code,css_code):
         col1, col2,col3 = st.columns(3)
         with col1:
            
-            html(
-            f"""<head><style>{css_code}</style></head>
-                <body>
-                    <div style="display:flex; justify-content: center; " >
-                        <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
-                            <div style="text-align:right;">
-                          <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="&#206;&#173;&#207;&#131;&#206;&#191;&#206;&#180;&#206;&#177; &#206;&#177;&#206;&#189;&#206;&#177; &#206;&#181;&#207;&#129;&#206;&#179;&#206;&#177;&#206;&#182;&#207;&#140;&#206;&#188;&#206;&#181;&#206;&#189;&#206;&#191;">
-                            <circle id="Ellipse 33" cx="16" cy="16" r="16" fill="url(#paint0_linear_111_338)"/>
-                            <g id="Camada 2">
-                            <g id="Camada 1">
-                            <path id="Vector" d="M23.6667 13.6667H22.6667V12.6667C22.6667 12.5783 22.6315 12.4935 22.569 12.431C22.5065 12.3685 22.4217 12.3333 22.3333 12.3333H21.3333V11.3333C21.3333 11.2449 21.2982 11.1601 21.2357 11.0976C21.1732 11.0351 21.0884 11 21 11H8.33333C8.24493 11 8.16014 11.0351 8.09763 11.0976C8.03512 11.1601 8 11.2449 8 11.3333V17.94C8 18.0284 8.03512 18.1132 8.09763 18.1757C8.16014 18.2382 8.24493 18.2733 8.33333 18.2733H9.33333V19.2733C9.33333 19.3617 9.36845 19.4465 9.43096 19.509C9.49348 19.5715 9.57826 19.6067 9.66667 19.6067H10.6667V20.6067C10.6667 20.6951 10.7018 20.7799 10.7643 20.8424C10.8268 20.9049 10.9116 20.94 11 20.94H23.6667C23.7551 20.94 23.8399 20.9049 23.9024 20.8424C23.9649 20.7799 24 20.6951 24 20.6067V14C24 13.9116 23.9649 13.8268 23.9024 13.7643C23.8399 13.7018 23.7551 13.6667 23.6667 13.6667ZM18.5333 17.6067H10.8C10.7263 17.0668 10.4779 16.566 10.0926 16.1807C9.70735 15.7955 9.2065 15.547 8.66667 15.4733V13.8C9.2065 13.7263 9.70735 13.4779 10.0926 13.0926C10.4779 12.7074 10.7263 12.2065 10.8 11.6667H18.5333C18.607 12.2065 18.8555 12.7074 19.2407 13.0926C19.626 13.4779 20.1268 13.7263 20.6667 13.8V15.4733C20.1268 15.547 19.626 15.7955 19.2407 16.1807C18.8555 16.566 18.607 17.0668 18.5333 17.6067ZM20.6667 16.14V17.6067H19.1933C19.2624 17.2422 19.4401 16.9071 19.703 16.6453C19.9659 16.3836 20.3019 16.2074 20.6667 16.14ZM20.6667 11.6667V13.14C20.3009 13.0721 19.9644 12.895 19.7014 12.632C19.4383 12.369 19.2612 12.0324 19.1933 11.6667H20.6667ZM8.66667 11.6667H10.14C10.0721 12.0324 9.89499 12.369 9.63197 12.632C9.36895 12.895 9.03239 13.0721 8.66667 13.14V11.6667ZM8.66667 16.14C9.03148 16.2074 9.36739 16.3836 9.63031 16.6453C9.89324 16.9071 10.0709 17.2422 10.14 17.6067H8.66667V16.14ZM10 18.28H21C21.0884 18.28 21.1732 18.2449 21.2357 18.1824C21.2982 18.1199 21.3333 18.0351 21.3333 17.9467V13H22V18.94H10V18.28ZM23.3333 20.28H11.3333V19.6133H22.3333C22.4217 19.6133 22.5065 19.5782 22.569 19.5157C22.6315 19.4532 22.6667 19.3684 22.6667 19.28V14.3333H23.3333V20.28Z" fill="white"/>
-                            <path id="Vector_2" d="M14.6667 12.3733C14.2198 12.3733 13.7828 12.5059 13.4112 12.7542C13.0395 13.0025 12.7498 13.3555 12.5788 13.7685C12.4077 14.1814 12.363 14.6358 12.4502 15.0742C12.5374 15.5126 12.7526 15.9153 13.0687 16.2314C13.3847 16.5475 13.7874 16.7627 14.2258 16.8499C14.6642 16.9371 15.1186 16.8924 15.5316 16.7213C15.9446 16.5502 16.2975 16.2606 16.5459 15.8889C16.7942 15.5173 16.9267 15.0803 16.9267 14.6333C16.925 14.0345 16.6863 13.4607 16.2629 13.0372C15.8394 12.6138 15.2656 12.3751 14.6667 12.3733ZM14.6667 16.2267C14.3516 16.2267 14.0436 16.1332 13.7815 15.9581C13.5195 15.7831 13.3153 15.5342 13.1947 15.2431C13.0741 14.9519 13.0425 14.6316 13.104 14.3225C13.1655 14.0134 13.3173 13.7295 13.5401 13.5067C13.7629 13.2838 14.0468 13.1321 14.3559 13.0706C14.665 13.0091 14.9853 13.0407 15.2765 13.1613C15.5676 13.2819 15.8165 13.4861 15.9915 13.7481C16.1666 14.0101 16.2601 14.3182 16.2601 14.6333C16.261 14.8431 16.2204 15.051 16.1407 15.2451C16.061 15.4392 15.9438 15.6156 15.7958 15.7643C15.6477 15.913 15.4718 16.0309 15.278 16.1114C15.0843 16.1919 14.8765 16.2333 14.6667 16.2333V16.2267Z" fill="white"/>
-                            </g>
-                            </g>
-                            </g>
-                            <defs>
-                            <linearGradient id="paint0_linear_111_338" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#548CEE"/>
-                            <stop offset="1" stop-color="#15E7FF"/>
-                            </linearGradient>
-                            </defs>
-                            </svg>
+            # html(
+            # f"""<head><style>{css_code}</style></head>
+            #     <body>
+            #         <div style="display:flex; justify-content: center; " >
+            #             <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
+            #                 <div style="text-align:right;">
+            #               <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            #                 <g id="&#206;&#173;&#207;&#131;&#206;&#191;&#206;&#180;&#206;&#177; &#206;&#177;&#206;&#189;&#206;&#177; &#206;&#181;&#207;&#129;&#206;&#179;&#206;&#177;&#206;&#182;&#207;&#140;&#206;&#188;&#206;&#181;&#206;&#189;&#206;&#191;">
+            #                 <circle id="Ellipse 33" cx="16" cy="16" r="16" fill="url(#paint0_linear_111_338)"/>
+            #                 <g id="Camada 2">
+            #                 <g id="Camada 1">
+            #                 <path id="Vector" d="M23.6667 13.6667H22.6667V12.6667C22.6667 12.5783 22.6315 12.4935 22.569 12.431C22.5065 12.3685 22.4217 12.3333 22.3333 12.3333H21.3333V11.3333C21.3333 11.2449 21.2982 11.1601 21.2357 11.0976C21.1732 11.0351 21.0884 11 21 11H8.33333C8.24493 11 8.16014 11.0351 8.09763 11.0976C8.03512 11.1601 8 11.2449 8 11.3333V17.94C8 18.0284 8.03512 18.1132 8.09763 18.1757C8.16014 18.2382 8.24493 18.2733 8.33333 18.2733H9.33333V19.2733C9.33333 19.3617 9.36845 19.4465 9.43096 19.509C9.49348 19.5715 9.57826 19.6067 9.66667 19.6067H10.6667V20.6067C10.6667 20.6951 10.7018 20.7799 10.7643 20.8424C10.8268 20.9049 10.9116 20.94 11 20.94H23.6667C23.7551 20.94 23.8399 20.9049 23.9024 20.8424C23.9649 20.7799 24 20.6951 24 20.6067V14C24 13.9116 23.9649 13.8268 23.9024 13.7643C23.8399 13.7018 23.7551 13.6667 23.6667 13.6667ZM18.5333 17.6067H10.8C10.7263 17.0668 10.4779 16.566 10.0926 16.1807C9.70735 15.7955 9.2065 15.547 8.66667 15.4733V13.8C9.2065 13.7263 9.70735 13.4779 10.0926 13.0926C10.4779 12.7074 10.7263 12.2065 10.8 11.6667H18.5333C18.607 12.2065 18.8555 12.7074 19.2407 13.0926C19.626 13.4779 20.1268 13.7263 20.6667 13.8V15.4733C20.1268 15.547 19.626 15.7955 19.2407 16.1807C18.8555 16.566 18.607 17.0668 18.5333 17.6067ZM20.6667 16.14V17.6067H19.1933C19.2624 17.2422 19.4401 16.9071 19.703 16.6453C19.9659 16.3836 20.3019 16.2074 20.6667 16.14ZM20.6667 11.6667V13.14C20.3009 13.0721 19.9644 12.895 19.7014 12.632C19.4383 12.369 19.2612 12.0324 19.1933 11.6667H20.6667ZM8.66667 11.6667H10.14C10.0721 12.0324 9.89499 12.369 9.63197 12.632C9.36895 12.895 9.03239 13.0721 8.66667 13.14V11.6667ZM8.66667 16.14C9.03148 16.2074 9.36739 16.3836 9.63031 16.6453C9.89324 16.9071 10.0709 17.2422 10.14 17.6067H8.66667V16.14ZM10 18.28H21C21.0884 18.28 21.1732 18.2449 21.2357 18.1824C21.2982 18.1199 21.3333 18.0351 21.3333 17.9467V13H22V18.94H10V18.28ZM23.3333 20.28H11.3333V19.6133H22.3333C22.4217 19.6133 22.5065 19.5782 22.569 19.5157C22.6315 19.4532 22.6667 19.3684 22.6667 19.28V14.3333H23.3333V20.28Z" fill="white"/>
+            #                 <path id="Vector_2" d="M14.6667 12.3733C14.2198 12.3733 13.7828 12.5059 13.4112 12.7542C13.0395 13.0025 12.7498 13.3555 12.5788 13.7685C12.4077 14.1814 12.363 14.6358 12.4502 15.0742C12.5374 15.5126 12.7526 15.9153 13.0687 16.2314C13.3847 16.5475 13.7874 16.7627 14.2258 16.8499C14.6642 16.9371 15.1186 16.8924 15.5316 16.7213C15.9446 16.5502 16.2975 16.2606 16.5459 15.8889C16.7942 15.5173 16.9267 15.0803 16.9267 14.6333C16.925 14.0345 16.6863 13.4607 16.2629 13.0372C15.8394 12.6138 15.2656 12.3751 14.6667 12.3733ZM14.6667 16.2267C14.3516 16.2267 14.0436 16.1332 13.7815 15.9581C13.5195 15.7831 13.3153 15.5342 13.1947 15.2431C13.0741 14.9519 13.0425 14.6316 13.104 14.3225C13.1655 14.0134 13.3173 13.7295 13.5401 13.5067C13.7629 13.2838 14.0468 13.1321 14.3559 13.0706C14.665 13.0091 14.9853 13.0407 15.2765 13.1613C15.5676 13.2819 15.8165 13.4861 15.9915 13.7481C16.1666 14.0101 16.2601 14.3182 16.2601 14.6333C16.261 14.8431 16.2204 15.051 16.1407 15.2451C16.061 15.4392 15.9438 15.6156 15.7958 15.7643C15.6477 15.913 15.4718 16.0309 15.278 16.1114C15.0843 16.1919 14.8765 16.2333 14.6667 16.2333V16.2267Z" fill="white"/>
+            #                 </g>
+            #                 </g>
+            #                 </g>
+            #                 <defs>
+            #                 <linearGradient id="paint0_linear_111_338" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
+            #                 <stop stop-color="#548CEE"/>
+            #                 <stop offset="1" stop-color="#15E7FF"/>
+            #                 </linearGradient>
+            #                 </defs>
+            #                 </svg>
 
 
-                            </div>
-                            <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
-                            <div>
-                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Καθαρά αποτελέσματα</div>
-                            </div>
-                            <div>
-                                <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val2)} %</div>
-                            </div>
-                        </div>
-	                </div>
-                <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+            #                 </div>
+            #                 <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
+            #                 <div>
+            #                     <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Καθαρά αποτελέσματα</div>
+            #                 </div>
+            #                 <div>
+            #                     <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val2)} %</div>
+            #                 </div>
+            #             </div>
+	        #         </div>
+            #     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 
-                <script type="text/javascript">
-                {js_code}
-                animateCounter3test3("counter", 0, """+str(val1)+""", 1000,10);  // Increase from 0 to 100 in 1 second
-                </script>
-                </body>
-
-
-
-            """,height=250
-            )
+            #     <script type="text/javascript">
+            #     {js_code}
+            #     animateCounter3test3("counter", 0, """+str(val1)+""", 1000,10);  // Increase from 0 to 100 in 1 second
+            #     </script>
+            #     </body>
 
 
 
+            # """,height=250
+            # )
 
 
+
+
+            html_content12= html_button12(js_code, val1,css_code,val2)
+            html(html_content12,height=250)
 
         with col2:
 
 
-            html(
-            f"""<head><style>{css_code}</style></head>
-                <body>
-                    <div style="display:flex; justify-content: center; " >
-                        <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
-                            <div style="text-align:right;">
-                                <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="&#206;&#145;&#207;&#129;&#206;&#185;&#206;&#184;&#206;&#188;&#206;&#191;&#206;&#180;&#206;&#181;&#206;&#175;&#206;&#186;&#207;&#132;&#206;&#183;&#207;&#130;" clip-path="url(#clip0_111_384)">
-                                <circle id="Ellipse 34" cx="16" cy="16" r="16" fill="url(#paint0_linear_111_384)"/>
-                                <path id="Arrow 1" d="M11.7025 24.5475C11.8668 24.7118 12.1332 24.7118 12.2975 24.5475L14.975 21.87C15.1393 21.7057 15.1393 21.4393 14.975 21.275C14.8107 21.1107 14.5443 21.1107 14.38 21.275L12 23.655L9.61998 21.275C9.45568 21.1107 9.18928 21.1107 9.02498 21.275C8.86067 21.4393 8.86067 21.7057 9.02498 21.87L11.7025 24.5475ZM11.5793 9.52439L11.5793 24.25H12.4207L12.4207 9.52439H11.5793Z" fill="white"/>
-                                <path id="Arrow 2" d="M19.0292 6.7025C18.8649 6.53819 18.5985 6.53819 18.4342 6.7025L15.7567 9.38002C15.5924 9.54432 15.5924 9.81071 15.7567 9.97502C15.921 10.1393 16.1874 10.1393 16.3517 9.97502L18.7317 7.595L21.1117 9.97502C21.276 10.1393 21.5424 10.1393 21.7067 9.97502C21.871 9.81071 21.871 9.54432 21.7067 9.38002L19.0292 6.7025ZM19.1524 24.25L19.1524 7L18.311 7L18.311 24.25L19.1524 24.25Z" fill="white"/>
-                                </g>
-                                <defs>
-                                <linearGradient id="paint0_linear_111_384" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#548CEE"/>
-                                <stop offset="1" stop-color="#15E7FF"/>
-                                </linearGradient>
-                                <clipPath id="clip0_111_384">
-                                <rect width="32" height="32" fill="white"/>
-                                </clipPath>
-                                </defs>
-                            </svg>
+            # html(
+            # f"""<head><style>{css_code}</style></head>
+            #     <body>
+            #         <div style="display:flex; justify-content: center; " >
+            #             <div style="width:310px;  display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
+            #                 <div style="text-align:right;">
+            #                     <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            #                     <g id="&#206;&#145;&#207;&#129;&#206;&#185;&#206;&#184;&#206;&#188;&#206;&#191;&#206;&#180;&#206;&#181;&#206;&#175;&#206;&#186;&#207;&#132;&#206;&#183;&#207;&#130;" clip-path="url(#clip0_111_384)">
+            #                     <circle id="Ellipse 34" cx="16" cy="16" r="16" fill="url(#paint0_linear_111_384)"/>
+            #                     <path id="Arrow 1" d="M11.7025 24.5475C11.8668 24.7118 12.1332 24.7118 12.2975 24.5475L14.975 21.87C15.1393 21.7057 15.1393 21.4393 14.975 21.275C14.8107 21.1107 14.5443 21.1107 14.38 21.275L12 23.655L9.61998 21.275C9.45568 21.1107 9.18928 21.1107 9.02498 21.275C8.86067 21.4393 8.86067 21.7057 9.02498 21.87L11.7025 24.5475ZM11.5793 9.52439L11.5793 24.25H12.4207L12.4207 9.52439H11.5793Z" fill="white"/>
+            #                     <path id="Arrow 2" d="M19.0292 6.7025C18.8649 6.53819 18.5985 6.53819 18.4342 6.7025L15.7567 9.38002C15.5924 9.54432 15.5924 9.81071 15.7567 9.97502C15.921 10.1393 16.1874 10.1393 16.3517 9.97502L18.7317 7.595L21.1117 9.97502C21.276 10.1393 21.5424 10.1393 21.7067 9.97502C21.871 9.81071 21.871 9.54432 21.7067 9.38002L19.0292 6.7025ZM19.1524 24.25L19.1524 7L18.311 7L18.311 24.25L19.1524 24.25Z" fill="white"/>
+            #                     </g>
+            #                     <defs>
+            #                     <linearGradient id="paint0_linear_111_384" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
+            #                     <stop stop-color="#548CEE"/>
+            #                     <stop offset="1" stop-color="#15E7FF"/>
+            #                     </linearGradient>
+            #                     <clipPath id="clip0_111_384">
+            #                     <rect width="32" height="32" fill="white"/>
+            #                     </clipPath>
+            #                     </defs>
+            #                 </svg>
 
 
 
-                            </div>
-                            <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
-                            <div>
-                                <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Αριθμοδείκτης καθαρών αποτελεσμάτων</div>
-                            </div>
+            #                 </div>
+            #                 <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
+            #                 <div>
+            #                     <div style="text-align:left; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Αριθμοδείκτης καθαρών αποτελεσμάτων</div>
+            #                 </div>
 
-                        </div>
-	                </div>
-                <script type="text/javascript">
-                {js_code}
-                animateCounter3test2noEuro("counter", 0, """+str(val3)+""", 1000,100);
+            #             </div>
+	        #         </div>
+            #     <script type="text/javascript">
+            #     {js_code}
+            #     animateCounter3test2noEuro("counter", 0, """+str(val3)+""", 1000,100);
 
-                </script>
-                </body>
+            #     </script>
+            #     </body>
 
 
 
-            """,height=250
-            )
+            # """,height=250
+            # )
 
-            
+            html_content13= html_button13(js_code, val3,css_code)
+            html(html_content13,height=250)
 
         with col3:
 
