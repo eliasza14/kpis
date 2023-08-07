@@ -810,53 +810,53 @@ def e_button5(id,kpdf,js_code,css_code):
             val4=float(kpdf['D30'][kpdf['year']==str(year_filter)].iloc[0])
             
 
-            html(
-            f"""<head><style>{css_code}</style></head>
-                <body>
-                    <div style="display:flex; justify-content: center; " >
-                        <div style="width:310px; display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
-                            <div style="text-align:right;">
-                                <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="&#206;&#154;&#207;&#132;&#206;&#174;&#207;&#129;&#206;&#185;&#206;&#191;">
-                                <circle id="Ellipse 25" cx="16" cy="16" r="16" fill="url(#paint0_linear_103_204)"/>
-                                <path id="XMLID_1_" d="M22.2862 23H9.71458V16.0769H8.706C8.05571 16.0769 7.75227 15.2582 8.242 14.8261L14.9324 8.42967C15.5312 7.85678 16.469 7.85678 17.0678 8.42967L23.7576 14.8261C24.2479 15.2576 23.9445 16.0769 23.2936 16.0769H22.2862V23Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path id="XMLID_2_" d="M18 23H14V19.4C14 18.0746 14.8955 17 16 17C17.1045 17 18 18.0746 18 19.4V23Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                </g>
-                                <defs>
-                                <linearGradient id="paint0_linear_103_204" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#548CEE"/>
-                                <stop offset="1" stop-color="#15E7FF"/>
-                                </linearGradient>
-                                </defs>
-                            </svg>
+            # html(
+            # f"""<head><style>{css_code}</style></head>
+            #     <body>
+            #         <div style="display:flex; justify-content: center; " >
+            #             <div style="width:310px; display: flex;align-items: flex-start;flex-direction: column;flex-wrap: nowrap;border: 1px solid #6E7279;border-radius: 16px;padding-top: 12px; padding-bottom: 12px; padding-left:24px; padding-right:24px;">
+            #                 <div style="text-align:right;">
+            #                     <svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            #                     <g id="&#206;&#154;&#207;&#132;&#206;&#174;&#207;&#129;&#206;&#185;&#206;&#191;">
+            #                     <circle id="Ellipse 25" cx="16" cy="16" r="16" fill="url(#paint0_linear_103_204)"/>
+            #                     <path id="XMLID_1_" d="M22.2862 23H9.71458V16.0769H8.706C8.05571 16.0769 7.75227 15.2582 8.242 14.8261L14.9324 8.42967C15.5312 7.85678 16.469 7.85678 17.0678 8.42967L23.7576 14.8261C24.2479 15.2576 23.9445 16.0769 23.2936 16.0769H22.2862V23Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            #                     <path id="XMLID_2_" d="M18 23H14V19.4C14 18.0746 14.8955 17 16 17C17.1045 17 18 18.0746 18 19.4V23Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            #                     </g>
+            #                     <defs>
+            #                     <linearGradient id="paint0_linear_103_204" x1="3.94207" y1="2.06489" x2="41.1102" y2="42.7996" gradientUnits="userSpaceOnUse">
+            #                     <stop stop-color="#548CEE"/>
+            #                     <stop offset="1" stop-color="#15E7FF"/>
+            #                     </linearGradient>
+            #                     </defs>
+            #                 </svg>
 
 
 
 
 
-                            </div>
-                            <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
-                            <div>
-                                <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Κτηρίων & Εξ. Χώρων</div>
-                            </div>
-                            <div>
-                                <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val4)} %</div>
-                            </div>
-                        </div>
-	                </div>
-                <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+            #                 </div>
+            #                 <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
+            #                 <div>
+            #                     <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Κτηρίων & Εξ. Χώρων</div>
+            #                 </div>
+            #                 <div>
+            #                     <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val4)} %</div>
+            #                 </div>
+            #             </div>
+	        #         </div>
+            #     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 
-                <script type="text/javascript">
+            #     <script type="text/javascript">
 
-                {js_code}
-                animateCounter3test3("counter", 0, """+str(val26)+""", 1000,10);  // Increase from 0 to 100 in 1 second
-                </script>
-                </body>
+            #     {js_code}
+            #     animateCounter3test3("counter", 0, """+str(val26)+""", 1000,10);  // Increase from 0 to 100 in 1 second
+            #     </script>
+            #     </body>
 
 
 
-            """,height=250
-            )
+            # """,height=250
+            # )
         html_content9 = html_button9(js_code, val4,css_code,val26)
         html(html_content9,height=250)
 
