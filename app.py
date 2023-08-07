@@ -93,8 +93,6 @@ def main():
 
     # Empty container for the right side content
     content_container = st.empty()
-
-        
         
     #RADIO OPTION ANTHROPINO DYNAMIKO
     if selected_option1=="Συνεταιριστές":
@@ -125,21 +123,8 @@ def ad_button1(id,kpdf,js_code):
     
     with st.container():
 
-  
-
-        # Display the HTML and JavaScript code
-       
-        #st.write('Col1 show D1')
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
-        # text="Συνεταιριστες Κατηγορια Α: "+str(val)+" 👪" 
-        #st.write(kpdf['D1'][kpdf['year']==str(year_filter)])
-        
-        st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)
-        
-       
-
-        
-        
+        st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)  
         html_content1 = html_button1(js_code, val)
         html(html_content1,height=250)
 
@@ -226,7 +211,6 @@ def ad_button2(id,kpdf,js_code):
                 pass
 
 
-
 def ad_button3(id,kpdf,js_code):
     st.subheader("Ωρες απασχόλησης")
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
@@ -273,7 +257,6 @@ def ad_button3(id,kpdf,js_code):
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
         
-
 
 def ad_button4(id,kpdf,js_code):
     st.subheader("Ετήσιες Μονάδες Εργασίας")
@@ -345,26 +328,12 @@ def ad_button4(id,kpdf,js_code):
             pass
              
 
-
-
-        
-
-
-
-
 def e_button5(id,kpdf,js_code,css_code):
     st.subheader("Κύκλοι εργασιών")
     colors = ['#00235e','#F0894F','#618abb']
-
-
     year_filter = st.selectbox("Έτος", kpdf['year'].tolist(),index=len(kpdf['year'])-1)
     val2=float(kpdf['D24'][kpdf['year']==str(year_filter)].iloc[0])
     val29=float(kpdf['D29'][kpdf['year']==str(year_filter)].iloc[0])
-
-
-
-
-
     html_content8 = html_button8(js_code, val2,css_code,val29)
     html(html_content8,height=250)
     with st.container():
@@ -372,32 +341,21 @@ def e_button5(id,kpdf,js_code,css_code):
 
         with col1:
             #st.markdown("<h3 style='text-align: center; color: grey;'>🏠 Κτηρίων & Εξ. Χώρων</h3>", unsafe_allow_html=True)
-
             val26=float(kpdf['D26'][kpdf['year']==str(year_filter)].iloc[0])
-            
             val4=float(kpdf['D30'][kpdf['year']==str(year_filter)].iloc[0])
-            
-
-            
             html_content9= html_button9(js_code, val4,css_code,val26)
             html(html_content9,height=250)
-
 
         with col2:
 
             val27=float(kpdf['D27'][kpdf['year']==str(year_filter)].iloc[0])
             val6=float(kpdf['D31'][kpdf['year']==str(year_filter)].iloc[0])
-
-            
             html_content10= html_button10(js_code, val6,css_code,val27)
             html(html_content10,height=250)
         with col3:
 
             val28=float(kpdf['D28'][kpdf['year']==str(year_filter)].iloc[0])
-            val8=float(kpdf['D32'][kpdf['year']==str(year_filter)].iloc[0])
-
-
-            
+            val8=float(kpdf['D32'][kpdf['year']==str(year_filter)].iloc[0])   
             html_content11= html_button11(js_code, val8,css_code,val28)
             html(html_content11,height=250)
     with st.container():
@@ -421,14 +379,8 @@ def e_button5(id,kpdf,js_code,css_code):
         with col2:
              # Select the relevant columns
             st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Κύκλου Εργασιών ανά Κατηγορία</h3>", unsafe_allow_html=True)
-
-
-
-
-
             columns = ['D26', 'D27', 'D28']
             legend_labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
-
             kpdf_selected = kpdf[columns]
             # Create the stacked bar plot using Plotly
             fig=stackedChart2(columns,kpdf,legend_labels,'Έτος','Συχνότητα',colors)
@@ -436,9 +388,6 @@ def e_button5(id,kpdf,js_code,css_code):
         with col3:
             pass
    
-
-
-
 
 def e_button6(id,kpdf,js_code):
     st.subheader("Διαχρονική (%) μεταβολή Κύκλων Εργασιών")
@@ -453,12 +402,8 @@ def e_button6(id,kpdf,js_code):
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D24'].astype(float).tolist()
-
             line_labels=kpdf['D29'].tolist()
-
             fig=pctChangeV2(categories,values,line_labels,'Κύκλοι Εργασιών','Κυκλ.Εργασιών')
-
-
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
@@ -509,10 +454,6 @@ def e_button6(id,kpdf,js_code):
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
 
-
-
-
-
 def e_button7(id,kpdf,js_code,css_code):
     st.subheader("Κατανομή πλήθους με βάση το καθαρό εισόδημα")
 
@@ -527,61 +468,32 @@ def e_button7(id,kpdf,js_code,css_code):
     with st.container():
         col1, col2,col3 = st.columns(3)
         with col1:
-           
-            
-
-
-
-
             html_content12= html_button12(js_code, val1,css_code,val2)
             html(html_content12,height=250)
-
         with col2:
-
-
-            
-
             html_content13= html_button13(js_code, val3,css_code)
             html(html_content13,height=250)
 
         with col3:
-
-
-        
-
             html_content14= html_button14(js_code, val4,css_code,val5)
             html(html_content14,height=250)
 
-
-
-
-
-
-            # st.metric(label="Έσοδα ανά εργαζόμενο / % Ετήσια Μεταβολή", label_visibility="hidden", value=val4, delta=f'{val5}%')
-    
     st.markdown("<br>", unsafe_allow_html=True)
 
     with st.container():
         col1,col2 = st.columns(2)
         with col1:
             st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μεταβολή Καθαρών Αποτελεσμάτων</h3>", unsafe_allow_html=True)
-
             categories=kpdf['year'].tolist()
             # Sample data
             # categories = ['Category A', 'Category B', 'Category C', 'Category D']
             values =kpdf['D36_overal'].astype(float).tolist()
-
             line_labels=kpdf['D36'].tolist()
-
             fig=pctChangeV2(categories,values,line_labels,'Καθαρά Αποτελέσματα','Καθ. Αποτελέσμ.')
-
             # fig=pctChangeChart(values,categories,'Values','Ποσοστιαία μεταβολή','Percentage Change','Values')
             st.plotly_chart(fig,use_container_width=True)
         with col2:
-
             st.markdown("<h3 style='text-align: center; color: grey;'>Συμμετοχή (%) Επιδοτήσεων στα έσοδα</h3>", unsafe_allow_html=True)
-
-             
             val39=float(kpdf['D39'][kpdf['year']==str(year_filter)].iloc[0])
             fig=donut_pct_Chart(val39,'#00235e', 'rgb(240,240,240)',['% Συμμετοχή Επιδοτήσεων', ' '])
             st.plotly_chart(fig, use_container_width=True)
@@ -617,8 +529,6 @@ def e_button7(id,kpdf,js_code,css_code):
             )
 
             st.plotly_chart(fig, use_container_width=True)
-
-            
         with col3:
             pass
 
@@ -657,7 +567,6 @@ def e_button8(id,kpdf,js_code,css_code):
     )
 
 
-
 def display_pinkas_submenu(id):
     st.subheader("pinkas Submenu")
     st.write("Content for pinkas submenu")
@@ -679,9 +588,6 @@ def display_pinkas_submenu(id):
     
     
     # Add content for pinkas submenu here
-    
-
-
 
 
 def get_url_params():
