@@ -344,7 +344,7 @@ def html_button8(js_code,val2,css_code,val29):
        <p style="
     color: #002970;
     font-size: 24px;
-    /* font-family: Ubuntu; */
+    font-family:'Source Sans Pro',sans-serif;
     font-weight: 300;
     line-height: 24px;
     word-wrap: break-word;">Κύκλοι Εργασιών</p>
