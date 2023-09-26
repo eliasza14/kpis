@@ -105,6 +105,7 @@ function animateCounter3test3(elementId, startValue, endValue, duration, interva
 //Put sign on the number of delta
 document.addEventListener('DOMContentLoaded', function() {
     const numberDiv = document.querySelector('.number');
+    if (numberDiv) {
     const number = parseFloat(numberDiv.textContent);
 
     if (number < 0) {
@@ -114,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
       numberDiv.classList.add('positive');
       numberDiv.setAttribute('data-sign', '+');
     }
+   }
   });
 /*
   function animateCounter3test2(elementId, startValue, endValue, duration, interval) {
