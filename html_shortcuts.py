@@ -342,7 +342,7 @@ def html_button8(js_code,val2,css_code,val29):
       padding-right: 20px;"><div id="counter" style="text-align: left; color:white;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 60px;"></div>
         </h3>
        <p style="
-    color: #002970;
+    color: white;
     font-size: 24px;
     font-family:'Source Sans Pro',sans-serif;
     font-weight: 300;
