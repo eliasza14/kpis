@@ -13,7 +13,7 @@
 
 
 
-h3 [class*="css"] {
+h3 {
     /* font-family: Roboto; 
     font-size: 18px;
     font-weight: 500;
@@ -24,7 +24,7 @@ h3 [class*="css"] {
  
 
     /* H3 */
-    font-family: Roboto !important;
+    font-family: Roboto ;
     
     font-style: normal;
     font-weight: 700;
@@ -32,6 +32,7 @@ h3 [class*="css"] {
     
 
 }
+
 .css-1xarl3l.e1vioofd1{
     display:none;
     }
