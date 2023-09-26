@@ -124,7 +124,7 @@ def ad_button1(id,kpdf,js_code):
     with st.container():
 
         val=kpdf['D1'][kpdf['year']==str(year_filter)].iloc[0]
-        st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)  
+        # st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)  
         html_content1 = html_button1(js_code, val)
         html(html_content1,height=250)
 
