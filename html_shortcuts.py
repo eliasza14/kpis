@@ -391,7 +391,7 @@ def html_button9(js_code,val4,css_code,val26):
                             </div>
                             <div id="counter" style="text-align: left; color:black;font-family:'Source Sans Pro',sans-serif;font-weight: bold; font-size: 45px;"></div>
                             <div>
-                                <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Κτηρίων & Εξ. Χώρων</div>
+                                <div style="text-align:center; color: #6E7279; font-size: 24px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">Κτιρίων & Εξ. Χώρων</div>
                             </div>
                             <div>
                                 <div class="number" style="text-align:center; font-size: 24px;padding-left:30px; font-family:  'Source Sans Pro',sans-serif; font-weight: 300; line-height: 24px; word-wrap: break-word">{str(val4)} %</div>
