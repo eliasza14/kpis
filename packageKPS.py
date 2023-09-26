@@ -162,10 +162,9 @@ def get_data_from_json(id):
     # response = json.loads(requests.get("https://cmtprooptiki.gr/api/getkoisenew.json").text)
     # response2 = json.loads(requests.get("https://cmtprooptiki.gr/api/getemploymentcmt.json").text)
     # response3 = json.loads(requests.get("https://cmtprooptiki.gr/api/getfinancial.json").text)
-    st.write(response)
+    
     df=pd.json_normalize(response, max_level=2)
     # st.write(df.dtypes)
-    st.write("Working until here")
 
     # st.write(df)
 
