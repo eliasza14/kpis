@@ -24,7 +24,7 @@ h3 [class*="css"] {
  
 
     /* H3 */
-    font-family: Roboto;
+    font-family: Roboto !important;
     
     font-style: normal;
     font-weight: 700;
