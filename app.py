@@ -365,7 +365,7 @@ def e_button5(id,kpdf,js_code,css_code):
         with col2:
             st.markdown("<h3 style='text-align: center; color: grey;'>Ποσοστό επί του Συνόλου ανά Κατηγορία Κύκλου Εργασιών</h3>", unsafe_allow_html=True)
 
-            labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
+            labels = ['Κτίρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
             values=[val26,val27,val28]
             fig=pieChart(labels,values,colors)
             st.plotly_chart(fig,use_container_width=True)
@@ -380,7 +380,7 @@ def e_button5(id,kpdf,js_code,css_code):
              # Select the relevant columns
             st.markdown("<h3 style='text-align: center; color: grey;'>Διαχρονική Κατανομή Κύκλου Εργασιών ανά Κατηγορία</h3>", unsafe_allow_html=True)
             columns = ['D26', 'D27', 'D28']
-            legend_labels = ['Κτηρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
+            legend_labels = ['Κτίρια & Εξ.Χώροι ','Εστίαση','Λοιπές Δραστηριότητες']
             kpdf_selected = kpdf[columns]
             # Create the stacked bar plot using Plotly
             fig=stackedChart2(columns,kpdf,legend_labels,'Έτος','Συχνότητα',colors)
@@ -408,7 +408,7 @@ def e_button6(id,kpdf,js_code):
             st.plotly_chart(fig,use_container_width=True)
 
         with col2:
-            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μετ.Kύκλ.Εργ. Κτήρια/Εξωτ. Χώροι</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: grey;'>% Ετήσια Μετ.Kύκλ.Εργ. Κτίρια/Εξωτ. Χώροι</h3>", unsafe_allow_html=True)
 
             categories=kpdf['year'].tolist()
             # Sample data
