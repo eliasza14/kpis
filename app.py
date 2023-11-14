@@ -561,7 +561,7 @@ def e_button8(id,kpdf,js_code,css_code):
 
     st.subheader("Υπόμνημα Δεικτών")
     st.markdown("""
-        <table border="1" cellpadding="0" cellspacing="0" style="font-family:Roboto;">
+        <table border="1" cellpadding="0" cellspacing="0" style="font-family:Roboto; color:black;">
             <tr> <th style="border:solid 1px black">Α/Α</th> <th style="border:solid 1px black">Δείκτης</th> </tr> 
             <tr> <td style="border:solid 1px black">Δ1</td> <td style="border:solid 1px black">Συνεταιριστές κατηγορίας Α</td> </tr>
             <tr> <td style="border:solid 1px black">Δ2</td> <td style="border:solid 1px black">Εργαζόμενοι Γενικού Πληθυσμού</td> </tr> 
