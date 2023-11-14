@@ -562,37 +562,37 @@ def e_button8(id,kpdf,js_code,css_code):
     st.subheader("Υπόμνημα Δεικτών")
     st.markdown("""
         <table border="1" cellpadding="0" cellspacing="0" style="font-family:Roboto; color:black;">
-            <tr> <th style="border:solid 1px black">Α/Α</th> <th style="border:solid 1px black">Δείκτης</th> </tr> 
-            <tr> <td style="border:solid 1px black">Δ1</td> <td style="border:solid 1px black">Συνεταιριστές κατηγορίας Α</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ2</td> <td style="border:solid 1px black">Εργαζόμενοι Γενικού Πληθυσμού</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ3</td> <td style="border:solid 1px black">Εργαζόμενοι ΛΥΨΥ</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ4</td> <td style="border:solid 1px black">Εργαζόμενοι ΕΚΟ</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ5</td> <td style="border:solid 1px black">Εργαζόμενοι Γενικού Πληθυσμού (% επί του συνόλου των εργαζομένων της ΚοιΣΠΕ)</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ6</td> <td style="border:solid 1px black">Εργαζόμενοι ΛΥΨΥ (% επί του συνόλου των εργαζομένων της ΚοιΣΠΕ)</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ7</td> <td style="border:solid 1px black">Εργαζόμενοι ΕΚΟ (% επί του συνόλου των εργαζομένων της ΚοιΣΠΕ)</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ8</td> <td style="border:solid 1px black">Ώρες απασχολησης εργαζόμενων ΛΥΨΥ</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ9</td> <td style="border:solid 1px black">Ώρες απασχολησης εργαζόμενων ΕΚΟ</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ10</td> <td style="border:solid 1px black">Ώρες απασχολησης εργαζόμενων ΛΥΨΥ (Μέσος Όρος)</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ11</td> <td style="border:solid 1px black">Ώρες απασχολησης εργαζόμενων ΕΚΟ (Μέσος Όρος)</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ12</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή ωρών απασχόλησης ΛΥΨΥ</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ13</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή ωρών απασχόλησης ΕΚΟ</td> </tr> 
-            <tr> <td style="border:solid 1px black">Δ14</td> <td style="border:solid 1px black">Ετήσιες Μονάδες Εργασίας</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ15</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή Ετησίων Μονάδων Εργασίας ΛΥΨΥ</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ16</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή Ετησίων Μονάδων Εργασίας ΕΚΟ</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ17</td> <td style="border:solid 1px black">Ετησίες (%) Μονάδες Εργασίας ΛΥΨΥ ως προς το σύνολο</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ18</td> <td style="border:solid 1px black">Ετησίες (%) Μονάδες Εργασίας ΕΚΟ ως προς το σύνολο</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ19</td> <td style="border:solid 1px black">Κύκλοι Εργασιών</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ20</td> <td style="border:solid 1px black">Κύκλοι Εργασιών δραστηριοτήτων παροχής υπηρεσιών σε κτίρια και εξωτερικούς χώρους</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ21</td> <td style="border:solid 1px black">Κύκλοι Εργασιών δραστηριοτήτων υπηρεσιών εστίασης</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ22</td> <td style="border:solid 1px black">Κύκλοι Εργασιών λοιπών δραστηριοτήτων</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ23</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή Κύκλου Εργασιών</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ24</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή Κύκλου Εργασιών δραστηριοτήτων παροχής υπηρεσιών σε κτίρια και εξωτερικούς χώρους</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ25</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή Κύκλου Εργασιών δραστηριοτήτων υπηρεσιών εστίασης</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ26</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή Κύκλου Εργασιών λοιπών δραστηριοτήτων</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ27</td> <td style="border:solid 1px black">Ετήσια (%) μεταβολή καθαρών αποτελεσμάτων</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ28</td> <td style="border:solid 1px black">Αριθμοδείκτης καθαρών αποτελεσμάτων</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ29</td> <td style="border:solid 1px black">Συμμετοχή (%) επιδοτήσεων στα έσοδα</td> </tr>
-            <tr> <td style="border:solid 1px black">Δ29</td> <td style="border:solid 1px black">Έσοδα ανά εργαζόμενο now do these</td> </tr>
+            <tr> <th style="border:solid 1px black;font-weight: bold;">Α/Α</th> <th style="border:solid 1px black;font-weight: bold;">Δείκτης</th> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ1</td> <td style="border:solid 1px black;font-weight: bold;">Συνεταιριστές κατηγορίας Α</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ2</td> <td style="border:solid 1px black;font-weight: bold;">Εργαζόμενοι Γενικού Πληθυσμού</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ3</td> <td style="border:solid 1px black;font-weight: bold;">Εργαζόμενοι ΛΥΨΥ</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ4</td> <td style="border:solid 1px black;font-weight: bold;">Εργαζόμενοι ΕΚΟ</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ5</td> <td style="border:solid 1px black;font-weight: bold;">Εργαζόμενοι Γενικού Πληθυσμού (% επί του συνόλου των εργαζομένων της ΚοιΣΠΕ)</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ6</td> <td style="border:solid 1px black;font-weight: bold;">Εργαζόμενοι ΛΥΨΥ (% επί του συνόλου των εργαζομένων της ΚοιΣΠΕ)</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ7</td> <td style="border:solid 1px black;font-weight: bold;">Εργαζόμενοι ΕΚΟ (% επί του συνόλου των εργαζομένων της ΚοιΣΠΕ)</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ8</td> <td style="border:solid 1px black;font-weight: bold;">Ώρες απασχολησης εργαζόμενων ΛΥΨΥ</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ9</td> <td style="border:solid 1px black;font-weight: bold;">Ώρες απασχολησης εργαζόμενων ΕΚΟ</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ10</td> <td style="border:solid 1px black;font-weight: bold;">Ώρες απασχολησης εργαζόμενων ΛΥΨΥ (Μέσος Όρος)</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ11</td> <td style="border:solid 1px black;font-weight: bold;">Ώρες απασχολησης εργαζόμενων ΕΚΟ (Μέσος Όρος)</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ12</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή ωρών απασχόλησης ΛΥΨΥ</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ13</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή ωρών απασχόλησης ΕΚΟ</td> </tr> 
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ14</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσιες Μονάδες Εργασίας</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ15</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή Ετησίων Μονάδων Εργασίας ΛΥΨΥ</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ16</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή Ετησίων Μονάδων Εργασίας ΕΚΟ</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ17</td> <td style="border:solid 1px black;font-weight: bold;">Ετησίες (%) Μονάδες Εργασίας ΛΥΨΥ ως προς το σύνολο</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ18</td> <td style="border:solid 1px black;font-weight: bold;">Ετησίες (%) Μονάδες Εργασίας ΕΚΟ ως προς το σύνολο</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ19</td> <td style="border:solid 1px black;font-weight: bold;">Κύκλοι Εργασιών</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ20</td> <td style="border:solid 1px black;font-weight: bold;">Κύκλοι Εργασιών δραστηριοτήτων παροχής υπηρεσιών σε κτίρια και εξωτερικούς χώρους</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ21</td> <td style="border:solid 1px black;font-weight: bold;">Κύκλοι Εργασιών δραστηριοτήτων υπηρεσιών εστίασης</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ22</td> <td style="border:solid 1px black;font-weight: bold;">Κύκλοι Εργασιών λοιπών δραστηριοτήτων</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ23</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή Κύκλου Εργασιών</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ24</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή Κύκλου Εργασιών δραστηριοτήτων παροχής υπηρεσιών σε κτίρια και εξωτερικούς χώρους</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ25</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή Κύκλου Εργασιών δραστηριοτήτων υπηρεσιών εστίασης</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ26</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή Κύκλου Εργασιών λοιπών δραστηριοτήτων</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ27</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή καθαρών αποτελεσμάτων</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ28</td> <td style="border:solid 1px black;font-weight: bold;">Αριθμοδείκτης καθαρών αποτελεσμάτων</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ29</td> <td style="border:solid 1px black;font-weight: bold;">Συμμετοχή (%) επιδοτήσεων στα έσοδα</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ29</td> <td style="border:solid 1px black;font-weight: bold;">Έσοδα ανά εργαζόμενο now do these</td> </tr>
         </table>
         <br>
     """,unsafe_allow_html=True)
