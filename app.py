@@ -594,6 +594,7 @@ def e_button8(id,kpdf,js_code,css_code):
             <tr> <td style="border:solid 1px black">Δ29</td> <td style="border:solid 1px black">Συμμετοχή (%) επιδοτήσεων στα έσοδα</td> </tr>
             <tr> <td style="border:solid 1px black">Δ29</td> <td style="border:solid 1px black">Έσοδα ανά εργαζόμενο now do these</td> </tr>
         </table>
+        <br>
     """,unsafe_allow_html=True)
 
     st.download_button(
