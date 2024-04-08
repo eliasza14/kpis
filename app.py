@@ -598,7 +598,7 @@ def e_button8(id,kpdf,js_code,css_code):
     """,unsafe_allow_html=True)
 
     st.download_button(
-    label="Λήψη Πίνακα Δεικτών",
+    label="Λήψη Πίνακα Δεικτών(.csv)",
     data=csv,
     file_name='kpis_table.csv',
     mime='text/csv',
@@ -609,7 +609,7 @@ def e_button8(id,kpdf,js_code,css_code):
 
     # Create a download button for the Excel file
     st.download_button(
-        label="Λήψη Πίνακα Δεικτών",
+        label="Λήψη Πίνακα Δεικτών(.xlsx)",
         data=open(excel_file_path, 'rb').read(),
         file_name=excel_file_path,
         mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
