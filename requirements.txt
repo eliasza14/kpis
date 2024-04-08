@@ -4,3 +4,4 @@ plotly
 requests
 pillow
 streamlit-option-menu
+openpyxl
