@@ -592,7 +592,7 @@ def e_button8(id,kpdf,js_code,css_code):
             <tr> <td style="border:solid 1px black;font-weight: bold;">Δ27</td> <td style="border:solid 1px black;font-weight: bold;">Ετήσια (%) μεταβολή καθαρών αποτελεσμάτων</td> </tr>
             <tr> <td style="border:solid 1px black;font-weight: bold;">Δ28</td> <td style="border:solid 1px black;font-weight: bold;">Αριθμοδείκτης καθαρών αποτελεσμάτων</td> </tr>
             <tr> <td style="border:solid 1px black;font-weight: bold;">Δ29</td> <td style="border:solid 1px black;font-weight: bold;">Συμμετοχή (%) επιδοτήσεων στα έσοδα</td> </tr>
-            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ29</td> <td style="border:solid 1px black;font-weight: bold;">Έσοδα ανά εργαζόμενο now do these</td> </tr>
+            <tr> <td style="border:solid 1px black;font-weight: bold;">Δ30</td> <td style="border:solid 1px black;font-weight: bold;">Έσοδα ανά εργαζόμενο</td> </tr>
         </table>
         <br>
     """,unsafe_allow_html=True)
