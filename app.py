@@ -604,6 +604,18 @@ def e_button8(id,kpdf,js_code,css_code):
     mime='text/csv',
     )
 
+    excel_file_path = 'kpis_table.xlsx'
+    kpdf_filtered.to_excel(excel_file_path, index=False)
+
+    # Create a download button for the Excel file
+    st.download_button(
+        label="Λήψη Πίνακα Δεικτών",
+        data=open(excel_file_path, 'rb').read(),
+        file_name=excel_file_path,
+        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    )
+    
+
 
 def display_pinkas_submenu(id):
     st.subheader("pinkas Submenu")
