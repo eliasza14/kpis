@@ -1,1 +1,1 @@
-whtmltopdf
+wkhtmltopdf
