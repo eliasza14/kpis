@@ -17,7 +17,7 @@ import pdfkit
 
 def save_page_as_pdf():
     # Get the current URL with query parameters
-    url = st.script_request_queue.get().get("url", "")
+    url = get_url_params()
 
     # Define PDF options
     options = {
