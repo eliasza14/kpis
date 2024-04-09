@@ -132,11 +132,11 @@ def ad_button1(id,kpdf,js_code):
     # Create a button to trigger PDF generation
     if st.button("Download as PDF"):
         pdf_file_path = save_page_as_pdf()
-        with open(pdf_file_path, "rb") as f:
-            pdf_contents = f.read()
+        # with open(pdf_file_path, "rb") as f:
+        #     pdf_contents = f.read()
         st.download_button(
             label="Download PDF",
-            data=pdf_contents,
+            data=pdf_file_path,
             file_name='streamlit_page.pdf',
             mime='application/pdf',
         )
