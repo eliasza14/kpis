@@ -686,7 +686,7 @@ def save_page_as_pdf():
     }
 
     # Generate PDF
-    pdf=pdfkit.from_url(str(url), "output.pdf", options=options)
+    pdf=pdfkit.from_url(str(url), options=options)
     return pdf
 
 if __name__ == "__main__":
