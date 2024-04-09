@@ -130,11 +130,18 @@ def ad_button1(id,kpdf,js_code):
         html(html_content1,height=250)
 
     st.title("Generate PDF of Streamlit Page")
-
+    pdf=save_page_as_pdf()
+    st.download_button(
+    label="Λήψη Πίνακα Δεικτών(.csv)",
+    data=pdf,
+    file_name='kpis_table.csv',
+    mime='text/csv',
+    )
     # Create a button to trigger PDF generation
-    if st.button("Download as PDF"):
-        save_page_as_pdf()
-        st.success("PDF downloaded successfully!")
+    # if st.button("Download as PDF"):
+        
+
+    #     st.success("PDF downloaded successfully!")
 
 
 
@@ -676,7 +683,8 @@ def save_page_as_pdf():
     }
 
     # Generate PDF
-    pdfkit.from_url(str(url), "output.pdf", options=options)
+    pdf=pdfkit.from_url(str(url), "output.pdf", options=options)
+    return pdf
 
 if __name__ == "__main__":
     main()
