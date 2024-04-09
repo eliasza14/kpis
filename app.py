@@ -13,8 +13,20 @@ from packageKPS import *
 from packageCharts import *
 from html_shortcuts import *
 from PIL import Image
+import pdfkit
 
+def save_page_as_pdf():
+    # Get the current URL with query parameters
+    url = st.experimental_get_query_params()["__url__"]
 
+    # Define PDF options
+    options = {
+        "page-size": "A4",
+        "encoding": "UTF-8",
+    }
+
+    # Generate PDF
+    pdfkit.from_url(url, "output.pdf", options=options)
 
 def main():
  
@@ -127,6 +139,13 @@ def ad_button1(id,kpdf,js_code):
         # st.markdown("<h3 style='text-align: center; color: grey;'>Συνεταιριστές Κατηγορίας Α</h3>", unsafe_allow_html=True)  
         html_content1 = html_button1(js_code, val)
         html(html_content1,height=250)
+
+    st.title("Generate PDF of Streamlit Page")
+
+    # Create a button to trigger PDF generation
+    if st.button("Download as PDF"):
+        save_page_as_pdf()
+        st.success("PDF downloaded successfully!")
 
 
 
