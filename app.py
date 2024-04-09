@@ -15,18 +15,7 @@ from html_shortcuts import *
 from PIL import Image
 import pdfkit
 
-def save_page_as_pdf():
-    # Get the current URL with query parameters
-    url = get_url_params()
 
-    # Define PDF options
-    options = {
-        "page-size": "A4",
-        "encoding": "UTF-8",
-    }
-
-    # Generate PDF
-    pdfkit.from_url(url, "output.pdf", options=options)
 
 def main():
  
@@ -676,7 +665,18 @@ def display_contents(id_received):
     st.write(f'Name: {contents["name"]}')
     st.write(f'Email: {contents["email"]}')
 
+def save_page_as_pdf():
+    # Get the current URL with query parameters
+    url = get_url_params()
 
+    # Define PDF options
+    options = {
+        "page-size": "A4",
+        "encoding": "UTF-8",
+    }
+
+    # Generate PDF
+    pdfkit.from_url(str(url), "output.pdf", options=options)
 
 if __name__ == "__main__":
     main()
