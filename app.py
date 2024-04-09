@@ -677,7 +677,7 @@ def display_contents(id_received):
 
 def save_page_as_pdf():
     # Get the current URL with query parameters
-    url = get_url_params()
+    url = "https://koispekpis.streamlit.app/?id=1128"
 
     # Define PDF options
     options = {
