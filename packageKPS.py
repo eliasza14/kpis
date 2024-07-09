@@ -145,11 +145,11 @@ def convert_df(df):
 
 # @st.experimental_memo
 # @st.cache_data(experimental_allow_widgets=True)
+@st.cache_data(ttl=320)
 def get_data_from_json(id):
     response = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getkoispe?id="+str(id)).text)
     response2 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getemployment?id="+str(id)).text)
     response3 = json.loads(requests.get("https://app.koispesupport.gr/koispe/api/getfinancial?id="+str(id)).text)
-
 
 
 

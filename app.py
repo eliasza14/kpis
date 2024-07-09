@@ -659,9 +659,11 @@ def display_pinkas_submenu(id):
 
 
 def get_url_params():
-    query_params = st.experimental_get_query_params()
-    id_received = query_params.get("id", [""])[0]
+    query_params = st.query_params
+    # st.write(query_params)
+    id_received = query_params.get("id",[""])
     
+    # st.write(id_received)
     return id_received
     # id_input = st.text_input("Enter ID", value=id_received)
     # if id_input:
